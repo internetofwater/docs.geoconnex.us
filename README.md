@@ -13,7 +13,7 @@ conda install -c conda-forge jupyter-book
 
 in this repo the book has been created and made in the books/iowbook directory.
 
-``` cd ``` into that directory and build the book with: 
+_cd_  into that directory and build the book with: 
 
 ```
 jupyter-book build .
