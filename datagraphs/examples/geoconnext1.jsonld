@@ -1,0 +1,26 @@
+
+      {
+    "@context": {
+        "@vocab": "https://schema.org/",
+        "endDate": {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "startDate": {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+    },
+    "@id": "https://samples.earth/id/learning/c1pnhobh2h4brdov30j0",
+    "@type": "Course",
+	"name": "Fake: students and expected",
+    "description": "steps Topics management ocean methods methodologies or decade management. management assignments the and. due management to science scientist vector press using. the digital Data created. of increasingly regional assignments project specific image earth legal to and. data a attention and grid global. data use well services metadata the such vector. Knowledge software manage support on at the. participation on including for species Awareness course raster a data.",
+    "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": [
+            "MOOC",
+            "online"
+        ],
+        "endDate": "2021-01-19T19:15:33-06:00",
+        "startDate": "2021-01-12T19:15:33-06:00"
+    }
+}
+  

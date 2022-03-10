@@ -1,0 +1,69 @@
+{
+    "@context": [
+        {
+            "schema": "https://schema.org/",
+            "uri": "@id",
+            "type": "@type",
+            "geosparql": "http://www.opengis.net/ont/geosparql#"
+        },
+        {
+            "schema": "https://schema.org/",
+            "LINK": {
+                "@id": "schema:subjectOf",
+                "@type": "@id"
+            }
+        }
+    ],
+    "type": "schema:Place",
+    "id": "CO_9523",
+    "fid": 203514,
+    "StateID": "CO",
+    "DataSourceOrganizationID": "CODWR",
+    "uri": "https://geoconnex.us/wade/sites/CO_9523",
+    "LINK": "https://wade-api-qa.azure-api.net/v1/SiteAllocationAmounts?SiteUUID=CO_9523",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -104.9480259999999,
+            39.80684
+        ]
+    },
+    "geosparql:hasGeometry": {
+        "@type": "http://www.opengis.net/ont/sf#Point",
+        "geosparql:asWKT": {
+            "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "@value": "POINT (-104.9480259999999 39.80684)"
+        }
+    },
+    "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:longitude": -104.9480259999999,
+        "schema:latitude": 39.80684
+    },
+    "links": [
+        {
+            "rel": "alternate",
+            "type": "application/geo+json",
+            "title": "This document as GeoJSON",
+            "href": "https://geoconnex.us/wade/sites/CO_9523?f=json"
+        },
+        {
+            "rel": "self",
+            "type": "application/ld+json",
+            "title": "This document as RDF (JSON-LD)",
+            "href": "https://geoconnex.us/wade/sites/CO_9523?f=jsonld"
+        },
+        {
+            "rel": "alternate",
+            "type": "text/html",
+            "title": "This document as HTML",
+            "href": "https://geoconnex.us/wade/sites/CO_9523?f=html"
+        },
+        {
+            "rel": "collection",
+            "type": "application/json",
+            "title": "WaDE Sites",
+            "href": "https://wade-test.internetofwater.dev/collections/wade"
+        }
+    ]
+}

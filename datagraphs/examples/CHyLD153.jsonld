@@ -1,0 +1,99 @@
+
+{
+  "@graph" : [ {
+    "@id" : "rdfs:Resource",
+    "@type" : [ "rdfs:Class", "http://www.w3.org/2002/07/owl#Class", "rdfs:Resource" ],
+    "subClassOf" : "rdfs:Resource",
+    "equivalentClass" : "rdfs:Resource"
+  }, {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing",
+    "@type" : [ "rdfs:Class", "http://www.w3.org/2002/07/owl#Class", "rdfs:Resource" ],
+    "subClassOf" : [ "http://www.w3.org/2002/07/owl#Thing", "rdfs:Resource" ],
+    "equivalentClass" : "http://www.w3.org/2002/07/owl#Thing"
+  }, {
+    "@id" : "https://geoconnex.us/chyld-pilot/id/hu/041504040102-drainage_basin",
+    "@type" : [ "https://www.opengis.net/def/hy_features/ontology/hyf/HY_Catchment", "rdfs:Resource", "https://www.opengis.net/def/hy_features/ontology/hyf/HY_DendriticCatchment", "http://www.w3.org/2002/07/owl#Thing" ],
+    "subjectOf" : [ "https://labs.waterdata.usgs.gov/geoserver/wmadata/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=wmadata:huc12agg&outputFormat=application%2Fjson&cql_filter=huc12=%27041504040102%27", "https://info.geoconnex.us/chyld-pilot/info/hu/041504040102-drainage_basin" ],
+    "label" : "Johns Brook: total upstream drainage basin",
+    "sameAs" : "https://geoconnex.us/chyld-pilot/id/hu/041504040102-drainage_basin",
+    "catchmentRealization" : [ "https://geoconnex.us/chyld-pilot/id/hu/041504040102-drainage_basin_hydrometric_network_nwis", "https://geoconnex.us/chyld-pilot/id/hu/041504040102-drainage_basin_flowpath", "https://geoconnex.us/chyld-pilot/id/hu/041504040102-drainage_basin_hydronetwork", "https://geoconnex.us/chyld-pilot/id/hu/041504040102-drainage_basin_hydrometric_network_wqp" ],
+    "lowerCatchment" : "https://geoconnex.us/chyld-pilot/id/hu/041504040103",
+    "outflow" : "https://geoconnex.us/chyld-pilot/id/hu_nexus/041504040103-inflow"
+  }, {
+    "@id" : "https://geoconnex.us/chyld-pilot/id/hu/041504040102-drainage_basin_hydrometric_network_wqp",
+    "@type" : [ "https://www.opengis.net/def/hy_features/ontology/hyf/HY_HydrometricNetwork", "http://www.w3.org/2002/07/owl#Thing", "rdfs:Resource" ],
+    "subjectOf" : [ "https://labs.waterdata.usgs.gov/api/nldi/linked-data/huc12pp/041504040102/navigate/UT/wqp", "https://info.geoconnex.us/chyld-pilot/info/hu/041504040102-drainage_basin_hydrometric_network_wqp" ],
+    "label" : "WQP hydrometric network of Johns Brook",
+    "sameAs" : "https://geoconnex.us/chyld-pilot/id/hu/041504040102-drainage_basin_hydrometric_network_wqp",
+    "realizedCatchment" : "https://geoconnex.us/chyld-pilot/id/hu/041504040102-drainage_basin"
+  }, {
+    "@id" : "https://info.geoconnex.us/chyld-pilot/info/hu/041504040102-drainage_basin_hydrometric_network_wqp",
+    "conformsTo" : "https://github.com/NRCan/GSIP",
+    "format" : [ "application/x-turtle", "application/ld+json", "text/html", "application/rdf+xml" ],
+    "provider" : "https://labs.waterdata.usgs.gov",
+    "label" : "Information Index"
+  }, {
+    "@id" : "https://labs.waterdata.usgs.gov/api/nldi/linked-data/huc12pp/041504040102/navigate/UT/wqp",
+    "conformsTo" : "https://github.com/NRCan/GSIP",
+    "format" : "application/vnd.geo+json",
+    "provider" : "https://labs.waterdata.usgs.gov",
+    "label" : "GeoJSON"
+  }, {
+    "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/HY_HydrometricNetwork",
+    "@type" : [ "rdfs:Class", "http://www.w3.org/2002/07/owl#Class", "rdfs:Resource" ],
+    "subClassOf" : [ "https://www.opengis.net/def/hy_features/ontology/hyf/HY_HydrometricNetwork", "rdfs:Resource" ],
+    "equivalentClass" : "https://www.opengis.net/def/hy_features/ontology/hyf/HY_HydrometricNetwork"
+  } ],
+  "@context" : {
+    "equivalentClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
+      "@type" : "@id"
+    },
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2002/07/owl#sameAs",
+      "@type" : "@id"
+    },
+    "catchmentRealization" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/catchmentRealization",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "lowerCatchment" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/lowerCatchment",
+      "@type" : "@id"
+    },
+    "subjectOf" : {
+      "@id" : "http://schema.org/subjectOf",
+      "@type" : "@id"
+    },
+    "outflow" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/outflow",
+      "@type" : "@id"
+    },
+    "realizedCatchment" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/realizedCatchment",
+      "@type" : "@id"
+    },
+    "conformsTo" : {
+      "@id" : "http://purl.org/dc/terms/conformsTo",
+      "@type" : "@id"
+    },
+    "provider" : {
+      "@id" : "http://schema.org/provider",
+      "@type" : "@id"
+    },
+    "format" : {
+      "@id" : "http://purl.org/dc/terms/format"
+    },
+    "schema" : "http://schema.org/",
+    "dct" : "http://purl.org/dc/terms/",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#"
+  }
+}
+

@@ -1,0 +1,138 @@
+{
+    "@context": [
+        {
+            "schema": "https://schema.org/",
+            "uri": "@id",
+            "type": "@type",
+            "geosparql": "http://www.opengis.net/ont/geosparql#"
+        },
+        {
+            "schema": "https://schema.org/",
+            "sitename": "schema:name",
+            "weblink": {
+                "@id": "schema:about",
+                "@type": "@id"
+            },
+            "comid": {
+                "@id": "schema:geoWithin",
+                "@type": "@id"
+            },
+            "provider": {
+                "@id": "schema:url"
+            },
+            "hu08": {
+                "@id": "schema:geoWithin",
+                "@type": "@id"
+            },
+            "hu10": {
+                "@id": "schema:geoWithin",
+                "@type": "@id"
+            },
+            "hu12": {
+                "@id": "schema:geoWithin",
+                "@type": "@id"
+            }
+        }
+    ],
+    "type": "schema:Place",
+    "id": "11181008",
+    "fid": 2142,
+    "sitename": "CASTRO VALLEY C A HAYWARD CA",
+    "operator": "USGS",
+    "datasource": "NWIS",
+    "sitestatus": "Active",
+    "stage_yn": "Y",
+    "stage_por": 4803,
+    "stage_status": "Active",
+    "stage_realtime": "Y",
+    "flow_yn": "Y",
+    "flow_por": 17493,
+    "flow_status": "Active",
+    "flow_realtime": "Y",
+    "watqual_yn": "Y",
+    "watqual_por": 245,
+    "watqual_status": "Inactive",
+    "watqual_realtime": "N",
+    "temp_yn": "Y",
+    "temp_por": 277,
+    "temp_status": "Inactive",
+    "temp_realtime": "N",
+    "floodmgmt": null,
+    "ecosysmgmt": null,
+    "grdwtrmgmt": null,
+    "pubsafety": null,
+    "wtrsupply": null,
+    "ref_gagesii": "N",
+    "strmorder": 2,
+    "ucdstrmclass": "Perennial groundwater and rain (PGR)",
+    "streamtype": "Stream/River - Perennial",
+    "totdasqkm": 14.3613,
+    "totdasqmi": 5.54492665,
+    "weblink": "https://geoconnex.us/usgs/monitoring-location/11181008",
+    "streamgages_objectid": 2411,
+    "gnisid_medres": " ",
+    "rchcd_medres": "18050004001063",
+    "comid_medres": 2803985.0,
+    "x_orig": -183223.4106,
+    "y_orig": -35389.87048,
+    "wtrshdnm_huc8": "San Francisco Bay",
+    "huc8": "18050004",
+    "wtrshdnm_huc10": "San Lorenzo Creek-Frontal San Francisco Bay Estuaries",
+    "huc10": "1805000408",
+    "wtrshdnm_huc12": "San Lorenzo Creek",
+    "huc12": "180500040802",
+    "excldfrmgg": "0",
+    "comid": "https://geoconnex.us/nhdplusv2/comid/2803985",
+    "hu08": "https://geoconnex.us/ref/hu08/18050004",
+    "hu10": "https://geoconnex.us/ref/hu10/1805000408",
+    "hu12": "https://geoconnex.us/nhdplusv2/huc12/180500040802",
+    "provider": "https://waterdata.usgs.gov",
+    "uri": "https://geoconnex.us/ca-gage-assessment/gages/11181008",
+    "reach_measure": 46.50807,
+    "site_id": "11181008",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -122.0805067772858,
+            37.67994028134787
+        ]
+    },
+    "geosparql:hasGeometry": {
+        "@type": "http://www.opengis.net/ont/sf#Point",
+        "geosparql:asWKT": {
+            "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "@value": "POINT (-122.0805067772858 37.67994028134787)"
+        }
+    },
+    "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:longitude": -122.0805067772858,
+        "schema:latitude": 37.67994028134787
+    },
+    "links": [
+        {
+            "rel": "alternate",
+            "type": "application/geo+json",
+            "title": "This document as GeoJSON",
+            "href": "https://geoconnex.us/ca-gage-assessment/gages/11181008?f=json"
+        },
+        {
+            "rel": "self",
+            "type": "application/ld+json",
+            "title": "This document as RDF (JSON-LD)",
+            "href": "https://geoconnex.us/ca-gage-assessment/gages/11181008?f=jsonld"
+        },
+        {
+            "rel": "alternate",
+            "type": "text/html",
+            "title": "This document as HTML",
+            "href": "https://geoconnex.us/ca-gage-assessment/gages/11181008?f=html"
+        },
+        {
+            "rel": "collection",
+            "type": "application/json",
+            "title": "Gages",
+            "href": "https://sb19.linked-data.internetofwater.dev/collections/ca_gages"
+        }
+    ]
+}

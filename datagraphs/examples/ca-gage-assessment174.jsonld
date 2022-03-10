@@ -1,0 +1,138 @@
+{
+    "@context": [
+        {
+            "schema": "https://schema.org/",
+            "uri": "@id",
+            "type": "@type",
+            "geosparql": "http://www.opengis.net/ont/geosparql#"
+        },
+        {
+            "schema": "https://schema.org/",
+            "sitename": "schema:name",
+            "weblink": {
+                "@id": "schema:about",
+                "@type": "@id"
+            },
+            "comid": {
+                "@id": "http://www.opengeospatial.org/standards/waterml2/hy_features/flowpath",
+                "@type": "@id"
+            },
+            "provider": {
+                "@id": "schema:url"
+            },
+            "hu08": {
+                "@id": "schema:geoWithin",
+                "@type": "@id"
+            },
+            "hu10": {
+                "@id": "schema:geoWithin",
+                "@type": "@id"
+            },
+            "hu12": {
+                "@id": "schema:geoWithin",
+                "@type": "@id"
+            }
+        }
+    ],
+    "type": "schema:Place",
+    "id": "BNC",
+    "fid": 17,
+    "sitename": "BROWN'S CK NR DOUGLAS CITY",
+    "operator": "USGS",
+    "datasource": "CDEC",
+    "sitestatus": "Inactive",
+    "stage_yn": "Y",
+    "stage_por": 180,
+    "stage_status": "Inactive",
+    "stage_realtime": "N",
+    "flow_yn": "Y",
+    "flow_por": 180,
+    "flow_status": "Inactive",
+    "flow_realtime": "N",
+    "watqual_yn": "N",
+    "watqual_por": null,
+    "watqual_status": null,
+    "watqual_realtime": "N",
+    "temp_yn": "N",
+    "temp_por": null,
+    "temp_status": null,
+    "temp_realtime": "N",
+    "floodmgmt": null,
+    "ecosysmgmt": null,
+    "grdwtrmgmt": null,
+    "pubsafety": null,
+    "wtrsupply": null,
+    "ref_gagesii": null,
+    "strmorder": 3,
+    "ucdstrmclass": "Perennial groundwater and rain (PGR)",
+    "streamtype": "Stream/River - Perennial",
+    "totdasqkm": 190.665,
+    "totdasqmi": 73.61613783,
+    "weblink": "http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=BNC",
+    "streamgages_objectid": 19,
+    "gnisid_medres": "219903",
+    "rchcd_medres": "18010211000114",
+    "comid_medres": 8245900.0,
+    "x_orig": -252396.97875599,
+    "y_orig": 296653.14879493,
+    "wtrshdnm_huc8": "Trinity",
+    "huc8": "18010211",
+    "wtrshdnm_huc10": "Browns Creek",
+    "huc10": "1801021106",
+    "wtrshdnm_huc12": "Lower Browns Creek",
+    "huc12": "180102110602",
+    "excldfrmgg": "0",
+    "comid": "https://geoconnex.us/nhdplusv2/comid/8245900",
+    "hu08": "https://geoconnex.us/ref/hu08/18010211",
+    "hu10": "https://geoconnex.us/ref/hu10/1801021106",
+    "hu12": "https://geoconnex.us/nhdplusv2/huc12/180102110602",
+    "provider": "https://cdec.water.ca.gov",
+    "uri": "https://geoconnex.us/ca-gage-assessment/gages/BNC",
+    "reach_measure": 0.0,
+    "site_id": "BNC",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -122.9849875920913,
+            40.64996459688092
+        ]
+    },
+    "geosparql:hasGeometry": {
+        "@type": "http://www.opengis.net/ont/sf#Point",
+        "geosparql:asWKT": {
+            "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "@value": "POINT (-122.9849875920913 40.64996459688092)"
+        }
+    },
+    "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:longitude": -122.9849875920913,
+        "schema:latitude": 40.64996459688092
+    },
+    "links": [
+        {
+            "rel": "alternate",
+            "type": "application/geo+json",
+            "title": "This document as GeoJSON",
+            "href": "https://geoconnex.us/ca-gage-assessment/gages/BNC?f=json"
+        },
+        {
+            "rel": "self",
+            "type": "application/ld+json",
+            "title": "This document as RDF (JSON-LD)",
+            "href": "https://geoconnex.us/ca-gage-assessment/gages/BNC?f=jsonld"
+        },
+        {
+            "rel": "alternate",
+            "type": "text/html",
+            "title": "This document as HTML",
+            "href": "https://geoconnex.us/ca-gage-assessment/gages/BNC?f=html"
+        },
+        {
+            "rel": "collection",
+            "type": "application/json",
+            "title": "Gages",
+            "href": "https://sb19.linked-data.internetofwater.dev/collections/ca_gages"
+        }
+    ]
+}

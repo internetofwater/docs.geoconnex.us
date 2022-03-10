@@ -1,0 +1,181 @@
+
+{
+  "@graph" : [ {
+    "@id" : "rdfs:Resource",
+    "@type" : [ "rdfs:Class", "http://www.w3.org/2002/07/owl#Class", "rdfs:Resource" ],
+    "subClassOf" : "rdfs:Resource",
+    "equivalentClass" : "rdfs:Resource"
+  }, {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing",
+    "@type" : [ "rdfs:Class", "http://www.w3.org/2002/07/owl#Class", "rdfs:Resource" ],
+    "subClassOf" : [ "http://www.w3.org/2002/07/owl#Thing", "rdfs:Resource" ],
+    "equivalentClass" : "http://www.w3.org/2002/07/owl#Thing"
+  }, {
+    "@id" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin",
+    "@type" : [ "http://www.w3.org/2002/07/owl#Thing", "https://www.opengis.net/def/hy_features/ontology/hyf/HY_DendriticCatchment", "https://www.opengis.net/def/hy_features/ontology/hyf/HY_Catchment", "rdfs:Resource" ],
+    "subjectOf" : [ "https://labs.waterdata.usgs.gov/geoserver/wmadata/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=wmadata:huc12agg&outputFormat=application%2Fjson&cql_filter=huc12=%27041504020307%27", "https://info.geoconnex.us/chyld-pilot/info/hu/041504020307-drainage_basin" ],
+    "label" : "Pleasant Brook-Otter Creek: total upstream drainage basin",
+    "sameAs" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin",
+    "catchmentRealization" : [ "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_hydrometric_network_nwis", "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_hydrometric_network_wqp", "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_hydronetwork", "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_flowpath" ],
+    "lowerCatchment" : "https://geoconnex.us/chyld-pilot/id/hu/041504020502",
+    "outflow" : "https://geoconnex.us/chyld-pilot/id/hu_nexus/041504020502-inflow"
+  }, {
+    "@id" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_flowpath",
+    "@type" : [ "https://www.opengis.net/def/hy_features/ontology/hyf/HY_Flowpath", "http://www.w3.org/2002/07/owl#Thing", "rdfs:Resource" ],
+    "subjectOf" : [ "https://info.geoconnex.us/chyld-pilot/info/hu/041504020307-drainage_basin_flowpath", "https://labs.waterdata.usgs.gov/api/nldi/linked-data/huc12pp/041504020307/navigate/UM" ],
+    "label" : "Flowpath of Pleasant Brook-Otter Creek",
+    "sameAs" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_flowpath",
+    "realizedCatchment" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin"
+  }, {
+    "@id" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_hydrometric_network_nwis",
+    "@type" : [ "https://www.opengis.net/def/hy_features/ontology/hyf/HY_HydrometricNetwork", "http://www.w3.org/2002/07/owl#Thing", "rdfs:Resource" ],
+    "subjectOf" : [ "https://labs.waterdata.usgs.gov/api/nldi/linked-data/huc12pp/041504020307/navigate/UT/nwissite", "https://info.geoconnex.us/chyld-pilot/info/hu/041504020307-drainage_basin_hydrometric_network_nwis" ],
+    "label" : "NWIS hydrometric network of Pleasant Brook-Otter Creek",
+    "sameAs" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_hydrometric_network_nwis",
+    "realizedCatchment" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin"
+  }, {
+    "@id" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_hydrometric_network_wqp",
+    "@type" : [ "https://www.opengis.net/def/hy_features/ontology/hyf/HY_HydrometricNetwork", "http://www.w3.org/2002/07/owl#Thing", "rdfs:Resource" ],
+    "subjectOf" : [ "https://info.geoconnex.us/chyld-pilot/info/hu/041504020307-drainage_basin_hydrometric_network_wqp", "https://labs.waterdata.usgs.gov/api/nldi/linked-data/huc12pp/041504020307/navigate/UT/wqp" ],
+    "label" : "WQP hydrometric network of Pleasant Brook-Otter Creek",
+    "sameAs" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_hydrometric_network_wqp",
+    "realizedCatchment" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin"
+  }, {
+    "@id" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_hydronetwork",
+    "@type" : [ "https://www.opengis.net/def/hy_features/ontology/hyf/HY_HydroNetwork", "http://www.w3.org/2002/07/owl#Thing", "rdfs:Resource" ],
+    "subjectOf" : [ "https://labs.waterdata.usgs.gov/api/nldi/linked-data/huc12pp/041504020307/navigate/UT", "https://info.geoconnex.us/chyld-pilot/info/hu/041504020307-drainage_basin_hydronetwork" ],
+    "label" : "Hydronetwork of Pleasant Brook-Otter Creek",
+    "sameAs" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin_hydronetwork",
+    "realizedCatchment" : "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin"
+  }, {
+    "@id" : "https://geoconnex.us/chyld-pilot/id/hu/041504020502",
+    "@type" : [ "rdfs:Resource", "https://www.opengis.net/def/hy_features/ontology/hyf/HY_Catchment", "http://www.w3.org/2002/07/owl#Thing", "https://www.opengis.net/def/hy_features/ontology/hyf/HY_DendriticCatchment" ],
+    "subjectOf" : [ "https://labs.waterdata.usgs.gov/geoserver/wmadata/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=wmadata:huc12&outputFormat=application%2Fjson&cql_filter=huc12=%27041504020502%27", "https://info.geoconnex.us/chyld-pilot/info/hu/041504020502" ],
+    "sfIntersects" : "https://geoconnex.us/chyld-pilot/id/nat_aq/N400NYNECB",
+    "label" : "Otter Creek",
+    "sameAs" : "https://geoconnex.us/chyld-pilot/id/hu/041504020502",
+    "encompassingCatchment" : "https://geoconnex.us/chyld-pilot/id/hu/04150402",
+    "inflow" : "https://geoconnex.us/chyld-pilot/id/hu_nexus/041504020502-inflow",
+    "lowerCatchment" : "https://geoconnex.us/chyld-pilot/id/hu/041504080602",
+    "outflow" : "https://geoconnex.us/chyld-pilot/id/hu_nexus/041504080602-inflow",
+    "upperCatchment" : [ "https://geoconnex.us/chyld-pilot/id/hu/041504020501-drainage_basin", "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin", "https://geoconnex.us/chyld-pilot/id/hu/041504020307", "https://geoconnex.us/chyld-pilot/id/hu/041504020402", "https://geoconnex.us/chyld-pilot/id/hu/041504020402-drainage_basin", "https://geoconnex.us/chyld-pilot/id/hu/041504020501" ]
+  }, {
+    "@id" : "https://geoconnex.us/chyld-pilot/id/hu_nexus/041504020502-inflow",
+    "@type" : [ "rdfs:Resource", "https://www.opengis.net/def/hy_features/ontology/hyf/HY_HydroNexus", "http://www.w3.org/2002/07/owl#Thing" ],
+    "subjectOf" : [ "https://info.geoconnex.us/chyld-pilot/info/hu_nexus/041504020502-inflow", "https://www.sciencebase.gov/catalogMaps/mapping/ows/5762b664e4b07657d19a71ea?service=wfs&request=getfeature&version=1.0.0&typename=sb:fpp&outputFormat=application%2fjson&srsName=EPSG:4326&cql_filter=HUC_12%20IN%20(%27041504020402%27,%20%27041504020307%27,%20%27041504020501%27)" ],
+    "label" : "Nexus contributing to Otter Creek",
+    "sameAs" : "https://geoconnex.us/chyld-pilot/id/hu_nexus/041504020502-inflow",
+    "contributingCatchment" : [ "https://geoconnex.us/chyld-pilot/id/hu/041504020307", "https://geoconnex.us/chyld-pilot/id/hu/041504020307-drainage_basin", "https://geoconnex.us/chyld-pilot/id/hu/041504020501-drainage_basin", "https://geoconnex.us/chyld-pilot/id/hu/041504020501", "https://geoconnex.us/chyld-pilot/id/hu/041504020402-drainage_basin", "https://geoconnex.us/chyld-pilot/id/hu/041504020402" ],
+    "nexusRealization" : [ "https://geoconnex.us/chyld-pilot/id/hu_outlet/041504020307", "https://geoconnex.us/chyld-pilot/id/hu_outlet/041504020402", "https://geoconnex.us/chyld-pilot/id/hu_outlet/041504020501" ],
+    "receivingCatchment" : "https://geoconnex.us/chyld-pilot/id/hu/041504020502"
+  }, {
+    "@id" : "https://info.geoconnex.us/chyld-pilot/info/hu/041504020307-drainage_basin",
+    "conformsTo" : "https://github.com/NRCan/GSIP",
+    "format" : [ "application/x-turtle", "application/ld+json", "text/html", "application/rdf+xml" ],
+    "provider" : "https://labs.waterdata.usgs.gov",
+    "label" : "Information Index"
+  }, {
+    "@id" : "https://labs.waterdata.usgs.gov/geoserver/wmadata/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=wmadata:huc12agg&outputFormat=application%2Fjson&cql_filter=huc12=%27041504020307%27",
+    "conformsTo" : "https://github.com/NRCan/GSIP",
+    "format" : "application/vnd.geo+json",
+    "provider" : "https://labs.waterdata.usgs.gov",
+    "label" : "GeoJSON"
+  }, {
+    "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/HY_Catchment",
+    "@type" : [ "rdfs:Class", "http://www.w3.org/2002/07/owl#Class", "rdfs:Resource" ],
+    "label" : [ {
+      "@language" : "fr",
+      "@value" : "Bassin de drainage"
+    }, {
+      "@language" : "en",
+      "@value" : "Catchment"
+    } ],
+    "subClassOf" : [ "http://www.w3.org/2002/07/owl#Thing", "rdfs:Resource", "https://www.opengis.net/def/hy_features/ontology/hyf/HY_Catchment" ],
+    "equivalentClass" : "https://www.opengis.net/def/hy_features/ontology/hyf/HY_Catchment"
+  }, {
+    "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/HY_DendriticCatchment",
+    "@type" : [ "rdfs:Class", "http://www.w3.org/2002/07/owl#Class", "rdfs:Resource" ],
+    "subClassOf" : [ "https://www.opengis.net/def/hy_features/ontology/hyf/HY_DendriticCatchment", "rdfs:Resource" ],
+    "equivalentClass" : "https://www.opengis.net/def/hy_features/ontology/hyf/HY_DendriticCatchment"
+  } ],
+  "@context" : {
+    "subjectOf" : {
+      "@id" : "http://schema.org/subjectOf",
+      "@type" : "@id"
+    },
+    "catchmentRealization" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/catchmentRealization",
+      "@type" : "@id"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2002/07/owl#sameAs",
+      "@type" : "@id"
+    },
+    "outflow" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/outflow",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "lowerCatchment" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/lowerCatchment",
+      "@type" : "@id"
+    },
+    "realizedCatchment" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/realizedCatchment",
+      "@type" : "@id"
+    },
+    "equivalentClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
+      "@type" : "@id"
+    },
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "nexusRealization" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/nexusRealization",
+      "@type" : "@id"
+    },
+    "contributingCatchment" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/contributingCatchment",
+      "@type" : "@id"
+    },
+    "receivingCatchment" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/receivingCatchment",
+      "@type" : "@id"
+    },
+    "upperCatchment" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/upperCatchment",
+      "@type" : "@id"
+    },
+    "inflow" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/inflow",
+      "@type" : "@id"
+    },
+    "encompassingCatchment" : {
+      "@id" : "https://www.opengis.net/def/hy_features/ontology/hyf/encompassingCatchment",
+      "@type" : "@id"
+    },
+    "sfIntersects" : {
+      "@id" : "http://www.opengeospatial.org/standards/geosparql/sfIntersects",
+      "@type" : "@id"
+    },
+    "conformsTo" : {
+      "@id" : "http://purl.org/dc/terms/conformsTo",
+      "@type" : "@id"
+    },
+    "provider" : {
+      "@id" : "http://schema.org/provider",
+      "@type" : "@id"
+    },
+    "format" : {
+      "@id" : "http://purl.org/dc/terms/format"
+    },
+    "schema" : "http://schema.org/",
+    "dct" : "http://purl.org/dc/terms/",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#"
+  }
+}
+

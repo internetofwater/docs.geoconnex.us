@@ -1,0 +1,76 @@
+{
+    "@context": [
+        {
+            "schema": "https://schema.org/",
+            "uri": "@id",
+            "type": "@type",
+            "geosparql": "http://www.opengis.net/ont/geosparql#"
+        },
+        {
+            "schema": "https://schema.org/",
+            "name": "schema:name",
+            "description": "schema:description",
+            "subjectOf": {
+                "@id": "schema:subjectOf",
+                "@type": "@id"
+            }
+        }
+    ],
+    "type": "schema:Place",
+    "id": 1017172,
+    "fid": 17983,
+    "uri": "https://geoconnex.us/ref/gages/1017172",
+    "name": "West Beaver Creek at Grand Junction, IA",
+    "description": "USGS NWIS Stream/River/Lake Site 05481690: West Beaver Creek at Grand Junction, IA",
+    "subjectOf": "https://waterdata.usgs.gov/monitoring-location/05481690",
+    "provider": "https://waterdata.usgs.gov",
+    "provider_id": "05481690",
+    "nhdpv2_REACHCODE": "07100004000205",
+    "nhdpv2_REACH_measure": 57.40029304376699,
+    "nhdpv2_COMID": 6596048.0,
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -94.2107955,
+            42.03220378999999
+        ]
+    },
+    "geosparql:hasGeometry": {
+        "@type": "http://www.opengis.net/ont/sf#Point",
+        "geosparql:asWKT": {
+            "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "@value": "POINT (-94.2107955 42.03220378999999)"
+        }
+    },
+    "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:longitude": -94.2107955,
+        "schema:latitude": 42.03220378999999
+    },
+    "links": [
+        {
+            "rel": "alternate",
+            "type": "application/geo+json",
+            "title": "This document as GeoJSON",
+            "href": "https://geoconnex.us/ref/gages/1017172?f=json"
+        },
+        {
+            "rel": "self",
+            "type": "application/ld+json",
+            "title": "This document as RDF (JSON-LD)",
+            "href": "https://geoconnex.us/ref/gages/1017172?f=jsonld"
+        },
+        {
+            "rel": "alternate",
+            "type": "text/html",
+            "title": "This document as HTML",
+            "href": "https://geoconnex.us/ref/gages/1017172?f=html"
+        },
+        {
+            "rel": "collection",
+            "type": "application/json",
+            "title": "Reference Gages",
+            "href": "https://reference.geoconnex.us/collections/gages"
+        }
+    ]
+}

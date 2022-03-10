@@ -1,0 +1,69 @@
+{
+    "@context": [
+        {
+            "schema": "https://schema.org/",
+            "uri": "@id",
+            "type": "@type",
+            "geosparql": "http://www.opengis.net/ont/geosparql#"
+        },
+        {
+            "schema": "https://schema.org/",
+            "LINK": {
+                "@id": "schema:subjectOf",
+                "@type": "@id"
+            }
+        }
+    ],
+    "type": "schema:Place",
+    "id": "ID_153906",
+    "fid": 531085,
+    "StateID": "ID",
+    "DataSourceOrganizationID": "IDWR",
+    "uri": "https://geoconnex.us/wade/sites/ID_153906",
+    "LINK": "https://wade-api-qa.azure-api.net/v1/SiteAllocationAmounts?SiteUUID=ID_153906",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -113.855883802301,
+            43.36038093767989
+        ]
+    },
+    "geosparql:hasGeometry": {
+        "@type": "http://www.opengis.net/ont/sf#Point",
+        "geosparql:asWKT": {
+            "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "@value": "POINT (-113.855883802301 43.36038093767989)"
+        }
+    },
+    "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:longitude": -113.855883802301,
+        "schema:latitude": 43.36038093767989
+    },
+    "links": [
+        {
+            "rel": "alternate",
+            "type": "application/geo+json",
+            "title": "This document as GeoJSON",
+            "href": "https://geoconnex.us/wade/sites/ID_153906?f=json"
+        },
+        {
+            "rel": "self",
+            "type": "application/ld+json",
+            "title": "This document as RDF (JSON-LD)",
+            "href": "https://geoconnex.us/wade/sites/ID_153906?f=jsonld"
+        },
+        {
+            "rel": "alternate",
+            "type": "text/html",
+            "title": "This document as HTML",
+            "href": "https://geoconnex.us/wade/sites/ID_153906?f=html"
+        },
+        {
+            "rel": "collection",
+            "type": "application/json",
+            "title": "WaDE Sites",
+            "href": "https://wade-test.internetofwater.dev/collections/wade"
+        }
+    ]
+}
