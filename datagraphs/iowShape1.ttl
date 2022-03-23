@@ -1,0 +1,33 @@
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix oihval: <https://oceans.collaborium.io/voc/validation/1.0.1/shacl#> .
+
+oihval:IDShape
+    a sh:NodeShape ;
+    sh:targetClass schema:Course ;
+    sh:message "Graph must have an ID"@en ;
+    sh:description "URL IoW shape guidance" ;
+    sh:nodeKind sh:IRI ;
+    .
+
+oihval:DatasetCommonShape
+    a sh:NodeShape ;
+    sh:targetClass schema:Place ;
+    sh:message "IoW initial test shape" ;
+    sh:description "IoW shape guidance" ;
+    sh:property
+        oihval:uriProperty ;
+    .
+
+oihval:uriProperty
+    a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:nodeKind sh:Literal ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:message "URL is required "@en ;
+    sh:description "https://foo.org" ;
+    .
+
+
