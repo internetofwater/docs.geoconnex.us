@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: geoconnex.us 
+title: geoconnex.us Guidebook
 author: Internet of Water Coalition
 logo: logo.png
 
@@ -71,5 +71,5 @@ html:
       </div>
     </div>
     <div class="row_footer my-3">
-      The FAIR Cookbook is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International</a> (CC BY 4.0) license.
+      The geoconnex.us Guidebook and Knowledge Graph are licensed under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />Creative Commons Zero 1.0</a> (CC0) license.
     </div>"
