@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: geoconnex.us Guidebook
-author: Internet of Water Coalition
+title: Guidebook
+author: the Internet of Water Coalition
 logo: _static/img/geoconnex-logo.png
 
 # Force re-execution of notebooks on each build.
