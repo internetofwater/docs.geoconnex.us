@@ -3,8 +3,10 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: q1
-- file: participating
+parts: 
+  - caption: Introduction
+    chapters:
+    - file: markdown
+    - file: notebooks
+  - caption: How to Contribute
+    - file: participating
