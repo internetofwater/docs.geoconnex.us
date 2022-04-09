@@ -2,9 +2,11 @@
 
 
 
-:::{note}
-Here is a note!
-:::
+```{image} ../_static/img/geoconnex-logo.png
+:alt: geoconnex
+:class: bg-primary mb-1
+:align: center
+```
  
 [logo](https://user-images.githubusercontent.com/44071350/111527969-eb43b980-8736-11eb-82ca-3418b045df4b.png)
 
