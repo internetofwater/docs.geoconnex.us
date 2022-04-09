@@ -9,4 +9,5 @@ parts:
     - file: markdown
     - file: notebooks
   - caption: How to Contribute
+    chapters:
     - file: participating
