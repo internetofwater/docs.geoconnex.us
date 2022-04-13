@@ -223,6 +223,20 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#add-json-ld">
    Add JSON-LD
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#templates">
+     Templates
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hydrometricstation-surface-water-monitoring-location">
+       hydrometricStation (Surface Water Monitoring Location)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-pids">
@@ -265,6 +279,20 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#add-json-ld">
    Add JSON-LD
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#templates">
+     Templates
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hydrometricstation-surface-water-monitoring-location">
+       hydrometricStation (Surface Water Monitoring Location)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-pids">
@@ -295,6 +323,71 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="add-json-ld">
 <h2>Add JSON-LD<a class="headerlink" href="#add-json-ld" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="templates">
+<h3>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="hydrometricstation-surface-water-monitoring-location">
+<h4>hydrometricStation (Surface Water Monitoring Location)<a class="headerlink" href="#hydrometricstation-surface-water-monitoring-location" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-jsonld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nd">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">		</span><span class="p">{</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://schema.org/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;skos&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3.org/TR/skos-reference/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;hyf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;gsp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.opengeospatial.org/standards/geosparql/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:name&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:sameAs&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;related&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;skos:related&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:description&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:geo&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">				</span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:image&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">				</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@id&quot;</span><span class="w"></span>
+<span class="w">			</span><span class="p">}</span><span class="w"></span>
+<span class="w">		</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="p">],</span><span class="w"></span>
+<span class="w">	</span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{uri}}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">	</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">		</span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">		</span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation&quot;</span><span class="w"></span>
+<span class="w">	</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{name}}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{description}}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{reference_uri}}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;hyf:referencedPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">		</span><span class="p">{</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;hyf:HY_IndirectPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">				</span><span class="nt">&quot;hyf:distanceExpression&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">					</span><span class="nt">&quot;hyf:HY_DistanceFromReferent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">						</span><span class="nt">&quot;hyf:interpolative&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{measure}}&quot;</span><span class="w"></span>
+<span class="w">					</span><span class="p">}</span><span class="w"></span>
+<span class="w">				</span><span class="p">},</span><span class="w"></span>
+<span class="w">				</span><span class="nt">&quot;hyf:distanceDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">					</span><span class="nt">&quot;hyf:HY_DistanceDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{direction}}&quot;</span><span class="w"></span>
+<span class="w">				</span><span class="p">},</span><span class="w"></span>
+<span class="w">				</span><span class="nt">&quot;hyf:linearElement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{flowpath_uri}}&quot;</span><span class="w"></span>
+<span class="w">			</span><span class="p">}</span><span class="w"></span>
+<span class="w">		</span><span class="p">},</span><span class="w"></span>
+<span class="w">		</span><span class="p">{</span><span class="w"></span>
+<span class="w">			</span><span class="nt">&quot;hyf:HY_IndirectPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">				</span><span class="nt">&quot;hyf:linearElement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{mainstem_uri}}&quot;</span><span class="w"></span>
+<span class="w">			</span><span class="p">}</span><span class="w"></span>
+<span class="w">		</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="p">],</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;hyf:HY_HydroLocationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hydrometricStation&quot;</span><span class="p">,</span><span class="s2">&quot;dam&quot;</span><span class="p">,</span><span class="s2">&quot;etc&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:GeoCoordinates&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;schema:latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{latitude}}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">		</span><span class="nt">&quot;schema:longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{longitude}}&quot;</span><span class="w"></span>
+<span class="w">	</span><span class="p">},</span><span class="w"></span>
+<span class="w">	</span><span class="nt">&quot;gsp:hasGeometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gsp:Geometry&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">		</span><span class="nt">&quot;gsp:asWKT&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POINT ({{longitude}} {{latitude}})&quot;</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="add-pids">
 <h2>Add PIDS<a class="headerlink" href="#add-pids" title="Permalink to this headline">¶</a></h2>
