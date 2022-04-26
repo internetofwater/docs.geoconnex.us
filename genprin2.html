@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>test section &#8212; Guidebook</title>
+    <title>General Principles &#8212; Guidebook</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,7 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Contributing from Scratch" href="participating.html" />
+    <link rel="next" title="Contributing from Scratch" href="participating.html" />
+    <link rel="prev" title="General Principles" href="genprin.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -122,35 +123,35 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="genprin.html">
    General Principles
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="genprin2.html">
-     General Principles
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="participating.html">
-   Contributing from Scratch
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
+     General Principles
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="participating.html">
+   Contributing from Scratch
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="test.html">
      test section
     </a>
    </li>
@@ -197,7 +198,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/test.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/genprin2.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -217,7 +218,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/internetofwater/docs.geoconnex.us/issues/new?title=Issue%20on%20page%20%2Ftest.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/internetofwater/docs.geoconnex.us/issues/new?title=Issue%20on%20page%20%2Fgenprin2.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -244,40 +245,19 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-landing-content">
-   Make landing content
+  <a class="reference internal nav-link" href="#publish-feature-level-landing-content">
+   Publish feature-level landing content
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-json-ld">
    Add JSON-LD
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#templates">
-     Templates
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hydrometricstation-surface-water-monitoring-location">
-       hydrometricStation (Surface Water Monitoring Location)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-pids">
    Add PIDS
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-to-nldi">
-     Add to NLDI
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -289,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>test section</h1>
+                <h1>General Principles</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -300,40 +280,19 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-landing-content">
-   Make landing content
+  <a class="reference internal nav-link" href="#publish-feature-level-landing-content">
+   Publish feature-level landing content
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-json-ld">
    Add JSON-LD
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#templates">
-     Templates
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hydrometricstation-surface-water-monitoring-location">
-       hydrometricStation (Surface Water Monitoring Location)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-pids">
    Add PIDS
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-to-nldi">
-     Add to NLDI
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -344,87 +303,18 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="test-section">
-<h1>test section<a class="headerlink" href="#test-section" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="make-landing-content">
-<h2>Make landing content<a class="headerlink" href="#make-landing-content" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="general-principles">
+<h1>General Principles<a class="headerlink" href="#general-principles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="publish-feature-level-landing-content">
+<h2>Publish feature-level landing content<a class="headerlink" href="#publish-feature-level-landing-content" title="Permalink to this headline">¶</a></h2>
 <p>Publish feature-level landing content</p>
 </div>
 <div class="section" id="add-json-ld">
 <h2>Add JSON-LD<a class="headerlink" href="#add-json-ld" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="templates">
-<h3>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="hydrometricstation-surface-water-monitoring-location">
-<h4>hydrometricStation (Surface Water Monitoring Location)<a class="headerlink" href="#hydrometricstation-surface-water-monitoring-location" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-jsonld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">	</span><span class="nd">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">		</span><span class="p">{</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://schema.org/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;skos&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3.org/TR/skos-reference/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;hyf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;gsp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.opengeospatial.org/standards/geosparql/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:name&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:sameAs&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;related&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;skos:related&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:description&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:geo&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">				</span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:image&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">				</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@id&quot;</span><span class="w"></span>
-<span class="w">			</span><span class="p">}</span><span class="w"></span>
-<span class="w">		</span><span class="p">}</span><span class="w"></span>
-<span class="w">	</span><span class="p">],</span><span class="w"></span>
-<span class="w">	</span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{uri}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">		</span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">		</span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation&quot;</span><span class="w"></span>
-<span class="w">	</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{name}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{description}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{reference_uri}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;hyf:referencedPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">		</span><span class="p">{</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;hyf:HY_IndirectPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:distanceExpression&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">					</span><span class="nt">&quot;hyf:HY_DistanceFromReferent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">						</span><span class="nt">&quot;hyf:interpolative&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{measure}}&quot;</span><span class="w"></span>
-<span class="w">					</span><span class="p">}</span><span class="w"></span>
-<span class="w">				</span><span class="p">},</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:distanceDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">					</span><span class="nt">&quot;hyf:HY_DistanceDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{direction}}&quot;</span><span class="w"></span>
-<span class="w">				</span><span class="p">},</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:linearElement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{flowpath_uri}}&quot;</span><span class="w"></span>
-<span class="w">			</span><span class="p">}</span><span class="w"></span>
-<span class="w">		</span><span class="p">},</span><span class="w"></span>
-<span class="w">		</span><span class="p">{</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;hyf:HY_IndirectPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:linearElement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{mainstem_uri}}&quot;</span><span class="w"></span>
-<span class="w">			</span><span class="p">}</span><span class="w"></span>
-<span class="w">		</span><span class="p">}</span><span class="w"></span>
-<span class="w">	</span><span class="p">],</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;hyf:HY_HydroLocationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hydrometricStation&quot;</span><span class="p">,</span><span class="s2">&quot;dam&quot;</span><span class="p">,</span><span class="s2">&quot;etc&quot;</span><span class="p">]</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">		</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:GeoCoordinates&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;schema:latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{latitude}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">		</span><span class="nt">&quot;schema:longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{longitude}}&quot;</span><span class="w"></span>
-<span class="w">	</span><span class="p">},</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;gsp:hasGeometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">		</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gsp:Geometry&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">		</span><span class="nt">&quot;gsp:asWKT&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POINT ({{longitude}} {{latitude}})&quot;</span><span class="w"></span>
-<span class="w">	</span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="add-pids">
 <h2>Add PIDS<a class="headerlink" href="#add-pids" title="Permalink to this headline">¶</a></h2>
 <p>See Github</p>
-<div class="section" id="add-to-nldi">
-<h3>Add to NLDI<a class="headerlink" href="#add-to-nldi" title="Permalink to this headline">¶</a></h3>
-<p>See other GitHub</p>
-</div>
 </div>
 </div>
 
@@ -453,12 +343,19 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="participating.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="genprin.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Contributing from Scratch</p>
+            <p class="prev-next-title">General Principles</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="participating.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contributing from Scratch</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
