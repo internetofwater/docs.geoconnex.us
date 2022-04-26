@@ -1,4 +1,4 @@
-# How to participate (Quickstart)
+# Contributing from Scratch
 
 
 
