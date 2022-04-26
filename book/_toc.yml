@@ -11,5 +11,5 @@ parts:
   - caption: How to Contribute
     chapters:
     - file: participating
-    - sections:
-      - file: test
+      sections:
+        - file: test
