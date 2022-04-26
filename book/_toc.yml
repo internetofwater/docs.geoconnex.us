@@ -5,10 +5,12 @@ format: jb-book
 root: intro
 parts: 
   - caption: Introduction
+    numbered: true
     chapters:
     - file: markdown
     - file: notebooks
   - caption: How to Contribute
+    numbered: true
     chapters:
     - file: genprin
       sections: 
