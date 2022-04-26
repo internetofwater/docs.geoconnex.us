@@ -12,4 +12,4 @@ parts:
     chapters:
     - file: participating
     - sections:
-      - file: q1
+      - file: test
