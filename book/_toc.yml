@@ -11,3 +11,5 @@ parts:
   - caption: How to Contribute
     chapters:
     - file: participating
+    - sections:
+      - file: q1
