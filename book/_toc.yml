@@ -11,7 +11,8 @@ parts:
   - caption: How to Contribute
     chapters:
     - file: genprin
-      sections: genprin2
+      sections: 
+        - file: genprin2
     - file: participating
       sections:
         - file: test
