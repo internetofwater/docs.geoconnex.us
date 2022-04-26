@@ -12,9 +12,15 @@ parts:
   - caption: How to Contribute
     numbered: true
     chapters:
-    - file: genprin
+    - file: principles/genprin
       sections: 
-        - file: genprin2
-    - file: participating
+        - file: principles/hydrofeatures
+        - file: principles/pids
+        - file: principles/lc
+        - file: principles/jsonld
+    - file: quickstart/participating
       sections:
-        - file: test
+        - file: quickstart/dataprep
+        - file: quickstart/idscheme
+        - file: quickstart/pygeoapi
+        - file: quickstart/mintpids
