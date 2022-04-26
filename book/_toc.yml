@@ -10,6 +10,7 @@ parts:
     - file: notebooks
   - caption: How to Contribute
     chapters:
-    - file: participating
+    - file: genprin
       sections:
+        - file: participating
         - file: test
