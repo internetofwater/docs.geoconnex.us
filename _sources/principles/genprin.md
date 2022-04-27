@@ -1,13 +1,11 @@
 # General Principles
 
 
+Knowledge graph diagram
 
-## Publish feature-level landing content
+What is required?
 
-Publish feature-level landing content
-
-## Add JSON-LD
-
-
-## Add PIDS
-See Github
+1. features
+2. identifiers
+3. landing content
+4. linked data
