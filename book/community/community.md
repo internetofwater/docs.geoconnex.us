@@ -8,7 +8,6 @@ The geoconnex.us project is imagined to be a community open-source project with 
  * private sector organizations
  * interested individuals
 
-The key 
 
 
 ## Operator
