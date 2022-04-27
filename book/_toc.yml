@@ -13,6 +13,7 @@ parts:
         - file: principles/pids
         - file: principles/lc
         - file: principles/jsonld
+    - file: community/community
   - caption: How to Contribute
     numbered: true
     chapters:
