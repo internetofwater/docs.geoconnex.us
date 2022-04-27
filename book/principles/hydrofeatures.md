@@ -1,13 +1,13 @@
 # Real-World Features
 
 
+## Reference Features
 
-## Publish feature-level landing content
+### Common monitoring locations
 
-Publish feature-level landing content
+### Cataloging features
 
-## Add JSON-LD
+### Common Features of Interest
 
 
-## Add PIDS
-See Github
+## Organizational Features
