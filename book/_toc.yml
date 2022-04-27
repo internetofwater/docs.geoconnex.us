@@ -7,17 +7,15 @@ parts:
   - caption: Introduction
     numbered: true
     chapters:
-    - file: markdown
-    - file: notebooks
-  - caption: How to Contribute
-    numbered: true
-    chapters:
     - file: principles/genprin
       sections: 
         - file: principles/hydrofeatures
         - file: principles/pids
         - file: principles/lc
         - file: principles/jsonld
+  - caption: How to Contribute
+    numbered: true
+    chapters:
     - file: quickstart/participating
       sections:
         - file: quickstart/dataprep

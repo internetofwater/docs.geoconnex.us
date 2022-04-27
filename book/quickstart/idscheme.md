@@ -1,12 +1,3 @@
 # Identification Scheme
 
-
-## Publish feature-level landing content
-
-Publish feature-level landing content
-
-## Add JSON-LD
-
-
-## Add PIDS
-See Github
+How to structure an id scheme and add it to your data
