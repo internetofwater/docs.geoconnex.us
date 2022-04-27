@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. QUICKSTART: Contributing from Scratch &#8212; Guidebook</title>
+    <title>2. QUICKSTART: Contributing from Scratch &#8212; Guidebook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.4. Data preparation" href="dataprep.html" />
-    <link rel="prev" title="3.7. JSON-LD" href="../principles/jsonld.html" />
+    <link rel="next" title="2.1. Data preparation" href="dataprep.html" />
+    <link rel="prev" title="1.7. JSON-LD" href="../principles/jsonld.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,26 +106,9 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../markdown.html">
-   1. Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks.html">
-   2. Content with notebooks
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  How to Contribute
- </span>
-</p>
-<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../principles/genprin.html">
-   3. General Principles
+   1. General Principles
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -135,29 +118,36 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../principles/hydrofeatures.html">
-     3.4. Real-World Features
+     1.4. Real-World Features
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../principles/pids.html">
-     3.5. Persistent Identifiers
+     1.5. Persistent Identifiers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../principles/lc.html">
-     3.6. Landing Pages
+     1.6. Landing Pages
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../principles/jsonld.html">
-     3.7. JSON-LD
+     1.7. JSON-LD
     </a>
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  How to Contribute
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   4. QUICKSTART: Contributing from Scratch
+   2. QUICKSTART: Contributing from Scratch
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -167,22 +157,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="dataprep.html">
-     4.4. Data preparation
+     2.1. Data preparation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="idscheme.html">
-     4.5. Identification Scheme
+     2.2. Identification Scheme
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pygeoapi.html">
-     4.6. Publishing a feature service: pygeoapi
+     2.3. Publishing a feature service: pygeoapi
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="mintpids.html">
-     4.7. Mint Persistent Identifiers
+     2.4. Mint Persistent Identifiers
     </a>
    </li>
   </ul>
@@ -269,50 +259,6 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-landing-content">
-   4.1. Make landing content
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-json-ld">
-   4.2. Add JSON-LD
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#templates">
-     4.2.1. Templates
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hydrometricstation-surface-water-monitoring-location">
-       4.2.1.1. hydrometricStation (Surface Water Monitoring Location)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-pids">
-   4.3. Add PIDS
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-to-nldi">
-     4.3.1. Add to NLDI
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -325,50 +271,6 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-landing-content">
-   4.1. Make landing content
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-json-ld">
-   4.2. Add JSON-LD
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#templates">
-     4.2.1. Templates
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hydrometricstation-surface-water-monitoring-location">
-       4.2.1.1. hydrometricStation (Surface Water Monitoring Location)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-pids">
-   4.3. Add PIDS
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-to-nldi">
-     4.3.1. Add to NLDI
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -376,87 +278,14 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="quickstart-contributing-from-scratch">
-<h1><span class="section-number">4. </span>QUICKSTART: Contributing from Scratch<a class="headerlink" href="#quickstart-contributing-from-scratch" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="make-landing-content">
-<h2><span class="section-number">4.1. </span>Make landing content<a class="headerlink" href="#make-landing-content" title="Permalink to this headline">¶</a></h2>
-<p>Publish feature-level landing content</p>
-</div>
-<div class="section" id="add-json-ld">
-<h2><span class="section-number">4.2. </span>Add JSON-LD<a class="headerlink" href="#add-json-ld" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="templates">
-<h3><span class="section-number">4.2.1. </span>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="hydrometricstation-surface-water-monitoring-location">
-<h4><span class="section-number">4.2.1.1. </span>hydrometricStation (Surface Water Monitoring Location)<a class="headerlink" href="#hydrometricstation-surface-water-monitoring-location" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-jsonld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">	</span><span class="nd">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">		</span><span class="p">{</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://schema.org/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;skos&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3.org/TR/skos-reference/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;hyf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;gsp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.opengeospatial.org/standards/geosparql/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:name&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:sameAs&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;related&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;skos:related&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:description&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:geo&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">				</span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:image&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">				</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@id&quot;</span><span class="w"></span>
-<span class="w">			</span><span class="p">}</span><span class="w"></span>
-<span class="w">		</span><span class="p">}</span><span class="w"></span>
-<span class="w">	</span><span class="p">],</span><span class="w"></span>
-<span class="w">	</span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{uri}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">		</span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">		</span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation&quot;</span><span class="w"></span>
-<span class="w">	</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{name}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{description}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{reference_uri}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;hyf:referencedPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">		</span><span class="p">{</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;hyf:HY_IndirectPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:distanceExpression&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">					</span><span class="nt">&quot;hyf:HY_DistanceFromReferent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">						</span><span class="nt">&quot;hyf:interpolative&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{measure}}&quot;</span><span class="w"></span>
-<span class="w">					</span><span class="p">}</span><span class="w"></span>
-<span class="w">				</span><span class="p">},</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:distanceDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">					</span><span class="nt">&quot;hyf:HY_DistanceDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{direction}}&quot;</span><span class="w"></span>
-<span class="w">				</span><span class="p">},</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:linearElement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{flowpath_uri}}&quot;</span><span class="w"></span>
-<span class="w">			</span><span class="p">}</span><span class="w"></span>
-<span class="w">		</span><span class="p">},</span><span class="w"></span>
-<span class="w">		</span><span class="p">{</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;hyf:HY_IndirectPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:linearElement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{mainstem_uri}}&quot;</span><span class="w"></span>
-<span class="w">			</span><span class="p">}</span><span class="w"></span>
-<span class="w">		</span><span class="p">}</span><span class="w"></span>
-<span class="w">	</span><span class="p">],</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;hyf:HY_HydroLocationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hydrometricStation&quot;</span><span class="p">,</span><span class="s2">&quot;dam&quot;</span><span class="p">,</span><span class="s2">&quot;etc&quot;</span><span class="p">]</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">		</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:GeoCoordinates&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;schema:latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{latitude}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">		</span><span class="nt">&quot;schema:longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{longitude}}&quot;</span><span class="w"></span>
-<span class="w">	</span><span class="p">},</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;gsp:hasGeometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">		</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gsp:Geometry&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">		</span><span class="nt">&quot;gsp:asWKT&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POINT ({{longitude}} {{latitude}})&quot;</span><span class="w"></span>
-<span class="w">	</span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="add-pids">
-<h2><span class="section-number">4.3. </span>Add PIDS<a class="headerlink" href="#add-pids" title="Permalink to this headline">¶</a></h2>
-<p>See Github</p>
-<div class="section" id="add-to-nldi">
-<h3><span class="section-number">4.3.1. </span>Add to NLDI<a class="headerlink" href="#add-to-nldi" title="Permalink to this headline">¶</a></h3>
-<p>See other GitHub</p>
-</div>
-</div>
+<h1><span class="section-number">2. </span>QUICKSTART: Contributing from Scratch<a class="headerlink" href="#quickstart-contributing-from-scratch" title="Permalink to this headline">¶</a></h1>
+<p>The next sections guide you through the minimum, fastest steps to participate in geoconnex assuming all you have is a collection of static geospatial files representing locations or areas you have data about.</p>
+<ol class="simple">
+<li><p>Data preparation</p></li>
+<li><p>Creating an identifier scheme</p></li>
+<li><p>Deploying landing pages with JSON-LD using pygeoapi</p></li>
+<li><p>Minting persistent identifiers with <a class="reference external" href="http://geoconnex.us">geoconnex.us</a></p></li>
+</ol>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -490,13 +319,13 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3.7. </span>JSON-LD</p>
+            <p class="prev-next-title"><span class="section-number">1.7. </span>JSON-LD</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="dataprep.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.4. </span>Data preparation</p>
+        <p class="prev-next-title"><span class="section-number">2.1. </span>Data preparation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

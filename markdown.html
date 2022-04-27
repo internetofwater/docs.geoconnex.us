@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Markdown Files &#8212; Guidebook</title>
+    <title>Markdown Files &#8212; Guidebook</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,6 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Content with notebooks" href="notebooks.html" />
-    <link rel="prev" title="The geoconnex.us guidebook" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -105,27 +103,10 @@ const thebe_selector_output = ".output, .cell_output"
   Introduction
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   1. Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   2. Content with notebooks
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  How to Contribute
- </span>
-</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="principles/genprin.html">
-   3. General Principles
+   1. General Principles
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -135,29 +116,36 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="principles/hydrofeatures.html">
-     3.4. Real-World Features
+     1.4. Real-World Features
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="principles/pids.html">
-     3.5. Persistent Identifiers
+     1.5. Persistent Identifiers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="principles/lc.html">
-     3.6. Landing Pages
+     1.6. Landing Pages
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="principles/jsonld.html">
-     3.7. JSON-LD
+     1.7. JSON-LD
     </a>
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  How to Contribute
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="quickstart/participating.html">
-   4. QUICKSTART: Contributing from Scratch
+   2. QUICKSTART: Contributing from Scratch
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -167,22 +155,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="quickstart/dataprep.html">
-     4.4. Data preparation
+     2.1. Data preparation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="quickstart/idscheme.html">
-     4.5. Identification Scheme
+     2.2. Identification Scheme
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="quickstart/pygeoapi.html">
-     4.6. Publishing a feature service: pygeoapi
+     2.3. Publishing a feature service: pygeoapi
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="quickstart/mintpids.html">
-     4.7. Mint Persistent Identifiers
+     2.4. Mint Persistent Identifiers
     </a>
    </li>
   </ul>
@@ -276,32 +264,32 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-myst">
-   1.1. What is MyST?
+   What is MyST?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-are-roles-and-directives">
-   1.2. What are roles and directives?
+   What are roles and directives?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-a-directive">
-     1.2.1. Using a directive
+     Using a directive
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-a-role">
-     1.2.2. Using a role
+     Using a role
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-a-citation">
-     1.2.3. Adding a citation
+     Adding a citation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#executing-code-in-your-markdown-files">
-     1.2.4. Executing code in your markdown files
+     Executing code in your markdown files
     </a>
    </li>
   </ul>
@@ -328,32 +316,32 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-myst">
-   1.1. What is MyST?
+   What is MyST?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-are-roles-and-directives">
-   1.2. What are roles and directives?
+   What are roles and directives?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-a-directive">
-     1.2.1. Using a directive
+     Using a directive
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-a-role">
-     1.2.2. Using a role
+     Using a role
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-a-citation">
-     1.2.3. Adding a citation
+     Adding a citation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#executing-code-in-your-markdown-files">
-     1.2.4. Executing code in your markdown files
+     Executing code in your markdown files
     </a>
    </li>
   </ul>
@@ -368,19 +356,19 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="markdown-files">
-<h1><span class="section-number">1. </span>Markdown Files<a class="headerlink" href="#markdown-files" title="Permalink to this headline">¶</a></h1>
+<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Permalink to this headline">¶</a></h1>
 <p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
 in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
 called <strong>MyST Markdown</strong>.</p>
 <div class="section" id="what-is-myst">
-<h2><span class="section-number">1.1. </span>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">¶</a></h2>
+<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">¶</a></h2>
 <p>MyST stands for “Markedly Structured Text”. It
 is a slight variation on a flavor of markdown called “CommonMark” markdown,
 with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
 in the Sphinx ecosystem.</p>
 </div>
 <div class="section" id="what-are-roles-and-directives">
-<h2><span class="section-number">1.2. </span>What are roles and directives?<a class="headerlink" href="#what-are-roles-and-directives" title="Permalink to this headline">¶</a></h2>
+<h2>What are roles and directives?<a class="headerlink" href="#what-are-roles-and-directives" title="Permalink to this headline">¶</a></h2>
 <p>Roles and directives are two of the most powerful tools in Jupyter Book. They
 are kind of like functions, but written in a markup language. They both
 serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
@@ -388,7 +376,7 @@ serve a similar purpose, but <strong>roles are written in one line</strong>, whe
 and what they do with those inputs depends on the specific role or directive
 that is being called.</p>
 <div class="section" id="using-a-directive">
-<h3><span class="section-number">1.2.1. </span>Using a directive<a class="headerlink" href="#using-a-directive" title="Permalink to this headline">¶</a></h3>
+<h3>Using a directive<a class="headerlink" href="#using-a-directive" title="Permalink to this headline">¶</a></h3>
 <p>At its simplest, you can insert a directive into your book’s content like so:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mydirectivename}
 My directive content
@@ -414,7 +402,7 @@ Here is a note
 <a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
 </div>
 <div class="section" id="using-a-role">
-<h3><span class="section-number">1.2.2. </span>Using a role<a class="headerlink" href="#using-a-role" title="Permalink to this headline">¶</a></h3>
+<h3>Using a role<a class="headerlink" href="#using-a-role" title="Permalink to this headline">¶</a></h3>
 <p>Roles are very similar to directives, but they are less-complex and written
 entirely on one line. You can insert a role into your book’s content with
 this pattern:</p>
@@ -429,7 +417,7 @@ role syntax <code class="docutils literal notranslate"><span class="pre">{doc}`i
 <a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
 </div>
 <div class="section" id="adding-a-citation">
-<h3><span class="section-number">1.2.3. </span>Adding a citation<a class="headerlink" href="#adding-a-citation" title="Permalink to this headline">¶</a></h3>
+<h3>Adding a citation<a class="headerlink" href="#adding-a-citation" title="Permalink to this headline">¶</a></h3>
 <p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
 the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
 this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
@@ -452,7 +440,7 @@ then the bibliography is inserted with:</p>
 </div>
 </div>
 <div class="section" id="executing-code-in-your-markdown-files">
-<h3><span class="section-number">1.2.4. </span>Executing code in your markdown files<a class="headerlink" href="#executing-code-in-your-markdown-files" title="Permalink to this headline">¶</a></h3>
+<h3>Executing code in your markdown files<a class="headerlink" href="#executing-code-in-your-markdown-files" title="Permalink to this headline">¶</a></h3>
 <p>If you’d like to include computational content inside these markdown files,
 you can use MyST Markdown to define cells that will be executed when your
 book is built. Jupyter Book uses <em>jupytext</em> to do this.</p>
@@ -501,21 +489,7 @@ see <a class="reference external" href="https://myst-nb.readthedocs.io/">The MyS
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">The geoconnex.us guidebook</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="notebooks.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Content with notebooks</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
