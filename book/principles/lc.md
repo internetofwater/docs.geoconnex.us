@@ -1,13 +1,10 @@
 # Landing Pages
 
 
+## SELFIE Architecture background
 
-## Publish feature-level landing content
+## Methods
 
-Publish feature-level landing content
+### Dynamic site methods
 
-## Add JSON-LD
-
-
-## Add PIDS
-See Github
+### Static site methods
