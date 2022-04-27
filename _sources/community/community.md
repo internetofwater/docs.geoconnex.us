@@ -21,11 +21,9 @@ geoconnex.us is based on a variety of open-source software as well as open commu
 :column: col-lg-6 col-md-6 col-sm-6 col-xs-12 
 :card: shadow-none border-0
 
-```{figure} _static/img/usgs.png
+```{figure} _static/img/usgs.png 
 :width: 100%
 :name: example1
-
-Sub-caption 1
 ```
 
 ---
@@ -33,8 +31,6 @@ Sub-caption 1
 ```{figure} _static/img/cgs-logo2.png
 :width: 100%
 :name: example2
-
-Sub-caption 2
 ```
 
 ````
