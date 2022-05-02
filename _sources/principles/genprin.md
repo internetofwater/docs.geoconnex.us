@@ -7,8 +7,8 @@ Think about the way that a search for a movie title on a search engine instantly
 ## What is structured, linked data?
 Structured data consists of specifically formatted, machine-readable descriptive information about the subject of the website, as well as in many cases, links to other websites. For example, a webpage about a particular job posting on a job listing app might have structured information about the job title, work location, posting date, salary range, as well as link to the company homepage. 
 
-```{code-cell}Click the button to reveal example json-ld
-:tag:[hide-cell]
+```{code-cell} Click the button to reveal example json-ld
+:tags: [hide-cell]
  {
       "@context" : "https://schema.org/",
       "@type" : "JobPosting",
