@@ -263,6 +263,34 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-1-1-redirects-to-geoconnex-us">
+   3.4.1. Adding 1:1 redirects to geoconnex.us
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-regular-expression-redirects-to-geoconnex-us">
+   3.4.2. Adding regular expression redirects to geoconnex.us
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-geospatial-reference-features-to-reference-geoconnex-us">
+   3.4.3. Adding geospatial reference features to reference.geoconnex.us
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#licensing-of-geoconnex-us-contributions">
+   3.4.4. Licensing of geoconnex.us contributions.
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -275,6 +303,34 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-1-1-redirects-to-geoconnex-us">
+   3.4.1. Adding 1:1 redirects to geoconnex.us
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-regular-expression-redirects-to-geoconnex-us">
+   3.4.2. Adding regular expression redirects to geoconnex.us
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-geospatial-reference-features-to-reference-geoconnex-us">
+   3.4.3. Adding geospatial reference features to reference.geoconnex.us
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#licensing-of-geoconnex-us-contributions">
+   3.4.4. Licensing of geoconnex.us contributions.
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -283,7 +339,46 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="mint-persistent-identifiers">
 <h1><span class="section-number">3.4. </span>Mint Persistent Identifiers<a class="headerlink" href="#mint-persistent-identifiers" title="Permalink to this headline">¶</a></h1>
-<p>GitHub stuff</p>
+<p>The process for adding a PID-URI redirect is generally similar to that used by <a class="reference external" href="https://github.com/perma-id/w3id.org">w3id.org</a>.</p>
+<p>There is a strong preference for creating “<a class="reference external" href="#adding-11-redirects-to-geoconnexus">1:1</a>” redirects. That is, specifying an exact redirect from a geoconnex.us-based PID to the URI of the hydrologic feature you have a web resource about, for each and every individual feature. However, if you need to create PIDs and redirects for a large number of features (&gt;= 300,000), we will require a <a class="reference external" href="#adding-regular-expression-redirects-to-geoconnexus">regular expression matching redirect</a>. For example, redirecting from <a class="reference external" href="https://geoconnex.us/example-namespace/*wildcard-string">https://geoconnex.us/example-namespace/*wildcard-string</a> to <a class="reference external" href="https://example.org/features?query=*wildcard-string">https://example.org/features?query=*wildcard-string</a>.</p>
+<p>That being said, 1:1 redirects are preferred where possible because they are simpler to resolve and allow you to customize (and change, when needed) your target URI patterns with more specificity. Thus, if you have &gt;=300,000 features, but these features can be split in a consistent way into sub-collections, all of which number &lt;300,000 features (as might be the case for features that can be divided by geography, jurisdiction, theme, or type), then you might consider submitting multiple collections of 1:1 redirects.</p>
+<div class="section" id="adding-1-1-redirects-to-geoconnex-us">
+<h2><span class="section-number">3.4.1. </span>Adding 1:1 redirects to <a class="reference external" href="http://geoconnex.us">geoconnex.us</a><a class="headerlink" href="#adding-1-1-redirects-to-geoconnex-us" title="Permalink to this headline">¶</a></h2>
+<p>The preferred way to create the redirects yourself is by following these steps:</p>
+<ol class="simple">
+<li><p>Fork the <a class="reference external" href="https://github.com/internetofwater/geoconnex.us"><code class="docutils literal notranslate"><span class="pre">internetofwater/geoconnex.us</span></code></a> repository.</p></li>
+<li><p>Add a directory corresponding to the namespace you want in the <code class="docutils literal notranslate"><span class="pre">namespaces</span></code> directory. For example ‘namespaces/example-namespace/</p></li>
+<li><p>Add a set of redirects using the <a class="reference external" href="https://github.com/internetofwater/geoconnex.us/blob/master/namespaces/example-namespace/example_ids.csv">csv template</a> or a geoJSON file with the exact same field names as the csv template. You may consider adding multiple separate sets of redirects, as long as each set is comprised of &lt;=300,000</p></li>
+</ol>
+<ul class="simple">
+<li><p>The only required fields are “id” (the geoconnex URI you want), “target” (where the URI should redirect to), and “creator” (your email address).</p></li>
+<li><p>Optionally include latitude and longitude, lines, or polygons in a geojson file to refer to resources about places with distinct locations on Earth.</p></li>
+<li><p>Optionally include more complex redirects for content negotiation using the c1_ and c2_ fields.</p></li>
+</ul>
+<ol class="simple">
+<li><p>(Optional but strongly suggested) Add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> detailing contact persons and
+(a subset of) your permanent identifiers in your namespace directory. For an example,
+see <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">namespaces/example-namespace/README.md</span></code></span></p></li>
+<li><p>Commit your changes and submit a
+<a class="reference external" href="https://github.com/internetofwater/geoconnex.us/pulls">pull request</a>.</p></li>
+<li><p><a class="reference external" href="http://geoconnex.us">geoconnex.us</a> administrators will review your pull request and merge it if
+everything looks correct. Once the pull request is merged, the changes go
+live within (a time period)</p></li>
+</ol>
+</div>
+<div class="section" id="adding-regular-expression-redirects-to-geoconnex-us">
+<h2><span class="section-number">3.4.2. </span>Adding regular expression redirects to <a class="reference external" href="http://geoconnex.us">geoconnex.us</a><a class="headerlink" href="#adding-regular-expression-redirects-to-geoconnex-us" title="Permalink to this headline">¶</a></h2>
+<p>If you have a collection of &gt;300,000 features that cannot be easily and consistently subdivided, please submit a request for a regular expression redirect. To do so, you may <a class="reference external" href="https://github.com/internetofwater/geoconnex.us/issues/new?assignees=dblodgett-usgs%2C+ksonda&amp;labels=PID+request&amp;template=request-regex-redirect.md&amp;title=%5Bregex+redirect+request">create an issue of type “Request regex redirect”</a> and fill out the template.</p>
+</div>
+<div class="section" id="adding-geospatial-reference-features-to-reference-geoconnex-us">
+<h2><span class="section-number">3.4.3. </span>Adding geospatial reference features to <a class="reference external" href="http://reference.geoconnex.us">reference.geoconnex.us</a><a class="headerlink" href="#adding-geospatial-reference-features-to-reference-geoconnex-us" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://reference.geoconnex.us">https://reference.geoconnex.us</a> is available to host community reference features. See the readme in the <a class="reference internal" href="pygeoapi.html"><span class="doc std std-doc">pygeoapi</span></a> folder for more info.</p>
+</div>
+<div class="section" id="licensing-of-geoconnex-us-contributions">
+<h2><span class="section-number">3.4.4. </span>Licensing of <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> contributions.<a class="headerlink" href="#licensing-of-geoconnex-us-contributions" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> project intends to be a public-domain registry of feature identifiers and reference information. The infrastructure used to host <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> is expected to be funded through an evolving funding source but the content of <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> is to stay dedicated to and owned by the community.</p>
+<p><a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="CC0" src="https://i.creativecommons.org/p/zero/1.0/88x31.png" /></a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
