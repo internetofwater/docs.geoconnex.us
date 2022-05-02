@@ -1,10 +1,6 @@
-# QUICKSTART: Contributing from Scratch
+# What is in graph.geoconnex.us?
 
+The features registered in https://github.com/internetofwater/geoconnex.us are automatically harvested and included in [graph.geoconnex.us](https://graph.geoconnex.us). They are either community reference features or associated with a particular organization or database.
 
-The next sections guide you through the minimum, fastest steps to participate in geoconnex assuming all you have is a collection of static geospatial files representing locations or areas you have data about.
-
-1. Data preparation
-2. Creating an identifier scheme
-3. Deploying landing pages with JSON-LD using pygeoapi
-4. Minting persistent identifiers with geoconnex.us
-
+1. community reference features: monitoring and environmental features collated by a person or group in the interest of the community. These features are available via OGC API Features at [reference.geoconnex.us](https://reference.geoconnex.us/collections). See this [R Shiny application](https://internetofwater.shinyapps.io/geoconnex-reference-features) for a simple map-based search interface for reference features.
+1. organization specific features: features owned by a particular organizational entity or from a specific dataset. 
