@@ -5,7 +5,7 @@ format: jb-book
 root: intro
 parts: 
   - caption: Introduction
-    numbered: true
+    numbered: false
     chapters:
     - file: principles/genprin
       sections: 
@@ -14,8 +14,12 @@ parts:
         - file: principles/lc
         - file: principles/jsonld
     - file: community/community
+  - caption: Discover and Use graph.geoconnex.us data
+    numbered: false
+    chapters:
+    - file: content/intro
   - caption: How to Contribute
-    numbered: true
+    numbered: false
     chapters:
     - file: quickstart/intro
       sections:
