@@ -1,13 +1,7 @@
 # JSON-LD
 
 
+## General Principles
 
-## Publish feature-level landing content
+## Available Templates
 
-Publish feature-level landing content
-
-## Add JSON-LD
-
-
-## Add PIDS
-See Github
