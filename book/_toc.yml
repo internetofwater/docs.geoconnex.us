@@ -17,7 +17,7 @@ parts:
   - caption: How to Contribute
     numbered: true
     chapters:
-    - file: quickstart/participating
+    - file: quickstart/intro
       sections:
         - file: quickstart/dataprep
         - file: quickstart/idscheme
