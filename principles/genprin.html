@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.2. Real-World Features" href="hydrofeatures.html" />
+    <link rel="next" title="1.3. Real-World Features" href="hydrofeatures.html" />
     <link rel="prev" title="The geoconnex.us guidebook" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -118,22 +118,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="hydrofeatures.html">
-     1.2. Real-World Features
+     1.3. Real-World Features
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pids.html">
-     1.3. Persistent Identifiers
+     1.4. Persistent Identifiers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="lc.html">
-     1.4. Landing Pages
+     1.5. Landing Pages
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="jsonld.html">
-     1.5. JSON-LD
+     1.6. JSON-LD
     </a>
    </li>
   </ul>
@@ -290,8 +290,13 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-structured-linked-data">
-   1.1. What is structured, linked data?
+  <a class="reference internal nav-link" href="#data-publishers-structured-water-data-on-the-web">
+   1.1. Data publishers: Structured water data on the web
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geoconnex-us-organizing-the-structured-data">
+   1.2. geoconnex.us: Organizing the structured data
   </a>
  </li>
 </ul>
@@ -315,8 +320,13 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-structured-linked-data">
-   1.1. What is structured, linked data?
+  <a class="reference internal nav-link" href="#data-publishers-structured-water-data-on-the-web">
+   1.1. Data publishers: Structured water data on the web
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geoconnex-us-organizing-the-structured-data">
+   1.2. geoconnex.us: Organizing the structured data
   </a>
  </li>
 </ul>
@@ -331,92 +341,37 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="general-principles">
 <h1><span class="section-number">1. </span>General Principles<a class="headerlink" href="#general-principles" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="http://geoconnex.us">geoconnex.us</a> is about publishing water data on the web in a manner similar to the way commercial entities publish information such that it is easily discoverable and useable by software developers to create feature-rich user experiences and information products.</p>
-<p>Think about the way that a search for a movie title on a search engine instantly brings up a card showing that film’s director, cast, showtimes at nearby movie theaters or availability on variou streaming platforms. Or how you can search along in a maps application for gas stations or fast-food chains along your route. Or how a search for a city name and “population” might bring up an interactive line graph showing its population trend along with those of other cities. <a class="reference external" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">These sorts of things</a>, as well as <a class="reference external" href="https://en.wikipedia.org/wiki/Search_engine_optimization">generally improved search results</a>, are generally made possible due to the publishing of “structured, linked data” within websites.</p>
-<div class="section" id="what-is-structured-linked-data">
-<h2><span class="section-number">1.1. </span>What is structured, linked data?<a class="headerlink" href="#what-is-structured-linked-data" title="Permalink to this headline">¶</a></h2>
-<p>Structured data consists of specifically formatted, machine-readable descriptive information about the subject of the website, as well as in many cases, links to other websites. For example, a webpage about a particular job posting on a job listing app might have structured information about the job title, work location, posting date, salary range, as well as link to the company homepage.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span>
-      <span class="s2">&quot;@context&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://schema.org/&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;@type&quot;</span> <span class="p">:</span> <span class="s2">&quot;JobPosting&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Software Engineer&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;&lt;p&gt;Google aspires to be an organization that reflects the globally diverse audience that our products and technology serve. We believe that in addition to hiring the best talent, a diversity of perspectives, ideas and cultures leads to the creation of better products and services.&lt;/p&gt;&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Google&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1234567&quot;</span>
-      <span class="p">},</span>
-      <span class="s2">&quot;datePosted&quot;</span> <span class="p">:</span> <span class="s2">&quot;2017-01-18&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;validThrough&quot;</span> <span class="p">:</span> <span class="s2">&quot;2017-03-18T00:00&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;employmentType&quot;</span> <span class="p">:</span> <span class="s2">&quot;CONTRACTOR&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;hiringOrganization&quot;</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;@type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Organization&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Google&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;sameAs&quot;</span> <span class="p">:</span> <span class="s2">&quot;http://www.google.com&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;logo&quot;</span> <span class="p">:</span> <span class="s2">&quot;http://www.example.com/images/logo.png&quot;</span>
-      <span class="p">},</span>
-      <span class="s2">&quot;jobLocation&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PostalAddress&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;streetAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;1600 Amphitheatre Pkwy&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;addressLocality&quot;</span><span class="p">:</span> <span class="s2">&quot;Mountain View&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;addressRegion&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;postalCode&quot;</span><span class="p">:</span> <span class="s2">&quot;94043&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;addressCountry&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span>
-        <span class="p">}</span>
-      <span class="p">},</span>
-      <span class="s2">&quot;baseSalary&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;MonetaryAmount&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;currency&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;QuantitativeValue&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">40.00</span><span class="p">,</span>
-          <span class="s2">&quot;unitText&quot;</span><span class="p">:</span> <span class="s2">&quot;HOUR&quot;</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;@context&#39;: &#39;https://schema.org/&#39;,
- &#39;@type&#39;: &#39;JobPosting&#39;,
- &#39;title&#39;: &#39;Software Engineer&#39;,
- &#39;description&#39;: &#39;&lt;p&gt;Google aspires to be an organization that reflects the globally diverse audience that our products and technology serve. We believe that in addition to hiring the best talent, a diversity of perspectives, ideas and cultures leads to the creation of better products and services.&lt;/p&gt;&#39;,
- &#39;identifier&#39;: {&#39;@type&#39;: &#39;PropertyValue&#39;,
-  &#39;name&#39;: &#39;Google&#39;,
-  &#39;value&#39;: &#39;1234567&#39;},
- &#39;datePosted&#39;: &#39;2017-01-18&#39;,
- &#39;validThrough&#39;: &#39;2017-03-18T00:00&#39;,
- &#39;employmentType&#39;: &#39;CONTRACTOR&#39;,
- &#39;hiringOrganization&#39;: {&#39;@type&#39;: &#39;Organization&#39;,
-  &#39;name&#39;: &#39;Google&#39;,
-  &#39;sameAs&#39;: &#39;http://www.google.com&#39;,
-  &#39;logo&#39;: &#39;http://www.example.com/images/logo.png&#39;},
- &#39;jobLocation&#39;: {&#39;@type&#39;: &#39;Place&#39;,
-  &#39;address&#39;: {&#39;@type&#39;: &#39;PostalAddress&#39;,
-   &#39;streetAddress&#39;: &#39;1600 Amphitheatre Pkwy&#39;,
-   &#39;addressLocality&#39;: &#39;Mountain View&#39;,
-   &#39;addressRegion&#39;: &#39;CA&#39;,
-   &#39;postalCode&#39;: &#39;94043&#39;,
-   &#39;addressCountry&#39;: &#39;US&#39;}},
- &#39;baseSalary&#39;: {&#39;@type&#39;: &#39;MonetaryAmount&#39;,
-  &#39;currency&#39;: &#39;USD&#39;,
-  &#39;value&#39;: {&#39;@type&#39;: &#39;QuantitativeValue&#39;, &#39;value&#39;: 40.0, &#39;unitText&#39;: &#39;HOUR&#39;}}}
-</pre></div>
-</div>
-</div>
-</div>
-<p>Knowledge graph diagram</p>
-<p>What is required?</p>
+<p>Think about the way that a search for a movie title on a search engine instantly brings up a card showing that film’s director, cast, showtimes at nearby movie theaters or availability on variou streaming platforms. Or how you can search along in a maps application for gas stations or fast-food chains along your route. Or how a search for a city name and “population” might bring up an interactive line graph showing its population trend along with those of other cities. <a class="reference external" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">These sorts of things</a>, as well as <a class="reference external" href="https://en.wikipedia.org/wiki/Search_engine_optimization">generally improved search results</a>, are generally made possible due to the presence of “structured, linked data” within websites.</p>
+<p>Structured data consists of specifically formatted, machine-readable descriptive information about the subject of the webpage, as well as in many cases, links to other webpages. For example, a webpage about a particular job posting on a job listing app might have structured information about the job title, work location, posting date, salary range, as well as link to the company homepage. Search engines then use “web crawlers”, which are special programs that go to webpages and harvest the structured data within them, to collect this structured data and aggregate it into a “knowledge graph”, a digital representation of all of the webpages and how they relate to each other. Knowledge graphs are what allow search engines to provide informative answers to queries. Google, Bing, and Yahoo have partenered together to create general framework for webpages to have structured linked data at <a class="reference external" href="https://schema.org">schema.org</a>, a specific vocabulary of terms that allows unambiguous representation of the properties subjects of websites. For example, <a class="reference external" href="https://schema.org/name">https://schema.org/name</a> is the standard identifier for the name of something, and <a class="reference external" href="https://schema.org/longitude">https://schema.org/longitude</a> is the standard identifier for the longitude of a location. <a class="reference external" href="https://json-ld.org">JSON-LD</a> is a special format that structured data can use, leveraging <a class="reference external" href="http://schema.org">schema.org</a> and other vocabularies, to be easily read by web crawlers.</p>
+<div class="section" id="data-publishers-structured-water-data-on-the-web">
+<h2><span class="section-number">1.1. </span>Data publishers: Structured water data on the web<a class="headerlink" href="#data-publishers-structured-water-data-on-the-web" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://geoconnex.us">geoconnex.us</a> augments the above framework with a strategy and guidance for data publishers to anchor webpages to hydrologic features of interest and structured data to vocabularies specifically designed for water science to create a knowledge graph for water data. The fundamental architecture of <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> has four components:</p>
 <ol class="simple">
-<li><p>features</p></li>
-<li><p>identifiers</p></li>
-<li><p>landing content</p></li>
-<li><p>structured, linked data formatted as JSON-LD</p></li>
+<li><p><strong>Real-World Features</strong> that have…</p></li>
+<li><p><strong>Persistent Identifiers (formatted as URLs)</strong> that point to…</p></li>
+<li><p><strong>Landing Content (web pages)</strong> that include…</p></li>
+<li><p><strong>Structured, Linked Data</strong> formatted as JSON-LD that include references to other <strong>Persistent Identifiers</strong></p></li>
 </ol>
+<div class="figure align-default" id="fundamentals">
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/fundamentals.png"><img alt="geoconnex-fundamentals" class="bg-primary mb-1" src="../_images/fundamentals.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">The <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> data publication fundamentals.</span><a class="headerlink" href="#fundamentals" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="geoconnex-us-organizing-the-structured-data">
+<h2><span class="section-number">1.2. </span><a class="reference external" href="http://geoconnex.us">geoconnex.us</a>: Organizing the structured data<a class="headerlink" href="#geoconnex-us-organizing-the-structured-data" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> system includes some important infrastructure that helps organize the structured data that data publishers put on the web and make it useable to data users. These elements include:</p>
+<ol class="simple">
+<li><p><strong>Persistent Identifier Registry</strong> to help data publishers mint persistent identifiers and populate a…</p></li>
+<li><p><strong>Sitemap</strong> of all identifiers to allow a…</p></li>
+<li><p><strong>Harvester</strong> to collect structured data so that it can be assembled into a knowlege graph and made available to data users through…</p></li>
+<li><p><strong>APIs and Search Interfaces</strong></p></li>
+<li><p><strong>Documentation</strong> that provides detailed guidance, templates, and examples on how to contribute to and use the knowledge graph.</p></li>
+</ol>
+<div class="figure align-default" id="bigpicture">
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/bigpicture.png"><img alt="geoconnex-bigpicture" class="bg-primary mb-1" src="../_images/bigpicture.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text">The <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> architecture</span><a class="headerlink" href="#bigpicture" title="Permalink to this image">¶</a></p>
+</div>
+<p>The remaining parts of this section give more detailed documentation for each of the elements outlined.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -457,7 +412,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="hydrofeatures.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.2. </span>Real-World Features</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Real-World Features</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
