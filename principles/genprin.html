@@ -221,7 +221,10 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../_sources/principles/genprin.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/principles/genprin.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -258,6 +261,23 @@ const thebe_selector_output = ".output, .cell_output"
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/internetofwater/docs.geoconnex.us/main?urlpath=tree/book/principles/genprin.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
 
         </div>
 
@@ -315,6 +335,80 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="what-is-structured-linked-data">
 <h2><span class="section-number">1.1. </span>What is structured, linked data?<a class="headerlink" href="#what-is-structured-linked-data" title="Permalink to this headline">¶</a></h2>
 <p>Structured data consists of specifically formatted, machine-readable descriptive information about the subject of the website, as well as in many cases, links to other websites. For example, a webpage about a particular job posting on a job listing app might have structured information about the job title, work location, posting date, salary range, as well as link to the company homepage.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span>
+      <span class="s2">&quot;@context&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://schema.org/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;@type&quot;</span> <span class="p">:</span> <span class="s2">&quot;JobPosting&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Software Engineer&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;&lt;p&gt;Google aspires to be an organization that reflects the globally diverse audience that our products and technology serve. We believe that in addition to hiring the best talent, a diversity of perspectives, ideas and cultures leads to the creation of better products and services.&lt;/p&gt;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Google&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1234567&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;datePosted&quot;</span> <span class="p">:</span> <span class="s2">&quot;2017-01-18&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;validThrough&quot;</span> <span class="p">:</span> <span class="s2">&quot;2017-03-18T00:00&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;employmentType&quot;</span> <span class="p">:</span> <span class="s2">&quot;CONTRACTOR&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;hiringOrganization&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Organization&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Google&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sameAs&quot;</span> <span class="p">:</span> <span class="s2">&quot;http://www.google.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;logo&quot;</span> <span class="p">:</span> <span class="s2">&quot;http://www.example.com/images/logo.png&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;jobLocation&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PostalAddress&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;streetAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;1600 Amphitheatre Pkwy&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;addressLocality&quot;</span><span class="p">:</span> <span class="s2">&quot;Mountain View&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;addressRegion&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;postalCode&quot;</span><span class="p">:</span> <span class="s2">&quot;94043&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;addressCountry&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;baseSalary&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;MonetaryAmount&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;currency&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;QuantitativeValue&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">40.00</span><span class="p">,</span>
+          <span class="s2">&quot;unitText&quot;</span><span class="p">:</span> <span class="s2">&quot;HOUR&quot;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;@context&#39;: &#39;https://schema.org/&#39;,
+ &#39;@type&#39;: &#39;JobPosting&#39;,
+ &#39;title&#39;: &#39;Software Engineer&#39;,
+ &#39;description&#39;: &#39;&lt;p&gt;Google aspires to be an organization that reflects the globally diverse audience that our products and technology serve. We believe that in addition to hiring the best talent, a diversity of perspectives, ideas and cultures leads to the creation of better products and services.&lt;/p&gt;&#39;,
+ &#39;identifier&#39;: {&#39;@type&#39;: &#39;PropertyValue&#39;,
+  &#39;name&#39;: &#39;Google&#39;,
+  &#39;value&#39;: &#39;1234567&#39;},
+ &#39;datePosted&#39;: &#39;2017-01-18&#39;,
+ &#39;validThrough&#39;: &#39;2017-03-18T00:00&#39;,
+ &#39;employmentType&#39;: &#39;CONTRACTOR&#39;,
+ &#39;hiringOrganization&#39;: {&#39;@type&#39;: &#39;Organization&#39;,
+  &#39;name&#39;: &#39;Google&#39;,
+  &#39;sameAs&#39;: &#39;http://www.google.com&#39;,
+  &#39;logo&#39;: &#39;http://www.example.com/images/logo.png&#39;},
+ &#39;jobLocation&#39;: {&#39;@type&#39;: &#39;Place&#39;,
+  &#39;address&#39;: {&#39;@type&#39;: &#39;PostalAddress&#39;,
+   &#39;streetAddress&#39;: &#39;1600 Amphitheatre Pkwy&#39;,
+   &#39;addressLocality&#39;: &#39;Mountain View&#39;,
+   &#39;addressRegion&#39;: &#39;CA&#39;,
+   &#39;postalCode&#39;: &#39;94043&#39;,
+   &#39;addressCountry&#39;: &#39;US&#39;}},
+ &#39;baseSalary&#39;: {&#39;@type&#39;: &#39;MonetaryAmount&#39;,
+  &#39;currency&#39;: &#39;USD&#39;,
+  &#39;value&#39;: {&#39;@type&#39;: &#39;QuantitativeValue&#39;, &#39;value&#39;: 40.0, &#39;unitText&#39;: &#39;HOUR&#39;}}}
+</pre></div>
+</div>
+</div>
+</div>
 <p>Knowledge graph diagram</p>
 <p>What is required?</p>
 <ol class="simple">

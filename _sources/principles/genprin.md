@@ -1,3 +1,14 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # General Principles
 
 geoconnex.us is about publishing water data on the web in a manner similar to the way commercial entities publish information such that it is easily discoverable and useable by software developers to create feature-rich user experiences and information products. 
