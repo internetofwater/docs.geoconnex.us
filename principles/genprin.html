@@ -276,48 +276,47 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="what-is-structured-linked-data">
 <h2><span class="section-number">1.1. </span>What is structured, linked data?<a class="headerlink" href="#what-is-structured-linked-data" title="Permalink to this headline">¶</a></h2>
 <p>Structured data consists of specifically formatted, machine-readable descriptive information about the subject of the website, as well as in many cases, links to other websites. For example, a webpage about a particular job posting on a job listing app might have structured information about the job title, work location, posting date, salary range, as well as link to the company homepage.</p>
-<div class="highlight-{code-cell}json notranslate"><div class="highlight"><pre><span></span>:tags: [hide-input]
- {
-      &quot;@context&quot; : &quot;https://schema.org/&quot;,
-      &quot;@type&quot; : &quot;JobPosting&quot;,
-      &quot;title&quot; : &quot;Software Engineer&quot;,
-      &quot;description&quot; : &quot;&lt;p&gt;Google aspires to be an organization that reflects the globally diverse audience that our products and technology serve. We believe that in addition to hiring the best talent, a diversity of perspectives, ideas and cultures leads to the creation of better products and services.&lt;/p&gt;&quot;,
-      &quot;identifier&quot;: {
-        &quot;@type&quot;: &quot;PropertyValue&quot;,
-        &quot;name&quot;: &quot;Google&quot;,
-        &quot;value&quot;: &quot;1234567&quot;
-      },
-      &quot;datePosted&quot; : &quot;2017-01-18&quot;,
-      &quot;validThrough&quot; : &quot;2017-03-18T00:00&quot;,
-      &quot;employmentType&quot; : &quot;CONTRACTOR&quot;,
-      &quot;hiringOrganization&quot; : {
-        &quot;@type&quot; : &quot;Organization&quot;,
-        &quot;name&quot; : &quot;Google&quot;,
-        &quot;sameAs&quot; : &quot;http://www.google.com&quot;,
-        &quot;logo&quot; : &quot;http://www.example.com/images/logo.png&quot;
-      },
-      &quot;jobLocation&quot;: {
-      &quot;@type&quot;: &quot;Place&quot;,
-        &quot;address&quot;: {
-        &quot;@type&quot;: &quot;PostalAddress&quot;,
-        &quot;streetAddress&quot;: &quot;1600 Amphitheatre Pkwy&quot;,
-        &quot;addressLocality&quot;: &quot;Mountain View&quot;,
-        &quot;addressRegion&quot;: &quot;CA&quot;,
-        &quot;postalCode&quot;: &quot;94043&quot;,
-        &quot;addressCountry&quot;: &quot;US&quot;
-        }
-      },
-      &quot;baseSalary&quot;: {
-        &quot;@type&quot;: &quot;MonetaryAmount&quot;,
-        &quot;currency&quot;: &quot;USD&quot;,
-        &quot;value&quot;: {
-          &quot;@type&quot;: &quot;QuantitativeValue&quot;,
-          &quot;value&quot;: 40.00,
-          &quot;unitText&quot;: &quot;HOUR&quot;
-        }
-      }
-    }
-</pre></div>
+<div class="toggle docutils container">
+<p>{
+“&#64;context” : “<a class="reference external" href="https://schema.org/">https://schema.org/</a>”,
+“&#64;type” : “JobPosting”,
+“title” : “Software Engineer”,
+“description” : “<p>Google aspires to be an organization that reflects the globally diverse audience that our products and technology serve. We believe that in addition to hiring the best talent, a diversity of perspectives, ideas and cultures leads to the creation of better products and services.</p>”,
+“identifier”: {
+“&#64;type”: “PropertyValue”,
+“name”: “Google”,
+“value”: “1234567”
+},
+“datePosted” : “2017-01-18”,
+“validThrough” : “2017-03-18T00:00”,
+“employmentType” : “CONTRACTOR”,
+“hiringOrganization” : {
+“&#64;type” : “Organization”,
+“name” : “Google”,
+“sameAs” : “<a class="reference external" href="http://www.google.com">http://www.google.com</a>”,
+“logo” : “<a class="reference external" href="http://www.example.com/images/logo.png">http://www.example.com/images/logo.png</a>”
+},
+“jobLocation”: {
+“&#64;type”: “Place”,
+“address”: {
+“&#64;type”: “PostalAddress”,
+“streetAddress”: “1600 Amphitheatre Pkwy”,
+“addressLocality”: “Mountain View”,
+“addressRegion”: “CA”,
+“postalCode”: “94043”,
+“addressCountry”: “US”
+}
+},
+“baseSalary”: {
+“&#64;type”: “MonetaryAmount”,
+“currency”: “USD”,
+“value”: {
+“&#64;type”: “QuantitativeValue”,
+“value”: 40.00,
+“unitText”: “HOUR”
+}
+}
+}</p>
 </div>
 <p>Knowledge graph diagram</p>
 <p>What is required?</p>

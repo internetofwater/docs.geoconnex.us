@@ -10,7 +10,7 @@ Google Cloud stuff
 
 #### hydrometricStation (Surface Water Monitoring Location)
 
-```jsonld
+```{toggle} Click the button to reveal example json-ld
 {
 	"@context": [
 		{

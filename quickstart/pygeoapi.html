@@ -306,64 +306,64 @@ Google Cloud stuff</p>
 <h3>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="hydrometricstation-surface-water-monitoring-location">
 <h4>hydrometricStation (Surface Water Monitoring Location)<a class="headerlink" href="#hydrometricstation-surface-water-monitoring-location" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-jsonld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">	</span><span class="nd">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">		</span><span class="p">{</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://schema.org/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;skos&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3.org/TR/skos-reference/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;hyf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;gsp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.opengeospatial.org/standards/geosparql/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:name&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:sameAs&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;related&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;skos:related&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:description&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:geo&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">				</span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:image&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">				</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@id&quot;</span><span class="w"></span>
-<span class="w">			</span><span class="p">}</span><span class="w"></span>
-<span class="w">		</span><span class="p">}</span><span class="w"></span>
-<span class="w">	</span><span class="p">],</span><span class="w"></span>
-<span class="w">	</span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{uri}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">		</span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">		</span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation&quot;</span><span class="w"></span>
-<span class="w">	</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{name}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{description}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{reference_uri}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;hyf:referencedPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">		</span><span class="p">{</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;hyf:HY_IndirectPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:distanceExpression&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">					</span><span class="nt">&quot;hyf:HY_DistanceFromReferent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">						</span><span class="nt">&quot;hyf:interpolative&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{measure}}&quot;</span><span class="w"></span>
-<span class="w">					</span><span class="p">}</span><span class="w"></span>
-<span class="w">				</span><span class="p">},</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:distanceDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">					</span><span class="nt">&quot;hyf:HY_DistanceDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{direction}}&quot;</span><span class="w"></span>
-<span class="w">				</span><span class="p">},</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:linearElement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{flowpath_uri}}&quot;</span><span class="w"></span>
-<span class="w">			</span><span class="p">}</span><span class="w"></span>
-<span class="w">		</span><span class="p">},</span><span class="w"></span>
-<span class="w">		</span><span class="p">{</span><span class="w"></span>
-<span class="w">			</span><span class="nt">&quot;hyf:HY_IndirectPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">				</span><span class="nt">&quot;hyf:linearElement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{mainstem_uri}}&quot;</span><span class="w"></span>
-<span class="w">			</span><span class="p">}</span><span class="w"></span>
-<span class="w">		</span><span class="p">}</span><span class="w"></span>
-<span class="w">	</span><span class="p">],</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;hyf:HY_HydroLocationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hydrometricStation&quot;</span><span class="p">,</span><span class="s2">&quot;dam&quot;</span><span class="p">,</span><span class="s2">&quot;etc&quot;</span><span class="p">]</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">		</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:GeoCoordinates&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;schema:latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{latitude}}&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">		</span><span class="nt">&quot;schema:longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{longitude}}&quot;</span><span class="w"></span>
-<span class="w">	</span><span class="p">},</span><span class="w"></span>
-<span class="w">	</span><span class="nt">&quot;gsp:hasGeometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">		</span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gsp:Geometry&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">		</span><span class="nt">&quot;gsp:asWKT&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POINT ({{longitude}} {{latitude}})&quot;</span><span class="w"></span>
-<span class="w">	</span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
+<div class="toggle docutils container">
+<p>{
+“&#64;context”: [
+{
+“schema”: “<a class="reference external" href="http://schema.org/">http://schema.org/</a>”,
+“skos”: “<a class="reference external" href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a>”,
+“hyf”: “<a class="reference external" href="https://www.opengis.net/def/schema/hy_features/hyf/">https://www.opengis.net/def/schema/hy_features/hyf/</a>”,
+“gsp”: “<a class="reference external" href="http://www.opengeospatial.org/standards/geosparql/">http://www.opengeospatial.org/standards/geosparql/</a>”,
+“name”: “schema:name”,
+“sameAs”: “schema:sameAs”,
+“related”: “skos:related”,
+“description”: “schema:description”,
+“geo”: “schema:geo”,
+“image”: {
+“&#64;id”: “schema:image”,
+“&#64;type”: “&#64;id”
+}
+}
+],
+“&#64;id”: “”,
+“&#64;type”: [
+“<a class="reference external" href="https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature">https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature</a>”,
+“<a class="reference external" href="https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation">https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation</a>”
+],
+“name”: “”,
+“description”: “”,
+“sameAs”: “”,
+“hyf:referencedPosition”: [
+{
+“hyf:HY_IndirectPosition”: {
+“hyf:distanceExpression”: {
+“hyf:HY_DistanceFromReferent”: {
+“hyf:interpolative”: “”
+}
+},
+“hyf:distanceDescription”: {
+“hyf:HY_DistanceDescription”: “”
+},
+“hyf:linearElement”: “”
+}
+},
+{
+“hyf:HY_IndirectPosition”: {
+“hyf:linearElement”: “”
+}
+}
+],
+“hyf:HY_HydroLocationType”: [“hydrometricStation”,”dam”,”etc”]
+“geo”: {
+“&#64;type”: “schema:GeoCoordinates”,
+“schema:latitude”: “”,
+“schema:longitude”: “”
+},
+“gsp:hasGeometry”: {
+“&#64;type”: “gsp:Geometry”,
+“gsp:asWKT”: “POINT ( )”
+}
+}</p>
 </div>
 </div>
 </div>
