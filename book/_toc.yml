@@ -19,7 +19,7 @@ parts:
     chapters:
     - file: content/intro
   - caption: How to Contribute
-    numbered: false
+    numbered: true
     chapters:
     - file: contributing/intro
     - file: contributing/structured-data
