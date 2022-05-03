@@ -22,12 +22,12 @@ parts:
     numbered: false
     chapters:
     - file: contributing/intro
+    - file: contributing/structured-data
+    - file: contributing/pids
+    - file: contributing/nldi
     - file: quickstart/intro
       sections:
         - file: quickstart/dataprep
         - file: quickstart/idscheme
         - file: quickstart/pygeoapi
         - file: quickstart/mintpids
-    - file: contributing/pids
-    - file: contributing/structured-data
-    - file: contributing/nldi
