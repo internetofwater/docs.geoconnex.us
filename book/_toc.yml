@@ -29,4 +29,4 @@ parts:
         - file: quickstart/mintpids
     - file: contributing/pids
     - file: contributing/structured-data
-    - file: contributling/nldi
+    - file: contributing/nldi
