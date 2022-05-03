@@ -27,7 +27,7 @@ parts:
     - file: contributing/nldi
     - file: quickstart/intro
       sections:
-        - file: quickstart/dataprep
         - file: quickstart/idscheme
+        - file: quickstart/dataprep
         - file: quickstart/pygeoapi
         - file: quickstart/mintpids
