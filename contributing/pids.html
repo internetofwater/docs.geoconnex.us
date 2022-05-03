@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Publishing a feature service: pygeoapi &#8212; Guidebook</title>
+    <title>Registering Persistent Identifiers (PIDs) &#8212; Guidebook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mint Persistent Identifiers" href="mintpids.html" />
-    <link rel="prev" title="Identification Scheme" href="idscheme.html" />
+    <link rel="next" title="Landing Pages" href="structured-data.html" />
+    <link rel="prev" title="Mint Persistent Identifiers" href="../quickstart/mintpids.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -162,45 +162,45 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../quickstart/intro.html">
    QUICKSTART: Contributing from Scratch
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="dataprep.html">
+    <a class="reference internal" href="../quickstart/dataprep.html">
      Data preparation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="idscheme.html">
+    <a class="reference internal" href="../quickstart/idscheme.html">
      Identification Scheme
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/pygeoapi.html">
      Publishing a feature service: pygeoapi
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="mintpids.html">
+    <a class="reference internal" href="../quickstart/mintpids.html">
      Mint Persistent Identifiers
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../contributing/pids.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Registering Persistent Identifiers (PIDs)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../contributing/structured-data.html">
+  <a class="reference internal" href="structured-data.html">
    Landing Pages
   </a>
  </li>
@@ -245,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/quickstart/pygeoapi.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/contributing/pids.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -265,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/internetofwater/docs.geoconnex.us/issues/new?title=Issue%20on%20page%20%2Fquickstart/pygeoapi.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/internetofwater/docs.geoconnex.us/issues/new?title=Issue%20on%20page%20%2Fcontributing/pids.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -291,24 +291,32 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-json-ld">
-   Add JSON-LD
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Registering Persistent Identifiers (PIDs)
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#templates">
-     Templates
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-1-1-redirects-to-geoconnex-us">
+     Adding 1:1 redirects to geoconnex.us
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hydrometricstation-surface-water-monitoring-location">
-       hydrometricStation (Surface Water Monitoring Location)
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-regular-expression-redirects-to-geoconnex-us">
+     Adding regular expression redirects to geoconnex.us
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-geospatial-reference-features-to-reference-geoconnex-us">
+     Adding geospatial reference features to reference.geoconnex.us
+    </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#licensing-of-geoconnex-us-contributions">
+   Licensing of geoconnex.us contributions.
+  </a>
  </li>
 </ul>
 
@@ -320,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Publishing a feature service: pygeoapi</h1>
+                <h1>Registering Persistent Identifiers (PIDs)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -330,24 +338,32 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-json-ld">
-   Add JSON-LD
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Registering Persistent Identifiers (PIDs)
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#templates">
-     Templates
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-1-1-redirects-to-geoconnex-us">
+     Adding 1:1 redirects to geoconnex.us
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hydrometricstation-surface-water-monitoring-location">
-       hydrometricStation (Surface Water Monitoring Location)
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-regular-expression-redirects-to-geoconnex-us">
+     Adding regular expression redirects to geoconnex.us
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-geospatial-reference-features-to-reference-geoconnex-us">
+     Adding geospatial reference features to reference.geoconnex.us
+    </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#licensing-of-geoconnex-us-contributions">
+   Licensing of geoconnex.us contributions.
+  </a>
  </li>
 </ul>
 
@@ -358,79 +374,48 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="publishing-a-feature-service-pygeoapi">
-<h1>Publishing a feature service: pygeoapi<a class="headerlink" href="#publishing-a-feature-service-pygeoapi" title="Permalink to this headline">¶</a></h1>
-<p>docker stuff
-config stuff
-Google Cloud stuff</p>
-<div class="section" id="add-json-ld">
-<h2>Add JSON-LD<a class="headerlink" href="#add-json-ld" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="templates">
-<h3>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="hydrometricstation-surface-water-monitoring-location">
-<h4>hydrometricStation (Surface Water Monitoring Location)<a class="headerlink" href="#hydrometricstation-surface-water-monitoring-location" title="Permalink to this headline">¶</a></h4>
-<div class="toggle docutils container">
-<p>{
-“&#64;context”: [
-{
-“schema”: “<a class="reference external" href="http://schema.org/">http://schema.org/</a>”,
-“skos”: “<a class="reference external" href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a>”,
-“hyf”: “<a class="reference external" href="https://www.opengis.net/def/schema/hy_features/hyf/">https://www.opengis.net/def/schema/hy_features/hyf/</a>”,
-“gsp”: “<a class="reference external" href="http://www.opengeospatial.org/standards/geosparql/">http://www.opengeospatial.org/standards/geosparql/</a>”,
-“name”: “schema:name”,
-“sameAs”: “schema:sameAs”,
-“related”: “skos:related”,
-“description”: “schema:description”,
-“geo”: “schema:geo”,
-“image”: {
-“&#64;id”: “schema:image”,
-“&#64;type”: “&#64;id”
-}
-}
-],
-“&#64;id”: “”,
-“&#64;type”: [
-“<a class="reference external" href="https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature">https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature</a>”,
-“<a class="reference external" href="https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation">https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation</a>”
-],
-“name”: “”,
-“description”: “”,
-“sameAs”: “”,
-“hyf:referencedPosition”: [
-{
-“hyf:HY_IndirectPosition”: {
-“hyf:distanceExpression”: {
-“hyf:HY_DistanceFromReferent”: {
-“hyf:interpolative”: “”
-}
-},
-“hyf:distanceDescription”: {
-“hyf:HY_DistanceDescription”: “”
-},
-“hyf:linearElement”: “”
-}
-},
-{
-“hyf:HY_IndirectPosition”: {
-“hyf:linearElement”: “”
-}
-}
-],
-“hyf:HY_HydroLocationType”: [“hydrometricStation”,”dam”,”etc”]
-“geo”: {
-“&#64;type”: “schema:GeoCoordinates”,
-“schema:latitude”: “”,
-“schema:longitude”: “”
-},
-“gsp:hasGeometry”: {
-“&#64;type”: “gsp:Geometry”,
-“gsp:asWKT”: “POINT ( )”
-}
-}</p>
+  <div class="section" id="registering-persistent-identifiers-pids">
+<h1>Registering Persistent Identifiers (PIDs)<a class="headerlink" href="#registering-persistent-identifiers-pids" title="Permalink to this headline">¶</a></h1>
+<p>The process for adding a PID-URI redirect is generally similar to that used by <a class="reference external" href="https://github.com/perma-id/w3id.org">w3id.org</a>.</p>
+<p>There is a strong preference for creating “<a class="reference external" href="#adding-11-redirects-to-geoconnexus">1:1</a>” redirects. That is, specifying an exact redirect from a geoconnex.us-based PID to the URI of the hydrologic feature you have a web resource about, for each and every individual feature. However, if you need to create PIDs and redirects for a large number of features (&gt;= 300,000), we will require a <a class="reference external" href="#adding-regular-expression-redirects-to-geoconnexus">regular expression matching redirect</a>. For example, redirecting from <a class="reference external" href="https://geoconnex.us/example-namespace/*wildcard-string">https://geoconnex.us/example-namespace/*wildcard-string</a> to <a class="reference external" href="https://example.org/features?query=*wildcard-string">https://example.org/features?query=*wildcard-string</a>.</p>
+<p>That being said, 1:1 redirects are preferred where possible because they are simpler to resolve and allow you to customize (and change, when needed) your target URI patterns with more specificity. Thus, if you have &gt;=300,000 features, but these features can be split in a consistent way into sub-collections, all of which number &lt;300,000 features (as might be the case for features that can be divided by geography, jurisdiction, theme, or type), then you might consider submitting multiple collections of 1:1 redirects.</p>
+<div class="section" id="adding-1-1-redirects-to-geoconnex-us">
+<h2>Adding 1:1 redirects to <a class="reference external" href="http://geoconnex.us">geoconnex.us</a><a class="headerlink" href="#adding-1-1-redirects-to-geoconnex-us" title="Permalink to this headline">¶</a></h2>
+<p>The preferred way to create the redirects yourself is by following these steps:</p>
+<ol class="simple">
+<li><p>Fork the <a class="reference external" href="https://github.com/internetofwater/geoconnex.us"><code class="docutils literal notranslate"><span class="pre">internetofwater/geoconnex.us</span></code></a> repository.</p></li>
+<li><p>Add a directory corresponding to the namespace you want in the <code class="docutils literal notranslate"><span class="pre">namespaces</span></code> directory. For example ‘namespaces/example-namespace/</p></li>
+<li><p>Add a set of redirects using the <a class="reference external" href="https://github.com/internetofwater/geoconnex.us/blob/master/namespaces/example-namespace/example_ids.csv">csv template</a> or a geoJSON file with the exact same field names as the csv template. You may consider adding multiple separate sets of redirects, as long as each set is comprised of &lt;=300,000</p></li>
+</ol>
+<ul class="simple">
+<li><p>The only required fields are “id” (the geoconnex URI you want), “target” (where the URI should redirect to), and “creator” (your email address).</p></li>
+<li><p>Optionally include latitude and longitude, lines, or polygons in a geojson file to refer to resources about places with distinct locations on Earth.</p></li>
+<li><p>Optionally include more complex redirects for content negotiation using the c1_ and c2_ fields.</p></li>
+</ul>
+<ol class="simple">
+<li><p>(Optional but strongly suggested) Add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> detailing contact persons and
+(a subset of) your permanent identifiers in your namespace directory. For an example,
+see <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">namespaces/example-namespace/README.md</span></code></span></p></li>
+<li><p>Commit your changes and submit a
+<a class="reference external" href="https://github.com/internetofwater/geoconnex.us/pulls">pull request</a>.</p></li>
+<li><p><a class="reference external" href="http://geoconnex.us">geoconnex.us</a> administrators will review your pull request and merge it if
+everything looks correct. Once the pull request is merged, the changes go
+live within (a time period)</p></li>
+</ol>
+</div>
+<div class="section" id="adding-regular-expression-redirects-to-geoconnex-us">
+<h2>Adding regular expression redirects to <a class="reference external" href="http://geoconnex.us">geoconnex.us</a><a class="headerlink" href="#adding-regular-expression-redirects-to-geoconnex-us" title="Permalink to this headline">¶</a></h2>
+<p>If you have a collection of &gt;300,000 features that cannot be easily and consistently subdivided, please submit a request for a regular expression redirect. To do so, you may <a class="reference external" href="https://github.com/internetofwater/geoconnex.us/issues/new?assignees=dblodgett-usgs%2C+ksonda&amp;labels=PID+request&amp;template=request-regex-redirect.md&amp;title=%5Bregex+redirect+request">create an issue of type “Request regex redirect”</a> and fill out the template.</p>
+</div>
+<div class="section" id="adding-geospatial-reference-features-to-reference-geoconnex-us">
+<h2>Adding geospatial reference features to <a class="reference external" href="http://reference.geoconnex.us">reference.geoconnex.us</a><a class="headerlink" href="#adding-geospatial-reference-features-to-reference-geoconnex-us" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://reference.geoconnex.us">https://reference.geoconnex.us</a> is available to host community reference features. See the readme in the <span class="xref myst">pygeoapi</span> folder for more info.</p>
 </div>
 </div>
-</div>
-</div>
+<div class="section" id="licensing-of-geoconnex-us-contributions">
+<h1>Licensing of <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> contributions.<a class="headerlink" href="#licensing-of-geoconnex-us-contributions" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> project intends to be a public-domain registry of feature identifiers and reference information. The infrastructure used to host <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> is expected to be funded through an evolving funding source but the content of <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> is to stay dedicated to and owned by the community.</p>
+<p><a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="CC0" src="https://i.creativecommons.org/p/zero/1.0/88x31.png" /></a></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -446,7 +431,7 @@ Google Cloud stuff</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./quickstart"
+            path: "./contributing"
         },
         predefinedOutput: true
     }
@@ -458,17 +443,17 @@ Google Cloud stuff</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="idscheme.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../quickstart/mintpids.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Identification Scheme</p>
+            <p class="prev-next-title">Mint Persistent Identifiers</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="mintpids.html" title="next page">
+    <a class='right-next' id="next-link" href="structured-data.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mint Persistent Identifiers</p>
+        <p class="prev-next-title">Landing Pages</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
