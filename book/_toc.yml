@@ -21,6 +21,7 @@ parts:
   - caption: How to Contribute
     numbered: false
     chapters:
+    - file: contributing/intro
     - file: quickstart/intro
       sections:
         - file: quickstart/dataprep
