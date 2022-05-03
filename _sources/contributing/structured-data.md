@@ -1,10 +1,10 @@
-# Landing Pages
+## Publishing structured, linked-data
 
 
-## SELFIE Architecture background
+### SELFIE Architecture background
 
-## Methods
+### Methods
 
-### Dynamic site methods
+#### Dynamic site methods
 
-### Static site methods
+#### Static site methods
