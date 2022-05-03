@@ -27,3 +27,6 @@ parts:
         - file: quickstart/idscheme
         - file: quickstart/pygeoapi
         - file: quickstart/mintpids
+    - file: contributing/pids
+    - file: contributing/structured-data
+    - file: contributling/nldi
