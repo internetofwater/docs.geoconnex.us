@@ -13,7 +13,7 @@ Note that it looks like a URL. This is because these identifiers are meant to re
 
 The stem (beginning) should always be `https://geoconnex.us`. The ***namespace*** should be a relatively short and easy-to-read name for grouping of identifiers that you have the authority to manage. This is often the name or abbreviated name of an organization, such as `epa`, `usgs`. 
 
-After the namespace, you have relative freedom to assign identifiers, as long as each feature/location has a unique identifier. You may wish to create an identification scheme with a topic hierarchy. For example, subdividing between surface water and groundwater monitoring locations with and `/sw-sites/`, `/wells/`.
+After the namespace, you have relative freedom to assign identifiers, as long as each feature/location has a unique identifier. You may wish to create an identification scheme with a topic hierarchy. For example, subdividing between surface water and groundwater monitoring locations with `/sw-sites/` and `/wells/`.
 
  You can use as many slashes, dashes, or other separators as you wish, and use upper and lowercase alphanumeric characters, as long as the resulting identifier is a valid URL. For example, you could have `https://geoconnex.us/organization/sites/surface/waterquality/1234` and `https://geoconnex.us/organization/sites/groundwater/injection/ABCD`
 
