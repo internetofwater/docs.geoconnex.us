@@ -12,7 +12,7 @@
 
 The Geoconnex project is about providing technical infrastructure and guidance to create an open, community-contribution model for a knowledge graph linking hydrologic features in the United States, published in accordance with [Spatial Data on the Web best practices](https://www.w3.org/TR/sdw-bp/) as an implementation of [Internet of Water](https://github.com/opengeospatial/SELFIE/blob/master/docs/demo/internet_of_water.md) principles.
 
-In short, Geoconnex aims to make water data as easily discoverable, accessible, and usable as possible.
+In short, Geoconnex aims to make water data as easily discoverable, accessible, and usable as possible. 
 
 ## What is Geoconnex?
 
@@ -22,6 +22,8 @@ Geoconnex aims to enable a [knowledge graph](https://en.wikipedia.org/wiki/Knowl
 2. Building a federated multi-organization monitoring network in which all member-systems reference common monitored features and are discoverable through a community index.
 
 See [https://geoconnex.us/demo](https://geoconnex.us/demo) for a mockup of data discovery and access workflows that `https://geoconnex.us` aspires to enable. 
+
+The development of geoconnex.us takes place on GitHub. See [here](https://github.com/internetofwater/about.geoconnex.us) for the system of repositories.
 
 ## Related materials, presentations, and publications
 
