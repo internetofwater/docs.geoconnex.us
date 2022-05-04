@@ -316,7 +316,16 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="identification-scheme">
 <h1><span class="section-number">6.1. </span>Identification Scheme<a class="headerlink" href="#identification-scheme" title="Permalink to this headline">¶</a></h1>
-<p>How to structure an id scheme and add it to your data</p>
+<p>The first thing to do is establish an identification scheme for the features/locations represented in your data. Identifiers should be unique, unambiguous, and persistent to changes. That is, if your organization uses some kind of numbering or nameing system that is vulenrable to periodic changes, identifiers should not be based on that system. Furthermore, to participate in the geoconnex system, identifiers should have the following format:</p>
+<div class="figure align-default" id="community">
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/idscheme.png"><img alt="geoconnex-idscheme" class="bg-primary mb-1" src="../_images/idscheme.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6.1 </span><span class="caption-text">The <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> persistent identifier format.</span><a class="headerlink" href="#community" title="Permalink to this image">¶</a></p>
+</div>
+<p>Note that it looks like a URL. This is because these identifiers are meant to resolve (redirect) to a <strong>landing page</strong> about the identified locations. This means that all elements must be allowed URL characters, and in practice, should avoid obscure symbols and whitespace.</p>
+<p>The stem (beginning) should always be <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us</span></code>. The <em><strong>namespace</strong></em> should be a relatively short and easy-to-read name for grouping of identifiers that you have the authority to manage. This is often the name or abbreviated name of an organization, such as <code class="docutils literal notranslate"><span class="pre">epa</span></code>, <code class="docutils literal notranslate"><span class="pre">usgs</span></code>.</p>
+<p>After the namespace, you have relative freedom to assign identifiers, as long as each feature/location has a unique identifier. You may wish to create an identification scheme with a topic hierarchy. For example, subdividing between surface water and groundwater monitoring locations with and <code class="docutils literal notranslate"><span class="pre">/sw-sites/</span></code>, <code class="docutils literal notranslate"><span class="pre">/wells/</span></code>.</p>
+<p>You can use as many slashes, dashes, or other separators as you wish, and use upper and lowercase alphanumeric characters, as long as the resulting identifier is a valid URL. For example, you could have <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/organization/sites/surface/waterquality/1234</span></code> and <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/organization/sites/groundwater/injection/ABCD</span></code></p>
+<p>Once you have established an indentifier scheme and assigned each of your features/locations with a unique identifier, you can begin preparing your data for publication in the <a class="reference external" href="https://docs.geoconnex.us/quickstart/dataprep.html">next step</a>.</p>
 </div>
 
     <script type="text/x-thebe-config">
