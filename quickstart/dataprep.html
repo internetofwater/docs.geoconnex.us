@@ -361,7 +361,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 <div class="section" id="using-reference-features-to-add-conextual-information">
 <h2><span class="section-number">6.2.1. </span>Using reference features to add conextual information<a class="headerlink" href="#using-reference-features-to-add-conextual-information" title="Permalink to this headline">¶</a></h2>
-<p>Wherever possible, contextual data should be in the form of persistent identifiers for these features. For example, counties are often given as a name, but spelling errors, capitalization or abbreviation differences, and other ambiguities can lead to barriers to iunteroperability between datasets that reference counties.</p>
+<p>Wherever possible, contextual data should be in the form of persistent identifiers (PIDs) for these features. For example, counties are often given as a name, but spelling errors, capitalization or abbreviation differences, and other ambiguities can lead to barriers to interoperability between datasets that reference counties. In addition, these PIDs are already members of the knowledge graph, making adding your data to the knowledge graph simpler and more meaningful. Some sources for PIDs for these contextual features are provided at <a class="reference external" href="http://reference.geoconnex.us/collections">reference.geoconnex.us/collections</a> . Some common patterns include:</p>
+<ul class="simple">
+<li><p>states: <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/ref/states/{2-digit</span> <span class="pre">FIPS}</span></code> e.g. <a class="reference external" href="https://geoconnex.us/ref/states/48">https://geoconnex.us/ref/states/48</a> for Texas</p></li>
+<li><p>counties: <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/ref/counties/{5-digit</span> <span class="pre">FIPS}</span></code> e.g. <a class="reference external" href="https://geoconnex.us/ref/counties/06037">https://geoconnex.us/ref/counties/06037</a> for Los Angeles county</p></li>
+<li><p>HUC12: <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/nhdplusv2/huc12/{12-digit</span> <span class="pre">HUC12</span> <span class="pre">code}</span></code> e.g. <a class="reference external" href="https://geoconnex.us/nhdplusv2/huc12/030300020607">https://geoconnex.us/nhdplusv2/huc12/030300020607</a> for the Morgan Creek HUC12</p></li>
+<li><p>HUC2-10: <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/ref/hu{02,04,06,08,10}/{2-10</span> <span class="pre">-</span> <span class="pre">digit</span> <span class="pre">HUC2</span> <span class="pre">-</span> <span class="pre">10</span> <span class="pre">code}</span></code>e.g. <a class="reference external" href="https://geoconnex.us/ref/hu08/06010105">https://geoconnex.us/ref/hu08/06010105</a> for the Upper French Broad HUC8</p></li>
+<li><p>NHDPlusV2 comid:</p></li>
+<li><p>NHDPlusV2 reachcode:</p></li>
+</ul>
 </div>
 </div>
 
