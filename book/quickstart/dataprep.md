@@ -17,7 +17,7 @@ Contextual information could include:
 1. administrative geographies it is within (e.g. census tract, municipality, county, state, PLSS section)
 2. watershed boundary it is within (e.g. HUC12)
 3. for groundwater sites, relevant aquifers
-4. for surface water sites, the [hydrologic address](../hydroaddress.pdf) on the [National Hydrography Dataset](https://www.usgs.gov/national-hydrography/national-hydrography-dataset) stream network
+4. for surface water sites, the [hydrologic address](https://github.com/internetofwater/docs.geoconnex.us/raw/main/book/hydroaddress.pdf) on the [National Hydrography Dataset](https://www.usgs.gov/national-hydrography/national-hydrography-dataset) stream network
 
 
 ## Using reference features to add conextual information
