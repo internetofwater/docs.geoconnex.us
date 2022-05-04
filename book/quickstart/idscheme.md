@@ -11,7 +11,7 @@ The geoconnex.us persistent identifier format.
 
 Note that it looks like a URL. This is because these identifiers are meant to resolve (redirect) to a **landing page** about the identified locations. This means that all elements must be allowed URL characters, and in practice, should avoid obscure symbols and whitespace. 
 
-The stem (beginning) should always be `https://geoconnex.us`. The ***namespace*** should be a relatively short and easy-to-read name for grouping of identifiers that you have the authority to manage. This is often the name or abbreviated name of an organization, such as `epa`, `usgs`. 
+The stem (beginning) should always be `https://geoconnex.us`. The ***namespace*** should be a relatively short and easy-to-read name for grouping of identifiers that you have the authority to manage. This is often the name or abbreviated name of an organization, such as `/epa/`, `/usgs/`. 
 
 After the namespace, you have relative freedom to assign identifiers, as long as each feature/location has a unique identifier. You may wish to create an identification scheme with a topic hierarchy. For example, subdividing between surface water and groundwater monitoring locations with `/sw-sites/` and `/wells/`.
 
