@@ -296,6 +296,19 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-reference-features-to-add-conextual-information">
+   6.2.1. Using reference features to add conextual information
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -308,6 +321,19 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-reference-features-to-add-conextual-information">
+   6.2.1. Using reference features to add conextual information
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -316,8 +342,27 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="data-preparation">
 <h1><span class="section-number">6.2. </span>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h1>
-<p>In this section, we guide through how to</p>
-<p>After having established an <a class="reference external" href="https://docs.geoconnex.us/quickstart/idscheme.html">identifier scheme</a>,</p>
+<p>In this section, we guide through how to create a dataset suitable to use with our open-source tool based on <a class="reference external" href="https://pygeoapi.io">pygeoapi</a>, which will generate landing pages with embedded JSON-LD.</p>
+<p>To be most useful to the wider water data community, locations should have both descriptive and contextual information in the data published to <a class="reference external" href="http://geoconnex.us">geoconnex.us</a>. Some useful descriptive information could include:</p>
+<ol class="simple">
+<li><p>identifier</p></li>
+<li><p>Location geometry (point or polygon latitude/longitude)</p></li>
+<li><p>short name</p></li>
+<li><p>long name or description</p></li>
+<li><p>organization</p></li>
+<li><p>URLs where observed or modeled data about the location can be accessed</p></li>
+</ol>
+<p>Contextual information could include:</p>
+<ol class="simple">
+<li><p>administrative geographies it is within (e.g. census tract, municipality, county, state, PLSS section)</p></li>
+<li><p>watershed boundary it is within (e.g. HUC12)</p></li>
+<li><p>for groundwater sites, relevant aquifers</p></li>
+<li><p>for surface water sites, the <span class="xref myst">hydrologic address</span> on the <a class="reference external" href="https://www.usgs.gov/national-hydrography/national-hydrography-dataset">National Hydrography Dataset</a> stream network</p></li>
+</ol>
+<div class="section" id="using-reference-features-to-add-conextual-information">
+<h2><span class="section-number">6.2.1. </span>Using reference features to add conextual information<a class="headerlink" href="#using-reference-features-to-add-conextual-information" title="Permalink to this headline">¶</a></h2>
+<p>Wherever possible, contextual data should be in the form of persistent identifiers for these features. For example, counties are often given as a name, but spelling errors, capitalization or abbreviation differences, and other ambiguities can lead to barriers to iunteroperability between datasets that reference counties.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
