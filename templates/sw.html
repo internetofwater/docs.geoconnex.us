@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Registering Persistent Identifiers (PIDs) &#8212; Guidebook</title>
+    <title>Surface water monitoring locations &#8212; Guidebook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Contributing to the Network-Linked Data Index" href="nldi.html" />
-    <link rel="prev" title="2. Publishing structured, linked-data" href="structured-data.html" />
+    <link rel="next" title="JSON-LD block guidance" href="intro-blocks.html" />
+    <link rel="prev" title="Templates" href="intro-full.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -161,24 +161,24 @@ const thebe_selector_output = ".output, .cell_output"
   How to Contribute
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
+  <a class="reference internal" href="../contributing/intro.html">
    1. Contributing to the geoconnex.us knowledge graph
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="structured-data.html">
+  <a class="reference internal" href="../contributing/structured-data.html">
    2. Publishing structured, linked-data
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contributing/pids.html">
    3. Registering Persistent Identifiers (PIDs)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="nldi.html">
+  <a class="reference internal" href="../contributing/nldi.html">
    5. Contributing to the Network-Linked Data Index
   </a>
  </li>
@@ -220,26 +220,26 @@ const thebe_selector_output = ".output, .cell_output"
   Appendix
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../templates/intro-full.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro-full.html">
    Templates
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../templates/sw.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Surface water monitoring locations
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../templates/intro-blocks.html">
+  <a class="reference internal" href="intro-blocks.html">
    JSON-LD block guidance
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -249,12 +249,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../templates/context.html">
+    <a class="reference internal" href="context.html">
      Context
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../templates/hydroaddress.html">
+    <a class="reference internal" href="hydroaddress.html">
      Hydrologic Addresses
     </a>
    </li>
@@ -299,9 +299,12 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../_sources/templates/sw.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/contributing/pids.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/templates/sw.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -321,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/internetofwater/docs.geoconnex.us/issues/new?title=Issue%20on%20page%20%2Fcontributing/pids.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/internetofwater/docs.geoconnex.us/issues/new?title=Issue%20on%20page%20%2Ftemplates/sw.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -337,46 +340,28 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/internetofwater/docs.geoconnex.us/main?urlpath=tree/book/templates/sw.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3. Registering Persistent Identifiers (PIDs)
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-1-1-redirects-to-geoconnex-us">
-     3.1. Adding 1:1 redirects to geoconnex.us
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-regular-expression-redirects-to-geoconnex-us">
-     3.2. Adding regular expression redirects to geoconnex.us
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-geospatial-reference-features-to-reference-geoconnex-us">
-     3.3. Adding geospatial reference features to reference.geoconnex.us
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#licensing-of-geoconnex-us-contributions">
-   4. Licensing of geoconnex.us contributions.
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -384,94 +369,108 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Registering Persistent Identifiers (PIDs)</h1>
+                <h1>Surface water monitoring locations</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3. Registering Persistent Identifiers (PIDs)
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-1-1-redirects-to-geoconnex-us">
-     3.1. Adding 1:1 redirects to geoconnex.us
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-regular-expression-redirects-to-geoconnex-us">
-     3.2. Adding regular expression redirects to geoconnex.us
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-geospatial-reference-features-to-reference-geoconnex-us">
-     3.3. Adding geospatial reference features to reference.geoconnex.us
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#licensing-of-geoconnex-us-contributions">
-   4. Licensing of geoconnex.us contributions.
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="section" id="registering-persistent-identifiers-pids">
-<h1><span class="section-number">3. </span>Registering Persistent Identifiers (PIDs)<a class="headerlink" href="#registering-persistent-identifiers-pids" title="Permalink to this headline">¶</a></h1>
-<p>The process for adding a PID-URI redirect is generally similar to that used by <a class="reference external" href="https://github.com/perma-id/w3id.org">w3id.org</a>.</p>
-<p>There is a strong preference for creating “<a class="reference external" href="#adding-11-redirects-to-geoconnexus">1:1</a>” redirects. That is, specifying an exact redirect from a geoconnex.us-based PID to the URI of the hydrologic feature you have a web resource about, for each and every individual feature. However, if you need to create PIDs and redirects for a large number of features (&gt;= 300,000), we will require a <a class="reference external" href="#adding-regular-expression-redirects-to-geoconnexus">regular expression matching redirect</a>. For example, redirecting from <a class="reference external" href="https://geoconnex.us/example-namespace/*wildcard-string">https://geoconnex.us/example-namespace/*wildcard-string</a> to <a class="reference external" href="https://example.org/features?query=*wildcard-string">https://example.org/features?query=*wildcard-string</a>.</p>
-<p>That being said, 1:1 redirects are preferred where possible because they are simpler to resolve and allow you to customize (and change, when needed) your target URI patterns with more specificity. Thus, if you have &gt;=300,000 features, but these features can be split in a consistent way into sub-collections, all of which number &lt;300,000 features (as might be the case for features that can be divided by geography, jurisdiction, theme, or type), then you might consider submitting multiple collections of 1:1 redirects.</p>
-<div class="section" id="adding-1-1-redirects-to-geoconnex-us">
-<h2><span class="section-number">3.1. </span>Adding 1:1 redirects to <a class="reference external" href="http://geoconnex.us">geoconnex.us</a><a class="headerlink" href="#adding-1-1-redirects-to-geoconnex-us" title="Permalink to this headline">¶</a></h2>
-<p>The preferred way to create the redirects yourself is by following these steps:</p>
-<ol class="simple">
-<li><p>Fork the <a class="reference external" href="https://github.com/internetofwater/geoconnex.us"><code class="docutils literal notranslate"><span class="pre">internetofwater/geoconnex.us</span></code></a> repository.</p></li>
-<li><p>Add a directory corresponding to the namespace you want in the <code class="docutils literal notranslate"><span class="pre">namespaces</span></code> directory. For example ‘namespaces/example-namespace/</p></li>
-<li><p>Add a set of redirects using the <a class="reference external" href="https://github.com/internetofwater/geoconnex.us/blob/master/namespaces/example-namespace/example_ids.csv">csv template</a> or a geoJSON file with the exact same field names as the csv template. You may consider adding multiple separate sets of redirects, as long as each set is comprised of &lt;=300,000</p></li>
-</ol>
-<ul class="simple">
-<li><p>The only required fields are “id” (the geoconnex URI you want), “target” (where the URI should redirect to), and “creator” (your email address).</p></li>
-<li><p>Optionally include latitude and longitude, lines, or polygons in a geojson file to refer to resources about places with distinct locations on Earth.</p></li>
-<li><p>Optionally include more complex redirects for content negotiation using the c1_ and c2_ fields.</p></li>
-</ul>
-<ol class="simple">
-<li><p>(Optional but strongly suggested) Add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> detailing contact persons and
-(a subset of) your permanent identifiers in your namespace directory. For an example,
-see <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">namespaces/example-namespace/README.md</span></code></span></p></li>
-<li><p>Commit your changes and submit a
-<a class="reference external" href="https://github.com/internetofwater/geoconnex.us/pulls">pull request</a>.</p></li>
-<li><p><a class="reference external" href="http://geoconnex.us">geoconnex.us</a> administrators will review your pull request and merge it if
-everything looks correct. Once the pull request is merged, the changes go
-live within (a time period)</p></li>
-</ol>
+  <div class="tex2jax_ignore mathjax_ignore section" id="surface-water-monitoring-locations">
+<h1>Surface water monitoring locations<a class="headerlink" href="#surface-water-monitoring-locations" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;@context&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="s2">&quot;https://schema.org/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;skos&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hyf&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:name&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;gsp&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.opengis.net/ont/geosparql#&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sameAs&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:sameAs&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;related&quot;</span><span class="p">:</span> <span class="s2">&quot;skos:related&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:description&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:image&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;@id&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://geoconnex.us/iow/demo/MA00689&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Quinebaug River&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Monitoring Location at Quinebaug River&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hyf:referencedPosition&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;hyf:HY_IndirectPosition&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;hyf:distanceExpression&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;hyf:HY_DistanceFromReferent&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;hyf:interpolative&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;hyf:distanceDescription&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;hyf:HY_DistanceDescription&quot;</span><span class="p">:</span> <span class="s2">&quot;upstream&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;hyf:linearElement&quot;</span><span class="p">:</span> <span class="s2">&quot;https://geoconnex.us/nhdplusv2/reachcode/01100001000054&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;hyf:HY_HydroLocationType&quot;</span><span class="p">:</span> <span class="s2">&quot;hydrometricStation&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;schema:geoWithin&quot;</span><span class="p">:</span> <span class="s2">&quot;https://geoconnex.us/ref/hu08/01100001&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;geo&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:GeoCoordinates&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;schema:longitude&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">72.03888644794775</span><span class="p">,</span>
+        <span class="s2">&quot;schema:latitude&quot;</span><span class="p">:</span> <span class="mf">42.0838662883585</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;gsp:hasGeometry&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.opengis.net/ont/sf#Point&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gsp:asWKT&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.opengis.net/ont/geosparql#wktLiteral&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;@value&quot;</span><span class="p">:</span> <span class="s2">&quot;POINT (-72.03888644794775 42.0838662883585)&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="adding-regular-expression-redirects-to-geoconnex-us">
-<h2><span class="section-number">3.2. </span>Adding regular expression redirects to <a class="reference external" href="http://geoconnex.us">geoconnex.us</a><a class="headerlink" href="#adding-regular-expression-redirects-to-geoconnex-us" title="Permalink to this headline">¶</a></h2>
-<p>If you have a collection of &gt;300,000 features that cannot be easily and consistently subdivided, please submit a request for a regular expression redirect. To do so, you may <a class="reference external" href="https://github.com/internetofwater/geoconnex.us/issues/new?assignees=dblodgett-usgs%2C+ksonda&amp;labels=PID+request&amp;template=request-regex-redirect.md&amp;title=%5Bregex+redirect+request">create an issue of type “Request regex redirect”</a> and fill out the template.</p>
 </div>
-<div class="section" id="adding-geospatial-reference-features-to-reference-geoconnex-us">
-<h2><span class="section-number">3.3. </span>Adding geospatial reference features to <a class="reference external" href="http://reference.geoconnex.us">reference.geoconnex.us</a><a class="headerlink" href="#adding-geospatial-reference-features-to-reference-geoconnex-us" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://reference.geoconnex.us">https://reference.geoconnex.us</a> is available to host community reference features. See the readme in the <span class="xref myst">pygeoapi</span> folder for more info.</p>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;@context&#39;: [{&#39;schema&#39;: &#39;https://schema.org/&#39;,
+   &#39;skos&#39;: &#39;http://www.w3.org/2004/02/skos/core#&#39;,
+   &#39;hyf&#39;: &#39;https://www.opengis.net/def/schema/hy_features/hyf/&#39;,
+   &#39;name&#39;: &#39;schema:name&#39;,
+   &#39;gsp&#39;: &#39;http://www.opengis.net/ont/geosparql#&#39;,
+   &#39;sameAs&#39;: &#39;schema:sameAs&#39;,
+   &#39;related&#39;: &#39;skos:related&#39;,
+   &#39;description&#39;: &#39;schema:description&#39;,
+   &#39;image&#39;: {&#39;@id&#39;: &#39;schema:image&#39;, &#39;@type&#39;: &#39;@id&#39;}}],
+ &#39;@id&#39;: &#39;https://geoconnex.us/iow/demo/MA00689&#39;,
+ &#39;@type&#39;: [&#39;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature&#39;,
+  &#39;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation&#39;],
+ &#39;name&#39;: &#39;Quinebaug River&#39;,
+ &#39;description&#39;: &#39;Monitoring Location at Quinebaug River&#39;,
+ &#39;hyf:referencedPosition&#39;: [{&#39;hyf:HY_IndirectPosition&#39;: {&#39;hyf:distanceExpression&#39;: {&#39;hyf:HY_DistanceFromReferent&#39;: {&#39;hyf:interpolative&#39;: 0}},
+    &#39;hyf:distanceDescription&#39;: {&#39;hyf:HY_DistanceDescription&#39;: &#39;upstream&#39;},
+    &#39;hyf:linearElement&#39;: &#39;https://geoconnex.us/nhdplusv2/reachcode/01100001000054&#39;}}],
+ &#39;hyf:HY_HydroLocationType&#39;: &#39;hydrometricStation&#39;,
+ &#39;schema:geoWithin&#39;: &#39;https://geoconnex.us/ref/hu08/01100001&#39;,
+ &#39;geo&#39;: {&#39;@type&#39;: &#39;schema:GeoCoordinates&#39;,
+  &#39;schema:longitude&#39;: -72.03888644794775,
+  &#39;schema:latitude&#39;: 42.0838662883585},
+ &#39;gsp:hasGeometry&#39;: {&#39;@type&#39;: &#39;http://www.opengis.net/ont/sf#Point&#39;,
+  &#39;gsp:asWKT&#39;: {&#39;@type&#39;: &#39;http://www.opengis.net/ont/geosparql#wktLiteral&#39;,
+   &#39;@value&#39;: &#39;POINT (-72.03888644794775 42.0838662883585)&#39;}}}
+</pre></div>
 </div>
 </div>
-<div class="section" id="licensing-of-geoconnex-us-contributions">
-<h1><span class="section-number">4. </span>Licensing of <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> contributions.<a class="headerlink" href="#licensing-of-geoconnex-us-contributions" title="Permalink to this headline">¶</a></h1>
-<p>The <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> project intends to be a public-domain registry of feature identifiers and reference information. The infrastructure used to host <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> is expected to be funded through an evolving funding source but the content of <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> is to stay dedicated to and owned by the community.</p>
-<p><a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="CC0" src="https://i.creativecommons.org/p/zero/1.0/88x31.png" /></a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -487,7 +486,7 @@ live within (a time period)</p></li>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contributing"
+            path: "./templates"
         },
         predefinedOutput: true
     }
@@ -499,17 +498,17 @@ live within (a time period)</p></li>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="structured-data.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="intro-full.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Publishing structured, linked-data</p>
+            <p class="prev-next-title">Templates</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="nldi.html" title="next page">
+    <a class='right-next' id="next-link" href="intro-blocks.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Contributing to the Network-Linked Data Index</p>
+        <p class="prev-next-title">JSON-LD block guidance</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
