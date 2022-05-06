@@ -34,10 +34,10 @@ parts:
   - caption: Appendix
     numbered: false
     chapters:
-      - file: templates/intro-full
-        sections:
-          - files: templates/sw
-      - file: templates/intro-blocks
-        sections:
-          - files: templates/context
-          - files: templates/hydroaddress
+    - file: templates/intro-full
+      sections:
+        - files: templates/sw
+    - file: templates/intro-blocks
+      sections:
+        - files: templates/context
+        - files: templates/hydroaddress
