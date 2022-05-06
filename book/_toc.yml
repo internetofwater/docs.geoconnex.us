@@ -36,8 +36,8 @@ parts:
     chapters:
     - file: templates/intro-full
       sections:
-        - files: templates/sw
+        - file: templates/sw
     - file: templates/intro-blocks
       sections:
-        - files: templates/context
-        - files: templates/hydroaddress
+        - file: templates/context
+        - file: templates/hydroaddress
