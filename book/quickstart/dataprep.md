@@ -27,6 +27,7 @@ Wherever possible, contextual data should be in the form of persistent identifie
 * **counties**: `https://geoconnex.us/ref/counties/{5-digit FIPS}` e.g. https://geoconnex.us/ref/counties/06037 for Los Angeles county
 * **HUC12**: `https://geoconnex.us/nhdplusv2/huc12/{12-digit HUC12 code}` e.g. https://geoconnex.us/nhdplusv2/huc12/030300020607 for the Morgan Creek HUC12
 * **HUC2-10**: `https://geoconnex.us/ref/hu{02,04,06,08,10}/{2-10 - digit HUC2 - 10 code}`e.g. https://geoconnex.us/ref/hu08/06010105 for the Upper French Broad HUC8
-* **NHDPlusV2 comid** exmaple: `https://geoconnex.us/nhdplusv2/comid/13293480`
+* **NHDPlusV2 comid** example: `https://geoconnex.us/nhdplusv2/comid/13293480`
 * **NHDPlusV2 reachcode** example: `https://geoconnex.us/nhdplusv2/reachcode/12040104000071`
 
+For example. 
