@@ -31,3 +31,13 @@ parts:
         - file: quickstart/dataprep
         - file: quickstart/pygeoapi
         - file: quickstart/mintpids
+  - caption: Appendix
+    numbered: false
+    chapters:
+      - file: templates/intro-full
+        sections:
+          - files: templates/sw
+      - file: templates/intro-blocks
+        sections:
+          - files: templates/context
+          - files: templates/hydroaddress
