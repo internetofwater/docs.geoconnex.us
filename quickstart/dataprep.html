@@ -351,6 +351,13 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#using-reference-features-to-add-conextual-information">
    6.2.1. Using reference features to add conextual information
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     6.2.1.1. Example:
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -376,6 +383,13 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#using-reference-features-to-add-conextual-information">
    6.2.1. Using reference features to add conextual information
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     6.2.1.1. Example:
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -392,7 +406,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>To be most useful to the wider water data community, locations should have both descriptive and contextual information in the data published to <a class="reference external" href="http://geoconnex.us">geoconnex.us</a>. Some useful descriptive information could include:</p>
 <ol class="simple">
 <li><p>identifier</p></li>
-<li><p>Location geometry (point or polygon latitude/longitude)</p></li>
+<li><p>Location geometry (point or polygon latitude/longitude, preferably in WGS84)</p></li>
 <li><p>short name</p></li>
 <li><p>long name or description</p></li>
 <li><p>organization</p></li>
@@ -413,10 +427,67 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong>counties</strong>: <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/ref/counties/{5-digit</span> <span class="pre">FIPS}</span></code> e.g. <a class="reference external" href="https://geoconnex.us/ref/counties/06037">https://geoconnex.us/ref/counties/06037</a> for Los Angeles county</p></li>
 <li><p><strong>HUC12</strong>: <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/nhdplusv2/huc12/{12-digit</span> <span class="pre">HUC12</span> <span class="pre">code}</span></code> e.g. <a class="reference external" href="https://geoconnex.us/nhdplusv2/huc12/030300020607">https://geoconnex.us/nhdplusv2/huc12/030300020607</a> for the Morgan Creek HUC12</p></li>
 <li><p><strong>HUC2-10</strong>: <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/ref/hu{02,04,06,08,10}/{2-10</span> <span class="pre">-</span> <span class="pre">digit</span> <span class="pre">HUC2</span> <span class="pre">-</span> <span class="pre">10</span> <span class="pre">code}</span></code>e.g. <a class="reference external" href="https://geoconnex.us/ref/hu08/06010105">https://geoconnex.us/ref/hu08/06010105</a> for the Upper French Broad HUC8</p></li>
-<li><p><strong>NHDPlusV2 comid</strong> example: <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/nhdplusv2/comid/13293480</span></code></p></li>
-<li><p><strong>NHDPlusV2 reachcode</strong> example: <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/nhdplusv2/reachcode/12040104000071</span></code></p></li>
+<li><p><strong>Mainstem River</strong> example: <a class="reference external" href="https://geoconnex.us/ref/mainstems/2104867">https://geoconnex.us/ref/mainstems/2104867</a> for the Hudson River</p></li>
+<li><p><strong>NHDPlusV2 comid</strong> example: <a class="reference external" href="https://geoconnex.us/nhdplusv2/comid/13293480">https://geoconnex.us/nhdplusv2/comid/13293480</a></p></li>
+<li><p><strong>NHDPlusV2 reachcode</strong> example: <a class="reference external" href="https://geoconnex.us/nhdplusv2/reachcode/12040104000071">https://geoconnex.us/nhdplusv2/reachcode/12040104000071</a></p></li>
+<li><p><strong>Secondary Hydrogeologic Regions</strong> example <a class="reference external" href="https://geoconnex.us/ref/sec_hydrg_reg/S50">https://geoconnex.us/ref/sec_hydrg_reg/S50</a></p></li>
 </ul>
-<p>For example.</p>
+<div class="section" id="example">
+<h3><span class="section-number">6.2.1.1. </span>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Below is an example table based on streamgages with data published at the <a class="reference external" href="https://cdec.water.ca.gov/riv_flows.html">California Data Exchange Center</a></p>
+<table class="table" id="example-data">
+<caption><span class="caption-number">Table 6.1 </span><span class="caption-text">Example monitoring location tabular data for geoconnex</span><a class="headerlink" href="#example-data" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>uri</p></th>
+<th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>organization</p></th>
+<th class="head"><p>data_url</p></th>
+<th class="head"><p>latitude</p></th>
+<th class="head"><p>longitude</p></th>
+<th class="head"><p>reachcode_nhdpv2</p></th>
+<th class="head"><p>measure_nhdpv2</p></th>
+<th class="head"><p>mainstem_river</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘<a class="reference external" href="https://geoconnex.us/ca-gage-assessment/gages/AMC">https://geoconnex.us/ca-gage-assessment/gages/AMC</a>’</p></td>
+<td><p>‘AMC’</p></td>
+<td><p>‘Arcade Creek at Winding Way’</p></td>
+<td><p>‘California Department of Water Resources’</p></td>
+<td><p>‘<a class="reference external" href="http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=AMC">http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=AMC</a>’</p></td>
+<td><p>38.645447</p></td>
+<td><p>-121.347407</p></td>
+<td><p>‘18020111000048’</p></td>
+<td><p>0</p></td>
+<td><p>‘<a class="reference external" href="https://geoconnex.us/ref/mainstems/5147">https://geoconnex.us/ref/mainstems/5147</a>’</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘<a class="reference external" href="https://geoconnex.us/ca-gage-assessment/gages/CSW">https://geoconnex.us/ca-gage-assessment/gages/CSW</a>’</p></td>
+<td><p>‘CSW’</p></td>
+<td><p>‘Kings River Below Crescent Weir’</p></td>
+<td><p>‘California Department of Water Resources’</p></td>
+<td><p>‘<a class="reference external" href="http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=CSW">http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=CSW</a>’</p></td>
+<td><p>36.3863018</p></td>
+<td><p>-119.875615</p></td>
+<td><p>‘18030012009243’</p></td>
+<td><p>0</p></td>
+<td><p>‘<a class="reference external" href="https://geoconnex.us/ref/mainstems/5147">https://geoconnex.us/ref/mainstems/5147</a>’</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 
