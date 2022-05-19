@@ -75,7 +75,7 @@ Below is an example table based on streamgages with data published at the [Calif
   - http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=AMC
   - 38.645447
   - -121.347407
-  - 18020111000048
+  - https://geoconnex.us/nhdpv2/reachcode/18020111000048
   - 0
   - https://geoconnex.us/ref/mainstems/5147
   - https://geoconnex.us/ref/gages/1185578
@@ -86,7 +86,7 @@ Below is an example table based on streamgages with data published at the [Calif
   - http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=CSW
   - 36.3863018
   - -119.875615
-  - 18030012009243
+  - https://geoconnex.us/nhdpv2/reachcode/18030012009243
   - 0
   - https://geoconnex.us/ref/mainstems/1796720
   - https://geoconnex.us/ref/gages/1185619 
