@@ -10,7 +10,7 @@ To be most useful to the wider water data community, locations should have both 
 3. short name
 4. long name or description 
 5. organization
-6. URLs where observed or modeled data about the location can be accessed
+6. **URLs where observed or modeled data about the location can be accessed** This is of particularly great interest where available.
 
 
 Contextual information could include:
@@ -51,7 +51,7 @@ By using persistent identifiers for NHDPlus features, you can represent your loc
 
 ## Example: 
 
-Below is an example table based on streamgages with data published at the [California Data Exchange Center](https://cdec.water.ca.gov/riv_flows.html) The table is also available for download as a csv [here](https://github.com/internetofwater/docs.geoconnex.us/raw/main/book/quickstart/dataprep_example.csv).
+Below is an example table based on streamgages with data published at the [California Data Exchange Center](https://cdec.water.ca.gov/riv_flows.html) The table is also available for download as a csv [here](https://github.com/internetofwater/docs.geoconnex.us/raw/main/book/quickstart/dataprep_example.csv). Note the inclusion of descriptive information, links to various reference features, and the `data_url` linking to the CDEC data system entrypoint for each site. 
 
 ```{list-table} Example monitoring location tabular data for geoconnex
 :header-rows: 1
