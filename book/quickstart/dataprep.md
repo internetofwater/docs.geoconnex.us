@@ -51,7 +51,7 @@ By using persistent identifiers for NHDPlus features, you can represent your loc
 
 ## Example: 
 
-Below is an example table based on streamgages with data published at the [California Data Exchange Center](https://cdec.water.ca.gov/riv_flows.html)
+Below is an example table based on streamgages with data published at the [California Data Exchange Center](https://cdec.water.ca.gov/riv_flows.html) The table is also available for download as a csv [here](https://github.com/internetofwater/docs.geoconnex.us/raw/main/book/quickstart/dataprep_example.csv).
 
 ```{list-table} Example monitoring location tabular data for geoconnex
 :header-rows: 1
