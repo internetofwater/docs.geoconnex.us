@@ -1,6 +1,6 @@
 # Identification Scheme
 
-The first thing to do is establish an identification scheme for the features/locations represented in your data. Identifiers should be unique, unambiguous, and persistent to changes. That is, if your organization uses some kind of numbering or nameing system that is vulenrable to periodic changes, identifiers should not be based on that system. Furthermore, to participate in the geoconnex system, identifiers should have the following format:
+The first thing to do is establish an identification scheme for the features/locations represented in your data. Identifiers should be unique, unambiguous, and persistent to changes. That is, if your organization uses some kind of numbering or nameing system that is vulenrable to periodic changes, identifiers should not be based on that system. The real-world feature should have a persistent, stable identifier. Furthermore, to participate in the geoconnex system, identifiers should have the following format:
 
 
 :::{figure-md} idscheme

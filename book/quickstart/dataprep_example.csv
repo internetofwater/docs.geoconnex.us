@@ -1,0 +1,3 @@
+﻿uri,id,name,organization,data_url,latitude,longitude,reachcode_nhdpv2,measure_nhdpv2,mainstem_river,reference_gage
+https://geoconnex.us/ca-gage-assessment/gages/AMC,AMC,Arcade Creek at Winding Way,California Department of Water Resources,http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=AMC,38.645447,-121.347407,1.80201E+13,0,https://geoconnex.us/ref/mainstems/5147,https://geoconnex.us/ref/gages/1185578
+https://geoconnex.us/ca-gage-assessment/gages/CSW,CSW,Kings River Below Crescent Weir,California Department of Water Resources,http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=CSW,36.3863018,-119.875615,1.803E+13,0,https://geoconnex.us/ref/mainstems/1796720,https://geoconnex.us/ref/gages/1185619
