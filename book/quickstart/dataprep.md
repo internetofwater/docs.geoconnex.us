@@ -36,8 +36,8 @@ Wherever possible, contextual data should be in the form of persistent identifie
 ### Using reference locations to link to other data about the same location
 Since many organizations publish data about the same feature, it is useful for these organizations to link their relevant data to a common identifier for that feature. The geoconnex project currently maintains two sets of reference location identifiers:
 
-* **Reference gages** for all surface stream monitoring locations (whether streamgages in the traditional sense or any water sampling site). These take the form `https://geoconnex.us/ref/gages/{7-digit integer}` e.g. https://geoconnex.us/ref/gages/10000001
-* **Reference dams** for all artificial dams impounding water bodies. These take the form `https://geoconnex.us/ref/dams/{7-digit-integer}` e.g. https://geoconnex.us/ref/dams/10000001
+* **Reference gages** for all surface stream monitoring locations (whether streamgages in the traditional sense or any water sampling site). These take the form `https://geoconnex.us/ref/gages/{7-digit integer}` e.g. https://geoconnex.us/ref/gages/1000001
+* **Reference dams** for all artificial dams impounding water bodies. These take the form `https://geoconnex.us/ref/dams/{7-digit-integer}` e.g. https://geoconnex.us/ref/dams/1000001
 
 Note that these identifiers have somewhat arbitrary schemes that are maintained independently of the identifiers of common national "authoritative" datasets such as USGS [Gages II](https://water.usgs.gov/GIS/metadata/usgswrd/XML/gagesII_Sept2011.xml) or the USACE [National Inventory of Dams](https://nid.usace.army.mil/#/) in order to accomodate features that are not (yet) included in these datasets, and to handle persistence in the case where these systems sometimes change identifiers for a given real-world feature.
 
