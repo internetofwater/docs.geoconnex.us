@@ -15,11 +15,9 @@ The preferred way to create the redirects yourself is by following these steps:
 
 1. Fork the [`internetofwater/geoconnex.us`](https://github.com/internetofwater/geoconnex.us) repository.
 2. Add a directory corresponding to the namespace you want in the `namespaces` directory. For example 'namespaces/example-namespace/
-3. Add a set of redirects using the [csv template](https://github.com/internetofwater/geoconnex.us/blob/master/namespaces/example-namespace/example_ids.csv) or a geoJSON file with the exact same field names as the csv template. You may consider adding multiple separate sets of redirects, as long as each set is comprised of <=300,000
+3. Add a set of redirects using the [csv template](https://github.com/internetofwater/geoconnex.us/blob/master/namespaces/example-namespace/example_ids.csv). You may consider adding multiple separate sets of redirects, as long as each set is comprised of <=300,000
 
   * The only required fields are "id" (the geoconnex URI you want), "target" (where the URI should redirect to), and "creator" (your email address).
-  * Optionally include latitude and longitude, lines, or polygons in a geojson file to refer to resources about places with distinct locations on Earth.
-  * Optionally include more complex redirects for content negotiation using the c1_ and c2_ fields.
 
 4. (Optional but strongly suggested) Add a `README.md` detailing contact persons and
    (a subset of) your permanent identifiers in your namespace directory. For an example,
@@ -28,11 +26,11 @@ The preferred way to create the redirects yourself is by following these steps:
    [pull request](https://github.com/internetofwater/geoconnex.us/pulls).
 6. geoconnex.us administrators will review your pull request and merge it if
    everything looks correct. Once the pull request is merged, the changes go
-   live within (a time period)
+   live within ~ 15 minutes.
 
 ### Adding regular expression redirects to geoconnex.us
 
-If you have a collection of >300,000 features that cannot be easily and consistently subdivided, please submit a request for a regular expression redirect. To do so, you may [create an issue of type "Request regex redirect"](https://github.com/internetofwater/geoconnex.us/issues/new?assignees=dblodgett-usgs%2C+ksonda&labels=PID+request&template=request-regex-redirect.md&title=[regex+redirect+request) and fill out the template.
+If you have a collection of >10,000 features that cannot be easily and consistently subdivided, you may wish submit a request for a regular expression redirect. To do so, you may [create an issue of type "Request regex redirect"](https://github.com/internetofwater/geoconnex.us/issues/new?assignees=dblodgett-usgs%2C+ksonda&labels=PID+request&template=request-regex-redirect.md&title=[regex+redirect+request) and fill out the template.
 
 ### Adding geospatial reference features to reference.geoconnex.us
 

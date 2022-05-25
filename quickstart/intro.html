@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.1. Identification Scheme" href="idscheme.html" />
+    <link rel="next" title="6.3. Identification Scheme" href="idscheme.html" />
     <link rel="prev" title="5. Contributing to the Network-Linked Data Index" href="../contributing/nldi.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -194,22 +194,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="idscheme.html">
-     6.1. Identification Scheme
+     6.3. Identification Scheme
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="dataprep.html">
-     6.2. Data preparation
+     6.4. Data preparation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pygeoapi.html">
-     6.3. Publishing a feature service: pygeoapi
+     6.5. Publishing a feature service: pygeoapi
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="mintpids.html">
-     6.4. Mint Persistent Identifiers
+     6.6. Mint Persistent Identifiers
     </a>
    </li>
   </ul>
@@ -342,6 +342,24 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assumptions">
+   6.1. Assumptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-steps">
+   6.2. The steps
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -354,6 +372,24 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assumptions">
+   6.1. Assumptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-steps">
+   6.2. The steps
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -362,14 +398,23 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="quickstart">
 <h1><span class="section-number">6. </span>QUICKSTART<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<p>The next sections guide you through the minimum, fastest steps to participate in geoconnex assuming all you have is a collection of static geospatial files representing locations or areas you have data about. It includes instructions on how to interact with <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> services through GitHub, install open-source software (pygeoapi) available on GitHub, and deploy this software on the internet (using Google Cloud Platform as an example). This quickstart assumes that you have would like to publish a dataset you have available that in some way represents geospatial locations that have data related to water about them. Typical examples could be water quality monitoring sites, wells, streamgages, water utilities, weather stations, dams, and so on.</p>
-<p>By following these steps, you will be able quickly publish <a class="reference external" href="https://docs.geoconnex.us/principles/lc.html">landing pages</a> with <a class="reference external" href="https://docs.geoconnex.us/principles/jsonld.html">embedded JSON-LD</a> about each <a class="reference external" href="https://docs.geoconnex.us/principles/hydrofeatures.html">feature</a> you have data about, and register <a class="reference external" href="https://docs.geoconnex.us/principles/pids.html">persistent identifiers</a> them, allowing them to be harvested into the <a class="reference external" href="https://docs.geoconnex.us/content/intro.html">knowledge graph</a>.</p>
+<p>The next sections guide you through the minimum, fastest steps to participate in <code class="docutils literal notranslate"><span class="pre">geoconnex.us</span></code> with a collection of static geospatial files representing locations or areas you have data about. It includes instructions on how to interact with <a class="reference external" href="http://geoconnex.us">geoconnex.us</a> services through GitHub, install open-source software (pygeoapi) available on GitHub, and deploy this software on the internet (using Google Cloud Platform as an example).</p>
+<div class="section" id="assumptions">
+<h2><span class="section-number">6.1. </span>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h2>
+<p>This quickstart makes some assumptions that may not be true in your case.</p>
+<p>This quickstart assumes that have would like to publish a dataset you have available that in some way represents geospatial locations that have data related to water about them. Typical examples could be water quality monitoring sites, wells, streamgages, water utilities, weather stations, dams, and so on. Presumably, this is true if you are reading this. However, if you don’t want to publish a dataset, then we encourage you to read the <a class="reference external" href="https://www.aspeninstitute.org/publications/internet-of-water/#:~:text=and%20Environment%20Program-,Internet%20of%20Water:%20Sharing%20and%20Integrating%20Water%20Data%20for%20Sustainability,and%20information%20to%20support%20sustainable">Internet of Water report</a> and reconsider!</p>
+<p>This quickstart also assumes that you do not currently have a platform that publishes web content about individual <a class="reference external" href="https://docs.geoconnex.us/principles/hydrofeatures.html">features</a>, and you do not have the resources, expertise, time, or desire to implement one customized to your needs in the near future. It offers <a class="reference external" href="https://docs.geoconnex.us/quickstart/pygeoapi.html">pygeoapi</a> as a free and open-source option to do so. If your data is being published through a web accessible folder or API, then it may be relatively simple for you to create <a class="reference external" href="https://docs.geoconnex.us/principles/lc.html">landing pages</a> using your own web development tooling if you have not already done so. If you already publish some kind of web site/ data portal with feature-specific landing pages, then you only need to modify your landing pages to <a class="reference external" href="https://docs.geoconnex.us/principles/jsonld.html">include structure metadata formatted as JSON-LD</a> and <a class="reference external" href="https://docs.geoconnex.us/principles/pids.html">mint persistent identifiers</a> for those pages.</p>
+</div>
+<div class="section" id="the-steps">
+<h2><span class="section-number">6.2. </span>The steps<a class="headerlink" href="#the-steps" title="Permalink to this headline">¶</a></h2>
+<p>By following this quickstart, you will be able quickly publish <a class="reference external" href="https://docs.geoconnex.us/principles/lc.html">landing pages</a> with <a class="reference external" href="https://docs.geoconnex.us/principles/jsonld.html">embedded JSON-LD</a> about each <a class="reference external" href="https://docs.geoconnex.us/principles/hydrofeatures.html">feature</a> you have data about, and register <a class="reference external" href="https://docs.geoconnex.us/principles/pids.html">persistent identifiers</a> them, allowing them to be harvested into the <a class="reference external" href="https://docs.geoconnex.us/content/intro.html">knowledge graph</a>.</p>
 <ol class="simple">
 <li><p><a class="reference external" href="https://docs.geoconnex.us/quickstart/idscheme.html">Creating an identifier scheme</a></p></li>
 <li><p><a class="reference external" href="https://docs.geoconnex.us/quickstart/dataprep.html">Data preparation</a></p></li>
 <li><p><a class="reference external" href="https://docs.geoconnex.us/quickstart/pygeoapi.html">Deploying landing pages with JSON-LD using pygeoapi</a></p></li>
 <li><p><a class="reference external" href="https://docs.geoconnex.us/quickstart/mintpids.html">Minting persistent identifiers with the geoconnex.us GitHub repository</a></p></li>
 </ol>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -409,7 +454,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="idscheme.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.1. </span>Identification Scheme</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>Identification Scheme</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

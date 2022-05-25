@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6.2. Data preparation &#8212; Guidebook</title>
+    <title>6.4. Data preparation &#8212; Guidebook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.3. Publishing a feature service: pygeoapi" href="pygeoapi.html" />
-    <link rel="prev" title="6.1. Identification Scheme" href="idscheme.html" />
+    <link rel="next" title="6.5. Publishing a feature service: pygeoapi" href="pygeoapi.html" />
+    <link rel="prev" title="6.3. Identification Scheme" href="idscheme.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -194,22 +194,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="idscheme.html">
-     6.1. Identification Scheme
+     6.3. Identification Scheme
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6.2. Data preparation
+     6.4. Data preparation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pygeoapi.html">
-     6.3. Publishing a feature service: pygeoapi
+     6.5. Publishing a feature service: pygeoapi
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="mintpids.html">
-     6.4. Mint Persistent Identifiers
+     6.6. Mint Persistent Identifiers
     </a>
    </li>
   </ul>
@@ -349,29 +349,29 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-contextual-information">
-   6.2.1. Adding contextual information
+   6.4.1. Adding contextual information
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-reference-cataloging-features-to-add-contextual-information">
-     6.2.1.1. Using reference cataloging features to add contextual information
+     6.4.1.1. Using reference cataloging features to add contextual information
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-reference-locations-to-link-to-other-data-about-the-same-location">
-     6.2.1.2. Using reference locations to link to other data about the same location
+     6.4.1.2. Using reference locations to link to other data about the same location
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-nhdplus-identifiers-to-represent-hydrologic-addresses">
-     6.2.1.3. Using NHDPlus identifiers to represent hydrologic addresses
+     6.4.1.3. Using NHDPlus identifiers to represent hydrologic addresses
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example">
-   6.2.2. Example:
+   6.4.2. Example:
   </a>
  </li>
 </ul>
@@ -396,29 +396,29 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-contextual-information">
-   6.2.1. Adding contextual information
+   6.4.1. Adding contextual information
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-reference-cataloging-features-to-add-contextual-information">
-     6.2.1.1. Using reference cataloging features to add contextual information
+     6.4.1.1. Using reference cataloging features to add contextual information
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-reference-locations-to-link-to-other-data-about-the-same-location">
-     6.2.1.2. Using reference locations to link to other data about the same location
+     6.4.1.2. Using reference locations to link to other data about the same location
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-nhdplus-identifiers-to-represent-hydrologic-addresses">
-     6.2.1.3. Using NHDPlus identifiers to represent hydrologic addresses
+     6.4.1.3. Using NHDPlus identifiers to represent hydrologic addresses
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example">
-   6.2.2. Example:
+   6.4.2. Example:
   </a>
  </li>
 </ul>
@@ -431,10 +431,10 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="data-preparation">
-<h1><span class="section-number">6.2. </span>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.4. </span>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h1>
 <p>In this section, we guide through how to create a dataset suitable to use with our open-source tool based on <a class="reference external" href="https://pygeoapi.io">pygeoapi</a>, which will generate landing pages with embedded JSON-LD.</p>
 <div class="section" id="adding-contextual-information">
-<h2><span class="section-number">6.2.1. </span>Adding contextual information<a class="headerlink" href="#adding-contextual-information" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.4.1. </span>Adding contextual information<a class="headerlink" href="#adding-contextual-information" title="Permalink to this headline">¶</a></h2>
 <p>To be most useful to the wider water data community, locations should have both descriptive and contextual information in the data published to <a class="reference external" href="http://geoconnex.us">geoconnex.us</a>. Some useful descriptive information could include:</p>
 <ol class="simple">
 <li><p>identifier</p></li>
@@ -453,7 +453,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>for surface water sites, the <a class="reference external" href="https://github.com/internetofwater/docs.geoconnex.us/raw/main/book/hydroaddress.pdf">hydrologic address</a> on the <a class="reference external" href="https://www.usgs.gov/national-hydrography/national-hydrography-dataset">National Hydrography Dataset</a> stream network</p></li>
 </ol>
 <div class="section" id="using-reference-cataloging-features-to-add-contextual-information">
-<h3><span class="section-number">6.2.1.1. </span>Using reference cataloging features to add contextual information<a class="headerlink" href="#using-reference-cataloging-features-to-add-contextual-information" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.4.1.1. </span>Using reference cataloging features to add contextual information<a class="headerlink" href="#using-reference-cataloging-features-to-add-contextual-information" title="Permalink to this headline">¶</a></h3>
 <p>Wherever possible, contextual data should be in the form of persistent identifiers (PIDs) for these features. For example, counties are often given as a name, but spelling errors, capitalization or abbreviation differences, and other ambiguities can lead to barriers to interoperability between datasets that reference counties. In addition, these PIDs are already members of the knowledge graph, making adding your data to the knowledge graph simpler and more meaningful. Some sources for PIDs for these contextual features are provided at <a class="reference external" href="http://reference.geoconnex.us/collections">reference.geoconnex.us/collections</a> . Some common patterns include:</p>
 <ul class="simple">
 <li><p><strong>states</strong>: <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/ref/states/{2-digit</span> <span class="pre">FIPS}</span></code> e.g. <a class="reference external" href="https://geoconnex.us/ref/states/48">https://geoconnex.us/ref/states/48</a> for Texas</p></li>
@@ -465,7 +465,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="using-reference-locations-to-link-to-other-data-about-the-same-location">
-<h3><span class="section-number">6.2.1.2. </span>Using reference locations to link to other data about the same location<a class="headerlink" href="#using-reference-locations-to-link-to-other-data-about-the-same-location" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.4.1.2. </span>Using reference locations to link to other data about the same location<a class="headerlink" href="#using-reference-locations-to-link-to-other-data-about-the-same-location" title="Permalink to this headline">¶</a></h3>
 <p>Since many organizations publish data about the same feature, it is useful for these organizations to link their relevant data to a common identifier for that feature. The geoconnex project currently maintains two sets of reference location identifiers:</p>
 <ul class="simple">
 <li><p><strong>Reference gages</strong> for all surface stream monitoring locations (whether streamgages in the traditional sense or any water sampling site). These take the form <code class="docutils literal notranslate"><span class="pre">https://geoconnex.us/ref/gages/{7-digit</span> <span class="pre">integer}</span></code> e.g. <a class="reference external" href="https://geoconnex.us/ref/gages/1000001">https://geoconnex.us/ref/gages/1000001</a></p></li>
@@ -474,7 +474,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Note that these identifiers have somewhat arbitrary schemes that are maintained independently of the identifiers of common national “authoritative” datasets such as USGS <a class="reference external" href="https://water.usgs.gov/GIS/metadata/usgswrd/XML/gagesII_Sept2011.xml">Gages II</a> or the USACE <a class="reference external" href="https://nid.usace.army.mil/#/">National Inventory of Dams</a> in order to accomodate features that are not (yet) included in these datasets, and to handle persistence in the case where these systems sometimes change identifiers for a given real-world feature.</p>
 </div>
 <div class="section" id="using-nhdplus-identifiers-to-represent-hydrologic-addresses">
-<h3><span class="section-number">6.2.1.3. </span>Using NHDPlus identifiers to represent hydrologic addresses<a class="headerlink" href="#using-nhdplus-identifiers-to-represent-hydrologic-addresses" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.4.1.3. </span>Using NHDPlus identifiers to represent hydrologic addresses<a class="headerlink" href="#using-nhdplus-identifiers-to-represent-hydrologic-addresses" title="Permalink to this headline">¶</a></h3>
 <p>By using persistent identifiers for NHDPlus features, you can represent your locations’ spot on versions of NHDPlus in a way that eliminates ambiguity as to which version of the NHD the address pertains to, as well as reduce common errors such as failing to include leading 0’s in reachcodes.</p>
 <ul class="simple">
 <li><p><strong>NHDPlusV2 comid</strong> example: <a class="reference external" href="https://geoconnex.us/nhdplusv2/comid/13293480">https://geoconnex.us/nhdplusv2/comid/13293480</a></p></li>
@@ -483,7 +483,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="example">
-<h2><span class="section-number">6.2.2. </span>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.4.2. </span>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>Below is an example table based on streamgages with data published at the <a class="reference external" href="https://cdec.water.ca.gov/riv_flows.html">California Data Exchange Center</a> The table is also available for download as a csv <a class="reference external" href="https://github.com/internetofwater/docs.geoconnex.us/raw/main/book/quickstart/dataprep_example.csv">here</a>. Note the inclusion of descriptive information, links to various reference features, and the <code class="docutils literal notranslate"><span class="pre">data_url</span></code> linking to the CDEC data system entrypoint for each site.</p>
 <table class="table" id="example-data">
 <caption><span class="caption-number">Table 6.1 </span><span class="caption-text">Example monitoring location tabular data for geoconnex</span><a class="headerlink" href="#example-data" title="Permalink to this table">¶</a></caption>
@@ -573,13 +573,13 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">6.1. </span>Identification Scheme</p>
+            <p class="prev-next-title"><span class="section-number">6.3. </span>Identification Scheme</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="pygeoapi.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.3. </span>Publishing a feature service: pygeoapi</p>
+        <p class="prev-next-title"><span class="section-number">6.5. </span>Publishing a feature service: pygeoapi</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
