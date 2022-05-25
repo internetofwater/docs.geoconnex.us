@@ -1,0 +1,56 @@
+<script>
+    {
+        "@context": [
+            {
+                "schema": "https://schema.org/",
+                "skos": "http://www.w3.org/2004/02/skos/core#",
+                "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/",
+                "name": "schema:name",
+                "gsp": "http://www.opengis.net/ont/geosparql#",
+                "sameAs": "schema:sameAs",
+                "related": "skos:related",
+                "description": "schema:description",
+                "image": {
+                    "@id": "schema:image",
+                    "@type": "@id"
+                }
+            }
+        ],
+            "@id": "https://geoconnex.us/iow/demo/MA00689",
+                "@type": [
+                    "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature",
+                    "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation"
+                ],
+                    "name": "Quinebaug River",
+                        "description": "Monitoring Location at Quinebaug River",
+                            "hyf:referencedPosition": [
+                                {
+                                    "hyf:HY_IndirectPosition": {
+                                        "hyf:distanceExpression": {
+                                            "hyf:HY_DistanceFromReferent": {
+                                                "hyf:interpolative": 0
+                                            }
+                                        },
+                                        "hyf:distanceDescription": {
+                                            "hyf:HY_DistanceDescription": "upstream"
+                                        },
+                                        "hyf:linearElement": "https://geoconnex.us/nhdplusv2/reachcode/01100001000054"
+                                    }
+                                }
+                            ],
+                                "hyf:HY_HydroLocationType": "hydrometricStation",
+                                    "schema:geoWithin": "https://geoconnex.us/ref/hu08/01100001",
+                                        "geo": {
+            "@type": "schema:GeoCoordinates",
+                "schema:longitude": -72.03888644794775,
+                    "schema:latitude": 42.0838662883585
+        },
+        "gsp:hasGeometry": {
+            "@type": "http://www.opengis.net/ont/sf#Point",
+                "gsp:asWKT": {
+                "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+                    "@value": "POINT (-72.03888644794775 42.0838662883585)"
+            }
+        }
+    }
+  </script>
