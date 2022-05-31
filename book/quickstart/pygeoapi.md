@@ -1,8 +1,6 @@
 # Publishing a feature service: pygeoapi
 
-docker stuff
-config stuff
-Google Cloud stuff
+Follow the instructions on [installing and deploying pygeoapi](https://docs.pygeoapi.io/en/stable/installation.html)
 
 ## Add JSON-LD
 
