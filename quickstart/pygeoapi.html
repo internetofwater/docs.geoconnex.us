@@ -581,14 +581,16 @@ title="Print to PDF"
 <ol class="simple">
 <li><p>Clone this repository on your machine.</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">cgs</span><span class="o">-</span><span class="n">earth</span><span class="o">/</span><span class="n">pygeoapi</span><span class="o">-</span><span class="n">geoconnex</span><span class="o">-</span><span class="n">examples</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">pygeoapi</span><span class="o">-</span><span class="n">geoconnex</span><span class="o">-</span><span class="n">examples</span>
+<!-- -->
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/cgs-earth/pygeoapi-geoconnex-examples.git
+cd pygeoapi-geoconnex-examples
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>Deploy the demonstration (make sure port 5000 is available)</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">up</span>
+<!-- -->
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker compose up
 </pre></div>
 </div>
 <ol class="simple">
@@ -603,84 +605,84 @@ title="Print to PDF"
 <section id="persistent-identifiers">
 <h3><span class="section-number">6.5.1.5. </span>Persistent Identifiers,<a class="headerlink" href="#persistent-identifiers" title="Permalink to this headline">#</a></h3>
 <p>As you explore the feature collections, notice the individual feature HTML resources (e.g. <a class="reference external" href="http://localhost:5000/collections/demo-ckan/items/31">http://localhost:5000/collections/demo-ckan/items/31</a>) and their json-ld versions (e.g. <a class="reference external" href="http://localhost:5000/collections/demo-ckan/items/31?f=jsonld">http://localhost:5000/collections/demo-ckan/items/31?f=jsonld</a>).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;@context&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="s2">&quot;https://schema.org/&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;skos&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;hyf&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:name&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;gsp&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.opengis.net/ont/geosparql#&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;sameAs&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:sameAs&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;related&quot;</span><span class="p">:</span> <span class="s2">&quot;skos:related&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:description&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:image&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;@id&quot;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/collections/demo-ckan/items/31&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation&quot;</span>
-    <span class="p">],</span>
-    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DWR at Gravelly Ford Canal&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Surveying/Benchmark Sites at DWR at Gravelly Ford Canal&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;schema:provider&quot;</span><span class="p">:</span> <span class="s2">&quot;SJRRP&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;hyf:HY_HydroLocationType&quot;</span><span class="p">:</span> <span class="s2">&quot;hydrometricStation&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;sosa:isFeatureOfInterestOf&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;schema:url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.restoresjr.net/science/subsidence-monitoring/&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;sosa:ObservationCollection&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;schema:format&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;application/json&quot;</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;schema:geoWithin&quot;</span><span class="p">:</span> <span class="s2">&quot;https://geoconnex.us/ref/states/06&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;geo&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;schema:GeoCoordinates&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;schema:longitude&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">120.169</span><span class="p">,</span>
-        <span class="s2">&quot;schema:latitude&quot;</span><span class="p">:</span> <span class="mf">36.8078</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;gsp:hasGeometry&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.opengis.net/ont/sf#Point&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;gsp:asWKT&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.opengis.net/ont/geosparql#wktLiteral&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;@value&quot;</span><span class="p">:</span> <span class="s2">&quot;POINT (-120.169 36.8078)&quot;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://schema.org/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;skos&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;hyf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:name&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;gsp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.opengis.net/ont/geosparql#&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:sameAs&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;related&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;skos:related&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:description&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:image&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@id&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:5000/collections/demo-ckan/items/31&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DWR at Gravelly Ford Canal&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Surveying/Benchmark Sites at DWR at Gravelly Ford Canal&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;schema:provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SJRRP&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;hyf:HY_HydroLocationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hydrometricStation&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;sosa:isFeatureOfInterestOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;schema:url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.restoresjr.net/science/subsidence-monitoring/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sosa:ObservationCollection&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;schema:format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;application/json&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;schema:geoWithin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://geoconnex.us/ref/states/06&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:GeoCoordinates&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;schema:longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-120.169</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;schema:latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">36.8078</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;gsp:hasGeometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.opengis.net/ont/sf#Point&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;gsp:asWKT&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.opengis.net/ont/geosparql#wktLiteral&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;@value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POINT (-120.169 36.8078)&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Notice how <code class="docutils literal notranslate"><span class="pre">&quot;&#64;id&quot;</span></code> is the URL for the API call. This can be configured to be an exteral URI instead, such as those <a class="reference external" href="https://docs.geoconnex.us/contributing/pids.html">minted with geoconnex.us</a>. You can then add these identifiers as a field in your data, whether in a local file or at an ESRI or CKAN api endpoint, and then specify this field as the <code class="docutils literal notranslate"><span class="pre">uri_field:</span></code> in the pygeoapi configuration yml file in the <code class="docutils literal notranslate"><span class="pre">providers:</span></code> block, like so:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    demo-ckan:
-        type: collection
-        title: geoconnex landing page demo (CKAN web service)
-        description: Demonstration Geoconnex Landing Pages (from CKAN REST service source)
-        keywords:
-            - Existing Sites
-        template: jsonld/hydrologic-location.jsonld
-        links:
-            - type: application/html
-              rel: canonical
-              title: data source
-              href: https://data.ca.gov/dataset/gsp-monitoring-data/resource/72612518-e45b-4900-9cab-72b8de09c57d
-              hreflang: en-US
-        extents:
-            spatial:
-                bbox: [-170,15,-51,72]
-                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-            temporal:
-                begin: null
-                end: null
-        providers:
-            - type: feature
-              name: CKAN
-              data: https://data.ca.gov/api/3/action/datastore_search?resource_id=72612518-e45b-4900-9cab-72b8de09c57d
-              id_field: EXISTING_INFO_ID
-              uri_field: EXAMPLE_URI_FIELD_RENAME_AS_NECESSARY
-              x_field: LONGITUDE
-              y_field: LATITUDE
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nt">demo-ckan</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collection</span><span class="w"></span>
+<span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoconnex landing page demo (CKAN web service)</span><span class="w"></span>
+<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Demonstration Geoconnex Landing Pages (from CKAN REST service source)</span><span class="w"></span>
+<span class="w">        </span><span class="nt">keywords</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Existing Sites</span><span class="w"></span>
+<span class="w">        </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jsonld/hydrologic-location.jsonld</span><span class="w"></span>
+<span class="w">        </span><span class="nt">links</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">application/html</span><span class="w"></span>
+<span class="w">              </span><span class="nt">rel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">canonical</span><span class="w"></span>
+<span class="w">              </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data source</span><span class="w"></span>
+<span class="w">              </span><span class="nt">href</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://data.ca.gov/dataset/gsp-monitoring-data/resource/72612518-e45b-4900-9cab-72b8de09c57d</span><span class="w"></span>
+<span class="w">              </span><span class="nt">hreflang</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en-US</span><span class="w"></span>
+<span class="w">        </span><span class="nt">extents</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">spatial</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="nt">bbox</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-170</span><span class="p p-Indicator">,</span><span class="nv">15</span><span class="p p-Indicator">,</span><span class="nv">-51</span><span class="p p-Indicator">,</span><span class="nv">72</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">                </span><span class="nt">crs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://www.opengis.net/def/crs/OGC/1.3/CRS84</span><span class="w"></span>
+<span class="w">            </span><span class="nt">temporal</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="nt">begin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"></span>
+<span class="w">                </span><span class="nt">end</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"></span>
+<span class="w">        </span><span class="nt">providers</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">feature</span><span class="w"></span>
+<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CKAN</span><span class="w"></span>
+<span class="w">              </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://data.ca.gov/api/3/action/datastore_search?resource_id=72612518-e45b-4900-9cab-72b8de09c57d</span><span class="w"></span>
+<span class="w">              </span><span class="nt">id_field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXISTING_INFO_ID</span><span class="w"></span>
+<span class="w">              </span><span class="nt">uri_field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXAMPLE_URI_FIELD_RENAME_AS_NECESSARY</span><span class="w"></span>
+<span class="w">              </span><span class="nt">x_field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LONGITUDE</span><span class="w"></span>
+<span class="w">              </span><span class="nt">y_field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LATITUDE</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
