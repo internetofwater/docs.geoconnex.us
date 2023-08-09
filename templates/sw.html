@@ -1,49 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Surface water monitoring locations &#8212; Guidebook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,62 +62,100 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'templates/sw';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="JSON-LD block guidance" href="intro-blocks.html" />
     <link rel="prev" title="Templates" href="intro-full.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint">Under Construction</div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Under Construction</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/geoconnex-logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Guidebook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/geoconnex-logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/geoconnex-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,394 +164,262 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../principles/genprin.html">
-   General Principles
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../principles/hydrofeatures.html">
-     Real-World Features
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../principles/pids.html">
-     Persistent Identifiers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../principles/lc.html">
-     Landing Pages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../principles/jsonld.html">
-     JSON-LD
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../community/community.html">
-   Community
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../principles/genprin.html">General Principles</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../principles/hydrofeatures.html">Real-World Features</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../principles/pids.html">Persistent Identifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../principles/lc.html">Landing Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../principles/jsonld.html">JSON-LD</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Discover and Use graph.geoconnex.us data
- </span>
-</p>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../community/community.html">Community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Discover and Use graph.geoconnex.us data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../content/intro.html">
-   What is in graph.geoconnex.us?
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../content/intro.html">What is in graph.geoconnex.us?</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  How to Contribute
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to Contribute</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../contributing/intro.html">
-   1. Contributing to the geoconnex.us knowledge graph
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../contributing/structured-data.html">
-   2. Publishing structured, linked-data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../contributing/pids.html">
-   3. Registering Persistent Identifiers (PIDs)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../contributing/nldi.html">
-   5. Contributing to the Network-Linked Data Index
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../quickstart/intro.html">
-   6. QUICKSTART
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../quickstart/idscheme.html">
-     6.3. Identification Scheme
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../quickstart/dataprep.html">
-     6.4. Data preparation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../quickstart/pygeoapi.html">
-     6.5. Using pygeoapi to publish data to Geoconnex
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../quickstart/mintpids.html">
-     6.6. Mint Persistent Identifiers
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/intro.html">1. Contributing to the geoconnex.us knowledge graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/structured-data.html">2. Publishing structured, linked-data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/pids.html">3. Registering Persistent Identifiers (PIDs)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../contributing/nldi.html">5. Contributing to the Network-Linked Data Index</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../quickstart/intro.html">6. QUICKSTART</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/idscheme.html">6.3. Identification Scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/dataprep.html">6.4. Data preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/pygeoapi.html">6.5. Using pygeoapi to publish data to Geoconnex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/mintpids.html">6.6. Mint Persistent Identifiers</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro-full.html">
-   Templates
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Surface water monitoring locations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="intro-blocks.html">
-   JSON-LD block guidance
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="context.html">
-     Context
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="hydroaddress.html">
-     Hydrologic Addresses
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro-full.html">Templates</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Surface water monitoring locations</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro-blocks.html">JSON-LD block guidance</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydroaddress.html">Hydrologic Addresses</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/internetofwater/docs.geoconnex.us/main?urlpath=tree/book/templates/sw.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/internetofwater/docs.geoconnex.us" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/internetofwater/docs.geoconnex.us/issues/new?title=Issue%20on%20page%20%2Ftemplates/sw.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/templates/sw.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/internetofwater/docs.geoconnex.us"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/internetofwater/docs.geoconnex.us/issues/new?title=Issue%20on%20page%20%2Ftemplates/sw.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/templates/sw.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
       
-      <li>
-        <a href="../_sources/templates/sw.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
     </div>
+  
 </div>
+</div>
+              
+              
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Surface water monitoring locations</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Surface water monitoring locations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-science-on-schema-org">Datasets (science-on-schema.org)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="surface-water-monitoring-locations">
-<h1>Surface water monitoring locations<a class="headerlink" href="#surface-water-monitoring-locations" title="Permalink to this headline">#</a></h1>
+<h1>Surface water monitoring locations<a class="headerlink" href="#surface-water-monitoring-locations" title="Permalink to this heading">#</a></h1>
 <div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;@context&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -590,7 +507,282 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</details>
 </div>
+<section id="datasets-science-on-schema-org">
+<h2>Datasets (<a class="reference external" href="http://science-on-schema.org">science-on-schema.org</a>)<a class="headerlink" href="#datasets-science-on-schema-org" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;@context&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;https://schema.org/&quot;</span><span class="p">,</span>
+    <span class="p">{</span>      
+      <span class="s2">&quot;prov&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.w3.org/ns/prov#&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;provone&quot;</span><span class="p">:</span> <span class="s2">&quot;http://purl.dataone.org/provone/2015/01/15/ontology#&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;spdx&quot;</span><span class="p">:</span> <span class="s2">&quot;http://spdx.org/rdf/terms#&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset/3300&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;https://registry.identifiers.org/registry/doi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;doi:10.1234/1234567890&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://doi.org/10.1234/1234567890&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sameAs&quot;</span><span class="p">:</span> <span class="s2">&quot;http://doi.org/abcd&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;sameAs&quot;</span><span class="p">:</span> <span class="s2">&quot;https://doi.org/10.1234/1234567890&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;isAccessibleForFree&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.example-data-repository.org/dataset/3300&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Dataset&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Larval krill studies - fluorescence and clearance from ARSV Laurence M. Gould LMG0106, LMG0205 in the Southern Ocean from 2001-2002 (SOGLOBEC project)&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;alternateName&quot;</span><span class="p">:</span> <span class="s2">&quot;larval krill pigments&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;HTML&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;@value&quot;</span><span class="p">:</span> <span class="s2">&quot;&amp;lt;p&amp;gt;&amp;quot;Winter ecology of larval krill: quantifying their interaction with the pack ice habitat&amp;quot;&amp;lt;/p&amp;gt;</span><span class="se">\r\n\r\n</span><span class="s2">&amp;lt;p&amp;gt;The goal of the larval krill studies was to investigate the physiology and ecology of krill larvae associated with the pack ice and the microbial community on which they feed.&amp;lt;/p&amp;gt;</span><span class="se">\r\n\r\n</span><span class="s2">&amp;lt;p&amp;gt;During LMG0106 we occupied two 4-5 day ice stations (Robert and Billy) and sampled several other ice floes opportunistically. We conducted 10 instantaneous growth rate experiments, and 4 whole body clearance time experiments to determine gut passage time (decline in pigment content over time). We also sampled larvae at two additional sites for initial body pigment content (whole body fluorescence), and at 4 sites for condition factor. The under-ice algal community was sampled at one site. Length and stage frequency determinations were also determined.&amp;lt;/p&amp;gt;</span><span class="se">\r\n\r\n</span><span class="s2">&amp;lt;p&amp;gt;We occupied three time-series stations of approximately 1 week each, and in addition opportunistically sampled at times when other activities had priority. Our primary goal during the cruise was to occupy three ice camps or process stations with the intent of thoroughly studying the under-ice environment by SCUBA in conjunction with other projects working topside. &amp;lt;a href=&amp;quot;http://www.ccpo.odu.edu/Research/globec/main_cruises02/lmg0205/report_lmg0205.pdf&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;&amp;lt;em&amp;gt;(from cruise report LMG0205)&amp;lt;/em&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;datePublished&quot;</span><span class="p">:</span> <span class="s2">&quot;2010-02-03&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;DefinedTerm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OCEANS&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;inDefinedTermSet&quot;</span><span class="p">:</span> <span class="s2">&quot;https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://gcmd.earthdata.nasa.gov/kms/concept/91697b7d-8f2b-4954-850e-61d5f61c867d&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;termCode&quot;</span><span class="p">:</span> <span class="s2">&quot;91697b7d-8f2b-4954-850e-61d5f61c867d&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;DefinedTerm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ice core studies&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;inDefinedTermSet&quot;</span><span class="p">:</span> <span class="s2">&quot;https://vocabularyserver.com/cnr/ml/snowterm/en/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://vocabularyserver.com/cnr/ml/snowterm/en/index.php?tema=29330&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;https://registry.identifiers.org/registry/ark&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;ark:/99152/t3v4yo3eeqepj0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://vocabularyserver.com/cnr/ml/snowterm/en/?ark=ark:/99152/t3v4yo3eeqepj0&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;DefinedTerm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Baked Clay&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;inDefinedTermSet&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www2.earthref.org/vocabularies/controlled&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;creator&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;@list&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/person/51159&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dr Langdon Quetin&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.example-data-repository.org/person/51159&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/person/51160&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dr Robin Ross&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.example-data-repository.org/person/51160&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;citation&quot;</span><span class="p">:</span> <span class="s2">&quot;Quetin, L., Ross, R. (2010) Larval krill studies - fluorescence and clearance from ARSV Laurence M. Gould LMG0106, LMG0205 in the Southern Ocean from 2001-2002 (SOGLOBEC project). Example Data Repository. Version 1. doi:10.1234/1234567890 [access date]&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;https://creativecommons.org/licenses/by/4.0/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;temporalCoverage&quot;</span><span class="p">:</span> <span class="s2">&quot;2001-08-06/2002-09-09&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;spatialCoverage&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;geo&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;GeoShape&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;box&quot;</span><span class="p">:</span> <span class="s2">&quot;-68.4817 -75.8183 -65.08 -68.5033&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;additionalProperty&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.wikidata.org/entity/Q4018860&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;well-known text (WKT) representation of geometry&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;POLYGON ((-75.8183 -68.4817, -68.5033 -68.4817, -68.5033 -65.08, -75.8183 -65.08, -75.8183 -68.4817))&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.wikidata.org/entity/Q161779&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Spatial Reference System&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.opengis.net/def/crs/OGC/1.3/CRS84&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;publisher&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Organization&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Data Repository&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.example-data-repository.org&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Organization&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Data Repository&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.example-data-repository.org&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;distribution&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;DataDownload&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;contentUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.example-data-repository.org/dataset/3300/data/larval-krill.tsv&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;encodingFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;text/tab-separated-values&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;datePublished&quot;</span><span class="p">:</span> <span class="s2">&quot;2010-02-03&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;spdx:checksum&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;spdx:Checksum&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;spdx:checksumValue&quot;</span><span class="p">:</span> <span class="s2">&quot;39ae639d33cea4a287198bbcdca5e6856e6607a7c91dc4c54348031be2ad4c51&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;spdx:checksumAlgorithm&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;spdx:checksumAlgorithm_sha256&quot;</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;spdx:Checksum&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;spdx:checksumValue&quot;</span><span class="p">:</span> <span class="s2">&quot;65d3616852dbf7b1a6d4b53b00626032&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;spdx:checksumAlgorithm&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;spdx:checksumAlgorithm_md5&quot;</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;measurementTechnique&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Hand-held plankton net&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Manual Biota Sampler&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;variableMeasured&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20860&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;cruiseid&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;cruise identification&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;unitText&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20861&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;year of experiment&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;unitText&quot;</span><span class="p">:</span> <span class="s2">&quot;calendar year&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20862&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;sample identification: WBC=whole body clearance expt.; WBF=whole body fluorescence on collection&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20863&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;time_sample&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Number of minutes between collection and sampling for pigment content; decline of pigment content with time was used to calculate time to clear the gut of pigment.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;unitText&quot;</span><span class="p">:</span> <span class="s2">&quot;minutes&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20864&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pigment_content&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;pigment content&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;unitText&quot;</span><span class="p">:</span> <span class="s2">&quot;micrograms total chl/grams wet weight&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20865&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;stage_id&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;stage development index of larvae in sample (furcilia = F1-6 = 1-6,  juvenile = J=7)&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20866&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;wet_weight&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;average wet weight/larvae in sample&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;unitText&quot;</span><span class="p">:</span> <span class="s2">&quot;mg&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20874&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;lat&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;latitude, in decimal degrees, North is positive, negative denotes South&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;unitText&quot;</span><span class="p">:</span> <span class="s2">&quot;decimal degrees&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20875&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;lon&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;longitude, in decimal degrees, East is positive, negative denotes West&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;unitText&quot;</span><span class="p">:</span> <span class="s2">&quot;decimal degrees&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20876&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;day_local&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;day of month, local time&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20877&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;month_local&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;month, local time&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20878&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;time_local&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;time of day, local time, using 2400 clock format&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;PropertyValue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;propertyID&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lod.example-data-repository.org/id/dataset-parameter/20879&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;yrday_local&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;local day and decimal time, as 326.5 for the 326th day of the year, or November 22 at 1200 hours (noon)&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;funding&quot;</span><span class="p">:{</span>
+      <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.nsf.gov/awardsearch/showAward?AWD_ID=9909933&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;MonetaryGrant&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;9909933&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;GLOBEC: Winter Ecology of Larval Krill: Quantifying their Interaction with the Pack Ice Habitat&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.nsf.gov/awardsearch/showAward?AWD_ID=9909933&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;funder&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://dx.doi.org/10.13039/100000001&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Organization&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;National Science Foundation&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;http://dx.doi.org/10.13039/100000001&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;https://ror.org/021nxhr62&quot;</span>
+          <span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;prov:wasDerivedFrom&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://doi.org/10.xxxx/Dataset-1&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;schema:isBasedOn&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://doi.org/10.xxxx/Dataset-1&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;prov:wasGeneratedBy&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://example.org/executions/execution-42&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;provone:Execution&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;prov:hadPlan&quot;</span><span class="p">:</span> <span class="s2">&quot;https://somerepository.org/datasets/10.xxxx/Dataset-2.v2/process-script.R&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;prov:used&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://doi.org/10.xxxx/Dataset-1&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3249</span><span class="o">/</span><span class="mf">790142042.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>   <span class="p">},</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>   <span class="s2">&quot;sameAs&quot;</span><span class="p">:</span> <span class="s2">&quot;https://doi.org/10.1234/1234567890&quot;</span><span class="p">,</span>
+<span class="ne">---&gt; </span><span class="mi">19</span>   <span class="s2">&quot;isAccessibleForFree&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>   <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.example-data-repository.org/dataset/3300&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>   <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Dataset&quot;</span><span class="p">,</span>
+
+<span class="ne">NameError</span>: name &#39;true&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -605,7 +797,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./templates"
         },
         predefinedOutput: true
@@ -613,39 +805,92 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="intro-full.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Templates</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro-full.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Templates</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="intro-blocks.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="intro-blocks.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">JSON-LD block guidance</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-science-on-schema-org">Datasets (science-on-schema.org)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By the Internet of Water Coalition<br/>
+  <div class="footer-item">
+    
+<p class="component-author">
+By the Internet of Water Coalition
+</p>
+
+  </div>
   
-      &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <div class="container-lg mt-3">
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div class="container-lg mt-3">
   <div class="row">
     <div class="col-xl-3">
         <div class="footerImages">
@@ -682,20 +927,22 @@ title="Print to PDF"
   The geoconnex.us Guidebook and Knowledge Graph are licensed under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />Creative Commons Zero 1.0</a> (CC0) license. This material is based upon work supported by the U.S. Geological Survey under Grant Nos. G21AP10607 and G21AC10732
 </div>
 
-    </div>
-</p>
-        </footer>
-    </div>
-    
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
