@@ -313,7 +313,7 @@ Note
 <p>Scroll up and down to view elements of the example landing page</p>
 </div>
 </div>
-<iframe width="780" height="500" src="https://geoconnex.us/usgs/monitoring-location/08282300" title="USGS Example"></iframe>
+<iframe width="780" height="500" src="https://waterdata.usgs.gov/monitoring-location/08282300" title="USGS Example"></iframe>
 <p>This location-oriented web resource includes this type of information</p>
 <ul>
 <li><p>“<a href="https://geoconnex.us/ref/monitoring-location/08282300">This is my HTTP identifier</a>”<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p></li>
@@ -801,11 +801,11 @@ Note
 <span id="cb10-17"><a href="#cb10-17"></a>    </span>
 <span id="cb10-18"><a href="#cb10-18"></a>      <span class="fu">{</span></span>
 <span id="cb10-19"><a href="#cb10-19"></a>        <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392020"</span><span class="fu">,</span></span>
-<span id="cb10-20"><a href="#cb10-20"></a>        <span class="er">@type</span><span class="dt">": "</span><span class="er">Place</span><span class="dt">"</span></span>
-<span id="cb10-21"><a href="#cb10-21"></a><span class="dt">      },</span></span>
-<span id="cb10-22"><a href="#cb10-22"></a><span class="dt">      {</span></span>
-<span id="cb10-23"><a href="#cb10-23"></a><span class="dt">        "</span><span class="er">@id</span><span class="dt">": "</span><span class="er">https</span><span class="fu">:</span><span class="er">//geoconnex.us/ref/pws/NC0392045</span><span class="st">",</span></span>
-<span id="cb10-24"><a href="#cb10-24"></a><span class="st">        @type"</span><span class="er">:</span> <span class="st">"Place"</span></span>
+<span id="cb10-20"><a href="#cb10-20"></a>        <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Place"</span></span>
+<span id="cb10-21"><a href="#cb10-21"></a>      <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb10-22"><a href="#cb10-22"></a>      <span class="fu">{</span></span>
+<span id="cb10-23"><a href="#cb10-23"></a>        <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392045"</span><span class="fu">,</span></span>
+<span id="cb10-24"><a href="#cb10-24"></a>        <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Place"</span></span>
 <span id="cb10-25"><a href="#cb10-25"></a>      <span class="fu">}</span></span>
 <span id="cb10-26"><a href="#cb10-26"></a>    <span class="ot">]</span><span class="er">,</span></span>
 <span id="cb10-27"><a href="#cb10-27"></a>    <span class="er">...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -820,8 +820,8 @@ Note
 <p>Sometimes it is impractical to list all applicable reference features, whether or not they are in <a href="https://reference.geoconnex.us" class="uri">https://reference.geoconnex.us</a> or another source. This is common for comprehensive datasets that are all about an entire reference dataset or other another dataset like a hydrofabric, such as datasets summmarizing values to U.S. Counties, or the National Water Model generating values for all NHDPlusV2 COMID flowlines. In this case it is best to declare that the Dataset is <a href="https://schema.org/isBasedOn">isBasedOn</a> the source geospatial fabric. For example, if the example dataset were about all public water systems instead of just the 5 listed, instead of <code>about</code>, we should specify an identifier, name, description, and any URLs for other resources that describe the source fabric and how to interpret it:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb11-1"><a href="#cb11-1"></a><span class="er">...,</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="er">"isBasedOn":</span> <span class="fu">{</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://www.hydroshare.org/resource/9ebc0a0b43b843b9835830ffffdd971e/"</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="st">"name"</span><span class="er">:</span> <span class="st">"U.S. Community Water Systems Service Boundaries, v4.0.0"</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://www.hydroshare.org/resource/9ebc0a0b43b843b9835830ffffdd971e/"</span><span class="fu">,</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="dt">"name"</span><span class="fu">:</span> <span class="st">"U.S. Community Water Systems Service Boundaries, v4.0.0"</span></span>
 <span id="cb11-5"><a href="#cb11-5"></a><span class="st">"description"</span><span class="er">:</span> <span class="st">"This is a layer of water service boundaries for 45,973 community water systems that deliver tap water to 307.7 million people in the US."</span> </span>
 <span id="cb11-6"><a href="#cb11-6"></a><span class="st">"url"</span><span class="er">:</span> <span class="st">"https://github.com/SimpleLab-Inc/wsb"</span></span>
 <span id="cb11-7"><a href="#cb11-7"></a><span class="fu">}</span><span class="er">,</span></span>
@@ -1122,7 +1122,7 @@ Note
 <li id="fn14"><p>for identifiers that are not HTTP URLs<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn15"><p>The actual URL where the resource<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn16"><p>Spatial coverage revers to maximum area extent of where data is about. For Geoconnex purposes, this is not necessary if the “about” elements with links to Geoconnex Reference Features is used<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn17"><p>refers to the first and last time for which data is available. It can be specified using <a href="https://en.wikipedia.org/wiki/ISO_8601#Time_intervals">ISO 8061 interval format</a> (<code>YYYY-MM-DD/YYYY-MM-DD</code>, with the start date first and the end date after the <code>/</code> . It can also include time like so <code>YYYY-MM-DDTHH:MM:SS/YYYY-MM-DDTHH:MM:SS</code> . If the dataset has no end date, as there is an active monitoring program, then this can be indicated like so <code>YYYY-MM-DD/..</code> <a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>refers to the first and last time for which data is available. It can be specified using <a href="https://en.wikipedia.org/wiki/ISO_8601#Time_intervals">ISO 8061 interval format</a> (<code>YYYY-MM-DD/YYYY-MM-DD</code>, with the start date first and the end date after the <code>/</code> . It can also include time like so <code>YYYY-MM-DDTHH:MM:SS/YYYY-MM-DDTHH:MM:SS</code> . If the dataset has no end date, as there is an active monitoring program, then this can be indicated like so <code>YYYY-MM-DD/..</code><a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn18"><p>refers to the minimum intended time spacing between observations in the case of regular time series data<a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn19"><p>These should be geoconnex reference feature URIs. If the locations the dataset is about is not within <a href="https://reference.geoconnex.us/collections" class="uri">https://reference.geoconnex.us/collections</a>, then consider <a href="https://github.com/internetofwater/geoconnex.us/blob/master/CONTRIBUTING.md">creating location-based resources and minting geoconnex identifiers</a>. If the dataset is extensive over a vector feature spatial fabric, like all Census Tracts or HUC12s or NHD Catchments, then this can be a reference to a single reference fabric dataset rather than an array of identifiers for every single feature. If the dataset is extensive over an area but has no particular tie to a particular reference feature set, like a raster dataset, then this can be omitted.<a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
@@ -1707,7 +1707,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb15-212"><a href="#cb15-212"></a>:::</span>
 <span id="cb15-213"><a href="#cb15-213"></a></span>
 <span id="cb15-214"><a href="#cb15-214"></a><span class="in">```{=html}</span></span>
-<span id="cb15-215"><a href="#cb15-215"></a><span class="in">&lt;iframe width="780" height="500" src="https://geoconnex.us/usgs/monitoring-location/08282300" title="USGS Example"&gt;&lt;/iframe&gt;</span></span>
+<span id="cb15-215"><a href="#cb15-215"></a><span class="in">&lt;iframe width="780" height="500" src="https://waterdata.usgs.gov/monitoring-location/08282300" title="USGS Example"&gt;&lt;/iframe&gt;</span></span>
 <span id="cb15-216"><a href="#cb15-216"></a><span class="in">```</span></span>
 <span id="cb15-217"><a href="#cb15-217"></a>This location-oriented web resource includes this type of information</span>
 <span id="cb15-218"><a href="#cb15-218"></a></span>
@@ -1998,12 +1998,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb15-503"><a href="#cb15-503"></a><span class="ss">4.  </span>The dataset's license, which is most easily populated by a URI for the license appropriate for your data. Federal agencies, many state agencies, and academics use open licenses such as those provided by <span class="co">[</span><span class="ot">opendatacommons.org</span><span class="co">](https://opendatacommons.org/licenses/)</span> and <span class="co">[</span><span class="ot">creativecommons.org</span><span class="co">](https://creativecommons.org/licenses)</span>. URIs for licenses are available from <span class="ot">&lt;https://spdx.org/licenses/&gt;</span></span>
 <span id="cb15-504"><a href="#cb15-504"></a><span class="ss">5.  </span>Either <span class="in">`true`</span> or <span class="in">`false`</span> depending on if the dataset is available for free.</span>
 <span id="cb15-505"><a href="#cb15-505"></a><span class="ss">6.  </span>The dataset includes information on a variable. (in schema.org called <span class="co">[</span><span class="ot">variableMeasured</span><span class="co">](https://schema.org/variableMeasured)</span>). Multiple <span class="in">`variableMeasured`</span> can be specified for datasets by using <span class="co">[</span><span class="ot">arrays</span><span class="co">](https://www.w3.org/TR/json-ld11/#example-135-indexing-language-tagged-strings-and-set)</span>, which is useful for datasets that must be downloaded in bulk that include multiple variables of interest. In general it is more clear to specify a "dataset" per <span class="in">`variableMeasured`</span> if the data has different temporal coverage per variable, or can be downloaded on a per-variable basis. Multiple <span class="in">`variableMeasured`</span> can be specified using nested JSON arrays.</span>
-<span id="cb15-506"><a href="#cb15-506"></a><span class="ss">7. </span><span class="in">`@PropertyValue`</span> is a generic type to extend schema.org properties and should just be used as a rule on <span class="in">`variableMeasured`</span> nodes.</span>
+<span id="cb15-506"><a href="#cb15-506"></a><span class="ss">7.  </span><span class="in">`@PropertyValue`</span> is a generic type to extend schema.org properties and should just be used as a rule on <span class="in">`variableMeasured`</span> nodes.</span>
 <span id="cb15-507"><a href="#cb15-507"></a><span class="ss">8.  </span><span class="in">`propertyID`</span> should be a URI where there is a machine-readable resource defines what the variable is. In this case, we are using a Wikidata link to the concept of stream discharge. In general, a good source for URIs is the <span class="co">[</span><span class="ot">ODM2 variable vocabulary</span><span class="co">](http://vocabulary.odm2.org/variablename/)</span>.</span>
 <span id="cb15-508"><a href="#cb15-508"></a><span class="ss">9.  </span>Here <span class="in">`url`</span> points to a human-readable resource describing the variable, in this case, we are using a Wikipedia link to the concept of stream discharge.</span>
-<span id="cb15-509"><a href="#cb15-509"></a><span class="ss">10.  </span>Here we use the units as written in the data source.</span>
-<span id="cb15-510"><a href="#cb15-510"></a><span class="ss">11.  </span>While <span class="in">`name`</span> and <span class="in">`propertyID`</span> specifies the variable as being "discharge" in this case, since multiple data sources might use different words and identifiers for their variables, it can be useful to reference a more general category of variables that we can ue to group variables across sources. We can use identifiers for <span class="co">[</span><span class="ot">QuantityKinds</span><span class="co">](https://qudt.org/schema/qudt/QuantityKind)</span> from QUDT, which we reference with the <span class="in">`qudt-quantkinds`</span> for the prefix as described in the <span class="in">`@context`</span> in @sec-context.</span>
-<span id="cb15-511"><a href="#cb15-511"></a><span class="ss">12.  </span>While <span class="in">`unitText`</span> above specifies the units, since multiple data sources might use different words for the same unit, to improve interoperability we can use identifiers for units provided by QUDT, which we reference with the <span class="in">`qudt-units`</span> vocabulary prefix as described in the <span class="in">`@context`</span> in @sec-context. If units from QUDT are unavailable, first check if <span class="in">`unitText`</span> can be filled with a term from name from http://vocabulary.odm2.org/units/.</span>
+<span id="cb15-509"><a href="#cb15-509"></a><span class="ss">10. </span>Here we use the units as written in the data source.</span>
+<span id="cb15-510"><a href="#cb15-510"></a><span class="ss">11. </span>While <span class="in">`name`</span> and <span class="in">`propertyID`</span> specifies the variable as being "discharge" in this case, since multiple data sources might use different words and identifiers for their variables, it can be useful to reference a more general category of variables that we can ue to group variables across sources. We can use identifiers for <span class="co">[</span><span class="ot">QuantityKinds</span><span class="co">](https://qudt.org/schema/qudt/QuantityKind)</span> from QUDT, which we reference with the <span class="in">`qudt-quantkinds`</span> for the prefix as described in the <span class="in">`@context`</span> in @sec-context.</span>
+<span id="cb15-511"><a href="#cb15-511"></a><span class="ss">12. </span>While <span class="in">`unitText`</span> above specifies the units, since multiple data sources might use different words for the same unit, to improve interoperability we can use identifiers for units provided by QUDT, which we reference with the <span class="in">`qudt-units`</span> vocabulary prefix as described in the <span class="in">`@context`</span> in @sec-context. If units from QUDT are unavailable, first check if <span class="in">`unitText`</span> can be filled with a term from name from http://vocabulary.odm2.org/units/.</span>
 <span id="cb15-512"><a href="#cb15-512"></a><span class="ss">13. </span><span class="in">`measurementTechnique`</span> is meant to be a highly general account of the data generating procedure, and primarily to distinguish between observed and modeled data. It is highly recommended for this to be <span class="in">`model`</span> or <span class="in">`observation`</span>, or if more specificity is required, to restrict these values to the ODM2 <span class="co">[</span><span class="ot">methodType</span><span class="co">](http://vocabulary.odm2.org/methodtype/)</span> vocabulary.</span>
 <span id="cb15-513"><a href="#cb15-513"></a><span class="ss">14. </span><span class="in">`measurementMethod`</span> specifies the method used to generate the data to as great a degree of specificity as possible. Ideally it could a persistent identifier that directs to a machine-readable web resource that unambiguously describes that method. This would look something like this: <span class="in">`"measurementMethod": {"@id": "https://www.nemi.gov/methods/method_summary/4680/"}`</span> In lieu of that, a name, description and URL to human-readable web resource like an explanatory webpage, technical report, standards document, or academic article would be appropriate, as in this example for USGS discharge measurement.</span>
 <span id="cb15-514"><a href="#cb15-514"></a><span class="ss">15. </span><span class="in">`temporal coverage`</span> refers to the first and last time for which data is available. It can be specified using <span class="co">[</span><span class="ot">ISO 8061 interval format</span><span class="co">](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals)</span> (<span class="in">`YYYY-MM-DD/YYYY-MM-DD`</span>, with the start date first and the end date after the <span class="in">`/`</span> . It can also include time like so <span class="in">`YYYY-MM-DDTHH:MM:SS/YYYY-MM-DDTHH:MM:SS`</span> . If the dataset has no end date, as there is an active monitoring program, then this can be indicated like so <span class="in">`YYYY-MM-DD/..`</span> .</span>
@@ -2043,7 +2043,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb15-548"><a href="#cb15-548"></a></span>
 <span id="cb15-549"><a href="#cb15-549"></a><span class="fu">### Dataset-oriented {#sec-data}</span></span>
 <span id="cb15-550"><a href="#cb15-550"></a></span>
-<span id="cb15-551"><a href="#cb15-551"></a>The purpose of the dataset-oriented page is to give enough information about the data available and the area, locations, or features that it is relevant to that a water data user would be able to quickly determine whether and how to download the data after reading. We will use this <span class="co">[</span><span class="ot">data resource about water utility treated water demand that has been published at HydroShare</span><span class="co">](https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/)</span> as an example for the type of content to put in dataset-oriented Geoconnex landing page web resources and how to map that content to embedded JSON-LD documents. </span>
+<span id="cb15-551"><a href="#cb15-551"></a>The purpose of the dataset-oriented page is to give enough information about the data available and the area, locations, or features that it is relevant to that a water data user would be able to quickly determine whether and how to download the data after reading. We will use this <span class="co">[</span><span class="ot">data resource about water utility treated water demand that has been published at HydroShare</span><span class="co">](https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/)</span> as an example for the type of content to put in dataset-oriented Geoconnex landing page web resources and how to map that content to embedded JSON-LD documents.</span>
 <span id="cb15-552"><a href="#cb15-552"></a></span>
 <span id="cb15-553"><a href="#cb15-553"></a>::: callout-note</span>
 <span id="cb15-554"><a href="#cb15-554"></a>Scroll up and down to view elements of the example landing page</span>
@@ -2066,457 +2066,460 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb15-571"><a href="#cb15-571"></a></span>
 <span id="cb15-572"><a href="#cb15-572"></a><span class="ss">-   </span>"My spatial coverage is the bounding box <span class="in">`"35.5463 -79.1235 36.0520 -78.3765"`</span>"<span class="ot">[^16]</span></span>
 <span id="cb15-573"><a href="#cb15-573"></a></span>
-<span id="cb15-574"><a href="#cb15-574"></a><span class="ss">-   </span>"I have data between January 1, 2002 and December 31, 2020" ^<span class="co">[</span><span class="ot">refers to the first and last time for which data is available. It can be specified using [ISO 8061 interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) (`YYYY-MM-DD/YYYY-MM-DD`, with the start date first and the end date after the `/` . It can also include time like so `YYYY-MM-DDTHH:MM:SS/YYYY-MM-DDTHH:MM:SS` . If the dataset has no end date, as there is an active monitoring program, then this can be indicated like so `YYYY-MM-DD/..` </span><span class="co">]</span></span>
+<span id="cb15-574"><a href="#cb15-574"></a><span class="ss">-   </span>"I have data between January 1, 2002 and December 31, 2020" <span class="ot">[^17]</span></span>
 <span id="cb15-575"><a href="#cb15-575"></a></span>
-<span id="cb15-576"><a href="#cb15-576"></a><span class="ss">-   </span>"My data is at a <span class="in">`1`</span> <span class="in">`month`</span> time step frequency" ^<span class="co">[</span><span class="ot">refers to the minimum intended time spacing between observations in the case of regular time series data</span><span class="co">]</span></span>
+<span id="cb15-576"><a href="#cb15-576"></a><span class="ss">-   </span>"My data is at a <span class="in">`1`</span> <span class="in">`month`</span> time step frequency" <span class="ot">[^18]</span></span>
 <span id="cb15-577"><a href="#cb15-577"></a></span>
-<span id="cb15-578"><a href="#cb15-578"></a><span class="ss">-   </span>"I am about the following features":<span class="ot">[^17]</span>.</span>
+<span id="cb15-578"><a href="#cb15-578"></a><span class="ss">-   </span>"I am about the following features":<span class="ot">[^19]</span>.</span>
 <span id="cb15-579"><a href="#cb15-579"></a></span>
 <span id="cb15-580"><a href="#cb15-580"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Raleigh Public Water System</span><span class="co">](https://geoconnex.us/ref/pws/NC0392010)</span></span>
 <span id="cb15-581"><a href="#cb15-581"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Cary Public Water System</span><span class="co">](https://geoconnex.us/ref/pws/NC0392020)</span></span>
 <span id="cb15-582"><a href="#cb15-582"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Durham Public Water System</span><span class="co">](https://geoconnex.us/ref/pws/NC0332010)</span></span>
 <span id="cb15-583"><a href="#cb15-583"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Apex Public Water System</span><span class="co">](https://geoconnex.us/ref/pws/NC0392045)</span></span>
 <span id="cb15-584"><a href="#cb15-584"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Orange Water and Sewer Authority</span><span class="co">](https://geoconnex.us/ref/pws/NC0368010)</span></span>
-<span id="cb15-585"><a href="#cb15-585"></a>    </span>
+<span id="cb15-585"><a href="#cb15-585"></a></span>
 <span id="cb15-586"><a href="#cb15-586"></a><span class="ss">-   </span>"I have the following variables":</span>
-<span id="cb15-587"><a href="#cb15-587"></a><span class="ss">    -   </span>Monthly Water demand measured in units of averaged millions of gallons per day</span>
-<span id="cb15-588"><a href="#cb15-588"></a><span class="ss">    -   </span>Historic Mean monthly water demand over the period of record measured in units of millions of gallons per day</span>
-<span id="cb15-589"><a href="#cb15-589"></a><span class="ss">    -   </span>The monthly water demand divided by historic mean monthly water demand, as a percent</span>
-<span id="cb15-590"><a href="#cb15-590"></a>    </span>
-<span id="cb15-591"><a href="#cb15-591"></a><span class="ss">-   </span>"You can download me <span class="co">[</span><span class="ot">here</span><span class="co">](https://www.hydroshare.org/hsapi/resource/4cf2a4298eca418f980201c1c5505299/)</span> on HydroShare as a zipped csv file"</span>
-<span id="cb15-592"><a href="#cb15-592"></a></span>
-<span id="cb15-593"><a href="#cb15-593"></a><span class="ss">-   </span>"I am accessible for free subject to this <span class="co">[</span><span class="ot">license</span><span class="co">](http://creativecommons.org/licenses/by/4.0/)</span>.</span>
-<span id="cb15-594"><a href="#cb15-594"></a></span>
-<span id="cb15-595"><a href="#cb15-595"></a><span class="ot">[^13]: </span>If a permanent identifier like a DOI is available</span>
-<span id="cb15-596"><a href="#cb15-596"></a></span>
-<span id="cb15-597"><a href="#cb15-597"></a><span class="ot">[^14]: </span>for identifiers that are not HTTP URLs</span>
-<span id="cb15-598"><a href="#cb15-598"></a></span>
-<span id="cb15-599"><a href="#cb15-599"></a><span class="ot">[^15]: </span>The actual URL where the resource</span>
-<span id="cb15-600"><a href="#cb15-600"></a></span>
-<span id="cb15-601"><a href="#cb15-601"></a><span class="ot">[^16]: </span>Spatial coverage revers to maximum area extent of where data is about. For Geoconnex purposes, this is not necessary if the "about" elements with links to Geoconnex Reference Features is used</span>
-<span id="cb15-602"><a href="#cb15-602"></a></span>
-<span id="cb15-603"><a href="#cb15-603"></a><span class="ot">[^17]: </span>These should be geoconnex reference feature URIs. If the locations the dataset is about is not within <span class="ot">&lt;https://reference.geoconnex.us/collections&gt;</span>, then consider <span class="co">[</span><span class="ot">creating location-based resources and minting geoconnex identifiers</span><span class="co">](https://github.com/internetofwater/geoconnex.us/blob/master/CONTRIBUTING.md)</span>. If the dataset is extensive over a vector feature spatial fabric, like all Census Tracts or HUC12s or NHD Catchments, then this can be a reference to a single reference fabric dataset rather than an array of identifiers for every single feature. If the dataset is extensive over an area but has no particular tie to a particular reference feature set, like a raster dataset, then this can be omitted. </span>
-<span id="cb15-604"><a href="#cb15-604"></a></span>
-<span id="cb15-605"><a href="#cb15-605"></a><span class="fu">#### JSON-LD</span></span>
-<span id="cb15-606"><a href="#cb15-606"></a></span>
-<span id="cb15-607"><a href="#cb15-607"></a>Much is similar to the <span class="co">[</span><span class="ot">Datasets guidance for location-oriented web resources</span><span class="co">](#sec-loc-data)</span>, so here we focus on the differences. Note that HydroShare automatically embeds JSON-LD. The JSON-LD examples below vary somewhat from HydroShare's default content to illustrate optional elements that would be useful for Geoconnex that are not currently implemented in HydroShare. </span>
-<span id="cb15-608"><a href="#cb15-608"></a></span>
-<span id="cb15-609"><a href="#cb15-609"></a><span class="fu">##### Identifiers, provenance, license, and distribution.</span></span>
-<span id="cb15-610"><a href="#cb15-610"></a></span>
-<span id="cb15-611"><a href="#cb15-611"></a>For basic identifying and descriptive information, <span class="co">[</span><span class="ot">science-on-schema.org has appropriate guidance</span><span class="co">](https://github.com/ESIPFed/science-on-schema.org/blob/master/examples/dataset/minimal.jsonld)</span>. In this case, note that a specific file download URL has been provided rather than an API endpoint, and that <span class="in">`dc:conformsTo`</span> points to a data dictionary that is supplied at the same web resource.</span>
-<span id="cb15-612"><a href="#cb15-612"></a></span>
-<span id="cb15-613"><a href="#cb15-613"></a><span class="in">``` json</span></span>
-<span id="cb15-614"><a href="#cb15-614"></a>{</span>
-<span id="cb15-615"><a href="#cb15-615"></a>  <span class="st">"@context"</span><span class="op">:</span> {</span>
-<span id="cb15-616"><a href="#cb15-616"></a>    <span class="st">"@vocab"</span><span class="op">:</span> <span class="st">"https://schema.org/"</span><span class="op">,</span> </span>
-<span id="cb15-617"><a href="#cb15-617"></a>    <span class="st">"rdfs"</span><span class="op">:</span> <span class="st">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="op">,</span></span>
-<span id="cb15-618"><a href="#cb15-618"></a>    <span class="st">"dc"</span><span class="op">:</span> <span class="st">"http://purl.org/dc/terms/"</span><span class="op">,</span></span>
-<span id="cb15-619"><a href="#cb15-619"></a>    <span class="st">"qudt"</span><span class="op">:</span> <span class="st">"http://qudt.org/schema/qudt/"</span><span class="op">,</span></span>
-<span id="cb15-620"><a href="#cb15-620"></a>    <span class="st">"qudt-units"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/unit/"</span><span class="op">,</span></span>
-<span id="cb15-621"><a href="#cb15-621"></a>    <span class="st">"qudt-quantkinds"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/quantitykind/"</span><span class="op">,</span></span>
-<span id="cb15-622"><a href="#cb15-622"></a>    <span class="st">"gsp"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/geosparql#"</span><span class="op">,</span></span>
-<span id="cb15-623"><a href="#cb15-623"></a>    <span class="st">"locType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/sitetype"</span><span class="op">,</span></span>
-<span id="cb15-624"><a href="#cb15-624"></a>    <span class="st">"odm2var"</span><span class="op">:</span><span class="st">"http://vocabulary.odm2.org/variablename/"</span><span class="op">,</span></span>
-<span id="cb15-625"><a href="#cb15-625"></a>    <span class="st">"odm2varType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variabletype/"</span><span class="op">,</span></span>
-<span id="cb15-626"><a href="#cb15-626"></a>    <span class="st">"hyf"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/"</span><span class="op">,</span></span>
-<span id="cb15-627"><a href="#cb15-627"></a>    <span class="st">"skos"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType"</span><span class="op">,</span></span>
-<span id="cb15-628"><a href="#cb15-628"></a>    <span class="st">"ssn"</span><span class="op">:</span> <span class="st">"http://www.w3.org/ns/ssn/"</span><span class="op">,</span></span>
-<span id="cb15-629"><a href="#cb15-629"></a>    <span class="st">"ssn-system"</span><span class="op">:</span>  <span class="st">"http://www.w3.org/ns/ssn/systems/"</span></span>
-<span id="cb15-630"><a href="#cb15-630"></a>  }<span class="op">,</span></span>
-<span id="cb15-631"><a href="#cb15-631"></a>  <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span></span>
-<span id="cb15-632"><a href="#cb15-632"></a>  <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://doi.org/10.4211/hs.4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
-<span id="cb15-633"><a href="#cb15-633"></a>  <span class="st">"identifier"</span><span class="op">:</span> <span class="st">"doi:hs.4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
-<span id="cb15-634"><a href="#cb15-634"></a>  <span class="st">"name"</span><span class="op">:</span> <span class="st">"Geoconnex Dataset Example: Data for Triangle Water Supply Dashboard"</span><span class="op">,</span></span>
-<span id="cb15-635"><a href="#cb15-635"></a>  <span class="st">"description"</span><span class="op">:</span> <span class="st">"This is a dataset meant as an example of dataset-level schema.org markup for https://geoconnex.us. It uses as an example data from the NC Triangle Water Supply Dashboard, which collects and visualizes finished water deliveries by water utilities to their service areas in the North Carolina Research Triangle area"</span><span class="op">,</span></span>
-<span id="cb15-636"><a href="#cb15-636"></a>  <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
-<span id="cb15-637"><a href="#cb15-637"></a>  <span class="st">"keywords"</span><span class="op">:</span> [<span class="st">"water demand"</span><span class="op">,</span> <span class="st">"water supply"</span><span class="op">,</span> <span class="st">"geoconnex"</span>]<span class="op">,</span></span>
-<span id="cb15-638"><a href="#cb15-638"></a>  <span class="st">"license"</span><span class="op">:</span> <span class="st">"https://creativecommons.org/licenses/by/4.0/"</span><span class="op">,</span></span>
-<span id="cb15-639"><a href="#cb15-639"></a>  <span class="st">"isAccessibleForFree"</span><span class="op">:</span> <span class="st">"true"</span><span class="op">,</span></span>
-<span id="cb15-640"><a href="#cb15-640"></a>     <span class="st">"distribution"</span><span class="op">:</span> [                                                                                       </span>
-<span id="cb15-641"><a href="#cb15-641"></a>     {</span>
-<span id="cb15-642"><a href="#cb15-642"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"DataDownload"</span><span class="op">,</span> </span>
-<span id="cb15-643"><a href="#cb15-643"></a>      <span class="st">"name"</span><span class="op">:</span> <span class="st">"HydroShare file URL"</span> </span>
-<span id="cb15-644"><a href="#cb15-644"></a>      <span class="st">"contentUrl"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/data/contents/demand_over_time.csv"</span><span class="op">,</span>    </span>
-<span id="cb15-645"><a href="#cb15-645"></a>      <span class="st">"encodingFormat"</span><span class="op">:</span> [<span class="st">"text/csv"</span>]<span class="op">,</span>                                                        </span>
-<span id="cb15-646"><a href="#cb15-646"></a>      <span class="st">"dc:conformsTo"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/data/contents/dataDictionary.xlsx"</span>   </span>
-<span id="cb15-647"><a href="#cb15-647"></a>      }<span class="op">,</span></span>
-<span id="cb15-648"><a href="#cb15-648"></a>      <span class="op">...</span></span>
-<span id="cb15-649"><a href="#cb15-649"></a><span class="vs">```</span></span>
-<span id="cb15-650"><a href="#cb15-650"></a></span>
-<span id="cb15-651"><a href="#cb15-651"></a><span class="vs">##### Variables and Methods</span></span>
-<span id="cb15-652"><a href="#cb15-652"></a><span class="vs">Again, follows the [dataset guidance](#sec-loc-data). In the example below, multiple `</span><span class="fu">variableMeasured</span><span class="vs">` are specified using a nested array. Other differences to point out:</span></span>
-<span id="cb15-653"><a href="#cb15-653"></a></span>
-<span id="cb15-654"><a href="#cb15-654"></a><span class="vs">- The unit of "million gallons per day" is not available from the QUDT units vocabulary. It is in the [ODM2 units codelist](http://vocabulary.odm2.org/units/), so we populate `</span><span class="fu">unitCode</span><span class="vs">` with the url listed there. </span></span>
-<span id="cb15-655"><a href="#cb15-655"></a><span class="vs">- The measurementMethod for both variables, which are simply different aggregation statistics for the same variable, do not have known web resources or specific identifiers available, and so use `</span><span class="fu">description</span><span class="vs">` to clarify the method.</span></span>
-<span id="cb15-656"><a href="#cb15-656"></a></span>
-<span id="cb15-657"><a href="#cb15-657"></a><span class="vs">```</span> json</span>
-<span id="cb15-658"><a href="#cb15-658"></a><span class="op">...,</span></span>
-<span id="cb15-659"><a href="#cb15-659"></a>   <span class="st">"variableMeasured"</span><span class="op">:</span> [</span>
-<span id="cb15-660"><a href="#cb15-660"></a>   {                                                                                      </span>
-<span id="cb15-661"><a href="#cb15-661"></a>   <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span>                                                                                 </span>
-<span id="cb15-662"><a href="#cb15-662"></a>   <span class="st">"name"</span><span class="op">:</span> <span class="st">"water demand"</span><span class="op">,</span>                                                                                    </span>
-<span id="cb15-663"><a href="#cb15-663"></a>   <span class="st">"description"</span><span class="op">:</span> <span class="st">"treated water delivered to distribution system"</span><span class="op">,</span>                                                   </span>
-<span id="cb15-664"><a href="#cb15-664"></a>   <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span>                                                  </span>
-<span id="cb15-665"><a href="#cb15-665"></a>   <span class="st">"url"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span>     </span>
-<span id="cb15-666"><a href="#cb15-666"></a>   <span class="st">"unitText"</span><span class="op">:</span> <span class="st">"million gallons per day"</span><span class="op">,</span></span>
-<span id="cb15-667"><a href="#cb15-667"></a>   <span class="st">"qudt:hasQuantityKind"</span><span class="op">:</span> <span class="st">"qudt-quantkinds:VolumeFlowRate"</span><span class="op">,</span>                                                  </span>
-<span id="cb15-668"><a href="#cb15-668"></a>   <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&amp;id=1125579048"</span><span class="op">,</span>        </span>
-<span id="cb15-669"><a href="#cb15-669"></a>   <span class="st">"measurementTechnique"</span><span class="op">:</span> <span class="st">"observation"</span><span class="op">,</span>                                                      </span>
-<span id="cb15-670"><a href="#cb15-670"></a>   <span class="st">"measurementMethod"</span><span class="op">:</span> {                                                                                     </span>
-<span id="cb15-671"><a href="#cb15-671"></a>     <span class="st">"name"</span><span class="op">:</span><span class="st">"water meter"</span><span class="op">,</span></span>
-<span id="cb15-672"><a href="#cb15-672"></a>     <span class="st">"description"</span><span class="op">:</span> <span class="st">"metered bulk value, accumlated over one month"</span><span class="op">,</span></span>
-<span id="cb15-673"><a href="#cb15-673"></a>     <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.wikidata.org/wiki/Q268503"</span>                                                                   </span>
-<span id="cb15-674"><a href="#cb15-674"></a>     }                                                                                                        </span>
-<span id="cb15-675"><a href="#cb15-675"></a>    }<span class="op">,</span> </span>
-<span id="cb15-676"><a href="#cb15-676"></a>    {                                                                                      </span>
-<span id="cb15-677"><a href="#cb15-677"></a>   <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span>                                                                                </span>
-<span id="cb15-678"><a href="#cb15-678"></a>   <span class="st">"name"</span><span class="op">:</span> <span class="st">"water demand (monthly average)"</span><span class="op">,</span>                                                                                     </span>
-<span id="cb15-679"><a href="#cb15-679"></a>   <span class="st">"description"</span><span class="op">:</span> <span class="st">"average monthly treated water delivered to distribution system"</span><span class="op">,</span>                                                   </span>
-<span id="cb15-680"><a href="#cb15-680"></a>   <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span>                                                   </span>
-<span id="cb15-681"><a href="#cb15-681"></a>   <span class="st">"url"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span>                                              </span>
-<span id="cb15-682"><a href="#cb15-682"></a>   <span class="st">"unitText"</span><span class="op">:</span> <span class="st">"million gallons per day"</span><span class="op">,</span>                                                                       </span>
-<span id="cb15-683"><a href="#cb15-683"></a>   <span class="st">"qudt:hasQuantityKind"</span><span class="op">:</span> <span class="st">"qudt-quantkinds:VolumeFlowRate"</span><span class="op">,</span>                                                </span>
-<span id="cb15-684"><a href="#cb15-684"></a>   <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&amp;id=1125579048"</span><span class="op">,</span>                                            </span>
-<span id="cb15-685"><a href="#cb15-685"></a>   <span class="st">"measurementTechnique"</span><span class="op">:</span> <span class="st">"observation"</span><span class="op">,</span>                                                  </span>
-<span id="cb15-686"><a href="#cb15-686"></a>   <span class="st">"measurementMethod"</span><span class="op">:</span> {                                                                               </span>
-<span id="cb15-687"><a href="#cb15-687"></a>     <span class="st">"name"</span><span class="op">:</span><span class="st">"water meter"</span><span class="op">,</span>                                                   </span>
-<span id="cb15-688"><a href="#cb15-688"></a>     <span class="st">"description"</span><span class="op">:</span> <span class="st">"metered bulk value, average accumlated over each month for multiple years"</span><span class="op">,</span>                   </span>
-<span id="cb15-689"><a href="#cb15-689"></a>     <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.wikidata.org/wiki/Q268503"</span>                                                             </span>
-<span id="cb15-690"><a href="#cb15-690"></a>     }                                                                                                    </span>
-<span id="cb15-691"><a href="#cb15-691"></a>    }<span class="op">,</span></span>
-<span id="cb15-692"><a href="#cb15-692"></a>    ]<span class="op">,</span></span>
-<span id="cb15-693"><a href="#cb15-693"></a>   <span class="st">"temporalCoverage"</span><span class="op">:</span> <span class="st">"2002-01-01/2020-12-31"</span><span class="op">,</span>                                                                     </span>
-<span id="cb15-694"><a href="#cb15-694"></a>   <span class="st">"ssn-system:frequency"</span><span class="op">:</span> {                                                                                </span>
-<span id="cb15-695"><a href="#cb15-695"></a>     <span class="st">"value"</span><span class="op">:</span> <span class="st">"1"</span><span class="op">,</span>                                                                                        </span>
-<span id="cb15-696"><a href="#cb15-696"></a>     <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"qudt-units:Month"</span>                                                                         </span>
-<span id="cb15-697"><a href="#cb15-697"></a>   }<span class="op">,</span></span>
-<span id="cb15-698"><a href="#cb15-698"></a>   </span>
-<span id="cb15-699"><a href="#cb15-699"></a><span class="vs">```</span></span>
-<span id="cb15-700"><a href="#cb15-700"></a></span>
-<span id="cb15-701"><a href="#cb15-701"></a></span>
-<span id="cb15-702"><a href="#cb15-702"></a><span class="vs">##### Geoconnex Reference Feature Links and Spatial Coverage</span></span>
-<span id="cb15-703"><a href="#cb15-703"></a></span>
-<span id="cb15-704"><a href="#cb15-704"></a><span class="vs">Unlike the location-based example, where a location is explicitly the `</span><span class="fu">subjectOf</span><span class="vs">` the dataset, here, the dataset must be described as being `</span><span class="fu">about</span><span class="vs">` certain features. If the dataset is not explicitly about any discrete features, such as raster datasets, then a Spatial Coverage should be specified.</span></span>
-<span id="cb15-705"><a href="#cb15-705"></a></span>
-<span id="cb15-706"><a href="#cb15-706"></a><span class="vs">Using the `</span><span class="fu">about</span><span class="vs">` construction, a single geoconnex URI or an array of multiple can be constructed. In the below example, multiple are used. Note the nesting of nodes within the array so that each URI has an `</span>@<span class="fu">id</span><span class="vs">` keyword and is `</span>@<span class="fu">type</span><span class="vs">` `</span><span class="fu">Place</span><span class="vs">`. In this example, URIs from the geoconnex [reference features set for Public Water Systems](https://reference.geoconnex.us/collections/pws) are used.</span></span>
-<span id="cb15-707"><a href="#cb15-707"></a></span>
+<span id="cb15-587"><a href="#cb15-587"></a></span>
+<span id="cb15-588"><a href="#cb15-588"></a><span class="ss">    -   </span>Monthly Water demand measured in units of averaged millions of gallons per day</span>
+<span id="cb15-589"><a href="#cb15-589"></a><span class="ss">    -   </span>Historic Mean monthly water demand over the period of record measured in units of millions of gallons per day</span>
+<span id="cb15-590"><a href="#cb15-590"></a><span class="ss">    -   </span>The monthly water demand divided by historic mean monthly water demand, as a percent</span>
+<span id="cb15-591"><a href="#cb15-591"></a></span>
+<span id="cb15-592"><a href="#cb15-592"></a><span class="ss">-   </span>"You can download me <span class="co">[</span><span class="ot">here</span><span class="co">](https://www.hydroshare.org/hsapi/resource/4cf2a4298eca418f980201c1c5505299/)</span> on HydroShare as a zipped csv file"</span>
+<span id="cb15-593"><a href="#cb15-593"></a></span>
+<span id="cb15-594"><a href="#cb15-594"></a><span class="ss">-   </span>"I am accessible for free subject to this <span class="co">[</span><span class="ot">license</span><span class="co">](http://creativecommons.org/licenses/by/4.0/)</span>.</span>
+<span id="cb15-595"><a href="#cb15-595"></a></span>
+<span id="cb15-596"><a href="#cb15-596"></a><span class="ot">[^13]: </span>If a permanent identifier like a DOI is available</span>
+<span id="cb15-597"><a href="#cb15-597"></a></span>
+<span id="cb15-598"><a href="#cb15-598"></a><span class="ot">[^14]: </span>for identifiers that are not HTTP URLs</span>
+<span id="cb15-599"><a href="#cb15-599"></a></span>
+<span id="cb15-600"><a href="#cb15-600"></a><span class="ot">[^15]: </span>The actual URL where the resource</span>
+<span id="cb15-601"><a href="#cb15-601"></a></span>
+<span id="cb15-602"><a href="#cb15-602"></a><span class="ot">[^16]: </span>Spatial coverage revers to maximum area extent of where data is about. For Geoconnex purposes, this is not necessary if the "about" elements with links to Geoconnex Reference Features is used</span>
+<span id="cb15-603"><a href="#cb15-603"></a></span>
+<span id="cb15-604"><a href="#cb15-604"></a><span class="ot">[^17]: </span>refers to the first and last time for which data is available. It can be specified using <span class="co">[</span><span class="ot">ISO 8061 interval format</span><span class="co">](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals)</span> (<span class="in">`YYYY-MM-DD/YYYY-MM-DD`</span>, with the start date first and the end date after the <span class="in">`/`</span> . It can also include time like so <span class="in">`YYYY-MM-DDTHH:MM:SS/YYYY-MM-DDTHH:MM:SS`</span> . If the dataset has no end date, as there is an active monitoring program, then this can be indicated like so <span class="in">`YYYY-MM-DD/..`</span></span>
+<span id="cb15-605"><a href="#cb15-605"></a></span>
+<span id="cb15-606"><a href="#cb15-606"></a><span class="ot">[^18]: </span>refers to the minimum intended time spacing between observations in the case of regular time series data</span>
+<span id="cb15-607"><a href="#cb15-607"></a></span>
+<span id="cb15-608"><a href="#cb15-608"></a><span class="ot">[^19]: </span>These should be geoconnex reference feature URIs. If the locations the dataset is about is not within <span class="ot">&lt;https://reference.geoconnex.us/collections&gt;</span>, then consider <span class="co">[</span><span class="ot">creating location-based resources and minting geoconnex identifiers</span><span class="co">](https://github.com/internetofwater/geoconnex.us/blob/master/CONTRIBUTING.md)</span>. If the dataset is extensive over a vector feature spatial fabric, like all Census Tracts or HUC12s or NHD Catchments, then this can be a reference to a single reference fabric dataset rather than an array of identifiers for every single feature. If the dataset is extensive over an area but has no particular tie to a particular reference feature set, like a raster dataset, then this can be omitted.</span>
+<span id="cb15-609"><a href="#cb15-609"></a></span>
+<span id="cb15-610"><a href="#cb15-610"></a><span class="fu">#### JSON-LD</span></span>
+<span id="cb15-611"><a href="#cb15-611"></a></span>
+<span id="cb15-612"><a href="#cb15-612"></a>Much is similar to the <span class="co">[</span><span class="ot">Datasets guidance for location-oriented web resources</span><span class="co">](#sec-loc-data)</span>, so here we focus on the differences. Note that HydroShare automatically embeds JSON-LD. The JSON-LD examples below vary somewhat from HydroShare's default content to illustrate optional elements that would be useful for Geoconnex that are not currently implemented in HydroShare.</span>
+<span id="cb15-613"><a href="#cb15-613"></a></span>
+<span id="cb15-614"><a href="#cb15-614"></a><span class="fu">##### Identifiers, provenance, license, and distribution.</span></span>
+<span id="cb15-615"><a href="#cb15-615"></a></span>
+<span id="cb15-616"><a href="#cb15-616"></a>For basic identifying and descriptive information, <span class="co">[</span><span class="ot">science-on-schema.org has appropriate guidance</span><span class="co">](https://github.com/ESIPFed/science-on-schema.org/blob/master/examples/dataset/minimal.jsonld)</span>. In this case, note that a specific file download URL has been provided rather than an API endpoint, and that <span class="in">`dc:conformsTo`</span> points to a data dictionary that is supplied at the same web resource.</span>
+<span id="cb15-617"><a href="#cb15-617"></a></span>
+<span id="cb15-618"><a href="#cb15-618"></a><span class="in">``` json</span></span>
+<span id="cb15-619"><a href="#cb15-619"></a>{</span>
+<span id="cb15-620"><a href="#cb15-620"></a>  <span class="st">"@context"</span><span class="op">:</span> {</span>
+<span id="cb15-621"><a href="#cb15-621"></a>    <span class="st">"@vocab"</span><span class="op">:</span> <span class="st">"https://schema.org/"</span><span class="op">,</span> </span>
+<span id="cb15-622"><a href="#cb15-622"></a>    <span class="st">"rdfs"</span><span class="op">:</span> <span class="st">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="op">,</span></span>
+<span id="cb15-623"><a href="#cb15-623"></a>    <span class="st">"dc"</span><span class="op">:</span> <span class="st">"http://purl.org/dc/terms/"</span><span class="op">,</span></span>
+<span id="cb15-624"><a href="#cb15-624"></a>    <span class="st">"qudt"</span><span class="op">:</span> <span class="st">"http://qudt.org/schema/qudt/"</span><span class="op">,</span></span>
+<span id="cb15-625"><a href="#cb15-625"></a>    <span class="st">"qudt-units"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/unit/"</span><span class="op">,</span></span>
+<span id="cb15-626"><a href="#cb15-626"></a>    <span class="st">"qudt-quantkinds"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/quantitykind/"</span><span class="op">,</span></span>
+<span id="cb15-627"><a href="#cb15-627"></a>    <span class="st">"gsp"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/geosparql#"</span><span class="op">,</span></span>
+<span id="cb15-628"><a href="#cb15-628"></a>    <span class="st">"locType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/sitetype"</span><span class="op">,</span></span>
+<span id="cb15-629"><a href="#cb15-629"></a>    <span class="st">"odm2var"</span><span class="op">:</span><span class="st">"http://vocabulary.odm2.org/variablename/"</span><span class="op">,</span></span>
+<span id="cb15-630"><a href="#cb15-630"></a>    <span class="st">"odm2varType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variabletype/"</span><span class="op">,</span></span>
+<span id="cb15-631"><a href="#cb15-631"></a>    <span class="st">"hyf"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/"</span><span class="op">,</span></span>
+<span id="cb15-632"><a href="#cb15-632"></a>    <span class="st">"skos"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType"</span><span class="op">,</span></span>
+<span id="cb15-633"><a href="#cb15-633"></a>    <span class="st">"ssn"</span><span class="op">:</span> <span class="st">"http://www.w3.org/ns/ssn/"</span><span class="op">,</span></span>
+<span id="cb15-634"><a href="#cb15-634"></a>    <span class="st">"ssn-system"</span><span class="op">:</span>  <span class="st">"http://www.w3.org/ns/ssn/systems/"</span></span>
+<span id="cb15-635"><a href="#cb15-635"></a>  }<span class="op">,</span></span>
+<span id="cb15-636"><a href="#cb15-636"></a>  <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span></span>
+<span id="cb15-637"><a href="#cb15-637"></a>  <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://doi.org/10.4211/hs.4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
+<span id="cb15-638"><a href="#cb15-638"></a>  <span class="st">"identifier"</span><span class="op">:</span> <span class="st">"doi:hs.4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
+<span id="cb15-639"><a href="#cb15-639"></a>  <span class="st">"name"</span><span class="op">:</span> <span class="st">"Geoconnex Dataset Example: Data for Triangle Water Supply Dashboard"</span><span class="op">,</span></span>
+<span id="cb15-640"><a href="#cb15-640"></a>  <span class="st">"description"</span><span class="op">:</span> <span class="st">"This is a dataset meant as an example of dataset-level schema.org markup for https://geoconnex.us. It uses as an example data from the NC Triangle Water Supply Dashboard, which collects and visualizes finished water deliveries by water utilities to their service areas in the North Carolina Research Triangle area"</span><span class="op">,</span></span>
+<span id="cb15-641"><a href="#cb15-641"></a>  <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
+<span id="cb15-642"><a href="#cb15-642"></a>  <span class="st">"keywords"</span><span class="op">:</span> [<span class="st">"water demand"</span><span class="op">,</span> <span class="st">"water supply"</span><span class="op">,</span> <span class="st">"geoconnex"</span>]<span class="op">,</span></span>
+<span id="cb15-643"><a href="#cb15-643"></a>  <span class="st">"license"</span><span class="op">:</span> <span class="st">"https://creativecommons.org/licenses/by/4.0/"</span><span class="op">,</span></span>
+<span id="cb15-644"><a href="#cb15-644"></a>  <span class="st">"isAccessibleForFree"</span><span class="op">:</span> <span class="st">"true"</span><span class="op">,</span></span>
+<span id="cb15-645"><a href="#cb15-645"></a>     <span class="st">"distribution"</span><span class="op">:</span> [                                                                                       </span>
+<span id="cb15-646"><a href="#cb15-646"></a>     {</span>
+<span id="cb15-647"><a href="#cb15-647"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"DataDownload"</span><span class="op">,</span> </span>
+<span id="cb15-648"><a href="#cb15-648"></a>      <span class="st">"name"</span><span class="op">:</span> <span class="st">"HydroShare file URL"</span> </span>
+<span id="cb15-649"><a href="#cb15-649"></a>      <span class="st">"contentUrl"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/data/contents/demand_over_time.csv"</span><span class="op">,</span>    </span>
+<span id="cb15-650"><a href="#cb15-650"></a>      <span class="st">"encodingFormat"</span><span class="op">:</span> [<span class="st">"text/csv"</span>]<span class="op">,</span>                                                        </span>
+<span id="cb15-651"><a href="#cb15-651"></a>      <span class="st">"dc:conformsTo"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/data/contents/dataDictionary.xlsx"</span>   </span>
+<span id="cb15-652"><a href="#cb15-652"></a>      }<span class="op">,</span></span>
+<span id="cb15-653"><a href="#cb15-653"></a>      <span class="op">...</span></span>
+<span id="cb15-654"><a href="#cb15-654"></a><span class="vs">```</span></span>
+<span id="cb15-655"><a href="#cb15-655"></a></span>
+<span id="cb15-656"><a href="#cb15-656"></a><span class="vs">##### Variables and Methods</span></span>
+<span id="cb15-657"><a href="#cb15-657"></a></span>
+<span id="cb15-658"><a href="#cb15-658"></a><span class="vs">Again, follows the [dataset guidance](#sec-loc-data). In the example below, multiple `</span><span class="fu">variableMeasured</span><span class="vs">` are specified using a nested array. Other differences to point out:</span></span>
+<span id="cb15-659"><a href="#cb15-659"></a></span>
+<span id="cb15-660"><a href="#cb15-660"></a><span class="vs">-   The unit of "million gallons per day" is not available from the QUDT units vocabulary. It is in the [ODM2 units codelist](http://vocabulary.odm2.org/units/), so we populate `</span><span class="fu">unitCode</span><span class="vs">` with the url listed there.</span></span>
+<span id="cb15-661"><a href="#cb15-661"></a><span class="vs">-   The measurementMethod for both variables, which are simply different aggregation statistics for the same variable, do not have known web resources or specific identifiers available, and so use `</span><span class="fu">description</span><span class="vs">` to clarify the method.</span></span>
+<span id="cb15-662"><a href="#cb15-662"></a></span>
+<span id="cb15-663"><a href="#cb15-663"></a><span class="vs">```</span> json</span>
+<span id="cb15-664"><a href="#cb15-664"></a><span class="op">...,</span></span>
+<span id="cb15-665"><a href="#cb15-665"></a>   <span class="st">"variableMeasured"</span><span class="op">:</span> [</span>
+<span id="cb15-666"><a href="#cb15-666"></a>   {                                                                                      </span>
+<span id="cb15-667"><a href="#cb15-667"></a>   <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span>                                                                                 </span>
+<span id="cb15-668"><a href="#cb15-668"></a>   <span class="st">"name"</span><span class="op">:</span> <span class="st">"water demand"</span><span class="op">,</span>                                                                                    </span>
+<span id="cb15-669"><a href="#cb15-669"></a>   <span class="st">"description"</span><span class="op">:</span> <span class="st">"treated water delivered to distribution system"</span><span class="op">,</span>                                                   </span>
+<span id="cb15-670"><a href="#cb15-670"></a>   <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span>                                                  </span>
+<span id="cb15-671"><a href="#cb15-671"></a>   <span class="st">"url"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span>     </span>
+<span id="cb15-672"><a href="#cb15-672"></a>   <span class="st">"unitText"</span><span class="op">:</span> <span class="st">"million gallons per day"</span><span class="op">,</span></span>
+<span id="cb15-673"><a href="#cb15-673"></a>   <span class="st">"qudt:hasQuantityKind"</span><span class="op">:</span> <span class="st">"qudt-quantkinds:VolumeFlowRate"</span><span class="op">,</span>                                                  </span>
+<span id="cb15-674"><a href="#cb15-674"></a>   <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&amp;id=1125579048"</span><span class="op">,</span>        </span>
+<span id="cb15-675"><a href="#cb15-675"></a>   <span class="st">"measurementTechnique"</span><span class="op">:</span> <span class="st">"observation"</span><span class="op">,</span>                                                      </span>
+<span id="cb15-676"><a href="#cb15-676"></a>   <span class="st">"measurementMethod"</span><span class="op">:</span> {                                                                                     </span>
+<span id="cb15-677"><a href="#cb15-677"></a>     <span class="st">"name"</span><span class="op">:</span><span class="st">"water meter"</span><span class="op">,</span></span>
+<span id="cb15-678"><a href="#cb15-678"></a>     <span class="st">"description"</span><span class="op">:</span> <span class="st">"metered bulk value, accumlated over one month"</span><span class="op">,</span></span>
+<span id="cb15-679"><a href="#cb15-679"></a>     <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.wikidata.org/wiki/Q268503"</span>                                                                   </span>
+<span id="cb15-680"><a href="#cb15-680"></a>     }                                                                                                        </span>
+<span id="cb15-681"><a href="#cb15-681"></a>    }<span class="op">,</span> </span>
+<span id="cb15-682"><a href="#cb15-682"></a>    {                                                                                      </span>
+<span id="cb15-683"><a href="#cb15-683"></a>   <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span>                                                                                </span>
+<span id="cb15-684"><a href="#cb15-684"></a>   <span class="st">"name"</span><span class="op">:</span> <span class="st">"water demand (monthly average)"</span><span class="op">,</span>                                                                                     </span>
+<span id="cb15-685"><a href="#cb15-685"></a>   <span class="st">"description"</span><span class="op">:</span> <span class="st">"average monthly treated water delivered to distribution system"</span><span class="op">,</span>                                                   </span>
+<span id="cb15-686"><a href="#cb15-686"></a>   <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span>                                                   </span>
+<span id="cb15-687"><a href="#cb15-687"></a>   <span class="st">"url"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span>                                              </span>
+<span id="cb15-688"><a href="#cb15-688"></a>   <span class="st">"unitText"</span><span class="op">:</span> <span class="st">"million gallons per day"</span><span class="op">,</span>                                                                       </span>
+<span id="cb15-689"><a href="#cb15-689"></a>   <span class="st">"qudt:hasQuantityKind"</span><span class="op">:</span> <span class="st">"qudt-quantkinds:VolumeFlowRate"</span><span class="op">,</span>                                                </span>
+<span id="cb15-690"><a href="#cb15-690"></a>   <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&amp;id=1125579048"</span><span class="op">,</span>                                            </span>
+<span id="cb15-691"><a href="#cb15-691"></a>   <span class="st">"measurementTechnique"</span><span class="op">:</span> <span class="st">"observation"</span><span class="op">,</span>                                                  </span>
+<span id="cb15-692"><a href="#cb15-692"></a>   <span class="st">"measurementMethod"</span><span class="op">:</span> {                                                                               </span>
+<span id="cb15-693"><a href="#cb15-693"></a>     <span class="st">"name"</span><span class="op">:</span><span class="st">"water meter"</span><span class="op">,</span>                                                   </span>
+<span id="cb15-694"><a href="#cb15-694"></a>     <span class="st">"description"</span><span class="op">:</span> <span class="st">"metered bulk value, average accumlated over each month for multiple years"</span><span class="op">,</span>                   </span>
+<span id="cb15-695"><a href="#cb15-695"></a>     <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.wikidata.org/wiki/Q268503"</span>                                                             </span>
+<span id="cb15-696"><a href="#cb15-696"></a>     }                                                                                                    </span>
+<span id="cb15-697"><a href="#cb15-697"></a>    }<span class="op">,</span></span>
+<span id="cb15-698"><a href="#cb15-698"></a>    ]<span class="op">,</span></span>
+<span id="cb15-699"><a href="#cb15-699"></a>   <span class="st">"temporalCoverage"</span><span class="op">:</span> <span class="st">"2002-01-01/2020-12-31"</span><span class="op">,</span>                                                                     </span>
+<span id="cb15-700"><a href="#cb15-700"></a>   <span class="st">"ssn-system:frequency"</span><span class="op">:</span> {                                                                                </span>
+<span id="cb15-701"><a href="#cb15-701"></a>     <span class="st">"value"</span><span class="op">:</span> <span class="st">"1"</span><span class="op">,</span>                                                                                        </span>
+<span id="cb15-702"><a href="#cb15-702"></a>     <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"qudt-units:Month"</span>                                                                         </span>
+<span id="cb15-703"><a href="#cb15-703"></a>   }<span class="op">,</span></span>
+<span id="cb15-704"><a href="#cb15-704"></a>   </span>
+<span id="cb15-705"><a href="#cb15-705"></a><span class="vs">```</span></span>
+<span id="cb15-706"><a href="#cb15-706"></a></span>
+<span id="cb15-707"><a href="#cb15-707"></a><span class="vs">##### Geoconnex Reference Feature Links and Spatial Coverage</span></span>
 <span id="cb15-708"><a href="#cb15-708"></a></span>
-<span id="cb15-709"><a href="#cb15-709"></a><span class="vs">```</span> json</span>
-<span id="cb15-710"><a href="#cb15-710"></a><span class="op">...,</span></span>
-<span id="cb15-711"><a href="#cb15-711"></a><span class="st">"about"</span><span class="op">:</span> [</span>
-<span id="cb15-712"><a href="#cb15-712"></a>      {</span>
-<span id="cb15-713"><a href="#cb15-713"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0332010"</span><span class="op">,</span></span>
-<span id="cb15-714"><a href="#cb15-714"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
-<span id="cb15-715"><a href="#cb15-715"></a>      }<span class="op">,</span></span>
-<span id="cb15-716"><a href="#cb15-716"></a>    </span>
-<span id="cb15-717"><a href="#cb15-717"></a>      {</span>
-<span id="cb15-718"><a href="#cb15-718"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0368010"</span><span class="op">,</span></span>
-<span id="cb15-719"><a href="#cb15-719"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
-<span id="cb15-720"><a href="#cb15-720"></a>      }<span class="op">,</span></span>
-<span id="cb15-721"><a href="#cb15-721"></a>    </span>
-<span id="cb15-722"><a href="#cb15-722"></a>      {</span>
-<span id="cb15-723"><a href="#cb15-723"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392010"</span><span class="op">,</span></span>
-<span id="cb15-724"><a href="#cb15-724"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
-<span id="cb15-725"><a href="#cb15-725"></a>      }<span class="op">,</span></span>
-<span id="cb15-726"><a href="#cb15-726"></a>    </span>
-<span id="cb15-727"><a href="#cb15-727"></a>      {</span>
-<span id="cb15-728"><a href="#cb15-728"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392020"</span><span class="op">,</span></span>
-<span id="cb15-729"><a href="#cb15-729"></a>        @type<span class="st">": "</span>Place<span class="st">"</span></span>
-<span id="cb15-730"><a href="#cb15-730"></a>      }<span class="op">,</span></span>
+<span id="cb15-709"><a href="#cb15-709"></a><span class="vs">Unlike the location-based example, where a location is explicitly the `</span><span class="fu">subjectOf</span><span class="vs">` the dataset, here, the dataset must be described as being `</span><span class="fu">about</span><span class="vs">` certain features. If the dataset is not explicitly about any discrete features, such as raster datasets, then a Spatial Coverage should be specified.</span></span>
+<span id="cb15-710"><a href="#cb15-710"></a></span>
+<span id="cb15-711"><a href="#cb15-711"></a><span class="vs">Using the `</span><span class="fu">about</span><span class="vs">` construction, a single geoconnex URI or an array of multiple can be constructed. In the below example, multiple are used. Note the nesting of nodes within the array so that each URI has an `</span>@<span class="fu">id</span><span class="vs">` keyword and is `</span>@<span class="fu">type</span><span class="vs">` `</span><span class="fu">Place</span><span class="vs">`. In this example, URIs from the geoconnex [reference features set for Public Water Systems](https://reference.geoconnex.us/collections/pws) are used.</span></span>
+<span id="cb15-712"><a href="#cb15-712"></a></span>
+<span id="cb15-713"><a href="#cb15-713"></a><span class="vs">```</span> json</span>
+<span id="cb15-714"><a href="#cb15-714"></a><span class="op">...,</span></span>
+<span id="cb15-715"><a href="#cb15-715"></a><span class="st">"about"</span><span class="op">:</span> [</span>
+<span id="cb15-716"><a href="#cb15-716"></a>      {</span>
+<span id="cb15-717"><a href="#cb15-717"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0332010"</span><span class="op">,</span></span>
+<span id="cb15-718"><a href="#cb15-718"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
+<span id="cb15-719"><a href="#cb15-719"></a>      }<span class="op">,</span></span>
+<span id="cb15-720"><a href="#cb15-720"></a>    </span>
+<span id="cb15-721"><a href="#cb15-721"></a>      {</span>
+<span id="cb15-722"><a href="#cb15-722"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0368010"</span><span class="op">,</span></span>
+<span id="cb15-723"><a href="#cb15-723"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
+<span id="cb15-724"><a href="#cb15-724"></a>      }<span class="op">,</span></span>
+<span id="cb15-725"><a href="#cb15-725"></a>    </span>
+<span id="cb15-726"><a href="#cb15-726"></a>      {</span>
+<span id="cb15-727"><a href="#cb15-727"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392010"</span><span class="op">,</span></span>
+<span id="cb15-728"><a href="#cb15-728"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
+<span id="cb15-729"><a href="#cb15-729"></a>      }<span class="op">,</span></span>
+<span id="cb15-730"><a href="#cb15-730"></a>    </span>
 <span id="cb15-731"><a href="#cb15-731"></a>      {</span>
-<span id="cb15-732"><a href="#cb15-732"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392045"</span><span class="op">,</span></span>
-<span id="cb15-733"><a href="#cb15-733"></a>        @type<span class="st">": "</span>Place<span class="st">"</span></span>
-<span id="cb15-734"><a href="#cb15-734"></a>      }</span>
-<span id="cb15-735"><a href="#cb15-735"></a>    ]<span class="op">,</span></span>
-<span id="cb15-736"><a href="#cb15-736"></a>    <span class="op">...</span></span>
-<span id="cb15-737"><a href="#cb15-737"></a><span class="vs">```</span></span>
-<span id="cb15-738"><a href="#cb15-738"></a></span>
-<span id="cb15-739"><a href="#cb15-739"></a><span class="vs"> To assist in finding reference features, &lt;https://reference.geoconnex.us&gt; allows queries following the [OGC-API Features](https://ogcapi.ogc.org/features/) API standard and the CQL [Common Query Language standard](https://portal.ogc.org/files/96288). </span></span>
-<span id="cb15-740"><a href="#cb15-740"></a></span>
-<span id="cb15-741"><a href="#cb15-741"></a><span class="vs">For example, to find the Geoconnex URI for the Raleigh public water system (PWS), we can construct the URL: </span></span>
+<span id="cb15-732"><a href="#cb15-732"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392020"</span><span class="op">,</span></span>
+<span id="cb15-733"><a href="#cb15-733"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
+<span id="cb15-734"><a href="#cb15-734"></a>      }<span class="op">,</span></span>
+<span id="cb15-735"><a href="#cb15-735"></a>      {</span>
+<span id="cb15-736"><a href="#cb15-736"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392045"</span><span class="op">,</span></span>
+<span id="cb15-737"><a href="#cb15-737"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
+<span id="cb15-738"><a href="#cb15-738"></a>      }</span>
+<span id="cb15-739"><a href="#cb15-739"></a>    ]<span class="op">,</span></span>
+<span id="cb15-740"><a href="#cb15-740"></a>    <span class="op">...</span></span>
+<span id="cb15-741"><a href="#cb15-741"></a><span class="vs">```</span></span>
 <span id="cb15-742"><a href="#cb15-742"></a></span>
-<span id="cb15-743"><a href="#cb15-743"></a><span class="vs">- CQL filter API endpoint for the PWS feature collection &lt;https://reference.geoconnex.us/collections/pws/items&gt;</span></span>
-<span id="cb15-744"><a href="#cb15-744"></a><span class="vs">- filter for name field `</span><span class="fu">pws_name</span><span class="vs">`: &lt;https://reference.geoconnex.us/collections/pws/items?filter=pws_name&gt;</span></span>
-<span id="cb15-745"><a href="#cb15-745"></a><span class="vs">- filter for a name that includes "Raleigh": [https://reference.geoconnex.us/collections/pws/items?filter=pws_name ILIKE '%Raleigh%'](https://reference.geoconnex.us/collections/pws/items?filter=pws_name ILIKE '%Raleigh%')</span></span>
+<span id="cb15-743"><a href="#cb15-743"></a><span class="vs">To assist in finding reference features, &lt;https://reference.geoconnex.us&gt; allows queries following the [OGC-API Features](https://ogcapi.ogc.org/features/) API standard and the CQL [Common Query Language standard](https://portal.ogc.org/files/96288).</span></span>
+<span id="cb15-744"><a href="#cb15-744"></a></span>
+<span id="cb15-745"><a href="#cb15-745"></a><span class="vs">For example, to find the Geoconnex URI for the Raleigh public water system (PWS), we can construct the URL:</span></span>
 <span id="cb15-746"><a href="#cb15-746"></a></span>
-<span id="cb15-747"><a href="#cb15-747"></a><span class="vs">Sometimes it is impossible to use feature URIs because the relevant specific features are not available from &lt;https://reference.geoconnex.us/collections&gt;. If so, feel free to [submit an issue to the geoconnex.us github repository](https://github.com/internetofwater/geoconnex.us/issues/new/choose) requesting a reference feature set. </span></span>
-<span id="cb15-748"><a href="#cb15-748"></a></span>
-<span id="cb15-749"><a href="#cb15-749"></a><span class="vs">Sometimes it is impractical to list all applicable reference features, whether or not they are in &lt;https://reference.geoconnex.us&gt; or another source. This is common for comprehensive datasets that are all about an entire reference dataset or other another dataset like a hydrofabric, such as datasets summmarizing values to U.S. Counties, or the National Water Model generating values for all NHDPlusV2 COMID flowlines. In this case it is best to declare that the Dataset is [isBasedOn](https://schema.org/isBasedOn) the source geospatial fabric. For example, if the example dataset were about all public water systems instead of just the 5 listed, instead of `</span><span class="fu">about</span><span class="vs">`, we should specify an identifier, name, description, and any URLs for other resources that describe the source fabric and how to interpret it:</span></span>
+<span id="cb15-747"><a href="#cb15-747"></a><span class="vs">-   CQL filter API endpoint for the PWS feature collection &lt;https://reference.geoconnex.us/collections/pws/items&gt;</span></span>
+<span id="cb15-748"><a href="#cb15-748"></a><span class="vs">-   filter for name field `</span><span class="fu">pws_name</span><span class="vs">`: &lt;https://reference.geoconnex.us/collections/pws/items?filter=pws_name&gt;</span></span>
+<span id="cb15-749"><a href="#cb15-749"></a><span class="vs">-   filter for a name that includes "Raleigh": [https://reference.geoconnex.us/collections/pws/items?filter=pws_name ILIKE '%Raleigh%'](https://reference.geoconnex.us/collections/pws/items?filter=pws_name%20ILIKE "%Raleigh%")</span></span>
 <span id="cb15-750"><a href="#cb15-750"></a></span>
-<span id="cb15-751"><a href="#cb15-751"></a><span class="vs">```</span> json</span>
-<span id="cb15-752"><a href="#cb15-752"></a><span class="op">...,</span></span>
-<span id="cb15-753"><a href="#cb15-753"></a><span class="st">"isBasedOn"</span><span class="op">:</span> {</span>
-<span id="cb15-754"><a href="#cb15-754"></a><span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/9ebc0a0b43b843b9835830ffffdd971e/"</span></span>
-<span id="cb15-755"><a href="#cb15-755"></a><span class="st">"name"</span><span class="op">:</span> <span class="st">"U.S. Community Water Systems Service Boundaries, v4.0.0"</span></span>
-<span id="cb15-756"><a href="#cb15-756"></a><span class="st">"description"</span><span class="op">:</span> <span class="st">"This is a layer of water service boundaries for 45,973 community water systems that deliver tap water to 307.7 million people in the US."</span> </span>
-<span id="cb15-757"><a href="#cb15-757"></a><span class="st">"url"</span><span class="op">:</span> <span class="st">"https://github.com/SimpleLab-Inc/wsb"</span></span>
-<span id="cb15-758"><a href="#cb15-758"></a>}<span class="op">,</span></span>
-<span id="cb15-759"><a href="#cb15-759"></a><span class="op">...</span></span>
-<span id="cb15-760"><a href="#cb15-760"></a></span>
-<span id="cb15-761"><a href="#cb15-761"></a><span class="vs">```</span></span>
-<span id="cb15-762"><a href="#cb15-762"></a></span>
-<span id="cb15-763"><a href="#cb15-763"></a><span class="vs">Sometimes there are no particular features that a dataset is explicitly about. This is common with remote sensing raster data. In this case, it is best to specify a `</span><span class="fu">spatialCoverage</span><span class="vs">` polygon using WKT encoded geometry: </span></span>
-<span id="cb15-764"><a href="#cb15-764"></a></span>
-<span id="cb15-765"><a href="#cb15-765"></a><span class="vs">```</span> json</span>
-<span id="cb15-766"><a href="#cb15-766"></a>  <span class="st">"spatialCoverage"</span><span class="op">:</span> {</span>
-<span id="cb15-767"><a href="#cb15-767"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span><span class="op">,</span></span>
-<span id="cb15-768"><a href="#cb15-768"></a>    <span class="st">"gsp:hasGeometry"</span><span class="op">:</span> {</span>
-<span id="cb15-769"><a href="#cb15-769"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/sf#MultiPolygon"</span><span class="op">,</span></span>
-<span id="cb15-770"><a href="#cb15-770"></a>      <span class="st">"gsp:asWKT"</span><span class="op">:</span> {</span>
-<span id="cb15-771"><a href="#cb15-771"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/geosparql#wktLiteral"</span><span class="op">,</span></span>
-<span id="cb15-772"><a href="#cb15-772"></a>        <span class="st">"@value"</span><span class="op">:</span> <span class="st">"MULTIPOLYGON (((-85.67957299999999 32.799514, -85.679637 32.822002999999995, -85.67199699999999 32.822063, -85.66421 32.821711, -85.647989 32.82224, -85.627966 32.822331, -85.627781 32.800716, -85.627496 32.778602, -85.635931 32.778656999999995, -85.645034 32.778146, -85.653352 32.778481, -85.67933699999999 32.778239, -85.67936399999999 32.784064, -85.679808 32.792068, -85.67957299999999 32.799514)))"</span></span>
-<span id="cb15-773"><a href="#cb15-773"></a>      }</span>
-<span id="cb15-774"><a href="#cb15-774"></a>    }</span>
-<span id="cb15-775"><a href="#cb15-775"></a>  }</span>
-<span id="cb15-776"><a href="#cb15-776"></a><span class="vs">```</span></span>
-<span id="cb15-777"><a href="#cb15-777"></a></span>
-<span id="cb15-778"><a href="#cb15-778"></a><span class="vs">## Complete Examples{#sec-complete-examples}</span></span>
-<span id="cb15-779"><a href="#cb15-779"></a></span>
-<span id="cb15-780"><a href="#cb15-780"></a><span class="vs">Below are complete examples for the general JSON-LD document types depending on the location or dataset orientation and data type.</span></span>
-<span id="cb15-781"><a href="#cb15-781"></a></span>
-<span id="cb15-782"><a href="#cb15-782"></a><span class="vs">They are viewable together below, or available for download:</span></span>
-<span id="cb15-783"><a href="#cb15-783"></a></span>
-<span id="cb15-784"><a href="#cb15-784"></a><span class="vs">-   [location-oriented example](https://raw.githubusercontent.com/internetofwater/geoconnex-guidance/main/examples/location-complete.jsonld)</span></span>
-<span id="cb15-785"><a href="#cb15-785"></a><span class="vs">-   [dataset-oriented example](https://raw.githubusercontent.com/internetofwater/geoconnex-guidance/main/examples/dataaset-complete.jsonld)</span></span>
+<span id="cb15-751"><a href="#cb15-751"></a><span class="vs">Sometimes it is impossible to use feature URIs because the relevant specific features are not available from &lt;https://reference.geoconnex.us/collections&gt;. If so, feel free to [submit an issue to the geoconnex.us github repository](https://github.com/internetofwater/geoconnex.us/issues/new/choose) requesting a reference feature set.</span></span>
+<span id="cb15-752"><a href="#cb15-752"></a></span>
+<span id="cb15-753"><a href="#cb15-753"></a><span class="vs">Sometimes it is impractical to list all applicable reference features, whether or not they are in &lt;https://reference.geoconnex.us&gt; or another source. This is common for comprehensive datasets that are all about an entire reference dataset or other another dataset like a hydrofabric, such as datasets summmarizing values to U.S. Counties, or the National Water Model generating values for all NHDPlusV2 COMID flowlines. In this case it is best to declare that the Dataset is [isBasedOn](https://schema.org/isBasedOn) the source geospatial fabric. For example, if the example dataset were about all public water systems instead of just the 5 listed, instead of `</span><span class="fu">about</span><span class="vs">`, we should specify an identifier, name, description, and any URLs for other resources that describe the source fabric and how to interpret it:</span></span>
+<span id="cb15-754"><a href="#cb15-754"></a></span>
+<span id="cb15-755"><a href="#cb15-755"></a><span class="vs">```</span> json</span>
+<span id="cb15-756"><a href="#cb15-756"></a><span class="op">...,</span></span>
+<span id="cb15-757"><a href="#cb15-757"></a><span class="st">"isBasedOn"</span><span class="op">:</span> {</span>
+<span id="cb15-758"><a href="#cb15-758"></a><span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/9ebc0a0b43b843b9835830ffffdd971e/"</span><span class="op">,</span></span>
+<span id="cb15-759"><a href="#cb15-759"></a><span class="st">"name"</span><span class="op">:</span> <span class="st">"U.S. Community Water Systems Service Boundaries, v4.0.0"</span></span>
+<span id="cb15-760"><a href="#cb15-760"></a><span class="st">"description"</span><span class="op">:</span> <span class="st">"This is a layer of water service boundaries for 45,973 community water systems that deliver tap water to 307.7 million people in the US."</span> </span>
+<span id="cb15-761"><a href="#cb15-761"></a><span class="st">"url"</span><span class="op">:</span> <span class="st">"https://github.com/SimpleLab-Inc/wsb"</span></span>
+<span id="cb15-762"><a href="#cb15-762"></a>}<span class="op">,</span></span>
+<span id="cb15-763"><a href="#cb15-763"></a><span class="op">...</span></span>
+<span id="cb15-764"><a href="#cb15-764"></a><span class="vs">```</span></span>
+<span id="cb15-765"><a href="#cb15-765"></a></span>
+<span id="cb15-766"><a href="#cb15-766"></a><span class="vs">Sometimes there are no particular features that a dataset is explicitly about. This is common with remote sensing raster data. In this case, it is best to specify a `</span><span class="fu">spatialCoverage</span><span class="vs">` polygon using WKT encoded geometry:</span></span>
+<span id="cb15-767"><a href="#cb15-767"></a></span>
+<span id="cb15-768"><a href="#cb15-768"></a><span class="vs">```</span> json</span>
+<span id="cb15-769"><a href="#cb15-769"></a>  <span class="st">"spatialCoverage"</span><span class="op">:</span> {</span>
+<span id="cb15-770"><a href="#cb15-770"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span><span class="op">,</span></span>
+<span id="cb15-771"><a href="#cb15-771"></a>    <span class="st">"gsp:hasGeometry"</span><span class="op">:</span> {</span>
+<span id="cb15-772"><a href="#cb15-772"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/sf#MultiPolygon"</span><span class="op">,</span></span>
+<span id="cb15-773"><a href="#cb15-773"></a>      <span class="st">"gsp:asWKT"</span><span class="op">:</span> {</span>
+<span id="cb15-774"><a href="#cb15-774"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/geosparql#wktLiteral"</span><span class="op">,</span></span>
+<span id="cb15-775"><a href="#cb15-775"></a>        <span class="st">"@value"</span><span class="op">:</span> <span class="st">"MULTIPOLYGON (((-85.67957299999999 32.799514, -85.679637 32.822002999999995, -85.67199699999999 32.822063, -85.66421 32.821711, -85.647989 32.82224, -85.627966 32.822331, -85.627781 32.800716, -85.627496 32.778602, -85.635931 32.778656999999995, -85.645034 32.778146, -85.653352 32.778481, -85.67933699999999 32.778239, -85.67936399999999 32.784064, -85.679808 32.792068, -85.67957299999999 32.799514)))"</span></span>
+<span id="cb15-776"><a href="#cb15-776"></a>      }</span>
+<span id="cb15-777"><a href="#cb15-777"></a>    }</span>
+<span id="cb15-778"><a href="#cb15-778"></a>  }</span>
+<span id="cb15-779"><a href="#cb15-779"></a><span class="vs">```</span></span>
+<span id="cb15-780"><a href="#cb15-780"></a></span>
+<span id="cb15-781"><a href="#cb15-781"></a><span class="vs">## Complete Examples {#sec-complete-examples}</span></span>
+<span id="cb15-782"><a href="#cb15-782"></a></span>
+<span id="cb15-783"><a href="#cb15-783"></a><span class="vs">Below are complete examples for the general JSON-LD document types depending on the location or dataset orientation and data type.</span></span>
+<span id="cb15-784"><a href="#cb15-784"></a></span>
+<span id="cb15-785"><a href="#cb15-785"></a><span class="vs">They are viewable together below, or available for download:</span></span>
 <span id="cb15-786"><a href="#cb15-786"></a></span>
-<span id="cb15-787"><a href="#cb15-787"></a><span class="vs">### Location-oriented  {#sec-loc-complete-example}</span></span>
-<span id="cb15-788"><a href="#cb15-788"></a></span>
-<span id="cb15-789"><a href="#cb15-789"></a><span class="vs">```</span> json</span>
-<span id="cb15-790"><a href="#cb15-790"></a>{</span>
-<span id="cb15-791"><a href="#cb15-791"></a>  <span class="st">"@context"</span><span class="op">:</span> {</span>
-<span id="cb15-792"><a href="#cb15-792"></a>    <span class="st">"@vocab"</span><span class="op">:</span> <span class="st">"https://schema.org/"</span><span class="op">,</span> </span>
-<span id="cb15-793"><a href="#cb15-793"></a>    <span class="st">"rdfs"</span><span class="op">:</span> <span class="st">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="op">,</span></span>
-<span id="cb15-794"><a href="#cb15-794"></a>    <span class="st">"dc"</span><span class="op">:</span> <span class="st">"http://purl.org/dc/terms/"</span><span class="op">,</span></span>
-<span id="cb15-795"><a href="#cb15-795"></a>    <span class="st">"qudt"</span><span class="op">:</span> <span class="st">"http://qudt.org/schema/qudt/"</span><span class="op">,</span></span>
-<span id="cb15-796"><a href="#cb15-796"></a>    <span class="st">"qudt-units"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/unit/"</span><span class="op">,</span></span>
-<span id="cb15-797"><a href="#cb15-797"></a>    <span class="st">"qudt-quantkinds"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/quantitykind/"</span><span class="op">,</span></span>
-<span id="cb15-798"><a href="#cb15-798"></a>    <span class="st">"gsp"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/geosparql#"</span><span class="op">,</span></span>
-<span id="cb15-799"><a href="#cb15-799"></a>    <span class="st">"locType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/sitetype"</span><span class="op">,</span></span>
-<span id="cb15-800"><a href="#cb15-800"></a>    <span class="st">"odm2var"</span><span class="op">:</span><span class="st">"http://vocabulary.odm2.org/variablename/"</span><span class="op">,</span></span>
-<span id="cb15-801"><a href="#cb15-801"></a>    <span class="st">"odm2varType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variabletype/"</span><span class="op">,</span></span>
-<span id="cb15-802"><a href="#cb15-802"></a>    <span class="st">"hyf"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/"</span><span class="op">,</span></span>
-<span id="cb15-803"><a href="#cb15-803"></a>    <span class="st">"skos"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType"</span><span class="op">,</span></span>
-<span id="cb15-804"><a href="#cb15-804"></a>    <span class="st">"ssn"</span><span class="op">:</span> <span class="st">"http://www.w3.org/ns/ssn/"</span><span class="op">,</span></span>
-<span id="cb15-805"><a href="#cb15-805"></a>    <span class="st">"ssn-system"</span><span class="op">:</span>  <span class="st">"http://www.w3.org/ns/ssn/systems/"</span></span>
-<span id="cb15-806"><a href="#cb15-806"></a>  }<span class="op">,</span></span>
-<span id="cb15-807"><a href="#cb15-807"></a>  <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/usgs/monitoring-location/08282300"</span><span class="op">,</span></span>
-<span id="cb15-808"><a href="#cb15-808"></a>  <span class="st">"@type"</span><span class="op">:</span> [</span>
-<span id="cb15-809"><a href="#cb15-809"></a>    <span class="st">"hyf:HY_HydrometricFeature"</span><span class="op">,</span></span>
-<span id="cb15-810"><a href="#cb15-810"></a>    <span class="st">"hyf:HY_HydroLocation"</span><span class="op">,</span></span>
-<span id="cb15-811"><a href="#cb15-811"></a>    <span class="st">"locType:stream"</span></span>
-<span id="cb15-812"><a href="#cb15-812"></a>  ]<span class="op">,</span></span>
-<span id="cb15-813"><a href="#cb15-813"></a>  <span class="st">"hyf:HydroLocationType"</span><span class="op">:</span> <span class="st">"hydrometric station"</span><span class="op">,</span></span>
-<span id="cb15-814"><a href="#cb15-814"></a>  <span class="st">"sameAs"</span><span class="op">:</span> {</span>
-<span id="cb15-815"><a href="#cb15-815"></a>    <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/gages/1018463"</span></span>
-<span id="cb15-816"><a href="#cb15-816"></a>  }<span class="op">,</span></span>
-<span id="cb15-817"><a href="#cb15-817"></a>  <span class="st">"identifier"</span><span class="op">:</span> {</span>
-<span id="cb15-818"><a href="#cb15-818"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span></span>
-<span id="cb15-819"><a href="#cb15-819"></a>    <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"USGS site number"</span><span class="op">,</span></span>
-<span id="cb15-820"><a href="#cb15-820"></a>    <span class="st">"value"</span><span class="op">:</span> <span class="st">"08282300"</span></span>
-<span id="cb15-821"><a href="#cb15-821"></a>  }<span class="op">,</span></span>
-<span id="cb15-822"><a href="#cb15-822"></a>  <span class="st">"name"</span><span class="op">:</span> <span class="st">"Rio Brazos at Fishtail Road NR Tierra Amarilla, NM"</span><span class="op">,</span></span>
-<span id="cb15-823"><a href="#cb15-823"></a>  <span class="st">"description"</span><span class="op">:</span> <span class="st">"Stream/River Site"</span><span class="op">,</span></span>
-<span id="cb15-824"><a href="#cb15-824"></a>  <span class="st">"provider"</span><span class="op">:</span> {</span>
-<span id="cb15-825"><a href="#cb15-825"></a>    <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://waterdata.usgs.gov"</span><span class="op">,</span></span>
-<span id="cb15-826"><a href="#cb15-826"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"GovernmentOrganization"</span><span class="op">,</span></span>
-<span id="cb15-827"><a href="#cb15-827"></a>    <span class="st">"name"</span><span class="op">:</span> <span class="st">"U.S. Geological Survey Water Data for the Nation"</span></span>
-<span id="cb15-828"><a href="#cb15-828"></a>  }<span class="op">,</span></span>
-<span id="cb15-829"><a href="#cb15-829"></a>  <span class="st">"geo"</span><span class="op">:</span> {</span>
-<span id="cb15-830"><a href="#cb15-830"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"schema:GeoCoordinates"</span><span class="op">,</span></span>
-<span id="cb15-831"><a href="#cb15-831"></a>    <span class="st">"longitude"</span><span class="op">:</span> <span class="op">-</span><span class="fl">106.4707722</span><span class="op">,</span></span>
-<span id="cb15-832"><a href="#cb15-832"></a>    <span class="st">"latitude"</span><span class="op">:</span> <span class="fl">36.7379333</span></span>
-<span id="cb15-833"><a href="#cb15-833"></a>  }<span class="op">,</span></span>
-<span id="cb15-834"><a href="#cb15-834"></a>  <span class="st">"gsp:hasGeometry"</span><span class="op">:</span> {</span>
-<span id="cb15-835"><a href="#cb15-835"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/sf#Point"</span><span class="op">,</span></span>
-<span id="cb15-836"><a href="#cb15-836"></a>    <span class="st">"gsp:asWKT"</span><span class="op">:</span> {</span>
-<span id="cb15-837"><a href="#cb15-837"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/geosparql#wktLiteral"</span><span class="op">,</span></span>
-<span id="cb15-838"><a href="#cb15-838"></a>      <span class="st">"@value"</span><span class="op">:</span> <span class="st">"POINT (-106.4707722 36.7379333)"</span></span>
-<span id="cb15-839"><a href="#cb15-839"></a>    }<span class="op">,</span></span>
-<span id="cb15-840"><a href="#cb15-840"></a>    <span class="st">"gsp:crs"</span><span class="op">:</span> {</span>
-<span id="cb15-841"><a href="#cb15-841"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/def/crs/OGC/1.3/CRS84"</span></span>
-<span id="cb15-842"><a href="#cb15-842"></a>    }</span>
-<span id="cb15-843"><a href="#cb15-843"></a>  }<span class="op">,</span></span>
-<span id="cb15-844"><a href="#cb15-844"></a>  <span class="st">"hyf:referencedPosition"</span><span class="op">:</span> {</span>
-<span id="cb15-845"><a href="#cb15-845"></a>    <span class="st">"hyf:HY_IndirectPosition"</span><span class="op">:</span> {</span>
-<span id="cb15-846"><a href="#cb15-846"></a>      <span class="st">"hyf:linearElement"</span><span class="op">:</span> {</span>
-<span id="cb15-847"><a href="#cb15-847"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/mainstems/1611418"</span></span>
-<span id="cb15-848"><a href="#cb15-848"></a>      }</span>
-<span id="cb15-849"><a href="#cb15-849"></a>    }</span>
-<span id="cb15-850"><a href="#cb15-850"></a>  }<span class="op">,</span></span>
-<span id="cb15-851"><a href="#cb15-851"></a>  <span class="st">"subjectOf"</span><span class="op">:</span> {</span>
-<span id="cb15-852"><a href="#cb15-852"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span></span>
-<span id="cb15-853"><a href="#cb15-853"></a>    <span class="st">"name"</span><span class="op">:</span> <span class="st">"Discharge data from USGS Monitoring Location 08282300"</span><span class="op">,</span></span>
-<span id="cb15-854"><a href="#cb15-854"></a>    <span class="st">"description"</span><span class="op">:</span> <span class="st">"Discharge data from USGS Streamgage at Rio Brazos at Fishtail Road NR Tierra Amarilla, NM"</span><span class="op">,</span></span>
-<span id="cb15-855"><a href="#cb15-855"></a>    <span class="st">"variableMeasured"</span><span class="op">:</span> {</span>
-<span id="cb15-856"><a href="#cb15-856"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span></span>
-<span id="cb15-857"><a href="#cb15-857"></a>      <span class="st">"name"</span><span class="op">:</span> <span class="st">"discharge"</span><span class="op">,</span></span>
-<span id="cb15-858"><a href="#cb15-858"></a>      <span class="st">"description"</span><span class="op">:</span> <span class="st">"Discharge in cubic feet per second"</span><span class="op">,</span></span>
-<span id="cb15-859"><a href="#cb15-859"></a>      <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"https://www.wikidata.org/wiki/Q8737769"</span><span class="op">,</span></span>
-<span id="cb15-860"><a href="#cb15-860"></a>      <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://en.wikipedia.org/wiki/Discharge_(hydrology)"</span><span class="op">,</span></span>
-<span id="cb15-861"><a href="#cb15-861"></a>      <span class="st">"unitText"</span><span class="op">:</span> <span class="st">"cubic feet per second"</span><span class="op">,</span></span>
-<span id="cb15-862"><a href="#cb15-862"></a>      <span class="st">"qudt:hasQuantityKind"</span><span class="op">:</span> <span class="st">"qudt-quantkinds:VolumeFlowRate"</span><span class="op">,</span></span>
-<span id="cb15-863"><a href="#cb15-863"></a>      <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"qudt-units:FT3-PER-SEC"</span><span class="op">,</span></span>
-<span id="cb15-864"><a href="#cb15-864"></a>      <span class="st">"measurementTechnique"</span><span class="op">:</span> <span class="st">"observation"</span><span class="op">,</span></span>
-<span id="cb15-865"><a href="#cb15-865"></a>      <span class="st">"measurementMethod"</span><span class="op">:</span> {</span>
-<span id="cb15-866"><a href="#cb15-866"></a>        <span class="st">"name"</span><span class="op">:</span> <span class="st">"Discharge Measurements at Gaging Stations"</span><span class="op">,</span></span>
-<span id="cb15-867"><a href="#cb15-867"></a>        <span class="st">"publisher"</span><span class="op">:</span> <span class="st">"U.S. Geological Survey"</span><span class="op">,</span></span>
-<span id="cb15-868"><a href="#cb15-868"></a>        <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://doi.org/10.3133/tm3A8"</span></span>
-<span id="cb15-869"><a href="#cb15-869"></a>      }</span>
-<span id="cb15-870"><a href="#cb15-870"></a>    }<span class="op">,</span></span>
-<span id="cb15-871"><a href="#cb15-871"></a>    <span class="st">"temporalCoverage"</span><span class="op">:</span> <span class="st">"2014-06-30/.."</span><span class="op">,</span></span>
-<span id="cb15-872"><a href="#cb15-872"></a>    <span class="st">"ssn-system:frequency"</span><span class="op">:</span> {</span>
-<span id="cb15-873"><a href="#cb15-873"></a>      <span class="st">"value"</span><span class="op">:</span> <span class="st">"15"</span><span class="op">,</span></span>
-<span id="cb15-874"><a href="#cb15-874"></a>      <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"qudt-units:Minute"</span></span>
-<span id="cb15-875"><a href="#cb15-875"></a>    }<span class="op">,</span></span>
-<span id="cb15-876"><a href="#cb15-876"></a>    <span class="st">"distribution"</span><span class="op">:</span> [</span>
-<span id="cb15-877"><a href="#cb15-877"></a>      {</span>
-<span id="cb15-878"><a href="#cb15-878"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"DataDownload"</span><span class="op">,</span></span>
-<span id="cb15-879"><a href="#cb15-879"></a>        <span class="st">"name"</span><span class="op">:</span> <span class="st">"USGS Instantaneous Values Service"</span></span>
-<span id="cb15-880"><a href="#cb15-880"></a>        <span class="st">"contentUrl"</span><span class="op">:</span> <span class="st">"https://waterservices.usgs.gov/nwis/iv/?sites=08282300&amp;parameterCd=00060&amp;format=rdb"</span><span class="op">,</span></span>
-<span id="cb15-881"><a href="#cb15-881"></a>        <span class="st">"encodingFormat"</span><span class="op">:</span> [</span>
-<span id="cb15-882"><a href="#cb15-882"></a>          <span class="st">"text/tab-separated-values"</span></span>
-<span id="cb15-883"><a href="#cb15-883"></a>        ]<span class="op">,</span></span>
-<span id="cb15-884"><a href="#cb15-884"></a>        <span class="st">"dc:conformsTo"</span><span class="op">:</span> <span class="st">"https://pubs.usgs.gov/of/2003/ofr03123/6.4rdb_format.pdf"</span></span>
-<span id="cb15-885"><a href="#cb15-885"></a>      }<span class="op">,</span></span>
-<span id="cb15-886"><a href="#cb15-886"></a>      {</span>
-<span id="cb15-887"><a href="#cb15-887"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"DataDownload"</span><span class="op">,</span></span>
-<span id="cb15-888"><a href="#cb15-888"></a>        <span class="st">"name"</span><span class="op">:</span> <span class="st">"USGS SensorThings API"</span></span>
-<span id="cb15-889"><a href="#cb15-889"></a>        <span class="st">"contentUrl"</span><span class="op">:</span> <span class="st">"https://labs.waterdata.usgs.gov/sta/v1.1/Datastreams('0adb31f7852e4e1c9a778a85076ac0cf')?$expand=Thing,Observations"</span><span class="op">,</span></span>
-<span id="cb15-890"><a href="#cb15-890"></a>        <span class="st">"encodingFormat"</span><span class="op">:</span> [</span>
-<span id="cb15-891"><a href="#cb15-891"></a>          <span class="st">"application/json"</span></span>
-<span id="cb15-892"><a href="#cb15-892"></a>        ]<span class="op">,</span></span>
-<span id="cb15-893"><a href="#cb15-893"></a>        <span class="st">"dc:conformsTo"</span><span class="op">:</span> <span class="st">"https://labs.waterdata.usgs.gov/docs/sensorthings/index.html"</span></span>
-<span id="cb15-894"><a href="#cb15-894"></a>      }</span>
-<span id="cb15-895"><a href="#cb15-895"></a>    ]</span>
-<span id="cb15-896"><a href="#cb15-896"></a>  }</span>
-<span id="cb15-897"><a href="#cb15-897"></a>}</span>
-<span id="cb15-898"><a href="#cb15-898"></a><span class="vs">```</span></span>
-<span id="cb15-899"><a href="#cb15-899"></a></span>
-<span id="cb15-900"><a href="#cb15-900"></a><span class="vs">### Dataset-oriented  {#sec-data-complete-example}</span></span>
-<span id="cb15-901"><a href="#cb15-901"></a></span>
-<span id="cb15-902"><a href="#cb15-902"></a><span class="vs">```</span> json</span>
-<span id="cb15-903"><a href="#cb15-903"></a>{</span>
-<span id="cb15-904"><a href="#cb15-904"></a>  <span class="st">"@context"</span><span class="op">:</span> {</span>
-<span id="cb15-905"><a href="#cb15-905"></a>    <span class="st">"@vocab"</span><span class="op">:</span> <span class="st">"https://schema.org/"</span><span class="op">,</span></span>
-<span id="cb15-906"><a href="#cb15-906"></a>    <span class="st">"rdfs"</span><span class="op">:</span> <span class="st">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="op">,</span></span>
-<span id="cb15-907"><a href="#cb15-907"></a>    <span class="st">"dc"</span><span class="op">:</span> <span class="st">"http://purl.org/dc/terms/"</span><span class="op">,</span></span>
-<span id="cb15-908"><a href="#cb15-908"></a>    <span class="st">"qudt"</span><span class="op">:</span> <span class="st">"http://qudt.org/schema/qudt/"</span><span class="op">,</span></span>
-<span id="cb15-909"><a href="#cb15-909"></a>    <span class="st">"qudt-units"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/unit/"</span><span class="op">,</span></span>
-<span id="cb15-910"><a href="#cb15-910"></a>    <span class="st">"qudt-quantkinds"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/quantitykind/"</span><span class="op">,</span></span>
-<span id="cb15-911"><a href="#cb15-911"></a>    <span class="st">"gsp"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/geosparql#"</span><span class="op">,</span></span>
-<span id="cb15-912"><a href="#cb15-912"></a>    <span class="st">"locType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/sitetype"</span><span class="op">,</span></span>
-<span id="cb15-913"><a href="#cb15-913"></a>    <span class="st">"odm2var"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/"</span><span class="op">,</span></span>
-<span id="cb15-914"><a href="#cb15-914"></a>    <span class="st">"odm2varType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variabletype/"</span><span class="op">,</span></span>
-<span id="cb15-915"><a href="#cb15-915"></a>    <span class="st">"hyf"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/"</span><span class="op">,</span></span>
-<span id="cb15-916"><a href="#cb15-916"></a>    <span class="st">"skos"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType"</span><span class="op">,</span></span>
-<span id="cb15-917"><a href="#cb15-917"></a>    <span class="st">"ssn"</span><span class="op">:</span> <span class="st">"http://www.w3.org/ns/ssn/"</span><span class="op">,</span></span>
-<span id="cb15-918"><a href="#cb15-918"></a>    <span class="st">"ssn-system"</span><span class="op">:</span> <span class="st">"http://www.w3.org/ns/ssn/systems/"</span></span>
-<span id="cb15-919"><a href="#cb15-919"></a>  }<span class="op">,</span></span>
-<span id="cb15-920"><a href="#cb15-920"></a>  <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span></span>
-<span id="cb15-921"><a href="#cb15-921"></a>  <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://doi.org/10.4211/hs.4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
-<span id="cb15-922"><a href="#cb15-922"></a>  <span class="st">"identifier"</span><span class="op">:</span> <span class="st">"doi:hs.4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
-<span id="cb15-923"><a href="#cb15-923"></a>  <span class="st">"name"</span><span class="op">:</span> <span class="st">"Geoconnex Dataset Example: Data for Triangle Water Supply Dashboard"</span><span class="op">,</span></span>
-<span id="cb15-924"><a href="#cb15-924"></a>  <span class="st">"description"</span><span class="op">:</span> <span class="st">"This is a dataset meant as an example of dataset-level schema.org markup for https://geoconnex.us. It uses as an example data from the NC Triangle Water Supply Dashboard, which collects and visualizes finished water deliveries by water utilities to their service areas in the North Carolina Research Triangle area"</span><span class="op">,</span></span>
-<span id="cb15-925"><a href="#cb15-925"></a>  <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
-<span id="cb15-926"><a href="#cb15-926"></a>  <span class="st">"keywords"</span><span class="op">:</span> [</span>
-<span id="cb15-927"><a href="#cb15-927"></a>    <span class="st">"water demand"</span><span class="op">,</span></span>
-<span id="cb15-928"><a href="#cb15-928"></a>    <span class="st">"water supply"</span><span class="op">,</span></span>
-<span id="cb15-929"><a href="#cb15-929"></a>    <span class="st">"geoconnex"</span></span>
-<span id="cb15-930"><a href="#cb15-930"></a>  ]<span class="op">,</span></span>
-<span id="cb15-931"><a href="#cb15-931"></a>  <span class="st">"license"</span><span class="op">:</span> <span class="st">"https://creativecommons.org/licenses/by/4.0/"</span><span class="op">,</span></span>
-<span id="cb15-932"><a href="#cb15-932"></a>  <span class="st">"isAccessibleForFree"</span><span class="op">:</span> <span class="st">"true"</span><span class="op">,</span></span>
-<span id="cb15-933"><a href="#cb15-933"></a>  <span class="st">"distribution"</span><span class="op">:</span> {</span>
-<span id="cb15-934"><a href="#cb15-934"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"DataDownload"</span><span class="op">,</span></span>
-<span id="cb15-935"><a href="#cb15-935"></a>    <span class="st">"name"</span><span class="op">:</span> <span class="st">"HydroShare file URL"</span><span class="op">,</span></span>
-<span id="cb15-936"><a href="#cb15-936"></a>    <span class="st">"contentUrl"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/data/contents/demand_over_time.csv"</span><span class="op">,</span></span>
-<span id="cb15-937"><a href="#cb15-937"></a>    <span class="st">"encodingFormat"</span><span class="op">:</span> [</span>
-<span id="cb15-938"><a href="#cb15-938"></a>      <span class="st">"text/csv"</span></span>
-<span id="cb15-939"><a href="#cb15-939"></a>    ]<span class="op">,</span></span>
-<span id="cb15-940"><a href="#cb15-940"></a>    <span class="st">"dc:conformsTo"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/data/contents/dataDictionary.xlsx"</span></span>
-<span id="cb15-941"><a href="#cb15-941"></a>  }<span class="op">,</span></span>
-<span id="cb15-942"><a href="#cb15-942"></a>  <span class="st">"variableMeasured"</span><span class="op">:</span> [</span>
-<span id="cb15-943"><a href="#cb15-943"></a>    {</span>
-<span id="cb15-944"><a href="#cb15-944"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span></span>
-<span id="cb15-945"><a href="#cb15-945"></a>      <span class="st">"name"</span><span class="op">:</span> <span class="st">"water demand"</span><span class="op">,</span></span>
-<span id="cb15-946"><a href="#cb15-946"></a>      <span class="st">"description"</span><span class="op">:</span> <span class="st">"treated water delivered to distribution system"</span><span class="op">,</span></span>
-<span id="cb15-947"><a href="#cb15-947"></a>      <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span></span>
-<span id="cb15-948"><a href="#cb15-948"></a>      <span class="st">"url"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span></span>
-<span id="cb15-949"><a href="#cb15-949"></a>      <span class="st">"unitText"</span><span class="op">:</span> <span class="st">"million gallons per day"</span><span class="op">,</span></span>
-<span id="cb15-950"><a href="#cb15-950"></a>      <span class="st">"qudt:hasQuantityKind"</span><span class="op">:</span> <span class="st">"qudt-quantkinds:VolumeFlowRate"</span><span class="op">,</span></span>
-<span id="cb15-951"><a href="#cb15-951"></a>      <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&amp;id=1125579048"</span><span class="op">,</span></span>
-<span id="cb15-952"><a href="#cb15-952"></a>      <span class="st">"measurementTechnique"</span><span class="op">:</span> <span class="st">"observation"</span><span class="op">,</span></span>
-<span id="cb15-953"><a href="#cb15-953"></a>      <span class="st">"measurementMethod"</span><span class="op">:</span> {</span>
-<span id="cb15-954"><a href="#cb15-954"></a>        <span class="st">"name"</span><span class="op">:</span> <span class="st">"water meter"</span><span class="op">,</span></span>
-<span id="cb15-955"><a href="#cb15-955"></a>        <span class="st">"description"</span><span class="op">:</span> <span class="st">"metered bulk value, accumlated over one month"</span><span class="op">,</span></span>
-<span id="cb15-956"><a href="#cb15-956"></a>        <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.wikidata.org/wiki/Q268503"</span></span>
-<span id="cb15-957"><a href="#cb15-957"></a>      }</span>
-<span id="cb15-958"><a href="#cb15-958"></a>    }<span class="op">,</span></span>
-<span id="cb15-959"><a href="#cb15-959"></a>    {</span>
-<span id="cb15-960"><a href="#cb15-960"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span></span>
-<span id="cb15-961"><a href="#cb15-961"></a>      <span class="st">"name"</span><span class="op">:</span> <span class="st">"water demand (monthly average)"</span><span class="op">,</span></span>
-<span id="cb15-962"><a href="#cb15-962"></a>      <span class="st">"description"</span><span class="op">:</span> <span class="st">"average monthly treated water delivered to distribution system"</span><span class="op">,</span></span>
-<span id="cb15-963"><a href="#cb15-963"></a>      <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span></span>
-<span id="cb15-964"><a href="#cb15-964"></a>      <span class="st">"url"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span></span>
-<span id="cb15-965"><a href="#cb15-965"></a>      <span class="st">"unitText"</span><span class="op">:</span> <span class="st">"million gallons per day"</span><span class="op">,</span></span>
-<span id="cb15-966"><a href="#cb15-966"></a>      <span class="st">"qudt:hasQuantityKind"</span><span class="op">:</span> <span class="st">"qudt-quantkinds:VolumeFlowRate"</span><span class="op">,</span></span>
-<span id="cb15-967"><a href="#cb15-967"></a>      <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&amp;id=1125579048"</span><span class="op">,</span></span>
-<span id="cb15-968"><a href="#cb15-968"></a>      <span class="st">"measurementTechnique"</span><span class="op">:</span> <span class="st">"observation"</span><span class="op">,</span></span>
-<span id="cb15-969"><a href="#cb15-969"></a>      <span class="st">"measurementMethod"</span><span class="op">:</span> {</span>
-<span id="cb15-970"><a href="#cb15-970"></a>        <span class="st">"name"</span><span class="op">:</span> <span class="st">"water meter"</span><span class="op">,</span></span>
-<span id="cb15-971"><a href="#cb15-971"></a>        <span class="st">"description"</span><span class="op">:</span> <span class="st">"metered bulk value, average accumlated over each month for multiple years"</span><span class="op">,</span></span>
-<span id="cb15-972"><a href="#cb15-972"></a>        <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.wikidata.org/wiki/Q268503"</span></span>
-<span id="cb15-973"><a href="#cb15-973"></a>      }</span>
-<span id="cb15-974"><a href="#cb15-974"></a>    }</span>
-<span id="cb15-975"><a href="#cb15-975"></a>  ]<span class="op">,</span></span>
-<span id="cb15-976"><a href="#cb15-976"></a>  <span class="st">"temporalCoverage"</span><span class="op">:</span> <span class="st">"2002-01-01/2020-12-31"</span><span class="op">,</span></span>
-<span id="cb15-977"><a href="#cb15-977"></a>  <span class="st">"ssn-system:frequency"</span><span class="op">:</span> {</span>
-<span id="cb15-978"><a href="#cb15-978"></a>    <span class="st">"value"</span><span class="op">:</span> <span class="st">"1"</span><span class="op">,</span></span>
-<span id="cb15-979"><a href="#cb15-979"></a>    <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"qudt-units:Month"</span></span>
-<span id="cb15-980"><a href="#cb15-980"></a>  }<span class="op">,</span></span>
-<span id="cb15-981"><a href="#cb15-981"></a>  <span class="st">"about"</span><span class="op">:</span> [</span>
-<span id="cb15-982"><a href="#cb15-982"></a>    {</span>
-<span id="cb15-983"><a href="#cb15-983"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0332010"</span><span class="op">,</span></span>
-<span id="cb15-984"><a href="#cb15-984"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
-<span id="cb15-985"><a href="#cb15-985"></a>    }<span class="op">,</span></span>
-<span id="cb15-986"><a href="#cb15-986"></a>    {</span>
-<span id="cb15-987"><a href="#cb15-987"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0368010"</span><span class="op">,</span></span>
-<span id="cb15-988"><a href="#cb15-988"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
-<span id="cb15-989"><a href="#cb15-989"></a>    }<span class="op">,</span></span>
-<span id="cb15-990"><a href="#cb15-990"></a>    {</span>
-<span id="cb15-991"><a href="#cb15-991"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392010"</span><span class="op">,</span></span>
-<span id="cb15-992"><a href="#cb15-992"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
-<span id="cb15-993"><a href="#cb15-993"></a>    }<span class="op">,</span></span>
-<span id="cb15-994"><a href="#cb15-994"></a>    {</span>
-<span id="cb15-995"><a href="#cb15-995"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392020"</span><span class="op">,</span></span>
-<span id="cb15-996"><a href="#cb15-996"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
-<span id="cb15-997"><a href="#cb15-997"></a>    }<span class="op">,</span></span>
-<span id="cb15-998"><a href="#cb15-998"></a>    {</span>
-<span id="cb15-999"><a href="#cb15-999"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392045"</span><span class="op">,</span></span>
-<span id="cb15-1000"><a href="#cb15-1000"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
-<span id="cb15-1001"><a href="#cb15-1001"></a>    }</span>
-<span id="cb15-1002"><a href="#cb15-1002"></a>  ]</span>
-<span id="cb15-1003"><a href="#cb15-1003"></a>}</span>
-<span id="cb15-1004"><a href="#cb15-1004"></a></span>
-<span id="cb15-1005"><a href="#cb15-1005"></a><span class="vs">```</span></span>
-<span id="cb15-1006"><a href="#cb15-1006"></a><span class="vs">## Appendices {#sec-appendices}</span></span>
-<span id="cb15-1007"><a href="#cb15-1007"></a></span>
-<span id="cb15-1008"><a href="#cb15-1008"></a><span class="vs">### Appendix 1: Codelists {#sec-codelists}</span></span>
-<span id="cb15-1009"><a href="#cb15-1009"></a></span>
-<span id="cb15-1010"><a href="#cb15-1010"></a><span class="vs">#### measurementTechnique {#sec-measurementTechnique}</span></span>
-<span id="cb15-1011"><a href="#cb15-1011"></a></span>
-<span id="cb15-1012"><a href="#cb15-1012"></a><span class="vs">+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span></span>
-<span id="cb15-1013"><a href="#cb15-1013"></a><span class="vs">| code        | definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |</span></span>
-<span id="cb15-1014"><a href="#cb15-1014"></a><span class="vs">+=============+===================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+</span></span>
-<span id="cb15-1015"><a href="#cb15-1015"></a><span class="vs">| observation | This term is meant to group data generating procedures that occur primarily to measure phenomena at, adjacent to discrete features (real-world objects and locations) at the time t. Examples include ground-based sensors like streamgages and weather stations, but also discrete water quality samples, habitat assessments, ecological surveys, and surveys of individuals, households, and organizations. Datasets in this category may be generated from algorithms or human processes that combine heterogeneous source data into latent or derived variables (e.g. composite indexes such as health risk scores or regulatory categorizations such as "in compliance"), or spatially aggregate data from smaller geographic units to larger ones (e.g. Census area-based reporting), as long as the data is representing the phenomena of interest at the time and place it actually occurred and was measured. However, this category can include datasets that use procedures for gap filling missing data (e.g. streamgage data with sensor malfunction period data estimated from time series models) |</span></span>
-<span id="cb15-1016"><a href="#cb15-1016"></a><span class="vs">+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span></span>
-<span id="cb15-1017"><a href="#cb15-1017"></a><span class="vs">| model       | This term is refers to data that are generated rather than observed. It groups data generating procedures that generate data for **hypothetical states** at discrete locations, such as (but not limited to):</span><span class="sc">\ </span><span class="vs">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |</span></span>
-<span id="cb15-1018"><a href="#cb15-1018"></a><span class="vs">|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |</span></span>
-<span id="cb15-1019"><a href="#cb15-1019"></a><span class="vs">|             | -   **the near future** (e.g. river stage forecasts like the gage location-based forecasts from the NOAA [Advanced Hydrologic Prediction System](https://water.weather.gov/ahps/forecasts.php))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |</span></span>
-<span id="cb15-1020"><a href="#cb15-1020"></a><span class="vs">|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |</span></span>
-<span id="cb15-1021"><a href="#cb15-1021"></a><span class="vs">|             | -   **counterfactuals** (e.g. hydrologic models under varying assumptions about dam removal or reservoir operations)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |</span></span>
-<span id="cb15-1022"><a href="#cb15-1022"></a><span class="vs">|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |</span></span>
-<span id="cb15-1023"><a href="#cb15-1023"></a><span class="vs">|             | -   **the unobserved past and present at the feature of interest** (e.g. water quality models for parameters based on climate and upstream effluent discharge data)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |</span></span>
-<span id="cb15-1024"><a href="#cb15-1024"></a><span class="vs">+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-787"><a href="#cb15-787"></a><span class="vs">-   [location-oriented example](https://raw.githubusercontent.com/internetofwater/geoconnex-guidance/main/examples/location-complete.jsonld)</span></span>
+<span id="cb15-788"><a href="#cb15-788"></a><span class="vs">-   [dataset-oriented example](https://raw.githubusercontent.com/internetofwater/geoconnex-guidance/main/examples/dataaset-complete.jsonld)</span></span>
+<span id="cb15-789"><a href="#cb15-789"></a></span>
+<span id="cb15-790"><a href="#cb15-790"></a><span class="vs">### Location-oriented {#sec-loc-complete-example}</span></span>
+<span id="cb15-791"><a href="#cb15-791"></a></span>
+<span id="cb15-792"><a href="#cb15-792"></a><span class="vs">```</span> json</span>
+<span id="cb15-793"><a href="#cb15-793"></a>{</span>
+<span id="cb15-794"><a href="#cb15-794"></a>  <span class="st">"@context"</span><span class="op">:</span> {</span>
+<span id="cb15-795"><a href="#cb15-795"></a>    <span class="st">"@vocab"</span><span class="op">:</span> <span class="st">"https://schema.org/"</span><span class="op">,</span> </span>
+<span id="cb15-796"><a href="#cb15-796"></a>    <span class="st">"rdfs"</span><span class="op">:</span> <span class="st">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="op">,</span></span>
+<span id="cb15-797"><a href="#cb15-797"></a>    <span class="st">"dc"</span><span class="op">:</span> <span class="st">"http://purl.org/dc/terms/"</span><span class="op">,</span></span>
+<span id="cb15-798"><a href="#cb15-798"></a>    <span class="st">"qudt"</span><span class="op">:</span> <span class="st">"http://qudt.org/schema/qudt/"</span><span class="op">,</span></span>
+<span id="cb15-799"><a href="#cb15-799"></a>    <span class="st">"qudt-units"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/unit/"</span><span class="op">,</span></span>
+<span id="cb15-800"><a href="#cb15-800"></a>    <span class="st">"qudt-quantkinds"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/quantitykind/"</span><span class="op">,</span></span>
+<span id="cb15-801"><a href="#cb15-801"></a>    <span class="st">"gsp"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/geosparql#"</span><span class="op">,</span></span>
+<span id="cb15-802"><a href="#cb15-802"></a>    <span class="st">"locType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/sitetype"</span><span class="op">,</span></span>
+<span id="cb15-803"><a href="#cb15-803"></a>    <span class="st">"odm2var"</span><span class="op">:</span><span class="st">"http://vocabulary.odm2.org/variablename/"</span><span class="op">,</span></span>
+<span id="cb15-804"><a href="#cb15-804"></a>    <span class="st">"odm2varType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variabletype/"</span><span class="op">,</span></span>
+<span id="cb15-805"><a href="#cb15-805"></a>    <span class="st">"hyf"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/"</span><span class="op">,</span></span>
+<span id="cb15-806"><a href="#cb15-806"></a>    <span class="st">"skos"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType"</span><span class="op">,</span></span>
+<span id="cb15-807"><a href="#cb15-807"></a>    <span class="st">"ssn"</span><span class="op">:</span> <span class="st">"http://www.w3.org/ns/ssn/"</span><span class="op">,</span></span>
+<span id="cb15-808"><a href="#cb15-808"></a>    <span class="st">"ssn-system"</span><span class="op">:</span>  <span class="st">"http://www.w3.org/ns/ssn/systems/"</span></span>
+<span id="cb15-809"><a href="#cb15-809"></a>  }<span class="op">,</span></span>
+<span id="cb15-810"><a href="#cb15-810"></a>  <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/usgs/monitoring-location/08282300"</span><span class="op">,</span></span>
+<span id="cb15-811"><a href="#cb15-811"></a>  <span class="st">"@type"</span><span class="op">:</span> [</span>
+<span id="cb15-812"><a href="#cb15-812"></a>    <span class="st">"hyf:HY_HydrometricFeature"</span><span class="op">,</span></span>
+<span id="cb15-813"><a href="#cb15-813"></a>    <span class="st">"hyf:HY_HydroLocation"</span><span class="op">,</span></span>
+<span id="cb15-814"><a href="#cb15-814"></a>    <span class="st">"locType:stream"</span></span>
+<span id="cb15-815"><a href="#cb15-815"></a>  ]<span class="op">,</span></span>
+<span id="cb15-816"><a href="#cb15-816"></a>  <span class="st">"hyf:HydroLocationType"</span><span class="op">:</span> <span class="st">"hydrometric station"</span><span class="op">,</span></span>
+<span id="cb15-817"><a href="#cb15-817"></a>  <span class="st">"sameAs"</span><span class="op">:</span> {</span>
+<span id="cb15-818"><a href="#cb15-818"></a>    <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/gages/1018463"</span></span>
+<span id="cb15-819"><a href="#cb15-819"></a>  }<span class="op">,</span></span>
+<span id="cb15-820"><a href="#cb15-820"></a>  <span class="st">"identifier"</span><span class="op">:</span> {</span>
+<span id="cb15-821"><a href="#cb15-821"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span></span>
+<span id="cb15-822"><a href="#cb15-822"></a>    <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"USGS site number"</span><span class="op">,</span></span>
+<span id="cb15-823"><a href="#cb15-823"></a>    <span class="st">"value"</span><span class="op">:</span> <span class="st">"08282300"</span></span>
+<span id="cb15-824"><a href="#cb15-824"></a>  }<span class="op">,</span></span>
+<span id="cb15-825"><a href="#cb15-825"></a>  <span class="st">"name"</span><span class="op">:</span> <span class="st">"Rio Brazos at Fishtail Road NR Tierra Amarilla, NM"</span><span class="op">,</span></span>
+<span id="cb15-826"><a href="#cb15-826"></a>  <span class="st">"description"</span><span class="op">:</span> <span class="st">"Stream/River Site"</span><span class="op">,</span></span>
+<span id="cb15-827"><a href="#cb15-827"></a>  <span class="st">"provider"</span><span class="op">:</span> {</span>
+<span id="cb15-828"><a href="#cb15-828"></a>    <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://waterdata.usgs.gov"</span><span class="op">,</span></span>
+<span id="cb15-829"><a href="#cb15-829"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"GovernmentOrganization"</span><span class="op">,</span></span>
+<span id="cb15-830"><a href="#cb15-830"></a>    <span class="st">"name"</span><span class="op">:</span> <span class="st">"U.S. Geological Survey Water Data for the Nation"</span></span>
+<span id="cb15-831"><a href="#cb15-831"></a>  }<span class="op">,</span></span>
+<span id="cb15-832"><a href="#cb15-832"></a>  <span class="st">"geo"</span><span class="op">:</span> {</span>
+<span id="cb15-833"><a href="#cb15-833"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"schema:GeoCoordinates"</span><span class="op">,</span></span>
+<span id="cb15-834"><a href="#cb15-834"></a>    <span class="st">"longitude"</span><span class="op">:</span> <span class="op">-</span><span class="fl">106.4707722</span><span class="op">,</span></span>
+<span id="cb15-835"><a href="#cb15-835"></a>    <span class="st">"latitude"</span><span class="op">:</span> <span class="fl">36.7379333</span></span>
+<span id="cb15-836"><a href="#cb15-836"></a>  }<span class="op">,</span></span>
+<span id="cb15-837"><a href="#cb15-837"></a>  <span class="st">"gsp:hasGeometry"</span><span class="op">:</span> {</span>
+<span id="cb15-838"><a href="#cb15-838"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/sf#Point"</span><span class="op">,</span></span>
+<span id="cb15-839"><a href="#cb15-839"></a>    <span class="st">"gsp:asWKT"</span><span class="op">:</span> {</span>
+<span id="cb15-840"><a href="#cb15-840"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/geosparql#wktLiteral"</span><span class="op">,</span></span>
+<span id="cb15-841"><a href="#cb15-841"></a>      <span class="st">"@value"</span><span class="op">:</span> <span class="st">"POINT (-106.4707722 36.7379333)"</span></span>
+<span id="cb15-842"><a href="#cb15-842"></a>    }<span class="op">,</span></span>
+<span id="cb15-843"><a href="#cb15-843"></a>    <span class="st">"gsp:crs"</span><span class="op">:</span> {</span>
+<span id="cb15-844"><a href="#cb15-844"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/def/crs/OGC/1.3/CRS84"</span></span>
+<span id="cb15-845"><a href="#cb15-845"></a>    }</span>
+<span id="cb15-846"><a href="#cb15-846"></a>  }<span class="op">,</span></span>
+<span id="cb15-847"><a href="#cb15-847"></a>  <span class="st">"hyf:referencedPosition"</span><span class="op">:</span> {</span>
+<span id="cb15-848"><a href="#cb15-848"></a>    <span class="st">"hyf:HY_IndirectPosition"</span><span class="op">:</span> {</span>
+<span id="cb15-849"><a href="#cb15-849"></a>      <span class="st">"hyf:linearElement"</span><span class="op">:</span> {</span>
+<span id="cb15-850"><a href="#cb15-850"></a>        <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/mainstems/1611418"</span></span>
+<span id="cb15-851"><a href="#cb15-851"></a>      }</span>
+<span id="cb15-852"><a href="#cb15-852"></a>    }</span>
+<span id="cb15-853"><a href="#cb15-853"></a>  }<span class="op">,</span></span>
+<span id="cb15-854"><a href="#cb15-854"></a>  <span class="st">"subjectOf"</span><span class="op">:</span> {</span>
+<span id="cb15-855"><a href="#cb15-855"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span></span>
+<span id="cb15-856"><a href="#cb15-856"></a>    <span class="st">"name"</span><span class="op">:</span> <span class="st">"Discharge data from USGS Monitoring Location 08282300"</span><span class="op">,</span></span>
+<span id="cb15-857"><a href="#cb15-857"></a>    <span class="st">"description"</span><span class="op">:</span> <span class="st">"Discharge data from USGS Streamgage at Rio Brazos at Fishtail Road NR Tierra Amarilla, NM"</span><span class="op">,</span></span>
+<span id="cb15-858"><a href="#cb15-858"></a>    <span class="st">"variableMeasured"</span><span class="op">:</span> {</span>
+<span id="cb15-859"><a href="#cb15-859"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span></span>
+<span id="cb15-860"><a href="#cb15-860"></a>      <span class="st">"name"</span><span class="op">:</span> <span class="st">"discharge"</span><span class="op">,</span></span>
+<span id="cb15-861"><a href="#cb15-861"></a>      <span class="st">"description"</span><span class="op">:</span> <span class="st">"Discharge in cubic feet per second"</span><span class="op">,</span></span>
+<span id="cb15-862"><a href="#cb15-862"></a>      <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"https://www.wikidata.org/wiki/Q8737769"</span><span class="op">,</span></span>
+<span id="cb15-863"><a href="#cb15-863"></a>      <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://en.wikipedia.org/wiki/Discharge_(hydrology)"</span><span class="op">,</span></span>
+<span id="cb15-864"><a href="#cb15-864"></a>      <span class="st">"unitText"</span><span class="op">:</span> <span class="st">"cubic feet per second"</span><span class="op">,</span></span>
+<span id="cb15-865"><a href="#cb15-865"></a>      <span class="st">"qudt:hasQuantityKind"</span><span class="op">:</span> <span class="st">"qudt-quantkinds:VolumeFlowRate"</span><span class="op">,</span></span>
+<span id="cb15-866"><a href="#cb15-866"></a>      <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"qudt-units:FT3-PER-SEC"</span><span class="op">,</span></span>
+<span id="cb15-867"><a href="#cb15-867"></a>      <span class="st">"measurementTechnique"</span><span class="op">:</span> <span class="st">"observation"</span><span class="op">,</span></span>
+<span id="cb15-868"><a href="#cb15-868"></a>      <span class="st">"measurementMethod"</span><span class="op">:</span> {</span>
+<span id="cb15-869"><a href="#cb15-869"></a>        <span class="st">"name"</span><span class="op">:</span> <span class="st">"Discharge Measurements at Gaging Stations"</span><span class="op">,</span></span>
+<span id="cb15-870"><a href="#cb15-870"></a>        <span class="st">"publisher"</span><span class="op">:</span> <span class="st">"U.S. Geological Survey"</span><span class="op">,</span></span>
+<span id="cb15-871"><a href="#cb15-871"></a>        <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://doi.org/10.3133/tm3A8"</span></span>
+<span id="cb15-872"><a href="#cb15-872"></a>      }</span>
+<span id="cb15-873"><a href="#cb15-873"></a>    }<span class="op">,</span></span>
+<span id="cb15-874"><a href="#cb15-874"></a>    <span class="st">"temporalCoverage"</span><span class="op">:</span> <span class="st">"2014-06-30/.."</span><span class="op">,</span></span>
+<span id="cb15-875"><a href="#cb15-875"></a>    <span class="st">"ssn-system:frequency"</span><span class="op">:</span> {</span>
+<span id="cb15-876"><a href="#cb15-876"></a>      <span class="st">"value"</span><span class="op">:</span> <span class="st">"15"</span><span class="op">,</span></span>
+<span id="cb15-877"><a href="#cb15-877"></a>      <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"qudt-units:Minute"</span></span>
+<span id="cb15-878"><a href="#cb15-878"></a>    }<span class="op">,</span></span>
+<span id="cb15-879"><a href="#cb15-879"></a>    <span class="st">"distribution"</span><span class="op">:</span> [</span>
+<span id="cb15-880"><a href="#cb15-880"></a>      {</span>
+<span id="cb15-881"><a href="#cb15-881"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"DataDownload"</span><span class="op">,</span></span>
+<span id="cb15-882"><a href="#cb15-882"></a>        <span class="st">"name"</span><span class="op">:</span> <span class="st">"USGS Instantaneous Values Service"</span></span>
+<span id="cb15-883"><a href="#cb15-883"></a>        <span class="st">"contentUrl"</span><span class="op">:</span> <span class="st">"https://waterservices.usgs.gov/nwis/iv/?sites=08282300&amp;parameterCd=00060&amp;format=rdb"</span><span class="op">,</span></span>
+<span id="cb15-884"><a href="#cb15-884"></a>        <span class="st">"encodingFormat"</span><span class="op">:</span> [</span>
+<span id="cb15-885"><a href="#cb15-885"></a>          <span class="st">"text/tab-separated-values"</span></span>
+<span id="cb15-886"><a href="#cb15-886"></a>        ]<span class="op">,</span></span>
+<span id="cb15-887"><a href="#cb15-887"></a>        <span class="st">"dc:conformsTo"</span><span class="op">:</span> <span class="st">"https://pubs.usgs.gov/of/2003/ofr03123/6.4rdb_format.pdf"</span></span>
+<span id="cb15-888"><a href="#cb15-888"></a>      }<span class="op">,</span></span>
+<span id="cb15-889"><a href="#cb15-889"></a>      {</span>
+<span id="cb15-890"><a href="#cb15-890"></a>        <span class="st">"@type"</span><span class="op">:</span> <span class="st">"DataDownload"</span><span class="op">,</span></span>
+<span id="cb15-891"><a href="#cb15-891"></a>        <span class="st">"name"</span><span class="op">:</span> <span class="st">"USGS SensorThings API"</span></span>
+<span id="cb15-892"><a href="#cb15-892"></a>        <span class="st">"contentUrl"</span><span class="op">:</span> <span class="st">"https://labs.waterdata.usgs.gov/sta/v1.1/Datastreams('0adb31f7852e4e1c9a778a85076ac0cf')?$expand=Thing,Observations"</span><span class="op">,</span></span>
+<span id="cb15-893"><a href="#cb15-893"></a>        <span class="st">"encodingFormat"</span><span class="op">:</span> [</span>
+<span id="cb15-894"><a href="#cb15-894"></a>          <span class="st">"application/json"</span></span>
+<span id="cb15-895"><a href="#cb15-895"></a>        ]<span class="op">,</span></span>
+<span id="cb15-896"><a href="#cb15-896"></a>        <span class="st">"dc:conformsTo"</span><span class="op">:</span> <span class="st">"https://labs.waterdata.usgs.gov/docs/sensorthings/index.html"</span></span>
+<span id="cb15-897"><a href="#cb15-897"></a>      }</span>
+<span id="cb15-898"><a href="#cb15-898"></a>    ]</span>
+<span id="cb15-899"><a href="#cb15-899"></a>  }</span>
+<span id="cb15-900"><a href="#cb15-900"></a>}</span>
+<span id="cb15-901"><a href="#cb15-901"></a><span class="vs">```</span></span>
+<span id="cb15-902"><a href="#cb15-902"></a></span>
+<span id="cb15-903"><a href="#cb15-903"></a><span class="vs">### Dataset-oriented {#sec-data-complete-example}</span></span>
+<span id="cb15-904"><a href="#cb15-904"></a></span>
+<span id="cb15-905"><a href="#cb15-905"></a><span class="vs">```</span> json</span>
+<span id="cb15-906"><a href="#cb15-906"></a>{</span>
+<span id="cb15-907"><a href="#cb15-907"></a>  <span class="st">"@context"</span><span class="op">:</span> {</span>
+<span id="cb15-908"><a href="#cb15-908"></a>    <span class="st">"@vocab"</span><span class="op">:</span> <span class="st">"https://schema.org/"</span><span class="op">,</span></span>
+<span id="cb15-909"><a href="#cb15-909"></a>    <span class="st">"rdfs"</span><span class="op">:</span> <span class="st">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="op">,</span></span>
+<span id="cb15-910"><a href="#cb15-910"></a>    <span class="st">"dc"</span><span class="op">:</span> <span class="st">"http://purl.org/dc/terms/"</span><span class="op">,</span></span>
+<span id="cb15-911"><a href="#cb15-911"></a>    <span class="st">"qudt"</span><span class="op">:</span> <span class="st">"http://qudt.org/schema/qudt/"</span><span class="op">,</span></span>
+<span id="cb15-912"><a href="#cb15-912"></a>    <span class="st">"qudt-units"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/unit/"</span><span class="op">,</span></span>
+<span id="cb15-913"><a href="#cb15-913"></a>    <span class="st">"qudt-quantkinds"</span><span class="op">:</span> <span class="st">"http://qudt.org/vocab/quantitykind/"</span><span class="op">,</span></span>
+<span id="cb15-914"><a href="#cb15-914"></a>    <span class="st">"gsp"</span><span class="op">:</span> <span class="st">"http://www.opengis.net/ont/geosparql#"</span><span class="op">,</span></span>
+<span id="cb15-915"><a href="#cb15-915"></a>    <span class="st">"locType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/sitetype"</span><span class="op">,</span></span>
+<span id="cb15-916"><a href="#cb15-916"></a>    <span class="st">"odm2var"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/"</span><span class="op">,</span></span>
+<span id="cb15-917"><a href="#cb15-917"></a>    <span class="st">"odm2varType"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variabletype/"</span><span class="op">,</span></span>
+<span id="cb15-918"><a href="#cb15-918"></a>    <span class="st">"hyf"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/"</span><span class="op">,</span></span>
+<span id="cb15-919"><a href="#cb15-919"></a>    <span class="st">"skos"</span><span class="op">:</span> <span class="st">"https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType"</span><span class="op">,</span></span>
+<span id="cb15-920"><a href="#cb15-920"></a>    <span class="st">"ssn"</span><span class="op">:</span> <span class="st">"http://www.w3.org/ns/ssn/"</span><span class="op">,</span></span>
+<span id="cb15-921"><a href="#cb15-921"></a>    <span class="st">"ssn-system"</span><span class="op">:</span> <span class="st">"http://www.w3.org/ns/ssn/systems/"</span></span>
+<span id="cb15-922"><a href="#cb15-922"></a>  }<span class="op">,</span></span>
+<span id="cb15-923"><a href="#cb15-923"></a>  <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span></span>
+<span id="cb15-924"><a href="#cb15-924"></a>  <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://doi.org/10.4211/hs.4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
+<span id="cb15-925"><a href="#cb15-925"></a>  <span class="st">"identifier"</span><span class="op">:</span> <span class="st">"doi:hs.4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
+<span id="cb15-926"><a href="#cb15-926"></a>  <span class="st">"name"</span><span class="op">:</span> <span class="st">"Geoconnex Dataset Example: Data for Triangle Water Supply Dashboard"</span><span class="op">,</span></span>
+<span id="cb15-927"><a href="#cb15-927"></a>  <span class="st">"description"</span><span class="op">:</span> <span class="st">"This is a dataset meant as an example of dataset-level schema.org markup for https://geoconnex.us. It uses as an example data from the NC Triangle Water Supply Dashboard, which collects and visualizes finished water deliveries by water utilities to their service areas in the North Carolina Research Triangle area"</span><span class="op">,</span></span>
+<span id="cb15-928"><a href="#cb15-928"></a>  <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299"</span><span class="op">,</span></span>
+<span id="cb15-929"><a href="#cb15-929"></a>  <span class="st">"keywords"</span><span class="op">:</span> [</span>
+<span id="cb15-930"><a href="#cb15-930"></a>    <span class="st">"water demand"</span><span class="op">,</span></span>
+<span id="cb15-931"><a href="#cb15-931"></a>    <span class="st">"water supply"</span><span class="op">,</span></span>
+<span id="cb15-932"><a href="#cb15-932"></a>    <span class="st">"geoconnex"</span></span>
+<span id="cb15-933"><a href="#cb15-933"></a>  ]<span class="op">,</span></span>
+<span id="cb15-934"><a href="#cb15-934"></a>  <span class="st">"license"</span><span class="op">:</span> <span class="st">"https://creativecommons.org/licenses/by/4.0/"</span><span class="op">,</span></span>
+<span id="cb15-935"><a href="#cb15-935"></a>  <span class="st">"isAccessibleForFree"</span><span class="op">:</span> <span class="st">"true"</span><span class="op">,</span></span>
+<span id="cb15-936"><a href="#cb15-936"></a>  <span class="st">"distribution"</span><span class="op">:</span> {</span>
+<span id="cb15-937"><a href="#cb15-937"></a>    <span class="st">"@type"</span><span class="op">:</span> <span class="st">"DataDownload"</span><span class="op">,</span></span>
+<span id="cb15-938"><a href="#cb15-938"></a>    <span class="st">"name"</span><span class="op">:</span> <span class="st">"HydroShare file URL"</span><span class="op">,</span></span>
+<span id="cb15-939"><a href="#cb15-939"></a>    <span class="st">"contentUrl"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/data/contents/demand_over_time.csv"</span><span class="op">,</span></span>
+<span id="cb15-940"><a href="#cb15-940"></a>    <span class="st">"encodingFormat"</span><span class="op">:</span> [</span>
+<span id="cb15-941"><a href="#cb15-941"></a>      <span class="st">"text/csv"</span></span>
+<span id="cb15-942"><a href="#cb15-942"></a>    ]<span class="op">,</span></span>
+<span id="cb15-943"><a href="#cb15-943"></a>    <span class="st">"dc:conformsTo"</span><span class="op">:</span> <span class="st">"https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/data/contents/dataDictionary.xlsx"</span></span>
+<span id="cb15-944"><a href="#cb15-944"></a>  }<span class="op">,</span></span>
+<span id="cb15-945"><a href="#cb15-945"></a>  <span class="st">"variableMeasured"</span><span class="op">:</span> [</span>
+<span id="cb15-946"><a href="#cb15-946"></a>    {</span>
+<span id="cb15-947"><a href="#cb15-947"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span></span>
+<span id="cb15-948"><a href="#cb15-948"></a>      <span class="st">"name"</span><span class="op">:</span> <span class="st">"water demand"</span><span class="op">,</span></span>
+<span id="cb15-949"><a href="#cb15-949"></a>      <span class="st">"description"</span><span class="op">:</span> <span class="st">"treated water delivered to distribution system"</span><span class="op">,</span></span>
+<span id="cb15-950"><a href="#cb15-950"></a>      <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span></span>
+<span id="cb15-951"><a href="#cb15-951"></a>      <span class="st">"url"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span></span>
+<span id="cb15-952"><a href="#cb15-952"></a>      <span class="st">"unitText"</span><span class="op">:</span> <span class="st">"million gallons per day"</span><span class="op">,</span></span>
+<span id="cb15-953"><a href="#cb15-953"></a>      <span class="st">"qudt:hasQuantityKind"</span><span class="op">:</span> <span class="st">"qudt-quantkinds:VolumeFlowRate"</span><span class="op">,</span></span>
+<span id="cb15-954"><a href="#cb15-954"></a>      <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&amp;id=1125579048"</span><span class="op">,</span></span>
+<span id="cb15-955"><a href="#cb15-955"></a>      <span class="st">"measurementTechnique"</span><span class="op">:</span> <span class="st">"observation"</span><span class="op">,</span></span>
+<span id="cb15-956"><a href="#cb15-956"></a>      <span class="st">"measurementMethod"</span><span class="op">:</span> {</span>
+<span id="cb15-957"><a href="#cb15-957"></a>        <span class="st">"name"</span><span class="op">:</span> <span class="st">"water meter"</span><span class="op">,</span></span>
+<span id="cb15-958"><a href="#cb15-958"></a>        <span class="st">"description"</span><span class="op">:</span> <span class="st">"metered bulk value, accumlated over one month"</span><span class="op">,</span></span>
+<span id="cb15-959"><a href="#cb15-959"></a>        <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.wikidata.org/wiki/Q268503"</span></span>
+<span id="cb15-960"><a href="#cb15-960"></a>      }</span>
+<span id="cb15-961"><a href="#cb15-961"></a>    }<span class="op">,</span></span>
+<span id="cb15-962"><a href="#cb15-962"></a>    {</span>
+<span id="cb15-963"><a href="#cb15-963"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"PropertyValue"</span><span class="op">,</span></span>
+<span id="cb15-964"><a href="#cb15-964"></a>      <span class="st">"name"</span><span class="op">:</span> <span class="st">"water demand (monthly average)"</span><span class="op">,</span></span>
+<span id="cb15-965"><a href="#cb15-965"></a>      <span class="st">"description"</span><span class="op">:</span> <span class="st">"average monthly treated water delivered to distribution system"</span><span class="op">,</span></span>
+<span id="cb15-966"><a href="#cb15-966"></a>      <span class="st">"propertyID"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span></span>
+<span id="cb15-967"><a href="#cb15-967"></a>      <span class="st">"url"</span><span class="op">:</span> <span class="st">"http://vocabulary.odm2.org/variablename/waterUsePublicSupply/"</span><span class="op">,</span></span>
+<span id="cb15-968"><a href="#cb15-968"></a>      <span class="st">"unitText"</span><span class="op">:</span> <span class="st">"million gallons per day"</span><span class="op">,</span></span>
+<span id="cb15-969"><a href="#cb15-969"></a>      <span class="st">"qudt:hasQuantityKind"</span><span class="op">:</span> <span class="st">"qudt-quantkinds:VolumeFlowRate"</span><span class="op">,</span></span>
+<span id="cb15-970"><a href="#cb15-970"></a>      <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&amp;id=1125579048"</span><span class="op">,</span></span>
+<span id="cb15-971"><a href="#cb15-971"></a>      <span class="st">"measurementTechnique"</span><span class="op">:</span> <span class="st">"observation"</span><span class="op">,</span></span>
+<span id="cb15-972"><a href="#cb15-972"></a>      <span class="st">"measurementMethod"</span><span class="op">:</span> {</span>
+<span id="cb15-973"><a href="#cb15-973"></a>        <span class="st">"name"</span><span class="op">:</span> <span class="st">"water meter"</span><span class="op">,</span></span>
+<span id="cb15-974"><a href="#cb15-974"></a>        <span class="st">"description"</span><span class="op">:</span> <span class="st">"metered bulk value, average accumlated over each month for multiple years"</span><span class="op">,</span></span>
+<span id="cb15-975"><a href="#cb15-975"></a>        <span class="st">"url"</span><span class="op">:</span> <span class="st">"https://www.wikidata.org/wiki/Q268503"</span></span>
+<span id="cb15-976"><a href="#cb15-976"></a>      }</span>
+<span id="cb15-977"><a href="#cb15-977"></a>    }</span>
+<span id="cb15-978"><a href="#cb15-978"></a>  ]<span class="op">,</span></span>
+<span id="cb15-979"><a href="#cb15-979"></a>  <span class="st">"temporalCoverage"</span><span class="op">:</span> <span class="st">"2002-01-01/2020-12-31"</span><span class="op">,</span></span>
+<span id="cb15-980"><a href="#cb15-980"></a>  <span class="st">"ssn-system:frequency"</span><span class="op">:</span> {</span>
+<span id="cb15-981"><a href="#cb15-981"></a>    <span class="st">"value"</span><span class="op">:</span> <span class="st">"1"</span><span class="op">,</span></span>
+<span id="cb15-982"><a href="#cb15-982"></a>    <span class="st">"unitCode"</span><span class="op">:</span> <span class="st">"qudt-units:Month"</span></span>
+<span id="cb15-983"><a href="#cb15-983"></a>  }<span class="op">,</span></span>
+<span id="cb15-984"><a href="#cb15-984"></a>  <span class="st">"about"</span><span class="op">:</span> [</span>
+<span id="cb15-985"><a href="#cb15-985"></a>    {</span>
+<span id="cb15-986"><a href="#cb15-986"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0332010"</span><span class="op">,</span></span>
+<span id="cb15-987"><a href="#cb15-987"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
+<span id="cb15-988"><a href="#cb15-988"></a>    }<span class="op">,</span></span>
+<span id="cb15-989"><a href="#cb15-989"></a>    {</span>
+<span id="cb15-990"><a href="#cb15-990"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0368010"</span><span class="op">,</span></span>
+<span id="cb15-991"><a href="#cb15-991"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
+<span id="cb15-992"><a href="#cb15-992"></a>    }<span class="op">,</span></span>
+<span id="cb15-993"><a href="#cb15-993"></a>    {</span>
+<span id="cb15-994"><a href="#cb15-994"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392010"</span><span class="op">,</span></span>
+<span id="cb15-995"><a href="#cb15-995"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
+<span id="cb15-996"><a href="#cb15-996"></a>    }<span class="op">,</span></span>
+<span id="cb15-997"><a href="#cb15-997"></a>    {</span>
+<span id="cb15-998"><a href="#cb15-998"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392020"</span><span class="op">,</span></span>
+<span id="cb15-999"><a href="#cb15-999"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
+<span id="cb15-1000"><a href="#cb15-1000"></a>    }<span class="op">,</span></span>
+<span id="cb15-1001"><a href="#cb15-1001"></a>    {</span>
+<span id="cb15-1002"><a href="#cb15-1002"></a>      <span class="st">"@id"</span><span class="op">:</span> <span class="st">"https://geoconnex.us/ref/pws/NC0392045"</span><span class="op">,</span></span>
+<span id="cb15-1003"><a href="#cb15-1003"></a>      <span class="st">"@type"</span><span class="op">:</span> <span class="st">"Place"</span></span>
+<span id="cb15-1004"><a href="#cb15-1004"></a>    }</span>
+<span id="cb15-1005"><a href="#cb15-1005"></a>  ]</span>
+<span id="cb15-1006"><a href="#cb15-1006"></a>}</span>
+<span id="cb15-1007"><a href="#cb15-1007"></a><span class="vs">```</span></span>
+<span id="cb15-1008"><a href="#cb15-1008"></a></span>
+<span id="cb15-1009"><a href="#cb15-1009"></a><span class="vs">## Appendices {#sec-appendices}</span></span>
+<span id="cb15-1010"><a href="#cb15-1010"></a></span>
+<span id="cb15-1011"><a href="#cb15-1011"></a><span class="vs">### Appendix 1: Codelists {#sec-codelists}</span></span>
+<span id="cb15-1012"><a href="#cb15-1012"></a></span>
+<span id="cb15-1013"><a href="#cb15-1013"></a><span class="vs">#### measurementTechnique {#sec-measurementTechnique}</span></span>
+<span id="cb15-1014"><a href="#cb15-1014"></a></span>
+<span id="cb15-1015"><a href="#cb15-1015"></a><span class="vs">+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span></span>
+<span id="cb15-1016"><a href="#cb15-1016"></a><span class="vs">| code        | definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |</span></span>
+<span id="cb15-1017"><a href="#cb15-1017"></a><span class="vs">+=============+===================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+</span></span>
+<span id="cb15-1018"><a href="#cb15-1018"></a><span class="vs">| observation | This term is meant to group data generating procedures that occur primarily to measure phenomena at, adjacent to discrete features (real-world objects and locations) at the time t. Examples include ground-based sensors like streamgages and weather stations, but also discrete water quality samples, habitat assessments, ecological surveys, and surveys of individuals, households, and organizations. Datasets in this category may be generated from algorithms or human processes that combine heterogeneous source data into latent or derived variables (e.g. composite indexes such as health risk scores or regulatory categorizations such as "in compliance"), or spatially aggregate data from smaller geographic units to larger ones (e.g. Census area-based reporting), as long as the data is representing the phenomena of interest at the time and place it actually occurred and was measured. However, this category can include datasets that use procedures for gap filling missing data (e.g. streamgage data with sensor malfunction period data estimated from time series models) |</span></span>
+<span id="cb15-1019"><a href="#cb15-1019"></a><span class="vs">+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span></span>
+<span id="cb15-1020"><a href="#cb15-1020"></a><span class="vs">| model       | This term is refers to data that are generated rather than observed. It groups data generating procedures that generate data for **hypothetical states** at discrete locations, such as (but not limited to):</span><span class="sc">\ </span><span class="vs">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |</span></span>
+<span id="cb15-1021"><a href="#cb15-1021"></a><span class="vs">|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |</span></span>
+<span id="cb15-1022"><a href="#cb15-1022"></a><span class="vs">|             | -   **the near future** (e.g. river stage forecasts like the gage location-based forecasts from the NOAA [Advanced Hydrologic Prediction System](https://water.weather.gov/ahps/forecasts.php))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |</span></span>
+<span id="cb15-1023"><a href="#cb15-1023"></a><span class="vs">|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |</span></span>
+<span id="cb15-1024"><a href="#cb15-1024"></a><span class="vs">|             | -   **counterfactuals** (e.g. hydrologic models under varying assumptions about dam removal or reservoir operations)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |</span></span>
+<span id="cb15-1025"><a href="#cb15-1025"></a><span class="vs">|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |</span></span>
+<span id="cb15-1026"><a href="#cb15-1026"></a><span class="vs">|             | -   **the unobserved past and present at the feature of interest** (e.g. water quality models for parameters based on climate and upstream effluent discharge data)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |</span></span>
+<span id="cb15-1027"><a href="#cb15-1027"></a><span class="vs">+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
