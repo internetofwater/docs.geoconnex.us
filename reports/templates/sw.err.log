@@ -272,7 +272,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2999/790142042.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_2922/790142042.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     17[0m   },
 [1;32m     18[0m   [0;34m"sameAs"[0m[0;34m:[0m [0;34m"https://doi.org/10.1234/1234567890"[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 19[0;31m   [0;34m"isAccessibleForFree"[0m[0;34m:[0m [0mtrue[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
