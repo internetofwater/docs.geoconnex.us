@@ -93,7 +93,7 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "QueryingSidebar",
           position: "left",
-          label: "Querying",
+          label: "Querying Data",
         },
         {
           type: "docSidebar",
@@ -105,7 +105,7 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "DataFormatReferenceSidebar",
           position: "left",
-          label: "Best Practices & Data Formatting",
+          label: "Best Practices & Reference Info",
         },
         {
           href: "https://github.com/internetofwater/docs.geoconnex.us",
