@@ -14,7 +14,9 @@ function HomepageHeader() {
       <div className="container">
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
+
         </Heading>
+        {/* <img src="img/geoconnex-logo.png" /> */}
         <p className="hero__subtitle">{siteConfig.tagline}</p>
       </div>
     </header>

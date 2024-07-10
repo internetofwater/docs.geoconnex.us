@@ -87,25 +87,25 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "ContributingSidebar",
           position: "left",
-          label: "Contributing",
+          label: "Contribute",
         },
         {
           type: "docSidebar",
           sidebarId: "QueryingSidebar",
           position: "left",
-          label: "Querying Data",
+          label: "Discover and Access Data",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "DataFormatReferenceSidebar",
+          position: "left",
+          label: "Best Practices & Data Standards",
         },
         {
           type: "docSidebar",
           sidebarId: "SystemArchitectureSidebar",
           position: "left",
           label: "System Architecture",
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "DataFormatReferenceSidebar",
-          position: "left",
-          label: "Best Practices & Reference Info",
         },
         {
           href: "https://github.com/internetofwater/docs.geoconnex.us",
@@ -141,11 +141,11 @@ const config: Config = {
             {
               label: "GitHub",
               href: "https://github.com/internetofwater/",
-            }
+            },
           ],
         },
       ],
-      copyright: `The geoconnex.us Guidebook and Knowledge Graph are licensed under the CC0Creative Commons Zero 1.0 (CC0) license and is based upon work supported by the U.S. Geological Survey under Grant Nos. G21AP10607 and G21AC10732 `,
+      copyright: `Licensed under the CC0 Creative Commons Zero 1.0 (CC0) license and based upon work supported by the U.S. Geological Survey under Grant Nos. G21AP10607 and G21AC10732 `,
     },
     prism: {
       theme: prismThemes.github,

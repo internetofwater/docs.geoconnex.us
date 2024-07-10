@@ -1,41 +1,39 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import React from 'react';
 
 type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
 };
-
+ 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Submit Water Data from your Organization',
+    title: 'Submit your water data into a unified database',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Advance research and reduce fragmentation by contributing the data you already collect.
       </>
     ),
   },
   {
-    title: 'Query a unified API for water resources',
+    title: 'Explore water data across organizations all in 1 place',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Explore the water data of many providers and gain broader insights quicker.
       </>
     ),
   },
   {
-    title: 'Reference Water Data Standards',
+    title: 'Align on water data standards',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Make sure your organization is well positioned to take advantage of new standardization efforts
       </>
     ),
   },
