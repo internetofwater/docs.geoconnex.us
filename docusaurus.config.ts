@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Geoconnex Docs",
+  title: "Geoconnex Documentation",
   tagline: "Data infrastructure for unifying hydrologic features in the United States",
   favicon: "img/favicon.ico",
 

@@ -5,45 +5,47 @@ import React from 'react';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  img: string;
   description: JSX.Element;
 };
  
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Submit your water data into a unified database',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Point Geoconnex to your water data',
+    img: "central.png",
     description: (
       <>
-        Advance research and reduce fragmentation by contributing the data you already collect.
+        Advance research by contributing the data your organization already collects.
       </>
     ),
   },
   {
-    title: 'Explore water data across organizations all in 1 place',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Explore data across organizations',
+    img: "db.png",
     description: (
       <>
-        Explore the water data of many providers and gain broader insights quicker.
+        Gain broader insights by leveraging common water data standards and a common API
       </>
     ),
   },
+
   {
-    title: 'Align on water data standards',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Register persistent identifiers',
+    img: "persist.png",
     description: (
       <>
-        Make sure your organization is well positioned to take advantage of new standardization efforts
+        Access common water data in a way that is stable and reusable
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, img, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        {/* Apply a CSS class for consistent image size */}
+        <img className={styles.featureImage} alt={title} src={img} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

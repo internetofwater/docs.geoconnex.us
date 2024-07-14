@@ -5,7 +5,11 @@
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+
+.featureImage {
+  width: 50%; /* Ensure the image takes up 50% of its container width */
+  height: 160px;
+  max-width: 70%; /* Ensure the image doesn't exceed its natural size */
+  margin: 20px; /* Optional: Add margin below each image for whitespace */
+  filter: drop-shadow(0.5px 0.5px 0 rgba(255, 255, 255, 0.5)); /* Transparent drop shadow */
 }
