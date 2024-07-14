@@ -73,16 +73,22 @@ const config: Config = {
     },
     // announcementBar: {
     //   content: "",
-    //   isCloseable: true,
+    //   isCloseable: tr0ue,
     // },
 
     navbar: {
       logo: {
         alt: "Geoconnex Logo",
-        src: "img/logo.jpg",
+        src: "outlined-logo-no-words.png",
       },
       hideOnScroll: true,
       items: [
+        {
+          type: "docSidebar",
+          sidebarId: "AboutSidebar",
+          position: "left",
+          label: "About",
+        },
         {
           type: "docSidebar",
           sidebarId: "ContributingSidebar",
@@ -91,16 +97,17 @@ const config: Config = {
         },
         {
           type: "docSidebar",
-          sidebarId: "QueryingSidebar",
-          position: "left",
-          label: "Discover and Access Data",
-        },
-        {
-          type: "docSidebar",
           sidebarId: "DataFormatReferenceSidebar",
           position: "left",
           label: "Best Practices & Data Standards",
         },
+        {
+          type: "docSidebar",
+          sidebarId: "QueryingSidebar",
+          position: "left",
+          label: "Access Data",
+        },
+
         {
           type: "docSidebar",
           sidebarId: "SystemArchitectureSidebar",
