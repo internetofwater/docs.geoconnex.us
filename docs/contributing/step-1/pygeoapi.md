@@ -1,6 +1,13 @@
+---
+
+title: Setting up an Endpoint
+sidebar_position: 1
+
+---
+
 # Using pygeoapi to publish data to Geoconnex
 
-This repository is a demonstration and explanation for how to use [pygeoapi](https://pygeoapi.io) to publish [landing content for individual features](https://docs.ogc.org/per/20-067.html#landingContent) within geospatial datasets suitable for harvesting by the [geoconnex.us](https://docs.geoconnex.us/principles/genprin.html) system. Geoconnex relies on [JSON-LD](https://json-ld.org/) to output standardized data structures across disparate data sources and providers.
+This page is a demonstration and explanation for how to use [pygeoapi](https://pygeoapi.io) to publish [landing content for individual features](https://docs.ogc.org/per/20-067.html#landingContent) within geospatial datasets suitable for harvesting by the [geoconnex.us](https://docs.geoconnex.us/principles/genprin.html) system. Geoconnex relies on [JSON-LD](https://json-ld.org/) to output standardized data structures across disparate data sources and providers.
 
 ## Getting started with pygeoapi and docker
 
@@ -36,12 +43,16 @@ The easiest way to deploy this demonstration is with docker-compose. The [docker
 
 1.  Clone this repository on your machine.
 
+    ```
     git clone https://github.com/cgs-earth/pygeoapi-geoconnex-examples.git
     cd pygeoapi-geoconnex-examples
+    ```
 
 2.  Deploy the demonstration (make sure port 5000 is available)
 
+    ```
     docker compose up
+    ```
 
 3.  Explore the OGC-API feature collections at `http://localhost:5000/collections`
 

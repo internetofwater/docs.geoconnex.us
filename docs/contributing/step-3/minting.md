@@ -1,7 +1,5 @@
 # Mint Persistent Identifiers
 
-
-
 The process for adding a PID-URI redirect is generally similar to that used by [w3id.org](https://github.com/perma-id/w3id.org). Test build
 
 There is a strong preference for creating "[1:1](#adding-11-redirects-to-geoconnexus)" redirects. That is, specifying an exact redirect from a geoconnex.us-based PID to the URI of the hydrologic feature you have a web resource about, for each and every individual feature. However, if you need to create PIDs and redirects for a large number of features (more than 300,000), we will require a [regular expression matching redirect](#adding-regular-expression-redirects-to-geoconnexus). For example, redirecting from https://geoconnex.us/example-namespace/*wildcard-string to https://example.org/features?query=*wildcard-string.
