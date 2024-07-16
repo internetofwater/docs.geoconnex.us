@@ -1,6 +1,6 @@
 # Community Landscape 
 
-The geoconnex.us project is imagined to be a community open-source project with both code and data contributions from a wide variety of entities with interests in the water sector, including: 
+The geoconnex.us project is imagined to be a community open-source project with both code and data contributions from a wide variety of entities with inter ests in the water sector, including: 
 
  * federal, state, and local government agencies
  * academic institutions and consortia

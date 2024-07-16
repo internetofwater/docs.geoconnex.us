@@ -11,7 +11,7 @@ import React from 'react';
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const titleStyle = {
-    color: '#14325D',
+    color: '#FFFFFF',
     textShadow: '0px 0px 5px rgba(100, 100, 100, 0.6)',
   };
 

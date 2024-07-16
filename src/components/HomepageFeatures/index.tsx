@@ -30,11 +30,11 @@ const FeatureList: FeatureItem[] = [
   },
 
   {
-    title: 'Register persistent identifiers',
-    img: "persist.png",
+    title: 'Align on common water data standards',
+    img: "jsonld.svg",
     description: (
       <>
-        Access common water data in a way that is stable and reusable
+        Ensure your organization knows best practices and is part of the community effort to standardize the future of water data
       </>
     ),
   },
