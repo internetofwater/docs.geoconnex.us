@@ -1,3 +1,9 @@
+---
+
+sidebar_position: 2
+---
+
+
 # Community Landscape 
 
 The geoconnex.us project is imagined to be a community open-source project with both code and data contributions from a wide variety of entities with inter ests in the water sector, including: 
@@ -10,7 +16,7 @@ The geoconnex.us project is imagined to be a community open-source project with 
 
  ![community diagram](assets/community.png)
 
-`community` below illustrates the various roles in the geoconnex.us community. The geoconnex.us knowledge graph begins fundamentally with a community of **data publishers** who publish their water-related data on the web following [W3C Spatial Data on the Web Best Practices](https://www.w3.org/TR/sdw-bp/). To do so, **data publishers** require relevant guidance specific to water and water-related domains in terms of what specific metadata needs to be published and in what format. The geoconnex.us **authoring guidance** being developed here at docs.geoconnex.us serves this purpose. **Data publishers** that follow this guidance enable the geoconnex.us [Indexer](https://github.com/internetofwater/harvest.geoconnex.us) to assemble the decentralized network of published data into a knowledge graph which **data users** can interact with through search interfaces such as [search.geoconnex.us](https://search.geoconnex.us) or with web services under development such as [reference.geoconnex.us](https://reference.geoconnex.us). **Data users** help the geoconnex.us developers design the **authoring guidance** by defining the types of queries (and required metadata) that are useful to them.
+The above diagram illustrates the various roles in the geoconnex.us community. The geoconnex.us knowledge graph begins fundamentally with a community of **data publishers** who publish their water-related data on the web following [W3C Spatial Data on the Web Best Practices](https://www.w3.org/TR/sdw-bp/). To do so, **data publishers** require relevant guidance specific to water and water-related domains in terms of what specific metadata needs to be published and in what format. The geoconnex.us **authoring guidance** being developed here at docs.geoconnex.us serves this purpose. **Data publishers** that follow this guidance enable the geoconnex.us [Indexer](https://github.com/internetofwater/harvest.geoconnex.us) to assemble the decentralized network of published data into a knowledge graph which **data users** can interact with through search interfaces such as [search.geoconnex.us](https://search.geoconnex.us) or with web services under development such as [reference.geoconnex.us](https://reference.geoconnex.us). **Data users** help the geoconnex.us developers design the **authoring guidance** by defining the types of queries (and required metadata) that are useful to them.
 
 ## Indexer
 

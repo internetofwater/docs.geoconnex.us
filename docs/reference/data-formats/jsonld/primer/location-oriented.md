@@ -1,14 +1,13 @@
+---
+sidebar_position: 2
+---
+
 # Location-oriented 
 
 The purpose of the location-oriented page is to give enough information about the location and the data available about that location that a water data user would be able to quickly determine whether and how to download the data after reading. We will use the USGS Monitoring Location [08282300](https://geoconnex.us/usgs/monitoring-location/08282300) as an example for the type of content to put in location-oriented Geoconnex landing page web resources and how to map that content to embedded JSON-LD documents.
 
-::: callout-note
-Scroll up and down to view elements of the example landing page
-:::
+<iframe width="780" height="500" src="https://waterdata.usgs.gov/monitoring-location/08282300" title="USGS Example"></iframe>
 
-```{=html}
-iframe width="780" height="500" src="https://waterdata.usgs.gov/monitoring-location/08282300" title="USGS Example"/iframe
-```
 This location-oriented web resource includes this type of information
 
 -   "[This is my HTTP identifier](https://geoconnex.us/ref/monitoring-location/08282300)"[^4]
@@ -290,7 +289,7 @@ However, to enable data users (and search engines) to filter for your data using
 }
 ```
 
-1.  This node (we are continuing from the above JSON-LD document, so the USGS Monitoring Location) is `subjectOf` the node that follows)
+1.  This node (we are continuing from the above JSON-LD document, so the USGS Monitoring Location is `subjectOf` the node that follows)
 2.  This node is a `Dataset`(https://schema.org/Dataset)
 3.  The dataset's name and description
 4.  The dataset's license, which is most easily populated by a URI for the license appropriate for your data. Federal agencies, many state agencies, and academics use open licenses such as those provided by [opendatacommons.org](https://opendatacommons.org/licenses/) and [creativecommons.org](https://creativecommons.org/licenses). URIs for licenses are available from https://spdx.org/licenses/

@@ -1,15 +1,15 @@
+---
 
+sidebar_position: 3
+---
 # Dataset-oriented 
 
 The purpose of the dataset-oriented page is to give enough information about the data available and the area, locations, or features that it is relevant to that a water data user would be able to quickly determine whether and how to download the data after reading. We will use this [data resource about water utility treated water demand that has been published at HydroShare](https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/) as an example for the type of content to put in dataset-oriented Geoconnex landing page web resources and how to map that content to embedded JSON-LD documents.
 
-::: callout-note
-Scroll up and down to view elements of the example landing page
-:::
 
-```{=html}
-iframe width="780" height="500" src="https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/" title="Hydroshare Example"/iframe
-```
+<iframe width="780" height="500" src="https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/" title="Hydroshare Example">
+</iframe>
+
 This dataset-oriented web resource includes this type of information
 
 -   "This is my URI (which is a DOI-URL): https://geoconnex.us/ref/monitoring-location/08282300"[^13]

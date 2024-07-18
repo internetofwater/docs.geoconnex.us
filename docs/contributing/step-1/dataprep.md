@@ -1,6 +1,6 @@
-# Data preparation
+# Adding Context
 
-In this section, we guide through how to create a dataset suitable to use with our open-source tool based on [pygeoapi](https://pygeoapi.io), which will generate landing pages with embedded JSON-LD.
+Before you submit your data to Geoconnex it is important that it is well formatted so it can be easier to parse and provide better insights. This also makes it more maintainable and expressive for your own team.
 
 ## Adding contextual information
 To be most useful to the wider water data community, locations should have both descriptive and contextual information in the data published to geoconnex.us. Some useful descriptive information could include:
@@ -53,41 +53,7 @@ By using persistent identifiers for NHDPlus features, you can represent your loc
 
 Below is an example table based on streamgages with data published at the [California Data Exchange Center](https://cdec.water.ca.gov/riv_flows.html) The table is also available for download as a csv [here](https://github.com/internetofwater/docs.geoconnex.us/raw/main/book/quickstart/dataprep_example.csv). Note the inclusion of descriptive information, links to various reference features, and the `data_url` linking to the CDEC data system entrypoint for each site. 
 
-```{list-table} Example monitoring location tabular data for geoconnex
-:header-rows: 1
-:name: Example Data
-
-* - uri
-  - id
-  - name
-  - organization
-  - data_url
-  - latitude
-  - longitude
-  - reachcode_nhdpv2
-  - measure_nhdpv2
-  - mainstem_river
-  - reference_gage
-* - https://geoconnex.us/ca-gage-assessment/gages/AMC
-  - AMC
-  - Arcade Creek at Winding Way
-  - California Department of Water Resources
-  - http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=AMC
-  - 38.645447
-  - -121.347407
-  - https://geoconnex.us/nhdpv2/reachcode/18020111000048
-  - 0
-  - https://geoconnex.us/ref/mainstems/5147
-  - https://geoconnex.us/ref/gages/1185578
-* - https://geoconnex.us/ca-gage-assessment/gages/CSW
-  - CSW
-  - Kings River Below Crescent Weir
-  - California Department of Water Resources
-  - http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=CSW
-  - 36.3863018
-  - -119.875615
-  - https://geoconnex.us/nhdpv2/reachcode/18030012009243
-  - 0
-  - https://geoconnex.us/ref/mainstems/1796720
-  - https://geoconnex.us/ref/gages/1185619 
-```
+| uri                                                     | id  | name                             | organization                            | data_url                                              | latitude   | longitude   | reachcode_nhdpv2                      | measure_nhdpv2 | mainstem_river                     | reference_gage                  |
+|---------------------------------------------------------|-----|----------------------------------|-----------------------------------------|-------------------------------------------------------|------------|-------------|--------------------------------------|----------------|-------------------------------------|----------------------------------|
+| https://geoconnex.us/ca-gage-assessment/gages/AMC        | AMC | Arcade Creek at Winding Way      | California Department of Water Resources | http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=AMC | 38.645447  | -121.347407 | https://geoconnex.us/nhdpv2/reachcode/18020111000048 | 0              | https://geoconnex.us/ref/mainstems/5147 | https://geoconnex.us/ref/gages/1185578 |
+| https://geoconnex.us/ca-gage-assessment/gages/CSW        | CSW | Kings River Below Crescent Weir | California Department of Water Resources | http://cdec.water.ca.gov/dynamicapp/staMeta?station_id=CSW | 36.3863018 | -119.875615 | https://geoconnex.us/nhdpv2/reachcode/18030012009243 | 0              | https://geoconnex.us/ref/mainstems/1796720 | https://geoconnex.us/ref/gages/1185619 |

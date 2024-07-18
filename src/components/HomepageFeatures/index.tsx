@@ -12,7 +12,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Point Geoconnex to your water data',
-    img: "central.png",
+    img: "point-recolored.png",
     description: (
       <>
         Advance research by contributing the data your organization already collects.
@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Explore data across organizations',
-    img: "db.png",
+    img: "db-colored.png",
     description: (
       <>
         Gain broader insights by leveraging common water data standards and a common API

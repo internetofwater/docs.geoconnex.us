@@ -1,4 +1,4 @@
-# What is in graph.geoconnex.us?
+# Graph.geoconnex.us
 
 The features registered in https://github.com/internetofwater/geoconnex.us are automatically harvested and included in [graph.geoconnex.us](https://graph.geoconnex.us). They are either community reference features or associated with a particular organization or database.
 

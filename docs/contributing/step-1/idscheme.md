@@ -1,11 +1,25 @@
-# Identification Scheme
+---
 
-The first thing to do is establish an identification scheme for the features/locations represented in your data. Identifiers should be unique, unambiguous, and persistent to changes. That is, if your organization uses some kind of numbering or nameing system that is vulenrable to periodic changes, identifiers should not be based on that system. The real-world feature should have a persistent, stable identifier. Furthermore, to participate in the geoconnex system, identifiers should have the following format:
+sidebar_position: 1
+title: Identification Scheme
+---
 
+# Establish an Identification Scheme for your Data
 
-<img src="idscheme.png" alt="geoconnex-idscheme" class="bg-primary mb-1" width="800px"> </img>
+The first thing to do is establish an identification scheme for the features/locations represented in your data. 
+    - Identifiers should be unique, unambiguous, and persistent to changes. 
+    - That is, if your organization uses some kind of numbering or nameing system that is vulenrable to periodic changes, identifiers should not be based on that system. The real-world feature should have a persistent, stable identifier. Furthermore, to participate in the geoconnex system, identifiers should have a stem, namespace, and id. 
 
-The geoconnex.us persistent identifier format.
+<figure>
+
+![An example id scheme](./assets/idscheme.png)
+
+<center>
+<i>
+<figcaption>An example id scheme</figcaption>
+</i>
+</center>
+</figure>
 
 Note that it looks like a URL. This is because these identifiers are meant to resolve (redirect) to a [landing page](https://docs.geoconnex.us/principles/lc.html) about the identified locations. This means that all elements must be allowed URL characters, and in practice, should avoid obscure symbols and whitespace. 
 

@@ -1,7 +1,9 @@
 {
-    "label": "Step 2: Data Formatting",
+    "label": "Step 2: Exposing your data",
     "position": 3,
     "link": {
+      "type": "generated-index",
+      "description": "Geoconnex can crawl data from any url with a valid HTML landing page and data as json-ld. You can use pygeoapi to create a wrapper over your data and fulfill these requirements. You can also leverage an existing endpoint."
     }
   }
   
