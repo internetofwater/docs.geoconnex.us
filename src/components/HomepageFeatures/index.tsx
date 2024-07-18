@@ -31,7 +31,7 @@ const FeatureList: FeatureItem[] = [
 
   {
     title: 'Align on common water data standards',
-    img: "jsonld.svg",
+    img: "collage.png",
     description: (
       <>
         Ensure your organization knows best practices and is part of the community effort to standardize the future of water data
