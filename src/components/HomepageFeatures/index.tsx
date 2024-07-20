@@ -2,67 +2,50 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import React from 'react';
-
-type FeatureItem = {
-  title: string;
-  img: string;
-  description: JSX.Element;
-};
- 
-const FeatureList: FeatureItem[] = [
-  {
-    title: 'Point Geoconnex to your water data',
-    img: "point-recolored.png",
-    description: (
-      <>
-        Advance research by contributing the data your organization already collects.
-      </>
-    ),
-  },
-  {
-    title: 'Explore data across organizations',
-    img: "db-colored.png",
-    description: (
-      <>
-        Gain broader insights by leveraging common water data standards and a common API
-      </>
-    ),
-  },
-
-  {
-    title: 'Align on common water data standards',
-    img: "collage.png",
-    description: (
-      <>
-        Ensure your organization knows best practices and is part of the community effort to standardize the future of water data
-      </>
-    ),
-  },
-];
-
-function Feature({ title, img, description }: FeatureItem) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        {/* Apply a CSS class for consistent image size */}
-        <img className={styles.featureImage} alt={title} src={img} />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
+import ThemedImage from '@theme/ThemedImage';
 
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+          <div className={clsx('col col--4')}>
+            <div className="text--center">
+              <img className={styles.featureImage} alt="Point Geoconnex to your water data" src="point-recolored.png" />
+            </div>
+            <div className="text--center padding-horiz--md">
+              <Heading as="h3">Point Geoconnex to your water data</Heading>
+              <p>Advance research by contributing the data your organization already collects.</p>
+            </div>
+          </div>
+
+          <div className={clsx('col col--4')}>
+            <div className="text--center">
+              <img className={styles.featureImage} alt="Explore data across organizations" src="db-colored.png" />
+            </div>
+            <div className="text--center padding-horiz--md">
+              <Heading as="h3">Explore data across organizations</Heading>
+              <p>Gain broader insights by leveraging common water data standards and a common API.</p>
+            </div>
+          </div>
+
+          <div className={clsx('col col--4')}>
+            <div className="text--center">
+            <ThemedImage
+              alt="Docusaurus themed image"
+              sources={{
+                light: "collage.png",
+                dark: "collage-outlined.png",
+                }
+              }
+              className={styles.featureImage}
+              />
+            </div>
+            <div className="text--center padding-horiz--md">
+              <Heading as="h3">Align on common water data standards</Heading>
+              <p>Ensure your organization knows best practices and is part of the community effort to standardize the future of water data.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

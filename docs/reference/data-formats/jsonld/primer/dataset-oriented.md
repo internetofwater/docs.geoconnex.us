@@ -12,11 +12,11 @@ The purpose of the dataset-oriented page is to give enough information about the
 
 This dataset-oriented web resource includes this type of information
 
--   "This is my URI (which is a DOI-URL): https://geoconnex.us/ref/monitoring-location/08282300"[^13]
+-   "This is my URI (which is a DOI-URL): https://geoconnex.us/ref/monitoring-location/08282300" [^13]
 
 -   "This is my permanent identifier, which is a DOI": [^14]
 
--   "This is my URL https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299"[^15]
+-   "This is my URL https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299" [^15]
 
 -   "My creator is name"
 
@@ -343,7 +343,7 @@ Sometimes there are no particular features that a dataset is explicitly about. T
   ],
   "temporalCoverage": "2002-01-01/2020-12-31",
   "dc:accrualPeriodicity": "freq:daily",                                                               
-  "dcat:temporalResolution": {"@value":PT15M","@type":"xsd:duration"}, 
+  "dcat:temporalResolution": {"@value": "PT15M","@type":"xsd:duration"}, 
   "about": [
     {
       "@id": "https://geoconnex.us/ref/pws/NC0332010",

@@ -10,9 +10,9 @@ The purpose of the location-oriented page is to give enough information about th
 
 This location-oriented web resource includes this type of information
 
--   "[This is my HTTP identifier](https://geoconnex.us/ref/monitoring-location/08282300)"[^4]
+-   "[This is my HTTP identifier](https://geoconnex.us/ref/monitoring-location/08282300)" [^4]
 
--   "I am the same thing as [Geoconnex Reference Gage 1018463](https://geoconnex.us/ref/gages/1018463)"[^5]
+-   "I am the same thing as [Geoconnex Reference Gage 1018463](https://geoconnex.us/ref/gages/1018463)" [^5]
 
 -   "My unique USGS ID is `08282300`"
 
@@ -20,11 +20,11 @@ This location-oriented web resource includes this type of information
 
 -   "Data about me is provided by the `USGS Water Data for the Nation`"
 
--   "I am a `hydrometric station`[^6]"
+-   "I am a `hydrometric station`" [^6]
 
 -   "My lat/long is `36.738 -106.471`"
 
--   "I am on the [Rio Brazos](https://geoconnex.us/ref/mainstems/1611418)"[^7]
+-   "I am on the [Rio Brazos](https://geoconnex.us/ref/mainstems/1611418)" [^7]
 
 -   "There is data about me for the parameter `Discharge` and between June 6, 2014 to the present at a 15 minute time resolution. This data is generated from `in-situ observation`, in particular using [USGS discharge measurement methods](https://pubs.usgs.gov/publication/tm3A8). You can download it [here](https://waterservices.usgs.gov/nwis/iv/?sites=08282300&parameterCd=00060&startDT=2023-08-13T03:08:21.313-06:00&endDT=2023-08-20T03:08:21.313-06:00&siteStatus=all&format=rdb) using the [USGS Instantaneous Values REST Web Service](https://waterservices.usgs.gov/rest/IV-Test-Tool.html) in the [RDB format](https://waterdata.usgs.gov/nwis/?tab_delimited_format_info)". You can also download it [here](https://labs.waterdata.usgs.gov/sta/v1.1/Datastreams('0adb31f7852e4e1c9a778a85076ac0cf')?$expand=Thing,Observations) using the [SensorThings API standard](https://docs.ogc.org/is/15-078r6/15-078r6.html) in `JSON` or `CSV` formats."[^8]
 
@@ -193,9 +193,6 @@ We have added a context element `gsp` and three blocks: `geo`, `gsp:hasGeometry`
 
 -   `hyf:referencedPosition` uses the [HY_Features](https://www.opengis.net/def/schema/hy_features/hyf/) model to declare that this location is located on a specific river, in this case the [Rio Brazos in New Mexico](%22https://geoconnex.us/ref/mainstems/1611418%22) as identified in the Reference Mainstems dataset, which is available via API at https://reference.geoconnex.us/collections/mainstems and managed on GitHub at https://github.com/internetofwater/ref_rivers. All surface water locations should include this type of element.
 
-::: callout-note
-####### What about groundwater?
-
 Groundwater monitoring locations may use the `hyf:referencedPosition` element if data providers wish their wells to be associated with specific streams. However, groundwater sample and monitoring locations such as wells can also be referenced to hydrogeologic unit or aquifer identifiers where available using this pattern, instead of using the `hyf:referencedPosition` pattern:
 
 ``` json
@@ -223,9 +220,8 @@ If reference URIs are not available for the groundwater unit you'd like to refer
    }
 }
 ```
-:::
 
-##### Datasets {#sec-loc-data}
+##### Datasets 
 
 Now that we have described our location's provenance, geospatial geometry, and association with any reference features , we now describe the data that can be accessed about that location. The simplest, most minimal way to do this is to add a block like this, which would be added to the bottom of the JSON-LD document we have created so far:
 
