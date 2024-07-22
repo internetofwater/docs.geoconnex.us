@@ -26,7 +26,7 @@ At a very high level, contributing to the geoconnex.us knowledge graph involves 
 
 This tutorial assumes that have would like to publish a dataset you have available that in some way represents geospatial locations that include data related to water.
 
-If you already publish some kind of website or data portal with feature-specific landing pages, then you only need to modify your landing pages to [include structure metadata formatted as JSON-LD](https://docs.geoconnex.us/principles/jsonld.html) and [mint persistent identifiers](https://docs.geoconnex.us/principles/pids.html) for those pages. If your data is being published through a web accessible folder or API, then it may be relatively simple for you to create [landing pages](https://docs.geoconnex.us/principles/lc.html) using your own web development tooling if you have not already done so. 
+If you already publish some kind of website or data portal with feature-specific landing pages, then you only need to modify your landing pages to [include structure metadata formatted as JSON-LD](../reference/data-formats/jsonld/overview.md) and [mint persistent identifiers](../contributing/step-3/minting.md) for those pages. If your data is being published through a web accessible folder or API, then it may be relatively simple for you to create [landing pages](../reference/landing-pages.md) using your own web development tooling if you have not already done so. 
 
 Otherwise, if you do not currently have a platform that publishes web content about individual [features](https://docs.geoconnex.us/principles/hydrofeatures.html), or you do not have the resources or time to make one, we show how to use [pygeoapi](https://docs.geoconnex.us/quickstart/pygeoapi.html) as a free and open-source option to so. 
 

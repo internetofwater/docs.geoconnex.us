@@ -123,7 +123,7 @@ Create a pygeoapi configuration file with metadata specific to your organization
 
 
 
-Notice how `"@id"` is the URL for the API call. This can be configured to be an exteral URI instead, such as those [minted with geoconnex.us](https://docs.geoconnex.us/contributing/pids.html). You can then add these identifiers as a field in your data, whether in a local file or at an ESRI or CKAN api endpoint, and then specify this field as the `uri_field:` in the pygeoapi configuration yml file in the `providers:` block, like so:
+Notice how `"@id"` is the URL for the API call. This can be configured to be an exteral URI instead, such as those [minted with geoconnex.us](../../step-3/minting.md). You can then add these identifiers as a field in your data, whether in a local file or at an ESRI or CKAN api endpoint, and then specify this field as the `uri_field:` in the pygeoapi configuration yml file in the `providers:` block, like so:
 
 ```yaml
 demo-ckan:

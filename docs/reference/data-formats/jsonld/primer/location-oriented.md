@@ -6,7 +6,6 @@ sidebar_position: 2
 
 The purpose of the location-oriented page is to give enough information about the location and the data available about that location that a water data user would be able to quickly determine whether and how to download the data after reading. We will use the USGS Monitoring Location [08282300](https://geoconnex.us/usgs/monitoring-location/08282300) as an example for the type of content to put in location-oriented Geoconnex landing page web resources and how to map that content to embedded JSON-LD documents.
 
-<iframe width="780" height="500" src="https://waterdata.usgs.gov/monitoring-location/08282300" title="USGS Example"></iframe>
 
 This location-oriented web resource includes this type of information
 

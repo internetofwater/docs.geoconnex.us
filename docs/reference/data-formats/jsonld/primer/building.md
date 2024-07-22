@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Building Geoconnex Web Resources
 
-This section provides step-by-step guidance to build Geoconnex Web Resources, which should be an HTML webpage with a unique URL within which is embedded an JSON-LD document (see @sec-primer). See @sec-complete-examples for completed example documents to skip the step-by-step.
+This section provides step-by-step guidance to build Geoconnex Web Resources, which should be an HTML webpage with a unique URL within which is embedded an JSON-LD document.
 
 ## Geoconnex JSON-LD elements
 
@@ -15,7 +15,7 @@ A Geoconnex JSON-LD document should be embedded in a human-readable website that
 
 ### Context 
 
-Geoconnex JSON-LD documents can have varying contexts. However, there are several vocabularies other than `schema.org` that mqy be useful, depending on the type of location and dataset being described and the level of specificity for which metadata is produced by the data provider. The example context below can serve as general-purpose starting point, although simpler contexts may be sufficient for many documents:
+Geoconnex JSON-LD documents can have varying contexts. However, there are several vocabularies other than `schema.org` that may be useful, depending on the type of location and dataset being described and the level of specificity for which metadata is produced by the data provider. The example context below can serve as general-purpose starting point, although simpler contexts may be sufficient for many documents:
 
 ``` json
   "@context": {
@@ -93,4 +93,3 @@ There are two basic patterns to think about:
 
 In some cases, it is possible to set up a web architecture that implements both patterns. For example, the [Wyoming State Engineer's Office Web Portal](https://seoflow.wyo.gov) conceptualizes a time series for a specific parameter at a specific location as a dataset. Thus, webpages exist for both [Locations](https://seoflow.wyo.gov/Data/Location/Summary/Location/06280300/Interval/Latest) and [Datasets](https://seoflow.wyo.gov/Data/DataSet/Summary/Location/06280300/DataSet/Discharge/Discharge/Interval/Latest), and they link to each other where relevant. In this case, it is only necessary to implement Geoconnex embedded JSON-LD at either the Location or Dataset level, although both could be done as well.
 
-Having chosen one of the patterns, proceed to [location-oriented](@sec-loc) or [dataset-oriented](@sec-data) guidance to start building a JSON-LD document.
