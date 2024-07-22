@@ -2,9 +2,6 @@
 
 Geoconnex requires a persistent identifier to refer to your data. That way, if the url where you host your data changes, you can update the mapping, but the end users of geoconnex can still query the same identifier. This process is generally done by uploading a CSV file with the associated mapping.
 
-<!-- Is this helpful info? Seems  very technical -->
-- The process for adding a PID-URI redirect is generally similar to that used by [w3id.org](https://github.com/perma-id/w3id.org). 
-
 
 ### Adding 1:1 redirects to geoconnex.us
 

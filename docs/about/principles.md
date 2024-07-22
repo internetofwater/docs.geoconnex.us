@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 
 # General Principles
 
@@ -18,8 +22,6 @@ geoconnex.us augments the above framework with a strategy and guidance for data 
 3. **Landing Content (web pages)** that include...
 4. **Structured, Linked Data** formatted as JSON-LD that include references to other **Persistent Identifiers**
 
-<!-- <img src="fundamentals.png" alt="geoconnex-fundamentals" class="bg-primary mb-1" width="800px"> -->
-
 The geoconnex.us data publication fundamentals.
 
 
@@ -36,11 +38,6 @@ The geoconnex.us system includes some important infrastructure that helps organi
 Of course, this website also includes comprehensive **Documentation** that provides detailed guidance, templates, and examples on how to contribute to and use the knowledge graph.
 
 
-<!-- :::{figure-md} bigpicture
-<img src="bigpicture.png" alt="geoconnex-bigpicture" class="bg-primary mb-1" width="800px">
-
-The geoconnex.us architecture
-::: -->
 
 
 The remaining parts of this section give more detailed documentation for each of the elements outlined.

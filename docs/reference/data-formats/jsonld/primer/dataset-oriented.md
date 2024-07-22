@@ -4,13 +4,11 @@ sidebar_position: 3
 ---
 # Dataset-oriented 
 
-The purpose of the dataset-oriented page is to give enough information about the data available and the area, locations, or features that it is relevant to that a water data user would be able to quickly determine whether and how to download the data after reading. We will use this [data resource about water utility treated water demand that has been published at HydroShare](https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/) as an example for the type of content to put in dataset-oriented Geoconnex landing page web resources and how to map that content to embedded JSON-LD documents.
+The purpose of dataset-oriented JSON-LD output is to give enough information about the data available and the area, locations, or features that it is relevant to that a water data user would be able to quickly determine whether and how to download the data after reading. 
+* In this page we will refer to a sample [data resource about treated water demand that has been published at HydroShare](https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/) as an example for the type of content to put in dataset-oriented Geoconnex landing page web resources
+* We will show how to map this content to embedded JSON-LD documents.
 
-
-<iframe width="780" height="500" src="https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/" title="Hydroshare Example">
-</iframe>
-
-This dataset-oriented web resource includes this type of information
+<!-- This dataset-oriented web resource includes this type of information
 
 -   "This is my URI (which is a DOI-URL): https://geoconnex.us/ref/monitoring-location/08282300" [^13]
 
@@ -58,15 +56,23 @@ This dataset-oriented web resource includes this type of information
 
 [^18]: refers to the minimum intended time spacing between observations in the case of regular time series data
 
-[^19]: These should be geoconnex reference feature URIs. If the locations the dataset is about is not within https://reference.geoconnex.us/collections, then consider [creating location-based resources and minting geoconnex identifiers](https://github.com/internetofwater/geoconnex.us/blob/master/CONTRIBUTING.md). If the dataset is extensive over a vector feature spatial fabric, like all Census Tracts or HUC12s or NHD Catchments, then this can be a reference to a single reference fabric dataset rather than an array of identifiers for every single feature. If the dataset is extensive over an area but has no particular tie to a particular reference feature set, like a raster dataset, then this can be omitted.
+[^19]: These should be geoconnex reference feature URIs. If the locations the dataset is about is not within https://reference.geoconnex.us/collections, then consider [creating location-based resources and minting geoconnex identifiers](https://github.com/internetofwater/geoconnex.us/blob/master/CONTRIBUTING.md). If the dataset is extensive over a vector feature spatial fabric, like all Census Tracts or HUC12s or NHD Catchments, then this can be a reference to a single reference fabric dataset rather than an array of identifiers for every single feature. If the dataset is extensive over an area but has no particular tie to a particular reference feature set, like a raster dataset, then this can be omitted. -->
 
-#### JSON-LD
 
-Much is similar to the [Datasets guidance for location-oriented web resources](#sec-loc-data), so here we focus on the differences. Note that HydroShare automatically embeds JSON-LD. The JSON-LD examples below vary somewhat from HydroShare's default content to illustrate optional elements that would be useful for Geoconnex that are not currently implemented in HydroShare.
+Much is similar to the [guidance for location-oriented web resources](./location-oriented.md), so here we focus on the differences.
 
-##### Identifiers, provenance, license, and distribution.
 
-For basic identifying and descriptive information, [science-on-schema.org has appropriate guidance](https://github.com/ESIPFed/science-on-schema.org/blob/master/examples/dataset/minimal.jsonld). In this case, note that a specific file download URL has been provided rather than an API endpoint, and that `dc:conformsTo` points to a data dictionary that is supplied at the same web resource.
+:::note
+
+HydroShare automatically embeds JSON-LD. The JSON-LD examples below vary from HydroShare's default content to illustrate optional elements that would be useful for Geoconnex that are not currently implemented in HydroShare.
+
+:::
+
+## 1. Identifiers, provenance, license, and distribution.
+
+The first part of a dataset-oriented JSON-LD document is the metadata about the dataset.
+
+For basic identifying and descriptive information, [science-on-schema.org](https://github.com/ESIPFed/science-on-schema.org/blob/main/examples/dataset/minimal.jsonld) has appropriate guidance. In this case, note that a specific file download URL has been provided rather than an API endpoint, and that `dc:conformsTo` points to a data dictionary that is supplied at the same web resource.
 
 ``` json
 {
@@ -118,18 +124,18 @@ For basic identifying and descriptive information, [science-on-schema.org has ap
       "encodingFormat": ["text/csv"],                                                        
       "dc:conformsTo": "https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/data/contents/dataDictionary.xlsx"   
       },
-      ...
 ```
 
-##### Variables and Methods
+## 2. Variables and Methods
 
-Again, follows the [dataset guidance](#sec-loc-data). In the example below, multiple `variableMeasured` are specified using a nested array. Other differences to point out:
+The second section of the JSON-LD output for a dataset-oriented document specifies which variables are being measured in the dataset. In the example below, multiple `variableMeasured` are specified using a nested array. Other differences to point out:
 
 -   The unit of "million gallons per day" is not available from the QUDT units vocabulary. It is in the [ODM2 units codelist](http://vocabulary.odm2.org/units/), so we populate `unitCode` with the url listed there.
 -   The measurementMethod for both variables, which are simply different aggregation statistics for the same variable, do not have known web resources or specific identifiers available, and so use `description` to clarify the method.
 
 ``` json
-...,
+  // ABBREVIATED FOR BREVITY
+  // ..., 
    "variableMeasured": [
    {                                                                                      
    "@type": "PropertyValue",                                                                                 
@@ -172,14 +178,20 @@ Again, follows the [dataset guidance](#sec-loc-data). In the example below, mult
    
 ```
 
-##### Geoconnex Reference Feature Links and Spatial Coverage
+## 3. Geoconnex Reference Feature Links and Spatial Coverage
+
+The third and final section is to specify the spatial coverage of the dataset.
+:::note
 
 Unlike the location-based example, where a location is explicitly the `subjectOf` the dataset, here, the dataset must be described as being `about` certain features. If the dataset is not explicitly about any discrete features, such as raster datasets, then a Spatial Coverage should be specified.
+
+:::
 
 Using the `about` construction, a single geoconnex URI or an array of multiple can be constructed. In the below example, multiple are used. Note the nesting of nodes within the array so that each URI has an `@id` keyword and is `@type` `Place`. In this example, URIs from the geoconnex [reference features set for Public Water Systems](https://reference.geoconnex.us/collections/pws) are used.
 
 ``` json
-...,
+// ABBREVIATED FOR BREVITY
+// ...,
 "about": [
       {
         "@id": "https://geoconnex.us/ref/pws/NC0332010",
@@ -247,9 +259,24 @@ Sometimes there are no particular features that a dataset is explicitly about. T
   }
 ```
 
+## Full Example
+
+<details >
+<summary>
+
+Full Dataset-oriented JSON-LD output (Identifiers, Variables, and Spatial Coverage)
+</summary> 
+
+:::note
+
+From more information regarding the underlying concepts, see the [appendix](/reference/data-formats/jsonld/primer/appendix#specific-geoconnex-json-ld-properties)
+
+:::
 
 ```json
 {
+  // Identifiers provenance and context
+
   "@context": {
     "@vocab": "https://schema.org/", 
     "xsd": "https://www.w3.org/TR/xmlschema-2/#",
@@ -307,6 +334,9 @@ Sometimes there are no particular features that a dataset is explicitly about. T
     ],
     "dc:conformsTo": "https://www.hydroshare.org/resource/4cf2a4298eca418f980201c1c5505299/data/contents/dataDictionary.xlsx"
   },
+
+  // Variables and Methods
+
   "variableMeasured": [
     {
       "@type": "PropertyValue",
@@ -343,7 +373,10 @@ Sometimes there are no particular features that a dataset is explicitly about. T
   ],
   "temporalCoverage": "2002-01-01/2020-12-31",
   "dc:accrualPeriodicity": "freq:daily",                                                               
-  "dcat:temporalResolution": {"@value": "PT15M","@type":"xsd:duration"}, 
+  "dcat:temporalResolution": {"@value": "PT15M","@type":"xsd:duration"},
+  
+  // Feature Links
+
   "about": [
     {
       "@id": "https://geoconnex.us/ref/pws/NC0332010",
@@ -368,3 +401,5 @@ Sometimes there are no particular features that a dataset is explicitly about. T
   ]
 }
 ```
+
+</details>

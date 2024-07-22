@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Overview
 ---
 
-# Contributing to the [geoconnex.us](https://geoconnex.us) knowledge graph
+# How to contribute to the [geoconnex.us](https://geoconnex.us) knowledge graph
 
 At a very high level, contributing to the geoconnex.us knowledge graph involves three steps:
 

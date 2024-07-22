@@ -15,7 +15,7 @@ A Geoconnex JSON-LD document should be embedded in a human-readable website that
 
 ### Context 
 
-Geoconnex JSON-LD documents can have varying contexts. However, there are several vocabularies other than `schema.org` that may be useful, depending on the type of location and dataset being described and the level of specificity for which metadata is produced by the data provider. The example context below can serve as general-purpose starting point, although simpler contexts may be sufficient for many documents:
+Geoconnex JSON-LD documents can have varying contexts. There are several vocabularies other than `schema.org` that may be useful, depending on the type of location and dataset being described and the level of specificity for which metadata is produced by the data provider. The example context below can serve as general-purpose starting point, although simpler contexts may be sufficient for many documents:
 
 ``` json
   "@context": {
@@ -39,33 +39,22 @@ Geoconnex JSON-LD documents can have varying contexts. However, there are severa
   }
 ```
 
--   `@vocab` specifies [`schema`](https://schema.org/) as the default vocabulary from https://schema.org
-
--   [`xsd`](https://www.w3.org/TR/xmlschema-2/) is a general web-enabled data types vocabulary (e.g., text vs number vs. datetime)
-
--   [`rdfs`](https://www.w3.org/TR/rdf12-schema/) is a general vocabulary for basic relationships
-
--   [`dc`](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#) is the [Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) vocabulary for general information metadata attributes
-
--   [`dcat`](https://www.w3.org/ns/dcat#) is the [Data Catalog (DCAT) Vocabulary](https://www.w3.org/TR/vocab-dcat-3), a vocabulary for dataset metadata attributes
-
--   [`freq`](http://purl.org/cld/freq/) is the [Dublin Core Collection Frequency Vocabulary](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/), a vocabulary for dataset temporal resolution and update frequency
-
--   [`qudt-units`](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html) provides standard identifiers for units (e.g. [cubic feet per second](https://qudt.org/vocab/unit/FT3-PER-SEC))
-
--   [`qudt-quantkinds`](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html) provides ids for general phenomena (e.g. [Volume flow rate](https://qudt.org/vocab/quantitykind/VolumeFlowRate)) which may be measured in various units
-
--   [`gsp`](http://defs.opengis.net/vocprez/object?uri=http://www.opengis.net/def/function/geosparql) provides ids for spatial relationships (e.g. intersects)
-
--   [`odm2var`](http://vocabulary.odm2.org/variablename) is a supplement to `qudt-quantkinds`, and includes ids for many variables relevant to water science and management (e.g. [turbidity](http://vocabulary.odm2.org/variablename/turbidity/))
-
--   [`odm2varType`](http://vocabulary.odm2.org/variabletype/) is a supplement to `odm2var` that includes ids for large groupings of variables (e.g. [Water Quality](http://vocabulary.odm2.org/variabletype/WaterQuality/))
-
--   [`hyf`](https://www.opengis.net/def/schema/hy_features/hyf/) provides ids for surface water hydrology concepts (e.g. [streams](https://defs.opengis.net/vocprez/object?uri=https%3A//www.opengis.net/def/schema/hy_features/hyf/HY_River))
-
--   [`skos`](https://www.w3.org/TR/swbp-skos-core-spec/) provides general properties for relating different concepts (e.g. broader, [narrower,](https://www.w3.org/2009/08/skos-reference/skos.html#narrower) exact Match)
-
--   [`ssn`](https://www.w3.org/TR/vocab-ssn/) and `ssn-system` provide ids for aspects of observations and measurement (e.g. measurement methods)
+| Key                | Description                                                                                                                                                                                                                     |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `@vocab`           | specifies [`schema`](https://schema.org/) as the default vocabulary from https://schema.org                                                                                                                                     |
+| `xsd`              | is a general web-enabled data types vocabulary (e.g., text vs number vs. datetime)                                                                                                                                             |
+| `rdfs`             | is a general vocabulary for basic relationships                                                                                                                                                                              |
+| `dc`               | is the [Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) vocabulary for general information metadata attributes                                                                                |
+| `dcat`             | is the [Data Catalog (DCAT) Vocabulary](https://www.w3.org/TR/vocab-dcat-3), a vocabulary for dataset metadata attributes                                                                                                    |
+| `freq`             | is the [Dublin Core Collection Frequency Vocabulary](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/), a vocabulary for dataset temporal resolution and update frequency               |
+| `qudt-units`      | provides standard identifiers for units (e.g. [cubic feet per second](https://qudt.org/vocab/unit/FT3-PER-SEC))                                                                                                            |
+| `qudt-quantkinds` | provides ids for general phenomena (e.g. [Volume flow rate](https://qudt.org/vocab/quantitykind/VolumeFlowRate)) which may be measured in various units                                                                     |
+| `gsp`              | provides ids for spatial relationships (e.g. intersects)                                                                                                                                                                      |
+| `odm2var`          | is a supplement to `qudt-quantkinds`, and includes ids for many variables relevant to water science and management (e.g. [turbidity](http://vocabulary.odm2.org/variablename/turbidity/))                                     |
+| `odm2varType`      | is a supplement to `odm2var` that includes ids for large groupings of variables (e.g. [Water Quality](http://vocabulary.odm2.org/variabletype/WaterQuality/))                                                                    |
+| `hyf`              | provides ids for surface water hydrology concepts (e.g. [streams](https://defs.opengis.net/vocprez/object?uri=https%3A//www.opengis.net/def/schema/hy_features/hyf/HY_River))                                              |
+| `skos`             | provides general properties for relating different concepts (e.g. broader, [narrower,](https://www.w3.org/2009/08/skos-reference/skos.html#narrower) exact Match)                                                           |
+| `ssn`              | and `ssn-system` provide ids for aspects of observations and measurement (e.g. measurement methods)                                                                                                                           |
 
 ### Reference Features 
 

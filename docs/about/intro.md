@@ -20,7 +20,7 @@ The development of geoconnex.us takes place on GitHub. See [here](https://github
 
 ![Fundamentals Diagram](../../static/fundamentals.png)
 
-
+{/*
 <!-- # Introduction
 
 
@@ -43,3 +43,4 @@ The model used to organize information in the Geoconnex system is shown in @fig-
 -   **Cataloging features** are areas on earth that commonly group datasets. They are a superset of summary features such as HUCs, counties and states. For example, a state-level dataset summarizing average annual surface water availability would not have states as a cataloging feature. However, streamgage is within a state, county, HUC, congressional district, etc and may be tagged with these features in metadata, and thus be filtered alongside other streamgages within the same state.
 
 This Geoconnex guidance concerns how to explicitly publish metadata that describes Datasets how they are related to each of the other elements of the information model. -->
+*/}

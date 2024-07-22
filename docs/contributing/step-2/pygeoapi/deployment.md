@@ -14,24 +14,6 @@ pygeoapi is a standardized, low-barrier, and open-source geospatial web server w
     - It leverages the [OGC-API Features](https://ogcapi.ogc.org/features/) standard, which gives each individual feature within a geospatial vector dataset a unique URL with an associated HTML landing page, a GeoJSON response, and a JSON-LD response. 
     - In addition to the [feature providers](https://docs.pygeoapi.io/en/latest/data-publishing/ogcapi-features.html) in pygeoapi core, the [internetofwater/pygeoapi](https://github.com/internetofwater/pygeoapi) fork includes feature providers for the ESRI FeatureServer, the CKAN Data API, and the SODA API. It also includes modifications that enable the injection of custom templated JSON-LD into the script headers of the HTML pages. Both the HTML pages and JSON-LD responses are generated using jinja templates.
 
-<!-- This demonstration uses [Docker](https://www.docker.com/) to deploy pygeoapi with landing pages generated for data from the following sources:
-
-1.  **CSV Provider:** A (local or periodically downloaded) csv file with latitude and longitude
-2.  **GeoJSON Provider:** A (local or periodically downloaded) geojson file
-3.  **SQLiteGPKG Provider:** A (local or periodically downloaded) geopackage file
-4.  **ESRI Provider:** An ESRI FeatureServer or MapServer endpoint
-5.  **CKAN Provider:** A CKAN Data API endpoint
-
-### Example data
-
-For our example data, we are using the California Department of Water Resources (DWR) Groundwater Sustainability Plan (GSP) Monitoring [dataset](https://data.ca.gov/dataset/gsp-monitoring-data), and in particular, its "Existing Sites" feature collection.
-
--   [CSV file](https://github.com/cgs-earth/pygeoapi-geoconnex-examples/blob/main/data/data.csv)
--   [GeoJSON file](https://github.com/cgs-earth/pygeoapi-geoconnex-examples/blob/main/data/data.geojson)
--   [Geopackage file](https://github.com/cgs-earth/pygeoapi-geoconnex-examples/blob/main/data/data.gpkg)
--   [ESRI feature service](https://services.arcgis.com/aa38u6OgfNoCkTJ6/ArcGIS/rest/services/GSP_Monitoring_Data/FeatureServer/0)
--   [CKAN API endpoint](https://data.ca.gov/api/3/action/datastore_search?resource_id=72612518-e45b-4900-9cab-72b8de09c57d) -->
-
 ### Deploying locally
 
 pygeoapi can be deployed from a [Dockerfile](https://www.docker.com/), building an image with data included as a layer, or with docker compose and volume binding. The only requirements to publish data to crawlable by geoconnex is a valid pygeoapi configuration file with a correct JSON-LD feature template. The [cgs-earth/pygeoapi-geoconnex-examples](https://github.com/cgs-earth/pygeoapi-geoconnex-examples.git) repository has been setup to satisfy both of these prerequisites out of the box.
@@ -58,6 +40,7 @@ The easiest way to deploy this demonstration is with docker-compose. The [docker
 
 <details>
 <summary> Example json-ld output </summary> 
+
 ```json
 {
     "@context": [

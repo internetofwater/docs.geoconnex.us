@@ -13,3 +13,7 @@
   margin: 20px; /* Optional: Add margin below each image for whitespace */
   filter: drop-shadow(0.5px 0.5px 0 rgba(255, 255, 255, 0.5)); /* Transparent drop shadow */
 }
+
+.header-link {
+  text-decoration: none;
+}

@@ -1,9 +1,5 @@
 {
     "label": "Step 2: Exposing your data",
-    "position": 3,
-    "link": {
-      "type": "generated-index",
-      "description": "Geoconnex can crawl data from any url with a valid HTML landing page and data output as JSON-LD in the header tag. You can create a custom solution for your data yourself or you can use pygeoapi, a free open-source tool, for the extract-transform-load (ETL) process to create a wrapper over your data and fulfill these requirements."
-    }
+    "position": 3
   }
   
