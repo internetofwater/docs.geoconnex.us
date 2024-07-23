@@ -131,7 +131,7 @@ For basic identifying and descriptive information, [science-on-schema.org](https
 The second section of the JSON-LD output for a dataset-oriented document specifies which variables are being measured in the dataset. In the example below, multiple `variableMeasured` are specified using a nested array. Other differences to point out:
 
 -   The unit of "million gallons per day" is not available from the QUDT units vocabulary. It is in the [ODM2 units codelist](http://vocabulary.odm2.org/units/), so we populate `unitCode` with the url listed there.
--   The measurementMethod for both variables, which are simply different aggregation statistics for the same variable, do not have known web resources or specific identifiers available, and so use `description` to clarify the method.
+-   The [`measurementMethod`](./reference.md#specific-geoconnex-json-ld-properties) for both variables, which are simply different aggregation statistics for the same variable, do not have known web resources or specific identifiers available, and so use `description` to clarify the method. 
 
 ``` json
   // ABBREVIATED FOR BREVITY
@@ -147,28 +147,28 @@ The second section of the JSON-LD output for a dataset-oriented document specifi
    "qudt:hasQuantityKind": "qudt-quantkinds:VolumeFlowRate",                                                  
    "unitCode": "http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&id=1125579048",        
    "measurementTechnique": "observation",                                                      
-   "measurementMethod": {                                                                                     
-     "name":"water meter",
-     "description": "metered bulk value, accumlated over one month",
-     "url": "https://www.wikidata.org/wiki/Q268503"                                                                   
-     }                                                                                                        
-    }, 
+      "measurementMethod": {                                                                                     
+        "name":"water meter",
+        "description": "metered bulk value, accumlated over one month",
+        "url": "https://www.wikidata.org/wiki/Q268503"                                                                   
+        }                                                                                                        
+      }, 
     {                                                                                      
-   "@type": "PropertyValue",                                                                                
-   "name": "water demand (monthly average)",                                                                                     
-   "description": "average monthly treated water delivered to distribution system",                                                   
-   "propertyID": "http://vocabulary.odm2.org/variablename/waterUsePublicSupply/",                                                   
-   "url": "http://vocabulary.odm2.org/variablename/waterUsePublicSupply/",                                              
-   "unitText": "million gallons per day",                                                                       
-   "qudt:hasQuantityKind": "qudt-quantkinds:VolumeFlowRate",                                                
-   "unitCode": "http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&id=1125579048",                                            
-   "measurementTechnique": "observation",                                                  
-   "measurementMethod": {                                                                               
-     "name":"water meter",                                                   
-     "description": "metered bulk value, average accumlated over each month for multiple years",                   
-     "url": "https://www.wikidata.org/wiki/Q268503"                                                             
-     }                                                                                                    
-    },
+      "@type": "PropertyValue",                                                                                
+      "name": "water demand (monthly average)",                                                                                     
+      "description": "average monthly treated water delivered to distribution system",                                                   
+      "propertyID": "http://vocabulary.odm2.org/variablename/waterUsePublicSupply/",                                                   
+      "url": "http://vocabulary.odm2.org/variablename/waterUsePublicSupply/",                                              
+      "unitText": "million gallons per day",                                                                       
+      "qudt:hasQuantityKind": "qudt-quantkinds:VolumeFlowRate",                                                
+      "unitCode": "http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=Units&id=1125579048",                                            
+      "measurementTechnique": "observation",                                                  
+      "measurementMethod": {                                                                               
+        "name":"water meter",                                                   
+        "description": "metered bulk value, average accumlated over each month for multiple years",                   
+        "url": "https://www.wikidata.org/wiki/Q268503"                                                             
+        }                                                                                                    
+      },
     ],
    "temporalCoverage": "2002-01-01/2020-12-31",                                                                     
    "ssn-system:frequency": {                                                                                
@@ -218,7 +218,7 @@ Using the `about` construction, a single geoconnex URI or an array of multiple c
         "@type": "Place"
       }
     ],
-    ...
+    // ...
 ```
 
 To assist in finding reference features, https://reference.geoconnex.us allows queries following the [OGC-API Features](https://ogcapi.ogc.org/features/) API standard and the CQL [Common Query Language standard](https://portal.ogc.org/files/96288).
@@ -234,14 +234,15 @@ Sometimes it is impossible to use feature URIs because the relevant specific fea
 Sometimes it is impractical to list all applicable reference features, whether or not they are in https://reference.geoconnex.us or another source. This is common for comprehensive datasets that are all about an entire reference dataset or other another dataset like a hydrofabric, such as datasets summmarizing values to U.S. Counties, or the National Water Model generating values for all NHDPlusV2 COMID flowlines. In this case it is best to declare that the Dataset is [isBasedOn](https://schema.org/isBasedOn) the source geospatial fabric. For example, if the example dataset were about all public water systems instead of just the 5 listed, instead of `about`, we should specify an identifier, name, description, and any URLs for other resources that describe the source fabric and how to interpret it:
 
 ``` json
-...,
+// ABBREVIATED FOR BREVITY
+// ...,
 "isBasedOn": {
-"@id": "https://www.hydroshare.org/resource/9ebc0a0b43b843b9835830ffffdd971e/",
-"name": "U.S. Community Water Systems Service Boundaries, v4.0.0"
-"description": "This is a layer of water service boundaries for 45,973 community water systems that deliver tap water to 307.7 million people in the US." 
-"url": "https://github.com/SimpleLab-Inc/wsb"
+  "@id": "https://www.hydroshare.org/resource/9ebc0a0b43b843b9835830ffffdd971e/",
+  "name": "U.S. Community Water Systems Service Boundaries, v4.0.0"
+  "description": "This is a layer of water service boundaries for 45,973 community water systems that deliver tap water to 307.7 million people in the US.",
+  "url": "https://github.com/SimpleLab-Inc/wsb"
 },
-...
+// ...
 ```
 
 Sometimes there are no particular features that a dataset is explicitly about. This is common with remote sensing raster data. In this case, it is best to specify a `spatialCoverage` polygon using WKT encoded geometry:
@@ -269,13 +270,13 @@ Full Dataset-oriented JSON-LD output (Identifiers, Variables, and Spatial Covera
 
 :::note
 
-From more information regarding the underlying concepts, see the [appendix](/reference/data-formats/jsonld/primer/appendix#specific-geoconnex-json-ld-properties)
+From more information regarding the underlying concepts, see the [reference page](/reference/data-formats/jsonld/primer/reference#specific-geoconnex-json-ld-properties)
 
 :::
 
 ```json
 {
-  // Identifiers provenance and context
+  // Identifiers, provenance, and context
 
   "@context": {
     "@vocab": "https://schema.org/", 

@@ -100,14 +100,14 @@ The second group of information provides specific location and spatial context:
     "latitude": 36.7379333
   },
   "gsp:hasGeometry": {
-    "@type": "http://www.opengis.net/ont/sf#Point",
-    "gsp:asWKT": {
-      "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
-      "@value": "POINT (-106.4707722 36.7379333)"
-     },
-    "gsp:crs": {
-      "@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-    }
+      "@type": "http://www.opengis.net/ont/sf#Point",
+      "gsp:asWKT": {
+        "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "@value": "POINT (-106.4707722 36.7379333)"
+      },
+      "gsp:crs": {
+        "@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      }
    },
   "hyf:referencedPosition": {
     "hyf:HY_IndirectPosition":{
@@ -164,10 +164,10 @@ If reference URIs are not available for the groundwater unit you'd like to refer
 
 ## Section 3. Datasets
 
-Now that we have described our location’s provenance, geospatial geometry, and association with any reference features , we now describe the data that can be accessed about that location. The simplest, most minimal way to do this is to add a block like this, which would be added to the bottom of the JSON-LD document we have created so far:
+Now that we have described our location’s provenance, geospatial geometry, and association with any reference features, we now describe the data that can be accessed about that location. The simplest, most minimal way to do this is to add a block like this, which would be added to the bottom of the JSON-LD document we have created so far:
 
 ```json
-
+// NOTE: this is just the dataset section, not the entire JSON-LD document
 "subjectOf": {
   "@type": "Dataset",
   "name": "Discharge data from USGS-08282300",
@@ -176,15 +176,15 @@ Now that we have described our location’s provenance, geospatial geometry, and
 }
 ```
 
-Here, we simply declare that the location we have been working with is subjectOf of a Dataset with a name, description, and URL where information about the dataset can be found.
+Here, we simply declare that the location we have been working with is `subjectOf` of a Dataset with a name, description, and URL where information about the dataset can be found.
 
-However, it is often useful to include much more details metadata. This allows users to
+However, it is often useful to include much more metadata about the details of the dataset. This allows users to
  * Filter for your data using more standardized names for variables, and by temporal coverage and resolution
  * Determine if they want to use that data based on the methods used (such as whether it is observed or modeled/forecasted data)
 
 <details >
 <summary>
-Dataset section with Detailed Metadata
+An example dataset section with more detailed metadata
 </summary>  
 ```json
 {
@@ -238,14 +238,14 @@ Dataset section with Detailed Metadata
 
 :::note
 
-From more information regarding the underlying concepts, see the [appendix](/reference/data-formats/jsonld/primer/appendix#specific-geoconnex-json-ld-properties)
+From more information regarding the underlying concepts, see the [reference page](/reference/data-formats/jsonld/primer/reference#specific-geoconnex-json-ld-properties)
 
 :::
 
 <details >
 <summary>
 
-Full Location-oriented JSON-LD output (Identifiers, Geometric References, and Datasets)
+Full location-oriented JSON-LD output (Identifiers, Geometric References, and Datasets)
 </summary>  
 
 ```json
@@ -297,14 +297,14 @@ Full Location-oriented JSON-LD output (Identifiers, Geometric References, and Da
     "latitude": 36.7379333
   },
   "gsp:hasGeometry": {
-    "@type": "http://www.opengis.net/ont/sf#Point",
-    "gsp:asWKT": {
-      "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
-      "@value": "POINT (-106.4707722 36.7379333)"
-    },
-    "gsp:crs": {
-      "@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-    }
+      "@type": "http://www.opengis.net/ont/sf#Point",
+      "gsp:asWKT": {
+        "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "@value": "POINT (-106.4707722 36.7379333)"
+      },
+      "gsp:crs": {
+        "@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      }
   },
   "hyf:referencedPosition": {
     "hyf:HY_IndirectPosition": {

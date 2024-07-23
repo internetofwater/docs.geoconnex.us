@@ -8,9 +8,7 @@ Geoconnex can crawl data from any url with a valid HTML landing page and data ou
 
 import DocCardList from '@theme/DocCardList';
 
-<figure>
-<figcaption>You have two main options for how to expose your data depending on your organization's technical capacity </figcaption>
-</figure>
+You have two main options for how to expose your data depending on your organization's technical capacity.
 
 <DocCardList />
 

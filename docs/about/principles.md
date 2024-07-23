@@ -22,22 +22,4 @@ geoconnex.us augments the above framework with a strategy and guidance for data 
 3. **Landing Content (web pages)** that include...
 4. **Structured, Linked Data** formatted as JSON-LD that include references to other **Persistent Identifiers**
 
-The geoconnex.us data publication fundamentals.
 
-
-## geoconnex.us: Organizing the structured data
-
-The geoconnex.us system includes some important infrastructure that helps organize the structured data that data publishers put on the web and make it useable to data users. These elements include:
-
-1. **Persistent Identifier Registry** to help data publishers mint persistent identifiers and populate a...
-2. **Sitemap** of all identifiers to allow a...
-3. **Harvester** to collect structured data so that it can be assembled into a 
-4. **Knowledge Graph** that data users can interact with through...
-5. **APIs and Search Interfaces**
-
-Of course, this website also includes comprehensive **Documentation** that provides detailed guidance, templates, and examples on how to contribute to and use the knowledge graph.
-
-
-
-
-The remaining parts of this section give more detailed documentation for each of the elements outlined.
