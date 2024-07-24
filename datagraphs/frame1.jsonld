@@ -1,7 +1,0 @@
-{
-    "@context": {"@vocab": "https://schema.org/"},
-    "@explicit": true,
-    "@type": "Place",
-    "uri" : {},
-    "name": {}
-}

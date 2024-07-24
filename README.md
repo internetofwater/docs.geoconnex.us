@@ -1,48 +1,41 @@
-# docs.geoconnex.us
+# Website
 
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-A repository to create a documentation website for guidance for data publishers, aggregators, and users.
-
-
-Following the install and build guide at https://kirenz.github.io/codelabs/codelabs/jupyter-book/#0
+### Installation
 
 ```
-conda install -c conda-forge jupyter-book
-
+$ yarn
 ```
 
-in this repo the book has been created and made in the books/iowbook directory.
-
-_cd_  into that directory and build the book with: 
+### Local Development
 
 ```
-jupyter-book build .
+$ yarn start
 ```
 
-This will create the HTML version of the book in 
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
 
 ```
-\_build/html
+$ yarn build
 ```
 
-If you wish to remove the book and rebuild you can use:
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
 
 ```
- jupyter-book clean . --all 
+$ USE_SSH=true yarn deploy
 ```
 
-```
- jupyter-book clean . --all; jupyter-book build .
-```
-
-
-You can also build a nice PDF of your book with 
+Not using SSH:
 
 ```
- jupyter-book build . --builder pdflatex
+$ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
-Note this does require a full LaTeX installion with an engine like xelatex which 
-can be quite large.  So unless you need a nice PDF version this is not a required step. 
-If you do the results can be found in \_build/latex
-
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
