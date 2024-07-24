@@ -9,4 +9,6 @@ It is possible to view example features for Geoconnex before they are ingested i
 
 ## Explore Example Reference Features
 
-To view the collection of all the items in HUC2 watershed one can visit [https://reference.geoconnex.us/collections/hu02/items](https://reference.geoconnex.us/collections/hu02/items). This displays a landing page for the dataset, but if you [query the endpoint with `?f=jsonld` at the end](https://reference.geoconnex.us/collections/hu02/items?f=jsonld), it will output the JSON-LD needed for the geoconnex crawler. 
+To view the collection of all the items in HUC2 watershed one can visit [https://reference.geoconnex.us/collections/hu02/items](https://reference.geoconnex.us/collections/hu02/items). This displays a landing page for the dataset and if you [query the endpoint with `?f=jsonld` at the end](https://reference.geoconnex.us/collections/hu02/items?f=jsonld) it will output the same data as JSON-LD.
+
+If you [query a specific item](https://reference.geoconnex.us/collections/hu02/items/02?f=jsonld) as JSON-LD, you can view the individual item at the feature level that Geoconnex will crawl.
