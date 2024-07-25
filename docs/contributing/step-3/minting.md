@@ -5,12 +5,15 @@ Geoconnex requires a persistent identifier to refer to your data. That way, if t
 
 ### Adding 1:1 redirects to geoconnex.us
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 There is a strong preference for creating 1:1 redirects. That is, specifying an exact redirect from a geoconnex.us-based PID to the URI of the hydrologic feature you have a web resource about, for each and every individual feature. 
 
 1:1 redirects are simpler to resolve and allow you to customize (and change, when needed) your target URI patterns with more specificity.
 
-
-The preferred way to create the redirects yourself is by following these steps:
+<Tabs>
+  <TabItem value="github" label="Submitting via GitHub" default>
 
 1. Fork the [`internetofwater/geoconnex.us`](https://github.com/internetofwater/geoconnex.us) repository.
 2. Add a directory corresponding to the namespace you want in the `namespaces` directory. For example `namespaces/example-namespace/`
@@ -25,11 +28,11 @@ The preferred way to create the redirects yourself is by following these steps:
    everything looks correct. Once the pull request is merged, the changes go
    live within ~ 15 minutes.
 
-:::tip
-
-You can also use the [https://register.geoconnex.us/](https://register.geoconnex.us/) website to submit your data if you prefer not to use GitHub
-
-:::
+  </TabItem>
+  <TabItem value="register" label="Submitting via register.geoconnex.us">
+  [register.geoconnex.us](https://register.geoconnex.us/) provides a convenient web interface for adding 1:1 redirects. It ends up submitting a pull request to the same GitHub repository but does not require you to use GitHub.  
+  </TabItem>
+</Tabs>
 
 
 ### Adding regular expression redirects to geoconnex.us
