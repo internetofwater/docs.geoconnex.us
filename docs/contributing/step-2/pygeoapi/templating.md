@@ -3,18 +3,25 @@ title: Creating landing pages via templating
 sidebar_position: 2
 ---
 
+# Creating pygeoapi landing pages via templating
 
 :::tip
-It is recommended to take a look at [the geoconnex JSON-LD reference](../../../reference/data-formats/jsonld/overview.md) before beginning to template your data. 
+It is recommended to take a look at [the geoconnex JSON-LD reference](../../../reference/data-formats/jsonld/overview.md) or the [pygeoapi docs](https://docs.pygeoapi.io/en/latest/html-templating.html) before beginning to template your data. 
 :::
 
-Pygeoapi can leverage Jinja templates to change the structure of the data output by your API. More documentation for templating can be found within the [pygeoapi docs](https://docs.pygeoapi.io/en/latest/html-templating.html).
+Pygeoapi can leverage Jinja templates to change the structure of the JSON data output by your API. 
+- Templating is needed in order to change the default JSON-LD output by pygeoapi into either the [location-oriented](../../../reference/data-formats/jsonld/primer/location-oriented.md) or [dataset-oriented](../../../reference/data-formats/jsonld/primer/dataset-oriented.md) JSON-LD output format for Geoconnex.
+- To add extra templates, open your [pygeoapi config file](https://docs.pygeoapi.io/en/latest/configuration.html) and create a new collection block that links to the new `item_template` you made for your JSON-LD `linked-data`. 
 
-Templating is needed in order to change the default JSON-LD output by pygeoapi into either the [location-oriented](../../../reference/data-formats/jsonld/primer/location-oriented.md) or [dataset-oriented](../../../reference/data-formats/jsonld/primer/dataset-oriented.md) JSON-LD output format for Geoconnex.
 
-To add extra templates, open your [pygeoapi config file](https://docs.pygeoapi.io/en/latest/configuration.html) and create a new collection block that links to the new `item_template` you made for your JSON-LD `linked-data`. 
 
-An example could be something like the following, where `my-custom-template-name.j2` is the name of your new template file.
+
+<details>
+<summary>
+Referring to your template in the pygeoapi config
+</summary>
+
+`my-custom-template-name.j2` refers to the name of your new template file.
 
 ```yml title="local.config.yml"
  MyNamespace/MyData:
@@ -28,37 +35,23 @@ An example could be something like the following, where `my-custom-template-name
         item_template: my-custom-template-name.j2
 ```
 
+</details>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 
-Notice how `"@id"` is the URL for the API call. This can be configured to be an exteral URI instead, such as those [minted with geoconnex.us](../../step-3/minting.md). You can then add these identifiers as a field in your data, whether in a local file or at an ESRI or CKAN api endpoint, and then specify this field as the `uri_field:` in the pygeoapi configuration yml file in the `providers:` block, like so:
+<Tabs>
+  <TabItem value="raw" label="Example JSON-LD output" default>
 
-```yaml
-demo-ckan:
-  type: collection
-  title: geoconnex landing page demo (CKAN web service)
-  description: Demonstration Geoconnex Landing Pages (from CKAN REST service source)
-  keywords:
-    - Existing Sites
-  template: jsonld/hydrologic-location.jsonld
-  links:
-    - type: application/html
-      rel: canonical
-      title: data source
-      href: https://data.ca.gov/dataset/gsp-monitoring-data/resource/72612518-e45b-4900-9cab-72b8de09c57d
-      hreflang: en-US
-  extents:
-    spatial:
-      bbox: [-170,15,-51,72]
-      crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-    temporal:
-      begin: null
-      end: null
-  providers:
-    - type: feature
-      name: CKAN
-      data: https://data.ca.gov/api/3/action/datastore_search?resource_id=72612518-e45b-4900-9cab-72b8de09c57d
-      id_field: EXISTING_INFO_ID
-      uri_field: EXAMPLE_URI_FIELD_RENAME_AS_NECESSARY
-      x_field: LONGITUDE
-      y_field: LATITUDE
-```
+    This is an example of one provider. Place this within a pre-existing `collection` block in the `.yml` file.
+  </TabItem>
+
+  <TabItem value="template" label="An example custom jinja template">
+  test
+  </TabItem>
+
+  <TabItem value="templated" label="Custom templated JSON-LD">
+  test
+  </TabItem>
+</Tabs>

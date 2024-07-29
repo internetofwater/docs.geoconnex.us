@@ -1,13 +1,17 @@
 # Ingesting data from common providers into pygeoapi
 
-The pygeoapi fork we [previously setup](../deployment.md) makes it easier to publish water data with pygeoapi. 
+Once we have [pygeoapi setup](../deployment.md), we can use it to ingest data from common providers and expose it via the endpoint. 
 
-In addition to the [default feature providers](https://docs.pygeoapi.io/en/latest/data-publishing/ogcapi-features.html) in pygeoapi core, the [internetofwater/pygeoapi](https://github.com/internetofwater/pygeoapi) fork includes feature providers for:
+:::note 
+
+
+Becuase we are using the [internetofwater/pygeoapi](https://github.com/internetofwater/pygeoapi) fork, it includes feature providers for:
 - the ESRI FeatureServer
 -  the CKAN Data API
 - the SODA API
 - Geopandas
 - SPARQL
+- and more
 
 It also includes modifications that enable the injection of custom templated JSON-LD into the script headers of the HTML pages. Both the HTML pages and JSON-LD responses are generated using jinja templates.
 
@@ -18,12 +22,13 @@ View the [pygeoapi-geoconnex-examples](https://github.com/cgs-earth/pygeoapi-geo
 :::
 
 
-### Customization Overview
+### Customization Steps
 
 There are two main steps to add an additional provider into your pygeoapi endpoint
 
-1. Create a new section in the local pygeoapi config file that corresponds to your new collection
-1. [Create a template](../templating.md) for the new collection that specifies how to map the data to JSON-LD
+#### 1. Create a new section in the local pygeoapi config file that corresponds to your new collection
+
+#### 2. [Create a template](../templating.md) for the new collection that specifies how to map the data to JSON-LD
 
 
 

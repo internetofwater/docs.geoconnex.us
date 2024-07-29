@@ -3,17 +3,22 @@
 Geoconnex requires a persistent identifier to refer to your data. That way, if the url where you host your data changes, you can update the mapping, but the end users of geoconnex can still query the same identifier. This process is generally done by uploading a CSV file with the associated mapping.
 
 
-### Adding 1:1 redirects to geoconnex.us
+:::tip
+
+View the [CSV formatting reference](../../reference/data-formats/csv-submissions/) for best practices on how to format your CSV and the difference between 1:1 and 1:N regex redirects.
+
+:::
+
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-There is a strong preference for creating 1:1 redirects. That is, specifying an exact redirect from a geoconnex.us-based PID to the URI of the hydrologic feature you have a web resource about, for each and every individual feature. 
-
-1:1 redirects are simpler to resolve and allow you to customize (and change, when needed) your target URI patterns with more specificity.
 
 <Tabs>
   <TabItem value="github" label="Submitting via GitHub" default>
+
+  GitHub submissions give you more control over the CSV submission process. To submit your CSV via GitHub:
 
 1. Fork the [`internetofwater/geoconnex.us`](https://github.com/internetofwater/geoconnex.us) repository.
 2. Add a directory corresponding to the namespace you want in the `namespaces` directory. For example `namespaces/example-namespace/`
@@ -28,22 +33,16 @@ There is a strong preference for creating 1:1 redirects. That is, specifying an 
    everything looks correct. Once the pull request is merged, the changes go
    live within ~ 15 minutes.
 
+:::note 
+
+To submit a request to submit regex redirects you must [create an issue of type "Request regex redirect"](https://github.com/internetofwater/geoconnex.us/issues/new?assignees=dblodgett-usgs%2C+ksonda&labels=PID+request&template=request-regex-redirect.md&title=[regex+redirect+request) and fill out the template.
+
+:::
   </TabItem>
   <TabItem value="register" label="Submitting via register.geoconnex.us">
-  [register.geoconnex.us](https://register.geoconnex.us/) provides a convenient web interface for adding 1:1 redirects. It ends up submitting a pull request to the same GitHub repository but does not require you to use GitHub.  
+  [register.geoconnex.us](https://register.geoconnex.us/) provides a convenient web interface for adding 1:1 redirects and may be preferred by users without background using GitHub. Once the web form is submitted, it ends up submitting a pull request to the same GitHub repository but does not require you to log in or use the command line.  
   </TabItem>
+  
 </Tabs>
-
-
-### Adding regular expression redirects to geoconnex.us
-
-If you need to create PIDs and redirects for a large number of features (more than 300,000), _and cannot use 1:1 redirects_, we will require a [regular expression matching redirect](#adding-regular-expression-redirects-to-geoconnexus). 
-
-   - For example, redirecting from https://geoconnex.us/example-namespace/*wildcard-string to https://example.org/features?query=*wildcard-string.
-
-    - If you have more than 300,000 features, but these features can be split in a consistent way into sub-collections, all of which number less than 300,000 features (as might be the case for features that can be divided by geography, jurisdiction, theme, or type), then you might consider submitting multiple collections of 1:1 redirects.
-
-To submit a request to submit this data, you can [create an issue of type "Request regex redirect"](https://github.com/internetofwater/geoconnex.us/issues/new?assignees=dblodgett-usgs%2C+ksonda&labels=PID+request&template=request-regex-redirect.md&title=[regex+redirect+request) and fill out the template.
-
 
 
