@@ -131,7 +131,7 @@ For basic identifying and descriptive information, [science-on-schema.org](https
 The second section of the JSON-LD output for a dataset-oriented document specifies which variables are being measured in the dataset. In the example below, multiple `variableMeasured` are specified using a nested array. Other differences to point out:
 
 -   The unit of "million gallons per day" is not available from the QUDT units vocabulary. It is in the [ODM2 units codelist](http://vocabulary.odm2.org/units/), so we populate `unitCode` with the url listed there.
--   The [`measurementMethod`](./reference.md#specific-geoconnex-json-ld-properties) for both variables, which are simply different aggregation statistics for the same variable, do not have known web resources or specific identifiers available, and so use `description` to clarify the method. 
+-   The [`measurementMethod`](./reference.md#geoconnex-specific-json-ld-properties ) for both variables, which are simply different aggregation statistics for the same variable, do not have known web resources or specific identifiers available, and so use `description` to clarify the method. 
 
 ``` json
   // ABBREVIATED FOR BREVITY
@@ -270,7 +270,7 @@ Full Dataset-oriented JSON-LD output (Identifiers, Variables, and Spatial Covera
 
 :::note
 
-From more information regarding the underlying concepts, see the [reference page](/reference/data-formats/jsonld/primer/reference#specific-geoconnex-json-ld-properties)
+For more information regarding the underlying concepts, see the [general JSON-LD reference page](../overview.md#keywords-and-their-significance-in-reference-to-the-example )
 
 :::
 

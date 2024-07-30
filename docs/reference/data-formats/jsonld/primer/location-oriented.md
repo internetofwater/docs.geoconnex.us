@@ -128,7 +128,7 @@ We have added a context element `gsp` and three blocks: `geo`, `gsp:hasGeometry`
 
 -   `gsp:hasGeometry` is the GeoSPARQL version of geometry, with which we can embed [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) representations of geometry in structured metadata in the `@value` element, and declare the coordinate reference system or projection in the `gsp:crs` element by using EPSG codes as encoded in the [OGC register of reference systems](http://www.opengis.net/def/crs/EPSG/0/), in this case using http://www.opengis.net/def/crs/EPSG/0/4326 for the familiar WGS 84 (EPSG 4326) system.
 
--   `hyf:referencedPosition` uses the [HY_Features](https://www.opengis.net/def/schema/hy_features/hyf/) model to declare that this location is located on a specific river, in this case the [Rio Brazos in New Mexico](%22https://geoconnex.us/ref/mainstems/1611418%22) as identified in the Reference Mainstems dataset, which is available via API at https://reference.geoconnex.us/collections/mainstems and managed on GitHub at https://github.com/internetofwater/ref_rivers. All surface water locations should include this type of element.
+-   `hyf:referencedPosition` uses the [HY_Features](https://www.opengis.net/def/schema/hy_features/hyf/) model to declare that this location is located on a specific river, in this case the [Rio Brazos in New Mexico](https://geoconnex.us/ref/mainstems/1611418) as identified in the Reference Mainstems dataset, which is available via API at https://reference.geoconnex.us/collections/mainstems and managed on GitHub at https://github.com/internetofwater/ref_rivers. All surface water locations should include this type of element.
 
 :::note
 ##### What about groundwater?
@@ -238,7 +238,7 @@ An example dataset section with more detailed metadata
 
 :::note
 
-From more information regarding the underlying concepts, see the [reference page](/reference/data-formats/jsonld/primer/reference#specific-geoconnex-json-ld-properties)
+For more information regarding the underlying concepts, see the [general JSON-LD reference page](../overview.md#keywords-and-their-significance-in-reference-to-the-example )
 
 :::
 

@@ -36,7 +36,7 @@ There is a strong preference for creating 1:1 redirects. That is, specifying an 
 An example 1:1 mapping can be found [here](https://github.com/internetofwater/geoconnex.us/blob/master/namespaces/usgs/monitoring-location/monitoring-location.csv).
 
 
-For more information regarding submitting redirects see [the tutorial for minting persistent identifiers](/contributing/step-3/minting#adding-regular-expression-redirects-to-geoconnexus)
+For information regarding submitting CSV redirects see [the tutorial for minting persistent identifiers](/contributing/step-3/minting)
   </TabItem>
   <TabItem value="register" label="1:N Regex Redirects">
 
@@ -45,7 +45,7 @@ For more information regarding submitting redirects see [the tutorial for mintin
 Unless you have more than 300,000 features and cannot use 1:1 redirects, you should avoid using regex redirects as they are harder to resolve and maintain if endpoints change
 
 :::
-  If you need to create PIDs and redirects for a large number of features (more than 300,000), _and cannot use 1:1 redirects_, we will require a [regular expression matching redirect](#adding-regular-expression-redirects-to-geoconnexus). 
+  If you need to create PIDs and redirects for a large number of features (more than 300,000), _and cannot use 1:1 redirects_, we will require a regular expression matching redirect.
 
    - For example, redirecting from https://geoconnex.us/example-namespace/*wildcard-string to https://example.org/features?query=*wildcard-string.
 
