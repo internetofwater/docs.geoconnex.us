@@ -8,9 +8,9 @@ For most common data providers there are already configurations created which al
 
 
 Becuase we are using the [internetofwater/pygeoapi](https://github.com/internetofwater/pygeoapi) fork, we can also ingest feature data from:
-- the ESRI FeatureServer
--  the CKAN Data API
-- the SODA API
+- ESRI FeatureServer or MapServer
+- CKAN Data API
+- Socrata Open Data API
 - Geopandas
 - and more
 
