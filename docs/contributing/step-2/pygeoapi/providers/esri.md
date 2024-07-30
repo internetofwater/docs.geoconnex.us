@@ -24,12 +24,12 @@ import TabItem from '@theme/TabItem';
     ```yml title="local.config.yml"
     providers:
         - type: feature
-        name: ESRI
-        data: https://sampleserver5.arcgisonline.com/arcgis/rest/services/NYTimes_Covid19Cases_USCounties/MapServer/0
-        id_field: objectid
-        time_field: date_in_your_device_time_zone # Optional time field
-        crs: 4326 # Optional crs (default is EPSG:4326)
-        username: username # Optional ArcGIS username
-        password: password # Optional ArcGIS password
+          name: ESRI
+          data: https://sampleserver5.arcgisonline.com/arcgis/rest/services/NYTimes_Covid19Cases_USCounties/MapServer/0
+          id_field: objectid
+          time_field: date_in_your_device_time_zone # Optional time field
+          crs: 4326 # Optional crs (default is EPSG:4326)
+          username: username # Optional ArcGIS username
+          password: password # Optional ArcGIS password
 ```
 
