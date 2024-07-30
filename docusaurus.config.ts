@@ -64,7 +64,7 @@ const config: Config = {
   ],
   themeConfig: {
     // Replace with your project's social card
-    image: "img/logo.jpg",
+    image: "geoconnex-logo.png",
 
     docs: {
       sidebar: {
