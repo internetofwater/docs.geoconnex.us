@@ -12,7 +12,6 @@ Becuase we are using the [internetofwater/pygeoapi](https://github.com/interneto
 -  the CKAN Data API
 - the SODA API
 - Geopandas
-- SPARQL
 - and more
 
 It also includes modifications that enable the injection of custom templated JSON-LD into the script headers of the HTML pages. Both the HTML pages and JSON-LD responses are generated using jinja templates.
