@@ -1,30 +1,25 @@
 ---
 title: ESRI Feature Service
 ---
+# Ingesting data from ESRI Feature Services into pygeoapi
 
-
-# Ingesting ESRI Data into pygeoapi
-
-
-# Step 1: Create a new section in the `local.config.yml` config file
+1. Create a new section in the `local.config.yml` config file
 
 <!-- This data comes from  https://docs.pygeoapi.io/en/latest/data-publishing/ogcapi-features.html#providers via a CC license -->
 
-- To publish an ESRI Feature Service or Map Service specify the URL for the service layer in the data field.
+2. specify the URL for the service layer in the data field.
 
     - `id_field` will often be `OBJECTID`, `objectid`, or `FID`.
 
-- If the map or feature service is not shared publicly, the username and password fields can be set in the configuration to authenticate into the service.
+3. If the map or feature service is not shared publicly, the username and password fields can be set in the configuration to authenticate into the service.
 
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## Example
 
-<Tabs>
-  <TabItem value="brief" label="An example provider config" default>
-
-    This is an example of one provider. Place this within a pre-existing `collection` block in the `.yml` file.
+    This is an example of just the  provider section. Place this within a pre-existing `collection` block in the `.yml` file. For clarification on the general pattern of adding providers, read about the general pattern [here](/contributing/step-2/pygeoapi/providers/#the-general-pattern-for-adding-a-new-data-endpoint).
 
     ```yml title="local.config.yml"
     providers:
@@ -37,43 +32,4 @@ import TabItem from '@theme/TabItem';
         username: username # Optional ArcGIS username
         password: password # Optional ArcGIS password
 ```
-  </TabItem>
 
-  <TabItem value="full" label="An example full collection (also contains a provider section)">
-
-    This is an example of a full collection. It includes both the ESRI provider info and the referenec to the `template` file you will use for outputting your JSON-LD.
-
-```yml title="local.config.yml"
-# ABBREVIATED FOR BREVITY ...
-demo-esri:
-    type: collection
-    title: geoconnex landing page demo (ESRI web service)
-    description: Demonstration Geoconnex Landing Pages (from ESRI REST service source)
-    keywords:
-        - Existing Sites
-    // highlight-next-line
-    template: jsonld/hydrologic-location.jsonld
-    links:
-        - type: application/html
-            rel: canonical
-            title: data source
-            href: https://data.ca.gov/dataset/gsp-monitoring-data/resource/ab3f524c-850f-40e4-b27a-6cae7154add5
-            hreflang: en-US
-    extents:
-        spatial:
-            bbox: [-170,15,-51,72]
-            crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-        temporal:
-            begin: null
-            end: null
-    providers:
-        - type: feature
-            name: ESRI
-            data: https://services.arcgis.com/aa38u6OgfNoCkTJ6/ArcGIS/rest/services/GSP_Monitoring_Data/FeatureServer/0
-            id_field: EXISTING_INFO_ID
-```
-  </TabItem>
-</Tabs>
-
-
-## Step 2: Creating a template
