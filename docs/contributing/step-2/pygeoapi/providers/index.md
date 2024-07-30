@@ -14,11 +14,11 @@ Becuase we are using the [internetofwater/pygeoapi](https://github.com/interneto
 - Geopandas
 - and more
 
-It also includes modifications that enable the injection of custom templated JSON-LD into the script headers of the HTML pages. Both the HTML pages and JSON-LD responses are generated using jinja templates.
+pygeoapi allows the injection of custom templated JSON-LD into the script headers of the HTML pages. Both the HTML pages and JSON-LD responses are generated using Jinja templates to modify the response from pygeoapi and return richer content.
 
 :::tip
 
-View the [pygeoapi-geoconnex-examples](https://github.com/cgs-earth/pygeoapi-geoconnex-examples) repo for sample code that demonstrates how this is done in a test application.
+View the [pygeoapi-geoconnex-examples](https://github.com/cgs-earth/pygeoapi-geoconnex-examples) repository for sample code that demonstrates how this is done in a test application.
 
 :::
 

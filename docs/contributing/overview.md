@@ -7,7 +7,7 @@ title: Overview
 
 At a very high level, contributing to the geoconnex.us knowledge graph involves three steps:
 
-1. Publishing landing pages about each real-world [vector geospatial feature](https://datacarpentry.org/organization-geospatial/02-intro-vector-data.html) of interest you have data about.
+1. Publishing HTML landing pages about each real-world [vector geospatial feature](https://datacarpentry.org/organization-geospatial/02-intro-vector-data.html) of interest you have data about.
     * Typical examples could be water quality monitoring sites, wells, streamgages, water utilities, weather stations, or dams
         * For example, the USGS has a different webpage for each of their stream gauges. These pages are entry points to more detailed information that may be available elsewhere
     * We encourage you to read the [Internet of Water report](https://www.aspeninstitute.org/publications/internet-of-water/#:~:text=and%20Environment%20Program-,Internet%20of%20Water:%20Sharing%20and%20Integrating%20Water%20Data%20for%20Sustainability,and%20information%20to%20support%20sustainable) for rationale on why you should publish your data

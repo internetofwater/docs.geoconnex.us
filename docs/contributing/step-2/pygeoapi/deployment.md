@@ -22,7 +22,7 @@ You can spin up pygeoapi with one command and navigate to http://localhost:5000 
 
 :::note
 
-We are using a fork of pygeoapi from the [internetofwater/pygeoapi](https://github.com/internetofwater/pygeoapi) repo which provides additional support for more data providers. However, you can use the standard upstream pygeoapi container image as well.
+We use our fork of pygeoapi from the [internetofwater/pygeoapi](https://github.com/internetofwater/pygeoapi) repository which provides support for additional data provider backends.
 
 :::
 
@@ -37,7 +37,9 @@ We are using a fork of pygeoapi from the [internetofwater/pygeoapi](https://gith
 
 ## Run pygeoapi with a custom configuration
 
-Once you have explored the baseline configuration, clone the repo, copy the default config named `pygeoapi-config.yml`, name it `local.config.yml` change it to fit your needs, and then run the container with a custom config.
+Once you have explored the baseline configuration you can use git clone and deploy a custom pygeoapi instance.
+
+To do this, first clone the repository and copy the default config named `pygeoapi-config.yml`, name it `local.config.yml` change it to fit your needs, and then run the container with a custom config.
 
 
   <Tippy content="Clone pygeoapi locally, and run the it with the local config file mounted inside the container at /pygeoapi/local.config.yml">

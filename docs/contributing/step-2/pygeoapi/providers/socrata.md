@@ -19,12 +19,12 @@ import TabItem from '@theme/TabItem';
     ```yml title="local.config.yml"
     providers:
         - type: feature
-        name: Socrata
-        data: https://soda.demo.socrata.com/
-        resource_id: emdb-u46w
-        id_field: earthquake_id
-        geom_field: location
-        time_field: datetime # Optional time_field for datetime queries
-        token: my_token # Optional app token
+          name: Socrata
+          data: https://soda.demo.socrata.com/
+          resource_id: emdb-u46w
+          id_field: earthquake_id
+          geom_field: location
+          time_field: datetime # Optional time_field for datetime queries
+          token: my_token # Optional app token
 ```
 
