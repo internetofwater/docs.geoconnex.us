@@ -68,7 +68,8 @@ import TabItem from '@theme/TabItem';
       providers:
         - type: feature
           name: SensorThings
-          // highlight-next-line
+
+          # Your existing API URL goes here
           data: https://labs.waterdata.usgs.gov/sta/v1.1/Things
 ```
 
@@ -496,10 +497,11 @@ To do this, add a `linked-data:` section to our pygeoapi config which links to t
       - Things
       - SensorThings
       - USGS
-    // highlight-next-line
+
+    # New section for linked data templating
     linked-data:
-    // highlight-next-line
       item_template: usgs-location-oriented.j2
+
     links:
       - type: application/html
         rel: canonical
