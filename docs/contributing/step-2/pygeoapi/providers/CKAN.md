@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
     ```yml title="local.config.yml"
     providers:
       - type: feature
-        name: pygeoapi_plugins.provider.ckan.CKANProvider
+        name: CKAN
         data: https://catalog.newmexicowaterdata.org/api/3/action/datastore_search
         resource_id: 08369d21-520b-439e-97e3-5ecb50737887
         id_field: _id
