@@ -1,140 +1,72 @@
 ---
 
-title: Setting up a new Endpoint
+title: Running pygeoapi locally
 sidebar_position: 1
 
 ---
 
-# Exposing your data as JSON-LD using pygeoapi
+import Tippy from '@tippyjs/react';
 
-Before geoconnex can leverage your data, you need to make sure it is exposed in a way that geoconnex can crawl it. 
+# Running pygeoapi locally
 
-pygeoapi is a standardized, low-barrier, and open-source geospatial web server which allows you to output your data in a format that can be ingested by geoconnex.
+Before geoconnex can leverage your data, it must be exposed in a way that geoconnex can crawl it. 
 
-    - It leverages the [OGC-API Features](https://ogcapi.ogc.org/features/) standard, which gives each individual feature within a geospatial vector dataset a unique URL with an associated HTML landing page, a GeoJSON response, and a JSON-LD response. 
-    - In addition to the [feature providers](https://docs.pygeoapi.io/en/latest/data-publishing/ogcapi-features.html) in pygeoapi core, the [internetofwater/pygeoapi](https://github.com/internetofwater/pygeoapi) fork includes feature providers for the ESRI FeatureServer, the CKAN Data API, and the SODA API. It also includes modifications that enable the injection of custom templated JSON-LD into the script headers of the HTML pages. Both the HTML pages and JSON-LD responses are generated using jinja templates.
+pygeoapi is a standardized, low-barrier, and open-source geospatial web server which allows you to output your data in a format that can be ingested by geoconnex. It leverages the [OGC-API Features](https://ogcapi.ogc.org/features/) standard, which gives each individual feature within a geospatial vector dataset a unique URL with an associated HTML landing page, a GeoJSON response, and a JSON-LD response. 
 
-### Deploying locally
+:::info
 
-pygeoapi can be deployed from a [Dockerfile](https://www.docker.com/), building an image with data included as a layer, or with docker compose and volume binding. The only requirements to publish data to crawlable by geoconnex is a valid pygeoapi configuration file with a correct JSON-LD feature template. The [cgs-earth/pygeoapi-geoconnex-examples](https://github.com/cgs-earth/pygeoapi-geoconnex-examples.git) repository has been setup to satisfy both of these prerequisites out of the box.
+In this tutorial, we use our fork of pygeoapi from the [internetofwater/pygeoapi](https://github.com/internetofwater/pygeoapi) repository which provides support for additional data provider backends. It is recommended that you use this same fork.
 
-The easiest way to deploy this demonstration is with docker-compose. The [docker-compose file](https://github.com/cgs-earth/pygeoapi-geoconnex-examples/blob/main/docker-compose.yml) binds the data directory of local files, the [pygeoapi configuration file](https://github.com/cgs-earth/pygeoapi-geoconnex-examples/blob/main/pygeoapi.config.yml), and the preconfigured [JSON-LD template](https://github.com/cgs-earth/pygeoapi-geoconnex-examples/blob/main/jsonld/hydrologic-location.jsonld) into the pygeoapi docker image.
+:::
 
-### Quickstart
+## Running with Docker
 
-1.  Clone this repository on your machine.
+Our fork of pygeoapi is most easily deployed with [Docker](https://www.docker.com/) to ensure reproducibility. You can also clone the repo and install from source in a similar way to upstream [pygeoapi](https://docs.pygeoapi.io/en/stable/installation.html#for-developers-and-the-truly-impatient), but this may take additional effort.
 
-    ```
-    git clone https://github.com/cgs-earth/pygeoapi-geoconnex-examples.git
-    cd pygeoapi-geoconnex-examples
-    ```
 
-2.  Deploy the demonstration (make sure port 5000 is available)
+Using Docker, you can spin up pygeoapi with one command and navigate to http://localhost:5000 to explore the frontend. 
 
-    ```
-    docker compose up
-    ```
 
-3.  Explore the OGC-API feature collections at `http://localhost:5000/collections`
-    - As you explore the feature collections, notice the individual feature HTML resources (e.g. http://localhost:5000/collections/demo-ckan/items/31) and their json-ld versions (e.g. http://localhost:5000/collections/demo-ckan/items/31?f=jsonld).
+  <Tippy content="This command binds port 80 in the container to port 5000 locally, runs it interactively, and cleans up after exiting.">
+   <div>
+   ```
+   docker run -p 5000:80 -it --rm internetofwater/pygeoapi
+  ```
+  </div>
+  </Tippy>
 
-<details>
-<summary> Example json-ld output </summary> 
 
-```json
-{
-    "@context": [
-        {
-            "schema": "https://schema.org/",
-            "skos": "http://www.w3.org/2004/02/skos/core#",
-            "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/",
-            "name": "schema:name",
-            "gsp": "http://www.opengis.net/ont/geosparql#",
-            "sameAs": "schema:sameAs",
-            "related": "skos:related",
-            "description": "schema:description",
-            "image": {
-                "@id": "schema:image",
-                "@type": "@id"
-            }
-        }
-    ],
-    "@id": "http://localhost:5000/collections/demo-ckan/items/31",
-    "@type": [
-        "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature",
-        "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation"
-    ],
-    "name": "DWR at Gravelly Ford Canal",
-    "description": "Surveying/Benchmark Sites at DWR at Gravelly Ford Canal",
-    "schema:provider": "SJRRP",
-    "hyf:HY_HydroLocationType": "hydrometricStation",
-    "sosa:isFeatureOfInterestOf": {
-        "schema:url": "http://www.restoresjr.net/science/subsidence-monitoring/",
-        "@type": "sosa:ObservationCollection",
-        "schema:format": [
-            "application/json"
-        ]
-    },
-    "schema:geoWithin": "https://geoconnex.us/ref/states/06",
-    "geo": {
-        "@type": "schema:GeoCoordinates",
-        "schema:longitude": -120.169,
-        "schema:latitude": 36.8078
-    },
-    "gsp:hasGeometry": {
-        "@type": "http://www.opengis.net/ont/sf#Point",
-        "gsp:asWKT": {
-            "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
-            "@value": "POINT (-120.169 36.8078)"
-        }
-    }
-}
+## Running with a custom configuration
+
+Once you have explored the baseline configuration you can use git clone and deploy a custom pygeoapi instance.  To do this:
+
+1. Clone the repository
+    - _(We clone the repository only to get a copy of the config file; assuming you are using Docker, you do not need to worry about source code or other files for setting up the environment)_
+2. Copy the default config named `pygeoapi-config.yml` and name it `local.config.yml`
+3. Change the settings in `local.config.yml` to fit your needs 
+    - `local.config.yml` is your local config that will specify which extra resources you want to expose and how you want them to be templated.
+    - See the [pygeoapi docs](https://docs.pygeoapi.io/en/latest/configuration.html) for a list of all configuration options.
+4. Run the container with a custom config.
+
+  <Tippy content="Clone pygeoapi locally, and run the it with the local config file mounted inside the container at /pygeoapi/local.config.yml">
+   <div>
+```
+git clone https://github.com/internetofwater/pygeoapi
+cd pygeoapi
+docker run -p 5000:80 -v $(pwd)/local.config.yml:/pygeoapi/local.config.yml -it --rm internetofwater/pygeoapi:latest    
 ```
 
-</details>
-
-    
-
-### Creating Landing Pages
-
-Geoconnex expects an HTML landing page that can be used to explore the data. You can use pygeoapi to create these HTML landing pages.
-
-Create a pygeoapi configuration file with metadata specific to your organization and a resource provider configured for your data format. Then create a JSON-LD jinja template that outputs your data in a structured and standarized way. 
-
-### Persistent Identifiers
+  </div>
+  </Tippy>
 
 
 
+:::tip
 
-Notice how `"@id"` is the URL for the API call. This can be configured to be an exteral URI instead, such as those [minted with geoconnex.us](../../step-3/minting.md). You can then add these identifiers as a field in your data, whether in a local file or at an ESRI or CKAN api endpoint, and then specify this field as the `uri_field:` in the pygeoapi configuration yml file in the `providers:` block, like so:
+If you wish to use docker-compose, view [the pygeoapi-geoconnex-examples repo](https://github.com/cgs-earth/pygeoapi-geoconnex-examples) for sample configuration
 
-```yaml
-demo-ckan:
-  type: collection
-  title: geoconnex landing page demo (CKAN web service)
-  description: Demonstration Geoconnex Landing Pages (from CKAN REST service source)
-  keywords:
-    - Existing Sites
-  template: jsonld/hydrologic-location.jsonld
-  links:
-    - type: application/html
-      rel: canonical
-      title: data source
-      href: https://data.ca.gov/dataset/gsp-monitoring-data/resource/72612518-e45b-4900-9cab-72b8de09c57d
-      hreflang: en-US
-  extents:
-    spatial:
-      bbox: [-170,15,-51,72]
-      crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-    temporal:
-      begin: null
-      end: null
-  providers:
-    - type: feature
-      name: CKAN
-      data: https://data.ca.gov/api/3/action/datastore_search?resource_id=72612518-e45b-4900-9cab-72b8de09c57d
-      id_field: EXISTING_INFO_ID
-      uri_field: EXAMPLE_URI_FIELD_RENAME_AS_NECESSARY
-      x_field: LONGITUDE
-      y_field: LATITUDE
-```
+:::
+
+## Next steps
+
+Once you have set up the container locally and explored the frontend, you can begin to start [ingesting your data](../pygeoapi/providers/index.md)

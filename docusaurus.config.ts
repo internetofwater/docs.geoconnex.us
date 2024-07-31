@@ -18,8 +18,8 @@ const config: Config = {
   organizationName: "internetofwater", // Usually your GitHub org/user name.
   projectName: "docs.geoconnex.us", // Usually your repo name.
 
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -64,7 +64,7 @@ const config: Config = {
   ],
   themeConfig: {
     // Replace with your project's social card
-    image: "img/logo.jpg",
+    image: "geoconnex-logo.png",
 
     docs: {
       sidebar: {
@@ -157,7 +157,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ["json", "yaml"],
+      additionalLanguages: ["json", "yaml", "markup-templating", "django"],
     },
     colorMode: {
       respectPrefersColorScheme: true,
