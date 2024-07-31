@@ -9,7 +9,7 @@ sidebar_position: 2
 It is recommended to take a look at [the geoconnex JSON-LD reference](../../../reference/data-formats/jsonld/overview.md) or the [pygeoapi templating docs](https://docs.pygeoapi.io/en/latest/html-templating.html) before beginning to template your data. 
 :::
 
-Pygeoapi can leverage Jinja templates to change the structure of the JSON data output by your API. 
+pygeoapi can leverage Jinja2 templates to change the structure of the JSON-LD data output. 
 - Templating is needed in order to change the default JSON-LD output by pygeoapi into either the [location-oriented](../../../reference/data-formats/jsonld/primer/location-oriented.md) or [dataset-oriented](../../../reference/data-formats/jsonld/primer/dataset-oriented.md) JSON-LD output format for Geoconnex.
 - To add extra templates, open your [pygeoapi config file](https://docs.pygeoapi.io/en/latest/configuration.html) and create a new collection block that links to the new `item_template` you made for your JSON-LD `linked-data`. 
 
