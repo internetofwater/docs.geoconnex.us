@@ -1,5 +1,5 @@
 ---
-title: Outputting properly formatted data via templating
+title: Templating landing pages with JSON-LD
 sidebar_position: 2
 ---
 
