@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
 There is a strong preference for creating 1:1 redirects. That is, specifying an exact redirect from a geoconnex.us-based PID to the URI of the hydrologic feature you have a web resource about, for each and every individual feature. 
 
 
-An example 1:1 mapping can be found [here](https://github.com/internetofwater/geoconnex.us/blob/master/namespaces/usgs/monitoring-location/monitoring-location.csv).
+An example 1:1 mapping can be found [here](https://github.com/internetofwater/geoconnex.us/blob/master/namespaces/SELFIE/SELFIE_ids.csv).
 
 
 For information regarding submitting CSV redirects see [the tutorial for minting persistent identifiers](/contributing/step-3/minting)
@@ -54,7 +54,7 @@ Unless you have more than 300,000 features and cannot use 1:1 redirects, you sho
 To submit a request to submit this data, you can [create an issue of type "Request regex redirect"](https://github.com/internetofwater/geoconnex.us/issues/new?assignees=dblodgett-usgs%2C+ksonda&labels=PID+request&template=request-regex-redirect.md&title=[regex+redirect+request) and fill out the template.
 
 
-An example 1:N mapping that uses regexes can be found [here](https://github.com/internetofwater/geoconnex.us/blob/master/namespaces/SELFIE/SELFIE_ids.csv)
+An example 1:N mapping that uses regexes can be found [here](https://github.com/internetofwater/geoconnex.us/blob/master/namespaces/usgs/monitoring-location/monitoring-location.csv)
     
 
   </TabItem>
