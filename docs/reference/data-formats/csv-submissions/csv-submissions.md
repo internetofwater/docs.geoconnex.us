@@ -65,3 +65,5 @@ An example 1:N mapping that uses a regular expression
 <CSVTable csvUrl="https://raw.githubusercontent.com/internetofwater/geoconnex.us/master/namespaces/usgs/monitoring-location/monitoring-location.csv" />
   </TabItem>
 </Tabs>
+
+This enables the resolution of features such as https://geoconnex.us/usgs/monitoring-location/01010000 to https://waterdata.usgs.gov/monitoring-location/01010000
