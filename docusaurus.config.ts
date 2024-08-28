@@ -1,6 +1,14 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import { remarkCodeHike, recmaCodeHike } from "codehike/mdx"
+
+const chConfig = {
+  components: { code: "MyCode" },
+  syntaxHighlighting: {
+    theme: "github-dark",
+  },
+}
 
 const config: Config = {
   title: "Geoconnex Documentation",
@@ -35,7 +43,9 @@ const config: Config = {
       {
         docs: {
           routeBasePath: "/", // Serve the docs at the site's root
-
+          beforeDefaultRemarkPlugins: [[remarkCodeHike, chConfig]],
+          recmaPlugins: [[recmaCodeHike, chConfig]],
+          
           sidebarPath: "./sidebars.ts",
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/internetofwater/docs.geoconnex.us/edit/main/",
