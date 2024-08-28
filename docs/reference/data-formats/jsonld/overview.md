@@ -43,6 +43,7 @@ This document is located inside a `<script>` tag within a `<head>` or `<body>` s
 ```json
 <script type="application/ld+json">
 {
+// !collapse(1:4) collapsed
   "@context": {
     "@vocab": "https://schema.org/",
     "ex": "https://example.com/schema/",
@@ -186,3 +187,4 @@ import TabItem from '@theme/TabItem';
   ```
   </TabItem>
 </Tabs>
+

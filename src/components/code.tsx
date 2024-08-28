@@ -2,6 +2,7 @@ import { HighlightedCode, Pre } from "codehike/code";
 import { callout } from "./annotations/callout";
 import React from "react";
 import { CopyButton } from "./copy";
+import { collapse, collapseContent, collapseTrigger } from "./collapse";
 
 export function MyCode({ codeblock }: { codeblock: HighlightedCode }) {
   return (
@@ -31,7 +32,7 @@ export function MyCode({ codeblock }: { codeblock: HighlightedCode }) {
 
       <Pre
         code={codeblock}
-        handlers={[callout]}
+        handlers={[callout, collapse, collapseTrigger, collapseContent]}
         style={{
           position: "relative",
           padding: "1em",
