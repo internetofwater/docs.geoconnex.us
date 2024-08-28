@@ -22,6 +22,7 @@
     "@tippyjs/react": "^4.2.6",
     "clsx": "^2.0.0",
     "codehike": "^1.0.0",
+    "lucide-react": "^0.436.0",
     "papaparse": "^5.4.1",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
