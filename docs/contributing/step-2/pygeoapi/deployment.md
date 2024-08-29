@@ -24,7 +24,7 @@ In this tutorial, we use our fork of pygeoapi from the [internetofwater/pygeoapi
 Our fork of pygeoapi is most easily deployed with [Docker](https://www.docker.com/) to ensure reproducibility. You can also clone the repo and install from source in a similar way to upstream [pygeoapi](https://docs.pygeoapi.io/en/stable/installation.html#for-developers-and-the-truly-impatient), but this may take additional effort.
 
 
-Using Docker, you can spin up pygeoapi with one command and navigate to http://localhost:5000 to explore the frontend. 
+Using Docker, you can spin up pygeoapi with one command. Once you have pygeoapi running, you can navigate to http://localhost:5000 to explore the frontend. 
 
 
   <Tippy content="This command binds port 80 in the container to port 5000 locally, runs it interactively, and cleans up after exiting.">

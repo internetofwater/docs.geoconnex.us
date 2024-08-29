@@ -19,7 +19,7 @@ Contextual information could include:
 2. watershed boundary it is within (e.g. HUC12)
 3. for groundwater sites, relevant aquifers
 4. a relevant reference location. Many organizations publish data about the same feature, such as a common monitoring location that may serve as a streamgage, a water quality sampling site, as well as being fixed on a dam or bridge. 
-5. for surface water sites, the [hydrologic address](https://github.com/internetofwater/docs.geoconnex.us/raw/main/book/hydroaddress.pdf) on the [National Hydrography Dataset](https://www.usgs.gov/national-hydrography/national-hydrography-dataset) stream network
+5. for surface water sites, the [hydrologic address](/hydroaddress.pdf) on the [National Hydrography Dataset](https://www.usgs.gov/national-hydrography/national-hydrography-dataset) stream network
 
 
 
@@ -28,7 +28,7 @@ Wherever possible, contextual data should be in the form of persistent identifie
 
 * **states**: `https://geoconnex.us/ref/states/{2-digit FIPS}` e.g. https://geoconnex.us/ref/states/48 for Texas
 * **counties**: `https://geoconnex.us/ref/counties/{5-digit FIPS}` e.g. https://geoconnex.us/ref/counties/06037 for Los Angeles county
-* **HUC12**: `https://geoconnex.us/nhdplusv2/huc12/{12-digit HUC12 code}` e.g. https://geoconnex.us/nhdplusv2/huc12/030300020607 for the Morgan Creek HUC12
+* **HUC12**: `https://geoconnex.us/nhdplusv2/huc12/{12-digit HUC12 code}` e.g. https://geoconnex.us/nhdplusv2/huc12/030300020607?f=json for the Morgan Creek HUC12
 * **HUC2-10**: `https://geoconnex.us/ref/hu{02,04,06,08,10}/{2-10 - digit HUC2 - 10 code}`e.g. https://geoconnex.us/ref/hu08/06010105 for the Upper French Broad HUC8
 * **Mainstem River** example: https://geoconnex.us/ref/mainstems/2104867 for the Hudson River
 * **Secondary Hydrogeologic Regions** example https://geoconnex.us/ref/sec_hydrg_reg/S50
@@ -39,7 +39,7 @@ Since many organizations publish data about the same feature, it is useful for t
 * **Reference gages** for all surface stream monitoring locations (whether streamgages in the traditional sense or any water sampling site). These take the form `https://geoconnex.us/ref/gages/{7-digit integer}` e.g. https://geoconnex.us/ref/gages/1000001
 * **Reference dams** for all artificial dams impounding water bodies. These take the form `https://geoconnex.us/ref/dams/{7-digit-integer}` e.g. https://geoconnex.us/ref/dams/1000001
 
-Note that these identifiers have somewhat arbitrary schemes that are maintained independently of the identifiers of common national "authoritative" datasets such as USGS [Gages II](https://water.usgs.gov/GIS/metadata/usgswrd/XML/gagesII_Sept2011.xml) or the USACE [National Inventory of Dams](https://nid.usace.army.mil/#/) in order to accomodate features that are not (yet) included in these datasets, and to handle persistence in the case where these systems sometimes change identifiers for a given real-world feature.
+Note that these identifiers have somewhat arbitrary schemes that are maintained independently of the identifiers of common national "authoritative" datasets such as USGS [Gages II](https://water.usgs.gov/GIS/metadata/usgswrd/XML/gagesII_Sept2011.xml) or the USACE [National Inventory of Dams](https://nid.sec.usace.army.mil/#/) in order to accomodate features that are not (yet) included in these datasets, and to handle persistence in the case where these systems sometimes change identifiers for a given real-world feature.
 
 ### Using NHDPlus identifiers to represent hydrologic addresses
 
@@ -51,7 +51,7 @@ By using persistent identifiers for NHDPlus features, you can represent your loc
 
 ## Example: 
 
-Below is an example table based on streamgages with data published at the [California Data Exchange Center](https://cdec.water.ca.gov/riv_flows.html) The table is also available for download as a csv [here](https://github.com/internetofwater/docs.geoconnex.us/raw/main/book/quickstart/dataprep_example.csv). Note the inclusion of descriptive information, links to various reference features, and the `data_url` linking to the CDEC data system entrypoint for each site. 
+Below is an example table based on streamgages with data published at the [California Data Exchange Center](https://cdec.water.ca.gov/riv_flows.html) The table is also available for download as a csv [here](/dataprep_example.csv). Note the inclusion of descriptive information, links to various reference features, and the `data_url` linking to the CDEC data system entrypoint for each site. 
 
 | uri                                                     | id  | name                             | organization                            | data_url                                              | latitude   | longitude   | reachcode_nhdpv2                      | measure_nhdpv2 | mainstem_river                     | reference_gage                  |
 |---------------------------------------------------------|-----|----------------------------------|-----------------------------------------|-------------------------------------------------------|------------|-------------|--------------------------------------|----------------|-------------------------------------|----------------------------------|

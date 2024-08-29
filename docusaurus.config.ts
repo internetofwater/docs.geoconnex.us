@@ -97,16 +97,17 @@ const config: Config = {
         },
         {
           type: "docSidebar",
-          sidebarId: "DataFormatReferenceSidebar",
-          position: "left",
-          label: "Best Practices & Data Standards",
-        },
-        {
-          type: "docSidebar",
           sidebarId: "QueryingSidebar",
           position: "left",
           label: "Access Data",
         },
+        {
+          type: "docSidebar",
+          sidebarId: "DataFormatReferenceSidebar",
+          position: "left",
+          label: "Best Practices & Data Standards",
+        },
+
 
         {
           type: "docSidebar",

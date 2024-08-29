@@ -13,13 +13,13 @@ export default function HomepageFeatures(): JSX.Element {
             <div className="text--center">
               <img
                 className={styles.featureImage}
-                alt="Point Geoconnex to your water data"
+                alt="Contribute your water data to Geoconnex"
                 src="point-recolored.png"
               />
             </div>
             <div className="text--center padding-horiz--md">
               <a href="/contributing/overview" style={{ textDecoration: 'underline', color: 'inherit' }}>
-              <Heading as="h3">Point Geoconnex to your water data</Heading>
+              <Heading as="h3">Contribute your water data to Geoconnex</Heading>
               </a>
               <p>
                 Advance research by contributing the data your organization
@@ -32,14 +32,14 @@ export default function HomepageFeatures(): JSX.Element {
             <div className="text--center">
               <img
                 className={styles.featureImage}
-                alt="Explore data across organizations"
+                alt="Access data across organizations"
                 src="db-colored.png"
               />
             </div>
             <div className="text--center padding-horiz--md">
             <a href="/access/overview" style={{ textDecoration: 'underline', color: 'inherit' }}>
 
-              <Heading as="h3">Explore data across organizations</Heading>
+              <Heading as="h3">Access data across organizations</Heading>
               </a>
               <p>
                 Gain broader insights by leveraging common water data standards

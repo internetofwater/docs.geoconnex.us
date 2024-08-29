@@ -1,3 +1,8 @@
+---
+title: "Step 3: Submitting references to your data"
+sidebar_position: 4
+---
+
 # Mint Persistent Identifiers
 
 Geoconnex requires a persistent identifier to refer to your data. That way, if the url where you host your data changes, you can update the mapping, but the end users of geoconnex can still query the same identifier. This process is generally done by uploading a CSV file with the associated mapping.
