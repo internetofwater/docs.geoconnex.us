@@ -4,8 +4,28 @@ import React from "react";
 import { CopyButton } from "./copy";
 import { collapse, collapseContent, collapseTrigger } from "./collapse";
 import { link } from "./link"
+import { Block, CodeBlock } from "codehike/blocks";
+import { z } from "zod";
+
+const Schema = Block.extend({
+  code: CodeBlock,
+  tooltips: z.array(Block).optional(),
+})
+
+
 
 export function MyCode({ codeblock }: { codeblock: HighlightedCode }) {
+  // A custom component to render the code block using codehike instead of the default
+  codeblock.annotations = codeblock.annotations.map((a) => {
+    const tooltip = tooltips.find((t) => t.title === a.query)
+    if (!tooltip) return a
+    return {
+      ...a,
+      data: { ...a.data, children: tooltip.children },
+
+    }
+  })
+
   return (
     <div
       style={{
@@ -33,7 +53,7 @@ export function MyCode({ codeblock }: { codeblock: HighlightedCode }) {
 
       <Pre
         code={codeblock}
-        handlers={[callout, collapse, collapseTrigger, collapseContent, link]}
+        handlers={[callout, collapse, collapseTrigger, collapseContent, link, tooltip]}
         style={{
           position: "relative",
           padding: "1em",
