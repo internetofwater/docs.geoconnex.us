@@ -79,7 +79,7 @@ const CardLinks = () => {
         />
         <div style={{ marginTop: '12px' }}>
           <a
-            href="https://gis.cgs.earth/portal/apps/webappviewer/index.html?id=41e8676b373344dfab9733b4d8f32837"
+            href="https://geoconnex.us/iow/map"
             style={{
               display: 'inline-block',
               padding: '4px 8px',
