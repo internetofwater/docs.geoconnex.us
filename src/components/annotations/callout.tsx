@@ -30,6 +30,7 @@ export const callout: AnnotationHandler = {
             marginLeft: "-1ch",
             marginTop: "0.25rem",
             whiteSpace: "break-spaces",
+            userSelect: "none"
           }}
         >
           <div

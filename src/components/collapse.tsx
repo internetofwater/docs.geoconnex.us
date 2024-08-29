@@ -4,9 +4,13 @@ import {
     InnerLine
   } from "codehike/code";
   import {
-    ChevronRightSquare
+    ArrowRightCircle,
+    ChevronRightSquare,
+    MoveRight,
+    MoveRightIcon,
+    Plus
   } from "lucide-react";
-  import React from "react";
+  import React, { useState } from "react";
   import {
     Collapsible,
     CollapsibleContent,
@@ -47,40 +51,34 @@ import {
   };
   
   const icon = (
-    <ChevronRightSquare
+    <ArrowRightCircle
       style={{
         display: 'inline-block',
+        marginTop: '1px',
         transition: 'transform 0.2s, opacity 0.2s',
-        opacity: '0.3',
-        marginBottom: '2px',
+        opacity: '0.8',
+        marginBottom: '1px',
       }}
       size={15}
-      className="group-data-[state=closed]:-rotate-90 group-data-[state=closed]:opacity-80 group-hover:!opacity-100"
     />
   );
   
   export const collapseTrigger: AnnotationHandler = {
+
     name: "CollapseTrigger",
     onlyIfAnnotated: true,
-    AnnotatedLine: ({
-      annotation,
-      ...props
-    }) => (
-      <CollapsibleTrigger>
-        <InnerLine merge={props} data={{ icon }} />
-      </CollapsibleTrigger>
-    ),
+    AnnotatedLine: ({ annotation, ...props }) => {
+      return (
+        <CollapsibleTrigger>
+          <InnerLine merge={props} data={{ icon }} />
+        </CollapsibleTrigger>
+      );
+    },
     Line: (props) => {
       const icon = props.data?.icon as React.ReactNode;
       return (
         <div style={{ display: 'table-row' }}>
-          <span style={{
-            width: '20px',
-            textAlign: 'center',
-            display: 'table-cell'
-          }}>
             {icon}
-          </span>
           <div style={{ display: 'table-cell' }}>
             <InnerLine merge={props} />
           </div>

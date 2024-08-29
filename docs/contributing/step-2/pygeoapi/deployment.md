@@ -29,7 +29,7 @@ Using Docker, you can spin up pygeoapi with one command and navigate to http://l
 
   <Tippy content="This command binds port 80 in the container to port 5000 locally, runs it interactively, and cleans up after exiting.">
    <div>
-   ```
+   ```sh
    docker run -p 5000:80 -it --rm internetofwater/pygeoapi
   ```
   </div>

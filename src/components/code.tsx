@@ -3,6 +3,7 @@ import { callout } from "./annotations/callout";
 import React from "react";
 import { CopyButton } from "./copy";
 import { collapse, collapseContent, collapseTrigger } from "./collapse";
+import { link } from "./link"
 
 export function MyCode({ codeblock }: { codeblock: HighlightedCode }) {
   return (
@@ -32,7 +33,7 @@ export function MyCode({ codeblock }: { codeblock: HighlightedCode }) {
 
       <Pre
         code={codeblock}
-        handlers={[callout, collapse, collapseTrigger, collapseContent]}
+        handlers={[callout, collapse, collapseTrigger, collapseContent, link]}
         style={{
           position: "relative",
           padding: "1em",
