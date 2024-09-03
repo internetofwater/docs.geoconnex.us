@@ -5,11 +5,13 @@ const MONACO_EDITOR_OPTIONS = {
   automaticLayout: true,
   formatOnType: true,
   formatOnPaste: true,
+  fontSize: 16,
 };
 
 const OPTIONS_WITH_READONLY = {
   readOnly: true,
   automaticLayout: true,
+  fontSize: 16,
 };
 
 const Playground = () => {
@@ -23,6 +25,11 @@ const Playground = () => {
     asides.forEach((aside) => {
       aside.style.display = 'none';
     });
+    return () => {
+      asides.forEach((aside) => {
+        aside.style.display = '';
+      });
+    };
   }, []);
 
   const updateResult = async () => {
