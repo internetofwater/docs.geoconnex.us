@@ -116,6 +116,12 @@ const config: Config = {
           label: "System Architecture",
         },
         {
+          type: "docSidebar",
+          sidebarId: "PlaygroundSidebar",
+          position: "left",
+          label: "Playground",
+        },
+        {
           href: "https://github.com/internetofwater/docs.geoconnex.us",
           label: "GitHub",
           position: "right",
