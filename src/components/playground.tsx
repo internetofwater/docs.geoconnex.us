@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
 
+import raw_output from './associated_assets/raw_output.json';
+
+const FONT_SIZE = 13
 const MONACO_EDITOR_OPTIONS = {
   automaticLayout: true,
   formatOnType: true,
   formatOnPaste: true,
-  fontSize: 16,
+  fontSize: FONT_SIZE,
+  minimap: {
+    enabled: false,
+  },
 };
 
 const OPTIONS_WITH_READONLY = {
   readOnly: true,
   automaticLayout: true,
-  fontSize: 16,
+  fontSize: FONT_SIZE,
+  minimap: {
+    enabled: false,
+  },
 };
 
 const Playground = () => {
@@ -48,37 +57,32 @@ const Playground = () => {
         return;
       }
 
-      const response = await fetch('http://127.0.0.1:8000/render/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          template: templateValue,
-          data: parsedData,
-        }),
-      });
-
-      const resultJson = await response.json();
-      if (resultJson.error) {
-        setError(resultJson.error);
-        setResult('');
-      } else {
-        setResult(resultJson.result);
-      }
+      // Here, you would handle the templating logic, but we're skipping it as there's no remote fetching.
+      const templatedResult = JSON.stringify(parsedData, null, 2); // Example operation
+      setResult(templatedResult);
     } catch (e) {
-      if (e instanceof Error && e.message.includes('NetworkError')) {
-        setError('Could not connect to the backend');
-      } else {
-        console.error(e);
-        setError('An error occurred');
-      }
+      console.error(e);
+      setError('An error occurred');
       setResult('');
+    }
+  };
+
+  const handleExampleChange = async (event) => {
+    const selectedOption = event.target.value;
+
+    if (selectedOption === 'location') {
+
+      const location_oriented_template = await fetch("https://raw.githubusercontent.com/cgs-earth/sta-pygeoapi/main/templates/usgs-location-oriented.j2")
+
+      setTemplate( await location_oriented_template.text());
+      setRaw(JSON.stringify(raw_output, null, 2));
     }
   };
 
   const containerStyle = {
     display: 'flex',
     height: '80vh',
-    width: '80vw', // Ensure full viewport width
+    width: '90vw', // Ensure full viewport width
     overflow: 'hidden',
     margin: 0,
     padding: 0, // Remove padding to prevent extra width
@@ -96,7 +100,7 @@ const Playground = () => {
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
-    margin: "2px"
+    margin: '2px',
   };
 
   const editorStyle = {
@@ -117,10 +121,12 @@ const Playground = () => {
 
   return (
     <>
-      <select style={{ flex: 'none' }}>
-        <option value="" selected disabled hidden>Pick an example</option>
+      <select style={{ flex: 'none' }} onChange={handleExampleChange}>
+        <option value="" selected disabled hidden>
+          Pick an example
+        </option>
         <option value="location"> Location Oriented </option>
-        <option value="dataset oriented"> Dataset Oriented </option>
+        <option value="dataset"> Dataset Oriented </option>
       </select>
 
       <div style={containerStyle}>
@@ -167,10 +173,7 @@ const Playground = () => {
         </div>
       </div>
     </>
-
-
   );
 };
 
 export default Playground;
-

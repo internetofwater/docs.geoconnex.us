@@ -4,6 +4,6 @@ title: ""
 sidebarCollapsible: false
 ---
 
-import Playground from '@site/src/components/playground';
+import Playground from '@site/src/components/Playground';
 
 <Playground/>
