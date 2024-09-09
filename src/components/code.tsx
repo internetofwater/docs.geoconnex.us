@@ -3,29 +3,30 @@ import { callout } from "./annotations/callout";
 import React from "react";
 import { CopyButton } from "./copy";
 import { collapse, collapseContent, collapseTrigger } from "./collapse";
-import { link } from "./link"
-import { Block, CodeBlock } from "codehike/blocks";
+import { link } from "./link";
+import { Block, HighlightedCodeBlock, parseProps } from "codehike/blocks";
 import { z } from "zod";
 
+// Define the schema for the props
 const Schema = Block.extend({
-  code: CodeBlock,
+  code: HighlightedCodeBlock,
   tooltips: z.array(Block).optional(),
-})
+});
 
-
-
-export function MyCode({ codeblock }: { codeblock: HighlightedCode }) {
-  // A custom component to render the code block using codehike instead of the default
-  codeblock.annotations = codeblock.annotations.map((a) => {
-    const tooltip = tooltips.find((t) => t.title === a.query)
-    if (!tooltip) return a
+export function MyCode(props: unknown) {
+  // Parse the incoming props using the defined schema
+  const { code, tooltips = [] } = parseProps(props, Schema);
+  
+  code.annotations = code.annotations.map((a) => {
+    const tooltip = tooltips.find((t) => t.title === a.query);
+    if (!tooltip) return a;
     return {
       ...a,
       data: { ...a.data, children: tooltip.children },
+    };
+  });
 
-    }
-  })
-
+  // Return the JSX with the code block and annotations
   return (
     <div
       style={{
@@ -36,7 +37,7 @@ export function MyCode({ codeblock }: { codeblock: HighlightedCode }) {
       }}
       className="px-4 bg-zinc-950 rounded"
     >
-      {codeblock.meta && (
+      {code.meta && (
         <div
           style={{
             backgroundColor: "#2a2d32",
@@ -47,13 +48,13 @@ export function MyCode({ codeblock }: { codeblock: HighlightedCode }) {
             fontStyle: "italic",
           }}
         >
-          {codeblock.meta}
+          {code.meta}
         </div>
       )}
 
       <Pre
-        code={codeblock}
-        handlers={[callout, collapse, collapseTrigger, collapseContent, link, tooltip]}
+        code={code}
+        handlers={[callout, collapse, collapseTrigger, collapseContent, link, tooltips]}
         style={{
           position: "relative",
           padding: "1em",
@@ -74,9 +75,8 @@ export function MyCode({ codeblock }: { codeblock: HighlightedCode }) {
           zIndex: 10,
         }}
       >
-        <CopyButton text={codeblock.code} />
+        <CopyButton text={code.code} />
       </div>
     </div>
   );
 }
-
