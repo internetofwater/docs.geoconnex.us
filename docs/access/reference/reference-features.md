@@ -1,8 +1,3 @@
----
-
-sidebar_position: 1
----
-
 # Reference Features
 
 It is possible to view example features for Geoconnex before they are ingested into the knowledge graph. The source for these features be found within the [the ref namespace within the geoconnex.us repo](https://github.com/internetofwater/geoconnex.us/tree/master/namespaces/ref). You can dynamically explore individual features within the web portal at [reference.geoconnex.us](https://reference.geoconnex.us/)

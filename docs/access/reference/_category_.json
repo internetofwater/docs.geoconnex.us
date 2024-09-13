@@ -1,0 +1,8 @@
+{
+    "label": "Accessing Geoconnex Reference Features",
+    "position": 1,
+    "link": {
+      "type": "generated-index",
+      "description": "The Geoconnex Reference Feature Server is an implementation of OGC API - Features using pygeoapi. This is set of community-curated web resources about Hydrologic Reference Reatures (e.g. watersheds, monitoring locations, dams, bridges, etc.) about which many organizations may collect and publish data."
+    }
+}
