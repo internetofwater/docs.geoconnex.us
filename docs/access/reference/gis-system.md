@@ -1,4 +1,4 @@
-# Accessing Data with QGIS and ArcGIS
+# Access with QGIS and ArcGIS
 
 You can easily add and explore data from OGC API - Feature servers in both **QGIS** and **ESRI ArcGIS**. OGC API compliant servers, such as [reference.geoconnex.us](https://reference.geoconnex.us), allow seamless integration of geospatial data into your GIS workflows.
 

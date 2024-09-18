@@ -1,4 +1,4 @@
-# Accessing Data in Browser
+# Access in Browser
 
 OGC API compliant servers, such as [reference.geoconnex.us](https://reference.geoconnex.us), serve HTML representations of all features in the server. This means all Reference Features have an HTML landing page with related information, making it easy to explore and access data without specialized software.
 

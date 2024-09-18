@@ -77,10 +77,10 @@ LIMIT 10
   </TabItem>
   <TabItem value="editor" label="Send a Query Graphically">
   Navigate to the [Sparql Editor](https://graph.geoconnex.us/sparql) on the sidebar.
-   [![sparql editor](sparql.png)](https://graph.geoconnex.us/sparql)
+   [![sparql editor](./assets/sparql.png)](https://graph.geoconnex.us/sparql)
    Paste your query and click "run". 
   Results are then output as a table that can be exported in a variety of formats such as CSV or JSON.
-  ![results of the sparql query](results.png)
+  ![results of the sparql query](./assets/results.png)
   </TabItem>
 
     <TabItem value="cli" label="Send a Query via CLI">
