@@ -87,7 +87,7 @@ LIMIT 10
 
     The Geoconnex graph database provides a RDF4J API that is documented [here](https://graph.geoconnex.us/webapi). With this API, you can run sparql queries from the command line or any client that can send HTTP requests.
 
-    The example below shows how we can read in the sparql query, encode it to be in the proper format, and send it to the API via curl.
+    The example below shows how we can send a sparql query. We can either send the query as a URL parameter in a GET request or inside the body of a POST request.
 
     ```sh
 #!/bin/bash
@@ -154,15 +154,17 @@ WHERE {
 LIMIT 10
 EOM
 
-# URL encode the query
+# URL encode the query so we can send it as a URL parameter
 ENCODED_QUERY=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$SPARQL_QUERY'''))")
 
 # Define the endpoint URL
 ENDPOINT="https://graph.geoconnex.us/repositories/iow?query=$ENCODED_QUERY"
 
-# Send the query using curl with Accept header set to application/sparql-results+json
+# Send the query as a GET request by using URL parameters and encoding the query
 curl -X GET --header 'Accept: application/sparql-results+json' "$ENDPOINT"
 
+# Send the query as a POST request by using the query in the body
+curl -X POST --header 'Accept: application/sparql-results+json' --header 'Content-Type: application/sparql-query' --data "$SPARQL_QUERY" "$ENDPOINT"
     ```
   </TabItem>
 
