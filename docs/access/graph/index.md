@@ -1,8 +1,8 @@
 # Access the full Geoconnex graph
 
-The Geoconnex Graph enables the discovery of datasets linked to geospatial features, including reference features such as mainstems. 
+The Geoconnex Graph enables the discovery of data linked between geospatial features, including reference features such as mainstems.  
 
-## Retrieving data from the `datasets` section
+## Retrieving associated data from the `datasets` section
 
 One of the key sections to explore when accessing a feature's landing page or JSON response is the `datasets` section, which contains records of various datasets and metadata associated with the feature you are exploring. These datasets often represent monitoring locations or other observational data, and they provide key information to help you understand the environmental or hydrological characteristics of the area.
 
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
     When we scroll down to the `datasets` section, we can see all the datasets associated with the mainstem 1. The first dataset contains the following `distributionURL` which we can use to download the dataset from its provider. 
 
     ```
-    distributionURL https://waterservices.usgs.gov/nwis/iv/?sites=USGS:11390500#parameterCd=00060&format=rdb
+    distributionURL: https://waterservices.usgs.gov/nwis/iv/?sites=USGS:11390500#parameterCd=00060&format=rdb
     ```
 
 

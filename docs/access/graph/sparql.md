@@ -87,7 +87,7 @@ LIMIT 10
 
     The Geoconnex graph database provides a RDF4J API that is documented [here](https://graph.geoconnex.us/webapi). With this API, you can run sparql queries from the command line or any client that can send HTTP requests.
 
-    The example below shows how we can send a sparql query. We can either send the query as a URL parameter in a GET request or inside the body of a POST request.
+    The example below shows how we can send a sparql query. We can either send the query as a URL parameter in a GET request or inside the body of a POST request. If your query is particularly long, you will likely need to use a POST request.
 
     ```sh
 #!/bin/bash

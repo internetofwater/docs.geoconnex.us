@@ -4,10 +4,9 @@ sidebar_position: 2
 
 import DocCardList from '@theme/DocCardList';
 
-# Access Geoconnex Reference Features
+# Access Geoconnex reference features
 
 Many organizations publish data about the same real-world things.  (e.g. watersheds, monitoring locations, dams, bridges, etc.)
-
 
 The Geoconnex Reference Feature Server refers to these features with persistent identifiers so they are standardized across organizations. This allows users to ask:
 - what is the identifier and spatial geometry for this thing? Does it exist?
