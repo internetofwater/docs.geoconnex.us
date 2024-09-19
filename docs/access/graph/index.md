@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 ### An example: getting datasets for the Sacramento River
 <Tabs>
   <TabItem value="query" label="Getting datasets via the UI" default>
-  To look for all datasets associated with the mainstem 1, we can go to [reference.geoconnex.us/collections/mainstems/items/1](https://reference.geoconnex.us/collections/mainstems/items/1). This is the reference feature page for Sacramento River. On this page it will contain both information about the mainstem and the datasets associated with it.
+  To look for all datasets associated with the mainstem 1, we can go to [geoconnex.us/ref/mainstems/1](https://geoconnex.us/ref/mainstems/1). This is the reference feature page for Sacramento River. On this page it will contain both information about the mainstem and the datasets associated with it.
 ![datasets](./assets/mainstem1.png)
     When we scroll down to the `datasets` section, we can see all the datasets associated with the mainstem 1. The first dataset contains the following `distributionURL` which we can use to download the dataset from its provider. 
 
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
         For instance, if one wanted to use bash and get metadata regarding the first dataset for mainstem 1, you could do the following:
 
         ```bash
-        curl 'https://reference.geoconnex.us/collections/mainstems/items/1?f=json' | jq .properties.datasets[0]
+        curl -L 'https://geoconnex.us/ref/mainstems/1' | jq .properties.datasets[0]
         ```
         ```json
         {
