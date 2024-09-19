@@ -30,19 +30,19 @@ const Playground = () => {
     "// Here is where your jinja template will be applied"
   );
   const [error, setError] = useState("");
+  const [sidebarVisible, setSidebarVisible] = useState(true);
 
-  // hide docusaurus sidebar on mount
-  // useEffect(() => {
-  //   const asides = document.querySelectorAll("aside");
-  //   asides.forEach((aside) => {
-  //     aside.style.display = "none";
-  //   });
-  //   return () => {
-  //     asides.forEach((aside) => {
-  //       aside.style.display = "";
-  //     });
-  //   };
-  // }, []);
+  useEffect(() => {
+    const asides = document.querySelectorAll("aside");
+    asides.forEach((aside) => {
+      aside.style.display = sidebarVisible ? "block" : "none";
+    });
+    return () => {
+      asides.forEach((aside) => {
+        aside.style.display = "";
+      });
+    };
+  }, [sidebarVisible]);
 
   const updateResult = async () => {
     try {
@@ -85,8 +85,7 @@ const Playground = () => {
   const containerStyle = {
     display: "flex",
     height: "80vh",
-    // change to 90vw for larger screens
-    width: "70vw",
+    width: sidebarVisible ? "70vw" : "90vw", // Change width based on sidebar visibility
     overflow: "hidden",
     margin: 0,
     padding: 0, // Remove padding to prevent extra width
@@ -125,22 +124,24 @@ const Playground = () => {
 
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between", padding: "1rem" }}>
+        <button onClick={() => setSidebarVisible(!sidebarVisible)}>
+          {sidebarVisible ? "Maximize width" : "Normal Width"}
+        </button>
+      </div>
       <div style={containerStyle}>
         <div style={editorContainerStyle}>
           <div style={columnStyle}>
-
-          <div style={{ display: "flex", justifyContent: "space-between", paddingRight: "3rem", paddingLeft: "3rem" }}>
-
-            <h2 style={headerStyle}>Raw JSON Output</h2>
-            <select style={{ flex: "none" }} onChange={handleExampleChange}>
-              <option value="" selected disabled hidden>
-                Pick an example
-              </option>
-              <option value="location"> Location Oriented </option>
-              <option value="dataset"> Dataset Oriented </option>
-            </select>
+            <div style={{ display: "flex", justifyContent: "space-between", paddingRight: "3rem", paddingLeft: "3rem" }}>
+              <h2 style={headerStyle}>Raw JSON Output</h2>
+              <select style={{ flex: "none" }} onChange={handleExampleChange}>
+                <option value="" selected disabled hidden>
+                  Pick an example
+                </option>
+                <option value="location"> Location Oriented </option>
+                <option value="dataset"> Dataset Oriented </option>
+              </select>
             </div>
-
             <Editor
               value={raw}
               options={MONACO_EDITOR_OPTIONS}
