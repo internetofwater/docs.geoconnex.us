@@ -24,7 +24,7 @@ Contextual information could include:
 
 
 ### Using reference cataloging features to add contextual information
-Wherever possible, contextual data should be in the form of persistent identifiers (PIDs) for these features. For example, counties are often given as a name, but spelling errors, capitalization or abbreviation differences, and other ambiguities can lead to barriers to interoperability between datasets that reference counties. In addition, these PIDs are already members of the knowledge graph, making adding your data to the knowledge graph simpler and more meaningful. Some sources for PIDs for these contextual features are provided at reference.geoconnex.us/collections . Some common patterns include:
+Wherever possible, contextual data should be in the form of persistent identifiers (PIDs) for these features. For example, counties are often given as a name, but spelling errors, capitalization or abbreviation differences, and other ambiguities can lead to barriers to interoperability between datasets that reference counties. In addition, these PIDs are already members of the knowledge graph, making adding your data to the knowledge graph simpler and more meaningful. Some sources for PIDs for these contextual features are provided at https://reference.geoconnex.us/collections . Some common patterns include:
 
 * **states**: `https://geoconnex.us/ref/states/{2-digit FIPS}` e.g. https://geoconnex.us/ref/states/48 for Texas
 * **counties**: `https://geoconnex.us/ref/counties/{5-digit FIPS}` e.g. https://geoconnex.us/ref/counties/06037 for Los Angeles county
