@@ -57,4 +57,3 @@ base_url = "https://reference.geoconnex.us"
 ### Other useful resources
 
 Although we do not use it in these examples, [HyRiver](https://docs.hyriver.io/) provides a wrapper over the Geoconnex reference feature server and allows for queries by spatial areas, by ID, and using CQL filters. Documentation for using HyRiver with Geoconnex can be found [here](https://docs.hyriver.io/examples/notebooks/geoconnex.html).
-cp
