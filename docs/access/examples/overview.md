@@ -12,12 +12,9 @@ In this section we demonstrate how to use the Geoconnex Reference Feature server
 
 :::tip
 
-The R examples can also be found, formatted as one longer Quarto notebook, [here](https://kyleonda.quarto.pub/using-the-geoconnex-reference-feature-server-with-r/#intersection-by-url-reference)
+The R examples can also be found formatted as one longer Quarto notebook [here](https://kyleonda.quarto.pub/using-the-geoconnex-reference-feature-server-with-r/#intersection-by-url-reference)
 
 :::
-
-
-The Geoconnex reference feature server implements the OGC API - Features specification, and its full API documentation is available [here](https://reference.geoconnex.us/openapi) for those who wish to explore its capabilities further than what is demonstrated in these examples.
 
 Throughout all examples, we will be using the following libraries/constants:
 
@@ -54,6 +51,14 @@ base_url = "https://reference.geoconnex.us"
 </TabItem>
 </Tabs>
 
-### Other useful resources
+### Useful resources for Geoconnex queries
 
-Although we do not use it in these examples, [HyRiver](https://docs.hyriver.io/) provides a wrapper over the Geoconnex reference feature server and allows for queries by spatial areas, by ID, and using CQL filters. Documentation for using HyRiver with Geoconnex can be found [here](https://docs.hyriver.io/examples/notebooks/geoconnex.html).
+The Geoconnex reference feature server implements the OGC API - Features specification, and its full API documentation is available [here](https://reference.geoconnex.us/openapi) for those who wish to explore its capabilities further than what is demonstrated in these examples.
+
+Although we do not use them in these examples, there are additional client libraries that provide wrappers over the Geoconnex reference feature server API for easier querying.
+- [HyRiver](https://docs.hyriver.io/) provides a Python client library and allows for queries by spatial areas, by ID, and using CQL filters. Documentation for using HyRiver with Geoconnex can be found [here](https://docs.hyriver.io/examples/notebooks/geoconnex.html).
+- [nhdplusTools](https://doi-usgs.github.io/nhdplusTools/index.html) is an R package for accessing and working with the NHDPlus and other US hydrographic data. It contains helper functions for working with Geoconnex.
+    - [get_geoconnex_reference()](https://doi-usgs.github.io/nhdplusTools/reference/get_geoconnex_reference.html) queries the geoconnex reference feature server for features of interest.
+    - [discover_geoconnex_reference()](https://doi-usgs.github.io/nhdplusTools/reference/get_geoconnex_reference.html) queries the geoconnex.us reference feature server for available layers and attributes.
+
+    
