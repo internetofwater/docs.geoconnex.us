@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_77d8f8236395875380968571da27a825 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+     top: 10px; right: 10px; width: 150px; height: auto; 
+     border:2px solid grey; background-color: white; 
+     z-index: 1000; padding: 10px;">
+     <h4>Legend</h4>
+     <i class="fa fa-circle" style="color:red"></i>&nbsp; Dams<br>
+     <i class="fa fa-circle" style="color:green"></i>&nbsp; Gages<br>
+</div>
+    
+            <div class="folium-map" id="map_77d8f8236395875380968571da27a825" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_77d8f8236395875380968571da27a825 = L.map(
+                "map_77d8f8236395875380968571da27a825",
+                {
+                    center: [37.29793368246544, -107.83775929024415],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cd5998c409d4862f6cd59495fe93a961 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_cd5998c409d4862f6cd59495fe93a961.addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+        function geo_json_5e9643469629c1ac66c3a8a9e767e3b6_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "weight": 2};
+            }
+        }
+
+        function geo_json_5e9643469629c1ac66c3a8a9e767e3b6_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_5e9643469629c1ac66c3a8a9e767e3b6 = L.geoJson(null, {
+                onEachFeature: geo_json_5e9643469629c1ac66c3a8a9e767e3b6_onEachFeature,
+            
+                style: geo_json_5e9643469629c1ac66c3a8a9e767e3b6_styler,
+        });
+
+        function geo_json_5e9643469629c1ac66c3a8a9e767e3b6_add (data) {
+            geo_json_5e9643469629c1ac66c3a8a9e767e3b6
+                .addData(data);
+        }
+            geo_json_5e9643469629c1ac66c3a8a9e767e3b6_add({"bbox": [-108.22140767579208, 36.71332087634703, -107.55492701015982, 37.93287160778748], "features": [{"bbox": [-108.22140767579208, 36.71332087634703, -107.55492701015982, 37.93287160778748], "geometry": {"coordinates": [[-107.61299841006974, 37.917023074478614], [-107.61091861007304, 37.92255967447003], [-107.60439047674981, 37.92942280779268], [-107.5964758100954, 37.932213207788365], [-107.58532687677939, 37.93022047445801], [-107.575273676795, 37.93287160778748], [-107.56871801013853, 37.93076427445739], [-107.56539861014363, 37.92739980779584], [-107.55492701015982, 37.91163127448702], [-107.55947141015281, 37.897791607841896], [-107.5586410101542, 37.88925720785512], [-107.56155801014961, 37.88740547452455], [-107.56548881014339, 37.88079520786811], [-107.56748947680711, 37.86777767455498], [-107.57629667679339, 37.85938460790142], [-107.57760001012468, 37.85101127458102], [-107.59208761010223, 37.84236720792784], [-107.59962021009045, 37.83287387460923], [-107.6088804100761, 37.82861967461587], [-107.61975481005925, 37.826995807951604], [-107.62560987671691, 37.82770500795056], [-107.64983427667914, 37.81633080796818], [-107.65542847667058, 37.81548280796949], [-107.66159467666097, 37.80555160798496], [-107.66868507664998, 37.80076740799232], [-107.66731780998549, 37.78020027469103], [-107.66368160999104, 37.77182820803739], [-107.66676000998632, 37.762035074719215], [-107.66188467666058, 37.75153560806879], [-107.66317460999193, 37.74707007474237], [-107.6610618099951, 37.73295500809761], [-107.65564301000354, 37.727489274772864], [-107.65241007667527, 37.71483840812588], [-107.65965780999738, 37.69909520815014], [-107.65674247666851, 37.68658160816963], [-107.6588130766653, 37.68289740817528], [-107.66977700998167, 37.6774932748504], [-107.6787768099677, 37.66595800820169], [-107.67902900996728, 37.657927408214064], [-107.68776907662033, 37.64941160822725], [-107.69109987661517, 37.64245440823821], [-107.69155267661455, 37.634744008249974], [-107.70238267659767, 37.621078274937936], [-107.71100600991753, 37.61667900827815], [-107.72236540990002, 37.615777274946254], [-107.72687667655964, 37.61300500828379], [-107.73248720988431, 37.61455540828134], [-107.74234920986896, 37.61308127495037], [-107.74901527652526, 37.609642274955725], [-107.75165347652114, 37.60654667496053], [-107.75898880984312, 37.60495220829645], [-107.76417060983516, 37.600793074969445], [-107.77069900982504, 37.59995207497075], [-107.77763287648088, 37.596503208309535], [-107.78265040980642, 37.5839700083289], [-107.77791060981383, 37.58112960833339], [-107.7767392098155, 37.575477875008815], [-107.7827004098063, 37.56596527502358], [-107.7802026098102, 37.563835675026795], [-107.78041200980994, 37.55717840837063], [-107.77715127648162, 37.54516500838911], [-107.77777000981399, 37.5332232750744], [-107.7839036098045, 37.52117140842629], [-107.78649987646713, 37.511336008441674], [-107.78513207646928, 37.50222947512249], [-107.7863984098006, 37.49970380845982], [-107.78996040979513, 37.498287408461984], [-107.7890756097965, 37.49233867513785], [-107.79258047645766, 37.49007580847463], [-107.79132087645968, 37.48586547514782], [-107.79341840978975, 37.483853475151015], [-107.79293187645709, 37.482023008487104], [-107.79723907645047, 37.480538275156086], [-107.79698467645085, 37.47596260849652], [-107.79090287646028, 37.47190987516943], [-107.78904267646323, 37.46600627517868], [-107.79734060978359, 37.4625334751841], [-107.8000994097793, 37.458119475190834], [-107.80413080977314, 37.440711608551354], [-107.80341747644087, 37.43554080855937], [-107.81648420975381, 37.41525407525747], [-107.82359927640948, 37.41159620859648], [-107.8230274097437, 37.408599075267794], [-107.82647227640508, 37.40205720861118], [-107.83071707639853, 37.40066300861354], [-107.82919847640085, 37.39816887528385], [-107.83180927639671, 37.39505827528875], [-107.83814720972032, 37.39279500862573], [-107.83462107639247, 37.39087247529529], [-107.83625747638985, 37.38586260863636], [-107.8397274097178, 37.383507075306774], [-107.84371220971161, 37.38456020863845], [-107.84933207636959, 37.38177007530943], [-107.85042280970117, 37.37605087531834], [-107.84643807637413, 37.37563847531899], [-107.84784327637192, 37.37396867532152], [-107.84646780970735, 37.372115408657656], [-107.84718540970624, 37.36856947532995], [-107.8502812763681, 37.36788360866426], [-107.84678520970687, 37.36465740866942], [-107.84710100970636, 37.362712875339014], [-107.8444356763772, 37.36145407534108], [-107.84377860971159, 37.35511680868423], [-107.84810667637151, 37.35305867535396], [-107.84515547637608, 37.35143380868979], [-107.8456148097087, 37.348620008694304], [-107.85106020970028, 37.345509475365596], [-107.85071660970078, 37.344434208700754], [-107.84613187637456, 37.34431900870083], [-107.84931367636966, 37.34001867537417], [-107.84762340970553, 37.33912607537567], [-107.845216276376, 37.340063675374225], [-107.84527400970927, 37.33891980870939], [-107.85117647636667, 37.338440408710014], [-107.85169260969928, 37.337067808712064], [-107.84564787637527, 37.33436727538306], [-107.84742527637258, 37.330867208721806], [-107.84367227637843, 37.3308206753886], [-107.84490600970975, 37.3251930753972], [-107.84135400971537, 37.32420860873201], [-107.84519347637605, 37.32226487540184], [-107.84453527637709, 37.32006847540518], [-107.84765760970545, 37.320252075404916], [-107.84983527636876, 37.31785027540868], [-107.84997900970194, 37.31624887541112], [-107.84614087637459, 37.315790675411904], [-107.84680100970684, 37.311764275418184], [-107.84940780970283, 37.31036927542017], [-107.85284460969751, 37.31096460875266], [-107.85361847636297, 37.308745608756105], [-107.85782880968975, 37.30815127542373], [-107.856827076358, 37.30444500876283], [-107.86069340968533, 37.30492587542863], [-107.86332827634789, 37.303439008764315], [-107.86304207634828, 37.30172320876697], [-107.86622087634339, 37.302318208766145], [-107.86845467633992, 37.30119720876784], [-107.8709462096694, 37.295958275442736], [-107.87028767633706, 37.289941608785355], [-107.87306527633274, 37.28156840879823], [-107.87481160966342, 37.28017287546705], [-107.8792494096565, 37.28067600879972], [-107.88674860964488, 37.27120420881429], [-107.8860610096458, 37.26788707548618], [-107.8813662763198, 37.26548527548992], [-107.88173807631921, 37.26235100882809], [-107.87541240966249, 37.256975075503064], [-107.87186160966792, 37.245386275521014], [-107.86579447634409, 37.241703475526855], [-107.86911300967222, 37.23538887553668], [-107.86665140967602, 37.222966208889225], [-107.85829767635568, 37.22061000889297], [-107.85429340969517, 37.21379207557026], [-107.8488872763702, 37.21093180890795], [-107.84580047637502, 37.199995608925036], [-107.84848907637092, 37.19885200892668], [-107.85432320969517, 37.19995060892499], [-107.85735507635718, 37.195581008931704], [-107.86278880968206, 37.19484900893302], [-107.8696514096714, 37.18741327561112], [-107.87442707633068, 37.18954047560785], [-107.87897307632358, 37.186382808945986], [-107.87419500966433, 37.1657244089781], [-107.87836747632451, 37.15984420898715], [-107.8789668096569, 37.15467360899525], [-107.8867682763115, 37.14947907567001], [-107.88708060964439, 37.142249475681304], [-107.89196667630347, 37.14055547568378], [-107.89325187630135, 37.13865640902023], [-107.88950720964061, 37.13449340902662], [-107.89181967630356, 37.128087009036584], [-107.89118867630464, 37.120628809048085], [-107.89329807630133, 37.1065812090699], [-107.89018307630607, 37.10120540907824], [-107.88461307631479, 37.09937607574781], [-107.88144187631974, 37.09361107575677], [-107.87735680965945, 37.08267547577367], [-107.8782126763248, 37.07510260911868], [-107.87538580966253, 37.071968409123706], [-107.87755527632584, 37.06707220913125], [-107.87495687632986, 37.0621764091388], [-107.88080860965408, 37.05659367581412], [-107.87581300966178, 37.05435187581768], [-107.87789660965859, 37.05275027582016], [-107.87322247633257, 37.04840247582687], [-107.87262627633339, 37.04166147583729], [-107.87486907632996, 37.036654809178486], [-107.87386160966486, 37.033354275850215], [-107.87829107632462, 37.0280056091918], [-107.87379767633155, 37.026938475860256], [-107.87214967633417, 37.00959760922043], [-107.86378900968043, 36.99631967590774], [-107.86819520967367, 36.98782520925429], [-107.86748387634134, 36.984369475926194], [-107.87173580966817, 36.981934609263455], [-107.87348380966546, 36.97584320927269], [-107.87294967633295, 36.972495875944716], [-107.86814340967373, 36.969445009282616], [-107.86818160967368, 36.96767820928545], [-107.87180327633473, 36.96631280928764], [-107.87595900966164, 36.968294609284484], [-107.87940240965628, 36.96581327595506], [-107.88126987632006, 36.96248027596031], [-107.87923907632319, 36.958777275966064], [-107.8828394763176, 36.956280275969974], [-107.8851168763141, 36.9495064759804], [-107.87588240966176, 36.94576080931948], [-107.87794660965847, 36.942660209324416], [-107.87516887632944, 36.93928300932959], [-107.87597347632823, 36.936306876001], [-107.87980687632222, 36.93126820934193], [-107.88519687631397, 36.92897160934557], [-107.89519807629841, 36.93352200933853], [-107.90905187627692, 36.93315587600586], [-107.91116640960695, 36.92438240935281], [-107.91031607627491, 36.92106640935782], [-107.91463580960152, 36.914088876035336], [-107.91467027626823, 36.91030727604125], [-107.91850387626226, 36.90828940937761], [-107.9156476096, 36.90542447604886], [-107.91607600959935, 36.90210760938733], [-107.91871127626194, 36.90159400938799], [-107.92105440959159, 36.903250276052034], [-107.9281534095806, 36.901663209388104], [-107.93101767624279, 36.89659260939594], [-107.94008167622871, 36.89430547606601], [-107.95021047621299, 36.88271747608404], [-107.95475407620586, 36.88314640941663], [-107.95671760953627, 36.88143927608596], [-107.95935847619876, 36.87399700943092], [-107.96847040951803, 36.86805000944015], [-107.97050660951481, 36.86381640944669], [-107.97368947617662, 36.86274287611504], [-107.97583847617324, 36.85623067612508], [-107.98591260949092, 36.8513194761328], [-107.99347920947918, 36.83381060949322], [-107.99783080947249, 36.82909260950057], [-108.00244380946532, 36.826993209503875], [-108.00680940945847, 36.82038400951418], [-108.01351247611478, 36.821349676179395], [-108.01772500944156, 36.81677060951967], [-108.02383927609873, 36.81804667618442], [-108.02740527609315, 36.814413809523465], [-108.03162520941999, 36.812856476192586], [-108.03589320941336, 36.8076412095338], [-108.04203007607049, 36.81004780953026], [-108.04783760939478, 36.80744847620086], [-108.0525892760541, 36.80029427621201], [-108.05567767604936, 36.801621076209955], [-108.0622328093724, 36.799701609546226], [-108.06677867603207, 36.796220476218295], [-108.07282767602271, 36.79518300955323], [-108.08255980934092, 36.787197276232405], [-108.0931072759912, 36.78726667623224], [-108.0986590093159, 36.7835134095714], [-108.10746140930225, 36.781281276241586], [-108.11030900929785, 36.77620620958272], [-108.11570647595602, 36.775610809583675], [-108.12347580927741, 36.768826809594245], [-108.12754627593779, 36.76784767626223], [-108.13085500926599, 36.76316607626967], [-108.13509667592604, 36.76226167627101], [-108.13789900925497, 36.757412676278555], [-108.14496207591077, 36.75178287628735], [-108.1520330758998, 36.748167609626186], [-108.15668627589247, 36.74832507629253], [-108.16273980921642, 36.74628647629584], [-108.16305087588262, 36.74040620963826], [-108.16703040920976, 36.73928427630674], [-108.16856460920746, 36.73612647631163], [-108.17268607586772, 36.735622076312346], [-108.17612460919571, 36.73310427631631], [-108.18664167584598, 36.73218547631769], [-108.19084527583954, 36.72698987632568], [-108.19926867582637, 36.72572320966122], [-108.20226480915511, 36.720629676335726], [-108.20753887581361, 36.71971380967032], [-108.20942620914394, 36.716623209675255], [-108.22140767579208, 36.71332087634703]], "type": "LineString"}, "id": "0", "properties": {"datasets": "[ { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": [ \"Turbidity\", \"FNU \\/ USGS-09363500-1f7260408f1d4cd3bc6031fcd10e379c\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=63680\", \"variableMeasured\": \"Turbidity\", \"variableUnit\": \"_FNU\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09363500\u00b6meterCd=63680\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": [ \"Turbidity\", \"FNU \\/ USGS-09363500-1f7260408f1d4cd3bc6031fcd10e379c\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=63680\", \"variableMeasured\": \"Turbidity\", \"variableUnit\": \"_FNU\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00271f7260408f1d4cd3bc6031fcd10e379c\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": \"Specific cond at 25C \\/ USGS-09363500-252c7ef5e70548d98f1528f3957f84e9\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00095\", \"variableMeasured\": \"Specific cond at 25C \\/ USGS-09363500-252c7ef5e70548d98f1528f3957f84e9\", \"variableUnit\": \"uS\\/cm\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09363500\u00b6meterCd=00095\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": \"Specific cond at 25C \\/ USGS-09363500-252c7ef5e70548d98f1528f3957f84e9\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00095\", \"variableMeasured\": \"Specific cond at 25C \\/ USGS-09363500-252c7ef5e70548d98f1528f3957f84e9\", \"variableUnit\": \"uS\\/cm\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027252c7ef5e70548d98f1528f3957f84e9\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": \"None \\/ USGS-09363500-3177e767c0af430b9efae7195a9bf7ef\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00045\", \"variableMeasured\": \"None \\/ USGS-09363500-3177e767c0af430b9efae7195a9bf7ef\", \"variableUnit\": \"in\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09363500\u00b6meterCd=00045\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": \"None \\/ USGS-09363500-3177e767c0af430b9efae7195a9bf7ef\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00045\", \"variableMeasured\": \"None \\/ USGS-09363500-3177e767c0af430b9efae7195a9bf7ef\", \"variableUnit\": \"in\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00273177e767c0af430b9efae7195a9bf7ef\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": \"Discharge \\/ USGS-09363500-4ce8f67475774e9fa0a8a02672fac314\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge \\/ USGS-09363500-4ce8f67475774e9fa0a8a02672fac314\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00274ce8f67475774e9fa0a8a02672fac314\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": \"Discharge \\/ USGS-09363500-4ce8f67475774e9fa0a8a02672fac314\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge \\/ USGS-09363500-4ce8f67475774e9fa0a8a02672fac314\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09363500\u00b6meterCd=00060\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": \"Gage height \\/ USGS-09363500-59779203902044889108b8588a459f5a\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09363500-59779203902044889108b8588a459f5a\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u002759779203902044889108b8588a459f5a\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": \"Gage height \\/ USGS-09363500-59779203902044889108b8588a459f5a\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09363500-59779203902044889108b8588a459f5a\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09363500\u00b6meterCd=00065\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": \"pH \\/ USGS-09363500-7a7e93fa62ba4c888b3e1352f4379a59\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00400\", \"variableMeasured\": \"pH \\/ USGS-09363500-7a7e93fa62ba4c888b3e1352f4379a59\", \"variableUnit\": \"pH Units\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09363500\u00b6meterCd=00400\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": \"pH \\/ USGS-09363500-7a7e93fa62ba4c888b3e1352f4379a59\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00400\", \"variableMeasured\": \"pH \\/ USGS-09363500-7a7e93fa62ba4c888b3e1352f4379a59\", \"variableUnit\": \"pH Units\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00277a7e93fa62ba4c888b3e1352f4379a59\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": [ \"Temperature\", \"water \\/ USGS-09363500-a916b7d006f14b1d88d2dff4b9d40725\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00010\", \"variableMeasured\": \"Temperature\", \"variableUnit\": \"degC\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027a916b7d006f14b1d88d2dff4b9d40725\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09363500\u0027\", \"siteName\": \"USGS-09363500\", \"datasetDescription\": [ \"Temperature\", \"water \\/ USGS-09363500-a916b7d006f14b1d88d2dff4b9d40725\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09363500\\/#parameterCode=00010\", \"variableMeasured\": \"Temperature\", \"variableUnit\": \"degC\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09363500\u00b6meterCd=00010\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.87533333333333 37.036569444444446)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09358000\u0027\", \"siteName\": \"USGS-09358000\", \"datasetDescription\": \"Gage height \\/ USGS-09358000-59e893b74c3e402193f818a6d4dcd886\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09358000\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09358000-59e893b74c3e402193f818a6d4dcd886\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09358000\u00b6meterCd=00065\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.659227832184 37.8111077307751)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09358000\u0027\", \"siteName\": \"USGS-09358000\", \"datasetDescription\": \"Gage height \\/ USGS-09358000-59e893b74c3e402193f818a6d4dcd886\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09358000\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09358000-59e893b74c3e402193f818a6d4dcd886\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u002759e893b74c3e402193f818a6d4dcd886\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.659227832184 37.8111077307751)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09358000\u0027\", \"siteName\": \"USGS-09358000\", \"datasetDescription\": \"Discharge \\/ USGS-09358000-0c71c0d350d5427f8007febd3a90a39c\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09358000\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge \\/ USGS-09358000-0c71c0d350d5427f8007febd3a90a39c\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09358000\u00b6meterCd=00060\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.659227832184 37.8111077307751)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09358000\u0027\", \"siteName\": \"USGS-09358000\", \"datasetDescription\": \"Discharge \\/ USGS-09358000-0c71c0d350d5427f8007febd3a90a39c\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09358000\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge \\/ USGS-09358000-0c71c0d350d5427f8007febd3a90a39c\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00270c71c0d350d5427f8007febd3a90a39c\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.659227832184 37.8111077307751)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09358000\u0027\", \"siteName\": \"USGS-09358000\", \"datasetDescription\": [ \"Precipitation\", \"total\", \"inches \\/ USGS-09358000-ef67088b61ba44deba320ea43e03ebe0\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09358000\\/#parameterCode=00045\", \"variableMeasured\": \"Precipitation\", \"variableUnit\": \"in\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027ef67088b61ba44deba320ea43e03ebe0\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.659227832184 37.8111077307751)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09358000\u0027\", \"siteName\": \"USGS-09358000\", \"datasetDescription\": [ \"Precipitation\", \"total\", \"inches \\/ USGS-09358000-ef67088b61ba44deba320ea43e03ebe0\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09358000\\/#parameterCode=00045\", \"variableMeasured\": \"Precipitation\", \"variableUnit\": \"in\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09358000\u00b6meterCd=00045\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.659227832184 37.8111077307751)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364200\u0027\", \"siteName\": \"USGS-09364200\", \"datasetDescription\": \"Gage height \\/ USGS-09364200-d979d814aee24c5f9ff9e257669fc4c0\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364200\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09364200-d979d814aee24c5f9ff9e257669fc4c0\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09364200\u00b6meterCd=00065\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-108.10241111111111 36.78364166666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364200\u0027\", \"siteName\": \"USGS-09364200\", \"datasetDescription\": \"Gage height \\/ USGS-09364200-d979d814aee24c5f9ff9e257669fc4c0\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364200\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09364200-d979d814aee24c5f9ff9e257669fc4c0\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027d979d814aee24c5f9ff9e257669fc4c0\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-108.10241111111111 36.78364166666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364200\u0027\", \"siteName\": \"USGS-09364200\", \"datasetDescription\": [ \"Discharge\", \"cubic feet per second \\/ USGS-09364200-65a1779a1efb410e83d5ad2117f6c15e\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364200\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09364200\u00b6meterCd=00060\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-108.10241111111111 36.78364166666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364200\u0027\", \"siteName\": \"USGS-09364200\", \"datasetDescription\": [ \"Discharge\", \"cubic feet per second \\/ USGS-09364200-65a1779a1efb410e83d5ad2117f6c15e\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364200\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u002765a1779a1efb410e83d5ad2117f6c15e\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-108.10241111111111 36.78364166666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359500\u0027\", \"siteName\": \"USGS-09359500\", \"datasetDescription\": [ \"Gage height\", \"feet \\/ USGS-09359500-0aca208aff76401092a69d3bae85a7b1\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359500\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09359500\u00b6meterCd=00065\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.776966666667 37.5974166666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359500\u0027\", \"siteName\": \"USGS-09359500\", \"datasetDescription\": [ \"Gage height\", \"feet \\/ USGS-09359500-0aca208aff76401092a69d3bae85a7b1\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359500\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00270aca208aff76401092a69d3bae85a7b1\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.776966666667 37.5974166666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359500\u0027\", \"siteName\": \"USGS-09359500\", \"datasetDescription\": \"Discharge \\/ USGS-09359500-2008ddb450fe40d5aa9e13ed1637e908\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359500\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge \\/ USGS-09359500-2008ddb450fe40d5aa9e13ed1637e908\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09359500\u00b6meterCd=00060\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.776966666667 37.5974166666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359500\u0027\", \"siteName\": \"USGS-09359500\", \"datasetDescription\": \"Discharge \\/ USGS-09359500-2008ddb450fe40d5aa9e13ed1637e908\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359500\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge \\/ USGS-09359500-2008ddb450fe40d5aa9e13ed1637e908\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00272008ddb450fe40d5aa9e13ed1637e908\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.776966666667 37.5974166666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359500\u0027\", \"siteName\": \"USGS-09359500\", \"datasetDescription\": [ \"Precipitation\", \"total\", \"inches \\/ USGS-09359500-e832b98772744f448d10bf311a8bfa54\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359500\\/#parameterCode=00045\", \"variableMeasured\": \"Precipitation\", \"variableUnit\": \"in\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027e832b98772744f448d10bf311a8bfa54\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.776966666667 37.5974166666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359500\u0027\", \"siteName\": \"USGS-09359500\", \"datasetDescription\": [ \"Precipitation\", \"total\", \"inches \\/ USGS-09359500-e832b98772744f448d10bf311a8bfa54\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359500\\/#parameterCode=00045\", \"variableMeasured\": \"Precipitation\", \"variableUnit\": \"in\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09359500\u00b6meterCd=00045\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.776966666667 37.5974166666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364500\u0027\", \"siteName\": \"USGS-09364500\", \"datasetDescription\": [ \"Temperature\", \"water\", \"degrees Celsius \\/ USGS-09364500-9a8c0fbfb204493197f50749d3c314b6\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364500\\/#parameterCode=00010\", \"variableMeasured\": \"Temperature\", \"variableUnit\": \"degC\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:30:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09364500\u00b6meterCd=00010\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-108.20175 36.7225)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364500\u0027\", \"siteName\": \"USGS-09364500\", \"datasetDescription\": [ \"Temperature\", \"water\", \"degrees Celsius \\/ USGS-09364500-9a8c0fbfb204493197f50749d3c314b6\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364500\\/#parameterCode=00010\", \"variableMeasured\": \"Temperature\", \"variableUnit\": \"degC\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:30:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00279a8c0fbfb204493197f50749d3c314b6\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-108.20175 36.7225)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364500\u0027\", \"siteName\": \"USGS-09364500\", \"datasetDescription\": \"Gage height \\/ USGS-09364500-82861930692c49b9afff8d05bf8c7436\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364500\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09364500-82861930692c49b9afff8d05bf8c7436\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:30:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u002782861930692c49b9afff8d05bf8c7436\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-108.20175 36.7225)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364500\u0027\", \"siteName\": \"USGS-09364500\", \"datasetDescription\": \"Gage height \\/ USGS-09364500-82861930692c49b9afff8d05bf8c7436\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364500\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09364500-82861930692c49b9afff8d05bf8c7436\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:30:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09364500\u00b6meterCd=00065\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-108.20175 36.7225)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364500\u0027\", \"siteName\": \"USGS-09364500\", \"datasetDescription\": [ \"Discharge\", \"cubic feet per second \\/ USGS-09364500-056c2ba718884457a764b59920997831\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364500\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:30:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09364500\u00b6meterCd=00060\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-108.20175 36.7225)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364500\u0027\", \"siteName\": \"USGS-09364500\", \"datasetDescription\": [ \"Discharge\", \"cubic feet per second \\/ USGS-09364500-056c2ba718884457a764b59920997831\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364500\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:30:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027056c2ba718884457a764b59920997831\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-108.20175 36.7225)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": [ \"Specific conductance\", \"water\", \"unfiltered\", \"microsiemens per centimeter at 25 degrees Celsius \\/ USGS-09359020-6e6c40e6fe0443cbba552a6e5a900f27\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=00095\", \"variableMeasured\": \"Specific conductance\", \"variableUnit\": \"uS\\/cm\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09359020\u00b6meterCd=00095\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": [ \"Specific conductance\", \"water\", \"unfiltered\", \"microsiemens per centimeter at 25 degrees Celsius \\/ USGS-09359020-6e6c40e6fe0443cbba552a6e5a900f27\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=00095\", \"variableMeasured\": \"Specific conductance\", \"variableUnit\": \"uS\\/cm\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00276e6c40e6fe0443cbba552a6e5a900f27\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": \"Gage height \\/ USGS-09359020-1b1f26c6cebd4c6bb3c1fed803953092\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09359020-1b1f26c6cebd4c6bb3c1fed803953092\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09359020\u00b6meterCd=00065\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": \"Gage height \\/ USGS-09359020-1b1f26c6cebd4c6bb3c1fed803953092\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09359020-1b1f26c6cebd4c6bb3c1fed803953092\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00271b1f26c6cebd4c6bb3c1fed803953092\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": [ \"Turbidity\", \"water\", \"unfiltered\", \"monochrome near infra-red LED light\", \"780-900 nm\", \"detection angle 90 +-2.5 degrees\", \"formazin nephelometric units (FNU) \\/ USGS-09359020-39fd41be75f94b2d9a85101d3c45e5d1\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=63680\", \"variableMeasured\": \"Turbidity\", \"variableUnit\": \"_FNU\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u002739fd41be75f94b2d9a85101d3c45e5d1\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": [ \"Turbidity\", \"water\", \"unfiltered\", \"monochrome near infra-red LED light\", \"780-900 nm\", \"detection angle 90 +-2.5 degrees\", \"formazin nephelometric units (FNU) \\/ USGS-09359020-39fd41be75f94b2d9a85101d3c45e5d1\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=63680\", \"variableMeasured\": \"Turbidity\", \"variableUnit\": \"_FNU\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09359020\u00b6meterCd=63680\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": [ \"Temperature\", \"water\", \"degrees Celsius \\/ USGS-09359020-425156292c5d4541816d75765978677c\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=00010\", \"variableMeasured\": \"Temperature\", \"variableUnit\": \"degC\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09359020\u00b6meterCd=00010\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": [ \"Temperature\", \"water\", \"degrees Celsius \\/ USGS-09359020-425156292c5d4541816d75765978677c\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=00010\", \"variableMeasured\": \"Temperature\", \"variableUnit\": \"degC\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027425156292c5d4541816d75765978677c\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": [ \"pH\", \"water\", \"unfiltered\", \"field\", \"standard units \\/ USGS-09359020-c93c592b3f2a49cc87453278ed15abaf\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=00400\", \"variableMeasured\": \"pH\", \"variableUnit\": \"pH Units\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09359020\u00b6meterCd=00400\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": [ \"pH\", \"water\", \"unfiltered\", \"field\", \"standard units \\/ USGS-09359020-c93c592b3f2a49cc87453278ed15abaf\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=00400\", \"variableMeasured\": \"pH\", \"variableUnit\": \"pH Units\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027c93c592b3f2a49cc87453278ed15abaf\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": [ \"Discharge\", \"cubic feet per second \\/ USGS-09359020-df618c1a55514c178a57fbf807322b59\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09359020\u00b6meterCd=00060\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09359020\u0027\", \"siteName\": \"USGS-09359020\", \"datasetDescription\": [ \"Discharge\", \"cubic feet per second \\/ USGS-09359020-df618c1a55514c178a57fbf807322b59\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09359020\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027df618c1a55514c178a57fbf807322b59\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.668222222222 37.7883333333333)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364010\u0027\", \"siteName\": \"USGS-09364010\", \"datasetDescription\": [ \"Discharge\", \"cubic feet per second \\/ USGS-09364010-8802ec9a7a184448bf4ab648ea78b70f\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364010\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:15:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09364010\u00b6meterCd=00060\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-108.02299444444445 36.81836666666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364010\u0027\", \"siteName\": \"USGS-09364010\", \"datasetDescription\": [ \"Discharge\", \"cubic feet per second \\/ USGS-09364010-8802ec9a7a184448bf4ab648ea78b70f\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364010\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:15:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u00278802ec9a7a184448bf4ab648ea78b70f\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-108.02299444444445 36.81836666666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364010\u0027\", \"siteName\": \"USGS-09364010\", \"datasetDescription\": \"Gage height \\/ USGS-09364010-ba66c41ad3f54c23b5afddcedb7e6ad0\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364010\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09364010-ba66c41ad3f54c23b5afddcedb7e6ad0\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:15:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09364010\u00b6meterCd=00065\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-108.02299444444445 36.81836666666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09364010\u0027\", \"siteName\": \"USGS-09364010\", \"datasetDescription\": \"Gage height \\/ USGS-09364010-ba66c41ad3f54c23b5afddcedb7e6ad0\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09364010\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09364010-ba66c41ad3f54c23b5afddcedb7e6ad0\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:15:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027ba66c41ad3f54c23b5afddcedb7e6ad0\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-108.02299444444445 36.81836666666667)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09362520\u0027\", \"siteName\": \"USGS-09362520\", \"datasetDescription\": [ \"Precipitation\", \"total\", \"inches \\/ USGS-09362520-cff4fcb5165a4e909300b1039260685b\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09362520\\/#parameterCode=00045\", \"variableMeasured\": \"Precipitation\", \"variableUnit\": \"in\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09362520\u00b6meterCd=00045\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.872583333333 37.2492638888889)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09362520\u0027\", \"siteName\": \"USGS-09362520\", \"datasetDescription\": [ \"Precipitation\", \"total\", \"inches \\/ USGS-09362520-cff4fcb5165a4e909300b1039260685b\" ], \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09362520\\/#parameterCode=00045\", \"variableMeasured\": \"Precipitation\", \"variableUnit\": \"in\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027cff4fcb5165a4e909300b1039260685b\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.872583333333 37.2492638888889)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09362520\u0027\", \"siteName\": \"USGS-09362520\", \"datasetDescription\": \"Gage height \\/ USGS-09362520-a400d068c52748d08a2068ff87e68bf7\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09362520\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09362520-a400d068c52748d08a2068ff87e68bf7\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09362520\u00b6meterCd=00065\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.872583333333 37.2492638888889)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09362520\u0027\", \"siteName\": \"USGS-09362520\", \"datasetDescription\": \"Gage height \\/ USGS-09362520-a400d068c52748d08a2068ff87e68bf7\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09362520\\/#parameterCode=00065\", \"variableMeasured\": \"Gage height \\/ USGS-09362520-a400d068c52748d08a2068ff87e68bf7\", \"variableUnit\": \"ft\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u0027a400d068c52748d08a2068ff87e68bf7\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.872583333333 37.2492638888889)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09362520\u0027\", \"siteName\": \"USGS-09362520\", \"datasetDescription\": \"Discharge \\/ USGS-09362520-78670c227184487c84869470ef271ffe\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09362520\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge \\/ USGS-09362520-78670c227184487c84869470ef271ffe\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS SensorThings API\", \"distributionURL\": \"https:\\/\\/labs.waterdata.usgs.gov\\/sta\\/v1.1\\/Datastreams(\u002778670c227184487c84869470ef271ffe\u0027)?$expand=Thing,Observations\", \"distributionFormat\": \"application\\/json\", \"wkt\": \"POINT (-107.872583333333 37.2492638888889)\" }, { \"monitoringLocation\": \"https:\\/\\/sta.geoconnex.dev\\/collections\\/USGS\\/Things\\/items\\/\u0027USGS-09362520\u0027\", \"siteName\": \"USGS-09362520\", \"datasetDescription\": \"Discharge \\/ USGS-09362520-78670c227184487c84869470ef271ffe\", \"type\": \"Stream\", \"url\": \"https:\\/\\/waterdata.usgs.gov\\/monitoring-location\\/09362520\\/#parameterCode=00060\", \"variableMeasured\": \"Discharge \\/ USGS-09362520-78670c227184487c84869470ef271ffe\", \"variableUnit\": \"ft^3\\/s\", \"measurementTechnique\": \"observation\", \"temporalCoverage\": \"2024-08-30T09:15:00Z\\/2024-09-09T18:00:00Z\", \"distributionName\": \"USGS Instantaneous Values Service\", \"distributionURL\": \"https:\\/\\/waterservices.usgs.gov\\/nwis\\/iv\\/?sites=USGS:09362520\u00b6meterCd=00060\u0026format=rdb\", \"distributionFormat\": \"text\\/tab-separated-values\", \"wkt\": \"POINT (-107.872583333333 37.2492638888889)\" } ]", "downstream_mainstem_id": "https://geoconnex.us/ref/mainstems/31552", "encompassing_mainstem_basins": "[\u0027https://geoconnex.us/ref/mainstems/31552\u0027, \u0027https://geoconnex.us/ref/mainstems/29559\u0027]", "featuretype": "[\u0027https://www.opengis.net/def/schema/hy_features/hyf/HY_FlowPath\u0027, \u0027https://www.opengis.net/def/schema/hy_features/hyf/HY_WaterBody\u0027]", "fid": 26370, "head_2020huc12": "140801040101", "head_nhdpv1_comid": 17013545, "head_nhdpv2_comid": "https://geoconnex.us/nhdplusv2/comid/17013545", "head_nhdpv2huc12": "https://geoconnex.us/nhdplusv2/huc12/140801040101", "head_rf1id": 42783, "id": "35394", "lengthkm": 203.0, "name_at_outlet": "Animas River", "name_at_outlet_gnis_id": 900284, "new_mainstemid": "", "outlet_2020huc12": "140801041006", "outlet_drainagearea_sqkm": 3488.9, "outlet_nhdpv1_comid": 17016191, "outlet_nhdpv2_comid": "https://geoconnex.us/nhdplusv2/comid/17016191", "outlet_nhdpv2huc12": "https://geoconnex.us/nhdplusv2/huc12/140801041006", "outlet_rf1id": 61948, "superseded": false, "uri": "https://geoconnex.us/ref/mainstems/35394"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_5e9643469629c1ac66c3a8a9e767e3b6.addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var marker_1f7c67d2982bf41aaf6c8a34a3eddca1 = L.marker(
+                [36.83360000011851, -107.9770000001298],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_f4dc612beac5269ac995387f8a6ed2d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "water", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1f7c67d2982bf41aaf6c8a34a3eddca1.setIcon(icon_f4dc612beac5269ac995387f8a6ed2d7);
+        
+    
+        var popup_4b56b4ec43382292f1d14a46ea40ad8f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cdff65f102636777f8c1f06a353b608c = $(`<div id="html_cdff65f102636777f8c1f06a353b608c" style="width: 100.0%; height: 100.0%;">N/A</div>`)[0];
+                popup_4b56b4ec43382292f1d14a46ea40ad8f.setContent(html_cdff65f102636777f8c1f06a353b608c);
+            
+        
+
+        marker_1f7c67d2982bf41aaf6c8a34a3eddca1.bindPopup(popup_4b56b4ec43382292f1d14a46ea40ad8f)
+        ;
+
+        
+    
+    
+            var marker_6687c9961c7311fa80ada2990c15fe1c = L.marker(
+                [36.83560000011545, -107.97580000013164],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_77a93e7a11a3fb1d7eabb89f884ec314 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "water", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6687c9961c7311fa80ada2990c15fe1c.setIcon(icon_77a93e7a11a3fb1d7eabb89f884ec314);
+        
+    
+        var popup_5aa85230ae12669d047b6855eb93e173 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cf54d6b3fb10f03857b55b7a0887cd75 = $(`<div id="html_cf54d6b3fb10f03857b55b7a0887cd75" style="width: 100.0%; height: 100.0%;">N/A</div>`)[0];
+                popup_5aa85230ae12669d047b6855eb93e173.setContent(html_cf54d6b3fb10f03857b55b7a0887cd75);
+            
+        
+
+        marker_6687c9961c7311fa80ada2990c15fe1c.bindPopup(popup_5aa85230ae12669d047b6855eb93e173)
+        ;
+
+        
+    
+    
+            var marker_a48a6a7c0ea6810782339c15d73ef460 = L.marker(
+                [37.03656944, -107.8753333],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_d63a70a97907112ba05fb6570fa8f524 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a48a6a7c0ea6810782339c15d73ef460.setIcon(icon_d63a70a97907112ba05fb6570fa8f524);
+        
+    
+        var popup_9de8f0fea7e73988a063d6373d9ad96f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4d04bf924cb154ce52ae366f50e6b11e = $(`<div id="html_4d04bf924cb154ce52ae366f50e6b11e" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09363500" target="_blank">Link</a></div>`)[0];
+                popup_9de8f0fea7e73988a063d6373d9ad96f.setContent(html_4d04bf924cb154ce52ae366f50e6b11e);
+            
+        
+
+        marker_a48a6a7c0ea6810782339c15d73ef460.bindPopup(popup_9de8f0fea7e73988a063d6373d9ad96f)
+        ;
+
+        
+    
+    
+            var marker_a9718da4601f22c03279fd24c3073fbb = L.marker(
+                [36.8250038, -108.003957],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_2f5d558545e313f931c3a9a249b8a850 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a9718da4601f22c03279fd24c3073fbb.setIcon(icon_2f5d558545e313f931c3a9a249b8a850);
+        
+    
+        var popup_24c01332a372287ec8494fd66ee7be0c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5126a131a7ad4c10d36ad5816fe8ef8e = $(`<div id="html_5126a131a7ad4c10d36ad5816fe8ef8e" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/364930108001210" target="_blank">Link</a></div>`)[0];
+                popup_24c01332a372287ec8494fd66ee7be0c.setContent(html_5126a131a7ad4c10d36ad5816fe8ef8e);
+            
+        
+
+        marker_a9718da4601f22c03279fd24c3073fbb.bindPopup(popup_24c01332a372287ec8494fd66ee7be0c)
+        ;
+
+        
+    
+    
+            var marker_0d8bfdb0ffb257805937dede4bee36f3 = L.marker(
+                [36.81836667, -108.0229944],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_e3a91b87aee501b388dcabf9617bf8ea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0d8bfdb0ffb257805937dede4bee36f3.setIcon(icon_e3a91b87aee501b388dcabf9617bf8ea);
+        
+    
+        var popup_9a67903a3c95faba7772b66632105fff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fec6321eb23734424883c9e21801ba2d = $(`<div id="html_fec6321eb23734424883c9e21801ba2d" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09364010" target="_blank">Link</a></div>`)[0];
+                popup_9a67903a3c95faba7772b66632105fff.setContent(html_fec6321eb23734424883c9e21801ba2d);
+            
+        
+
+        marker_0d8bfdb0ffb257805937dede4bee36f3.bindPopup(popup_9a67903a3c95faba7772b66632105fff)
+        ;
+
+        
+    
+    
+            var marker_06bf14338418e1b60754742b2ffa130a = L.marker(
+                [36.78364167, -108.1024111],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_338341c57e36b82a21d1379de5069124 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_06bf14338418e1b60754742b2ffa130a.setIcon(icon_338341c57e36b82a21d1379de5069124);
+        
+    
+        var popup_437ce80c7f089a61f71ff4f7bb688b18 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_33155c1ab2b14442e5c7d62f6b8f2031 = $(`<div id="html_33155c1ab2b14442e5c7d62f6b8f2031" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09364200" target="_blank">Link</a></div>`)[0];
+                popup_437ce80c7f089a61f71ff4f7bb688b18.setContent(html_33155c1ab2b14442e5c7d62f6b8f2031);
+            
+        
+
+        marker_06bf14338418e1b60754742b2ffa130a.bindPopup(popup_437ce80c7f089a61f71ff4f7bb688b18)
+        ;
+
+        
+    
+    
+            var marker_7155dee9a1e1503599fa8ba156634baf = L.marker(
+                [36.7225, -108.20175],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_8074b86bb4fa2c8afb5f6c280c8d2ed3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7155dee9a1e1503599fa8ba156634baf.setIcon(icon_8074b86bb4fa2c8afb5f6c280c8d2ed3);
+        
+    
+        var popup_7c92d689c6ba306f20d1ea58cbb0d468 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7bef3a41542496f1f7a6371352077b0e = $(`<div id="html_7bef3a41542496f1f7a6371352077b0e" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09364500" target="_blank">Link</a></div>`)[0];
+                popup_7c92d689c6ba306f20d1ea58cbb0d468.setContent(html_7bef3a41542496f1f7a6371352077b0e);
+            
+        
+
+        marker_7155dee9a1e1503599fa8ba156634baf.bindPopup(popup_7c92d689c6ba306f20d1ea58cbb0d468)
+        ;
+
+        
+    
+    
+            var marker_1cf1395f4f2ffb6cc0bacee2cd5dda61 = L.marker(
+                [37.7883333, -107.6682222],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_40626f65b7109c3a55fa5e337070c879 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1cf1395f4f2ffb6cc0bacee2cd5dda61.setIcon(icon_40626f65b7109c3a55fa5e337070c879);
+        
+    
+        var popup_d37b49b40b48e215f2b24c2df7013ed6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b10aa31df3a6bbc747cd8bc5b3ebc94e = $(`<div id="html_b10aa31df3a6bbc747cd8bc5b3ebc94e" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09359020" target="_blank">Link</a></div>`)[0];
+                popup_d37b49b40b48e215f2b24c2df7013ed6.setContent(html_b10aa31df3a6bbc747cd8bc5b3ebc94e);
+            
+        
+
+        marker_1cf1395f4f2ffb6cc0bacee2cd5dda61.bindPopup(popup_d37b49b40b48e215f2b24c2df7013ed6)
+        ;
+
+        
+    
+    
+            var marker_196525bf6390b7333f6e8fa71e5588fb = L.marker(
+                [37.59741667, -107.7769667],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_0f714a155bd616575ab0ba1d42937e26 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_196525bf6390b7333f6e8fa71e5588fb.setIcon(icon_0f714a155bd616575ab0ba1d42937e26);
+        
+    
+        var popup_ce72e046c56bdd784e91603d82b55d3e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_62ce37d2d89e86a0d160836f72485a73 = $(`<div id="html_62ce37d2d89e86a0d160836f72485a73" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09359500" target="_blank">Link</a></div>`)[0];
+                popup_ce72e046c56bdd784e91603d82b55d3e.setContent(html_62ce37d2d89e86a0d160836f72485a73);
+            
+        
+
+        marker_196525bf6390b7333f6e8fa71e5588fb.bindPopup(popup_ce72e046c56bdd784e91603d82b55d3e)
+        ;
+
+        
+    
+    
+            var marker_447b318cb57b456fdbb41479c867d49c = L.marker(
+                [37.83305235, -107.5995046],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_f6ac5e06cc40811cbe19f9f23536492d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_447b318cb57b456fdbb41479c867d49c.setIcon(icon_f6ac5e06cc40811cbe19f9f23536492d);
+        
+    
+        var popup_63c17a4b470364eda26d526414481a19 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4b8d711273b2e06af4f81e7b2bf4020e = $(`<div id="html_4b8d711273b2e06af4f81e7b2bf4020e" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09357500" target="_blank">Link</a></div>`)[0];
+                popup_63c17a4b470364eda26d526414481a19.setContent(html_4b8d711273b2e06af4f81e7b2bf4020e);
+            
+        
+
+        marker_447b318cb57b456fdbb41479c867d49c.bindPopup(popup_63c17a4b470364eda26d526414481a19)
+        ;
+
+        
+    
+    
+            var marker_2f77def27d57d4b8eded259e7cc4aace = L.marker(
+                [37.8111077, -107.6592278],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_1eb73dc593b9b0f9ce5f4d41d1164ee9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2f77def27d57d4b8eded259e7cc4aace.setIcon(icon_1eb73dc593b9b0f9ce5f4d41d1164ee9);
+        
+    
+        var popup_ffeab485bbab8c42b0b0a1b216754ff1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8b3b4e504c91a923e716355a8192f4e2 = $(`<div id="html_8b3b4e504c91a923e716355a8192f4e2" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09358000" target="_blank">Link</a></div>`)[0];
+                popup_ffeab485bbab8c42b0b0a1b216754ff1.setContent(html_8b3b4e504c91a923e716355a8192f4e2);
+            
+        
+
+        marker_2f77def27d57d4b8eded259e7cc4aace.bindPopup(popup_ffeab485bbab8c42b0b0a1b216754ff1)
+        ;
+
+        
+    
+    
+            var marker_ae49fc49e678c64530e1bcc488672c09 = L.marker(
+                [37.2791688, -107.8803445],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_bbfd4600183bb6eb78cc8f3cc1e32feb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ae49fc49e678c64530e1bcc488672c09.setIcon(icon_bbfd4600183bb6eb78cc8f3cc1e32feb);
+        
+    
+        var popup_70bbde94a65ed306ceaf9e2a2d96dbbd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e1f5f991f1a7df388bd0deab65f6a863 = $(`<div id="html_e1f5f991f1a7df388bd0deab65f6a863" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09361500" target="_blank">Link</a></div>`)[0];
+                popup_70bbde94a65ed306ceaf9e2a2d96dbbd.setContent(html_e1f5f991f1a7df388bd0deab65f6a863);
+            
+        
+
+        marker_ae49fc49e678c64530e1bcc488672c09.bindPopup(popup_70bbde94a65ed306ceaf9e2a2d96dbbd)
+        ;
+
+        
+    
+    
+            var marker_6d775533615211fa1798770b059b7900 = L.marker(
+                [37.25805808, -107.8761776],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_f7b8f19bcd2d4b10fdeeab0133e9c612 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6d775533615211fa1798770b059b7900.setIcon(icon_f7b8f19bcd2d4b10fdeeab0133e9c612);
+        
+    
+        var popup_de817c264b145bc429cd1714375e395a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2c41d4e17df237df4a49d21121d40676 = $(`<div id="html_2c41d4e17df237df4a49d21121d40676" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/371529107523202" target="_blank">Link</a></div>`)[0];
+                popup_de817c264b145bc429cd1714375e395a.setContent(html_2c41d4e17df237df4a49d21121d40676);
+            
+        
+
+        marker_6d775533615211fa1798770b059b7900.bindPopup(popup_de817c264b145bc429cd1714375e395a)
+        ;
+
+        
+    
+    
+            var marker_3fe5f97e64aecae48858bfb01b9e5d4f = L.marker(
+                [37.24926389, -107.8725833],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_96e52a2d86253644cf432eb25b9de240 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3fe5f97e64aecae48858bfb01b9e5d4f.setIcon(icon_96e52a2d86253644cf432eb25b9de240);
+        
+    
+        var popup_151ca6dede9f9b0b51b251ff63bcd4af = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aa4c2d1094e38008539a0cdb9b58d314 = $(`<div id="html_aa4c2d1094e38008539a0cdb9b58d314" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09362520" target="_blank">Link</a></div>`)[0];
+                popup_151ca6dede9f9b0b51b251ff63bcd4af.setContent(html_aa4c2d1094e38008539a0cdb9b58d314);
+            
+        
+
+        marker_3fe5f97e64aecae48858bfb01b9e5d4f.bindPopup(popup_151ca6dede9f9b0b51b251ff63bcd4af)
+        ;
+
+        
+    
+    
+            var marker_7ec3bf2197b3697eebcbb85e2526beff = L.marker(
+                [37.1519468, -107.8850662],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_b66924f6e22bba90620a389c3364589c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7ec3bf2197b3697eebcbb85e2526beff.setIcon(icon_b66924f6e22bba90620a389c3364589c);
+        
+    
+        var popup_9c5b682361ca64fc23dc944f1335f380 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d88de5e05a7d4499ec28ead5a566962e = $(`<div id="html_d88de5e05a7d4499ec28ead5a566962e" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/370907107530401" target="_blank">Link</a></div>`)[0];
+                popup_9c5b682361ca64fc23dc944f1335f380.setContent(html_d88de5e05a7d4499ec28ead5a566962e);
+            
+        
+
+        marker_7ec3bf2197b3697eebcbb85e2526beff.bindPopup(popup_9c5b682361ca64fc23dc944f1335f380)
+        ;
+
+        
+    
+    
+            var marker_9cdefde148b7e1d1f34a76728ebeb45d = L.marker(
+                [37.2219471, -107.8645104],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_6b2b3134b945d792db93c817af72bbec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9cdefde148b7e1d1f34a76728ebeb45d.setIcon(icon_6b2b3134b945d792db93c817af72bbec);
+        
+    
+        var popup_e0a3cabe003cd19606ac7de08ef9bab8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d0becadb24e87f147abb07ce365e22c5 = $(`<div id="html_d0becadb24e87f147abb07ce365e22c5" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/371319107515001" target="_blank">Link</a></div>`)[0];
+                popup_e0a3cabe003cd19606ac7de08ef9bab8.setContent(html_d0becadb24e87f147abb07ce365e22c5);
+            
+        
+
+        marker_9cdefde148b7e1d1f34a76728ebeb45d.bindPopup(popup_e0a3cabe003cd19606ac7de08ef9bab8)
+        ;
+
+        
+    
+    
+            var marker_751138a4c605e79ff121f179576b2979 = L.marker(
+                [37.23583604, -107.8664549],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_17e64fe3df05f35ab4d812be6029a83c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_751138a4c605e79ff121f179576b2979.setIcon(icon_17e64fe3df05f35ab4d812be6029a83c);
+        
+    
+        var popup_dcba7274e857fd817a4f1da2c7a79e14 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_626ede38e162f85ce0427e064d866650 = $(`<div id="html_626ede38e162f85ce0427e064d866650" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/371409107515701" target="_blank">Link</a></div>`)[0];
+                popup_dcba7274e857fd817a4f1da2c7a79e14.setContent(html_626ede38e162f85ce0427e064d866650);
+            
+        
+
+        marker_751138a4c605e79ff121f179576b2979.bindPopup(popup_dcba7274e857fd817a4f1da2c7a79e14)
+        ;
+
+        
+    
+    
+            var marker_f65b8b3bab424b75bd4594ef87b1e598 = L.marker(
+                [37.29975278, -107.868425],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_89a66196d7e11688ab3bfc778ab6f550 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f65b8b3bab424b75bd4594ef87b1e598.setIcon(icon_89a66196d7e11688ab3bfc778ab6f550);
+        
+    
+        var popup_fab429d1378329c88738b1baafec2fb2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e399a531169726ee9f83e66801cfbae7 = $(`<div id="html_e399a531169726ee9f83e66801cfbae7" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/371759107520601" target="_blank">Link</a></div>`)[0];
+                popup_fab429d1378329c88738b1baafec2fb2.setContent(html_e399a531169726ee9f83e66801cfbae7);
+            
+        
+
+        marker_f65b8b3bab424b75bd4594ef87b1e598.bindPopup(popup_fab429d1378329c88738b1baafec2fb2)
+        ;
+
+        
+    
+    
+            var marker_532722691640b850326f0263c055dd1b = L.marker(
+                [37.36284167, -107.8402361],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_b6d6f0f3d4dcc69c976acf54fcb1af92 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_532722691640b850326f0263c055dd1b.setIcon(icon_b6d6f0f3d4dcc69c976acf54fcb1af92);
+        
+    
+        var popup_9b5ffaf3419d143a30e234093000978a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8fdbd42492c9da97eb4bb45b77337bf7 = $(`<div id="html_8fdbd42492c9da97eb4bb45b77337bf7" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/372146107502401" target="_blank">Link</a></div>`)[0];
+                popup_9b5ffaf3419d143a30e234093000978a.setContent(html_8fdbd42492c9da97eb4bb45b77337bf7);
+            
+        
+
+        marker_532722691640b850326f0263c055dd1b.bindPopup(popup_9b5ffaf3419d143a30e234093000978a)
+        ;
+
+        
+    
+    
+            var marker_5bf43fbcb321dad3dfd63eef44a59802 = L.marker(
+                [37.45795, -107.7991806],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_cd623584ba342943edd8d557f23630ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5bf43fbcb321dad3dfd63eef44a59802.setIcon(icon_cd623584ba342943edd8d557f23630ac);
+        
+    
+        var popup_7842ffdde2034eb4f5e92c29b4baea42 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6fb2b4d23524fa2e591199d210ac3bb6 = $(`<div id="html_6fb2b4d23524fa2e591199d210ac3bb6" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/372728107475701" target="_blank">Link</a></div>`)[0];
+                popup_7842ffdde2034eb4f5e92c29b4baea42.setContent(html_6fb2b4d23524fa2e591199d210ac3bb6);
+            
+        
+
+        marker_5bf43fbcb321dad3dfd63eef44a59802.bindPopup(popup_7842ffdde2034eb4f5e92c29b4baea42)
+        ;
+
+        
+    
+    
+            var marker_b768db0c2c7bd55a61eaa43305bf0ae0 = L.marker(
+                [37.81666328, -107.6506165],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_33b07395ef898f66ce8a00869bfd9455 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b768db0c2c7bd55a61eaa43305bf0ae0.setIcon(icon_33b07395ef898f66ce8a00869bfd9455);
+        
+    
+        var popup_c6566c62d4278bae819e2187fdb9b75a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b351907f3ca95831c2fe9a796b72fd0f = $(`<div id="html_b351907f3ca95831c2fe9a796b72fd0f" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/374900107390001" target="_blank">Link</a></div>`)[0];
+                popup_c6566c62d4278bae819e2187fdb9b75a.setContent(html_b351907f3ca95831c2fe9a796b72fd0f);
+            
+        
+
+        marker_b768db0c2c7bd55a61eaa43305bf0ae0.bindPopup(popup_c6566c62d4278bae819e2187fdb9b75a)
+        ;
+
+        
+    
+    
+            var marker_93e58fefb057d47e11c3d1fc67203f37 = L.marker(
+                [37.8333301, -107.5992268],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_2cc87d63ba52ad0cfc805457c8b23b32 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_93e58fefb057d47e11c3d1fc67203f37.setIcon(icon_2cc87d63ba52ad0cfc805457c8b23b32);
+        
+    
+        var popup_61936c637afc2904c5ccaac2d9928889 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_77376a65532a5ab7a395263d5a9879c5 = $(`<div id="html_77376a65532a5ab7a395263d5a9879c5" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/375000107355501" target="_blank">Link</a></div>`)[0];
+                popup_61936c637afc2904c5ccaac2d9928889.setContent(html_77376a65532a5ab7a395263d5a9879c5);
+            
+        
+
+        marker_93e58fefb057d47e11c3d1fc67203f37.bindPopup(popup_61936c637afc2904c5ccaac2d9928889)
+        ;
+
+        
+    
+    
+            var marker_b0b57f791d9777a6cb3451342ad73801 = L.marker(
+                [37.87944097, -107.5658928],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_0be48697fd93ed03d32339fde4cd5890 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b0b57f791d9777a6cb3451342ad73801.setIcon(icon_0be48697fd93ed03d32339fde4cd5890);
+        
+    
+        var popup_21071b6d43300d1b9b2e8e093a3d4e04 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b33b4af5388399efd932783d124b3418 = $(`<div id="html_b33b4af5388399efd932783d124b3418" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/375246107335500" target="_blank">Link</a></div>`)[0];
+                popup_21071b6d43300d1b9b2e8e093a3d4e04.setContent(html_b33b4af5388399efd932783d124b3418);
+            
+        
+
+        marker_b0b57f791d9777a6cb3451342ad73801.bindPopup(popup_21071b6d43300d1b9b2e8e093a3d4e04)
+        ;
+
+        
+    
+    
+            var marker_8c9c12dafa7e0ff5c75ee2b8f30d7df6 = L.marker(
+                [37.92471825, -107.5639482],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_e8e353dc281cbb90b89f4221a86e7444 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8c9c12dafa7e0ff5c75ee2b8f30d7df6.setIcon(icon_e8e353dc281cbb90b89f4221a86e7444);
+        
+    
+        var popup_e30ad5daf256c76bc71a8e087c3a81bf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c5b4c2d2768a2a9270c3ec0f5642544 = $(`<div id="html_9c5b4c2d2768a2a9270c3ec0f5642544" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/375529107334801" target="_blank">Link</a></div>`)[0];
+                popup_e30ad5daf256c76bc71a8e087c3a81bf.setContent(html_9c5b4c2d2768a2a9270c3ec0f5642544);
+            
+        
+
+        marker_8c9c12dafa7e0ff5c75ee2b8f30d7df6.bindPopup(popup_e30ad5daf256c76bc71a8e087c3a81bf)
+        ;
+
+        
+    
+    
+            var marker_3009ba198be6f62d6eecd4e0ef5fa187 = L.marker(
+                [37.9322181, -107.5708927],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_e0ce27fc6a2ff07c2e20d64defd5cf40 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3009ba198be6f62d6eecd4e0ef5fa187.setIcon(icon_e0ce27fc6a2ff07c2e20d64defd5cf40);
+        
+    
+        var popup_fb962aa0a914764feecbd1bbc7dd598b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e31d51a803d918d5bc34149c36f96513 = $(`<div id="html_e31d51a803d918d5bc34149c36f96513" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/375548107335801" target="_blank">Link</a></div>`)[0];
+                popup_fb962aa0a914764feecbd1bbc7dd598b.setContent(html_e31d51a803d918d5bc34149c36f96513);
+            
+        
+
+        marker_3009ba198be6f62d6eecd4e0ef5fa187.bindPopup(popup_fb962aa0a914764feecbd1bbc7dd598b)
+        ;
+
+        
+    
+    
+            var marker_272fd7306be94556e892b3d05130df1c = L.marker(
+                [36.71944728, -108.2131298],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_6028b83c9e5c88c661ddce7c3a4f5251 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_272fd7306be94556e892b3d05130df1c.setIcon(icon_6028b83c9e5c88c661ddce7c3a4f5251);
+        
+    
+        var popup_d0ef946557eab8a4d77ff2ab4f50e325 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8426c441d7e1bb7fdde00f07e37107f0 = $(`<div id="html_8426c441d7e1bb7fdde00f07e37107f0" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/09357300" target="_blank">Link</a></div>`)[0];
+                popup_d0ef946557eab8a4d77ff2ab4f50e325.setContent(html_8426c441d7e1bb7fdde00f07e37107f0);
+            
+        
+
+        marker_272fd7306be94556e892b3d05130df1c.bindPopup(popup_d0ef946557eab8a4d77ff2ab4f50e325)
+        ;
+
+        
+    
+    
+            var marker_ad694ffe327924deef1a50ff68d09331 = L.marker(
+                [36.7133362, -108.2184077],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_422658cec5f6c29c6b4fa049ef0bbc17 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ad694ffe327924deef1a50ff68d09331.setIcon(icon_422658cec5f6c29c6b4fa049ef0bbc17);
+        
+    
+        var popup_2385bdf95ec6752e79eff9235066ff34 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79c54f70b6ed5a5b0b2368877a2b7964 = $(`<div id="html_79c54f70b6ed5a5b0b2368877a2b7964" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/364248108130410" target="_blank">Link</a></div>`)[0];
+                popup_2385bdf95ec6752e79eff9235066ff34.setContent(html_79c54f70b6ed5a5b0b2368877a2b7964);
+            
+        
+
+        marker_ad694ffe327924deef1a50ff68d09331.bindPopup(popup_2385bdf95ec6752e79eff9235066ff34)
+        ;
+
+        
+    
+    
+            var marker_b6d77589bfa46a9734213492366f1032 = L.marker(
+                [36.7879583, -108.0801722],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_0e3b481042e33631884d5bfcca39b904 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b6d77589bfa46a9734213492366f1032.setIcon(icon_0e3b481042e33631884d5bfcca39b904);
+        
+    
+        var popup_25a9ca9548d272dfcc0cfaea098d8699 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_43f6b8a235a845d70e2caf989384ca95 = $(`<div id="html_43f6b8a235a845d70e2caf989384ca95" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/364716108044810" target="_blank">Link</a></div>`)[0];
+                popup_25a9ca9548d272dfcc0cfaea098d8699.setContent(html_43f6b8a235a845d70e2caf989384ca95);
+            
+        
+
+        marker_b6d77589bfa46a9734213492366f1032.bindPopup(popup_25a9ca9548d272dfcc0cfaea098d8699)
+        ;
+
+        
+    
+    
+            var marker_a39f346313f758cfc4a8091ed24053f7 = L.marker(
+                [36.95537778, -107.8830889],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_694a4c3413805246826544618d759bfd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a39f346313f758cfc4a8091ed24053f7.setIcon(icon_694a4c3413805246826544618d759bfd);
+        
+    
+        var popup_0c01a12184ccc2aec926d86e2feecf3a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_028c9f7d3bbdc16ab88ef723a2c520bb = $(`<div id="html_028c9f7d3bbdc16ab88ef723a2c520bb" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/365719107525910" target="_blank">Link</a></div>`)[0];
+                popup_0c01a12184ccc2aec926d86e2feecf3a.setContent(html_028c9f7d3bbdc16ab88ef723a2c520bb);
+            
+        
+
+        marker_a39f346313f758cfc4a8091ed24053f7.bindPopup(popup_0c01a12184ccc2aec926d86e2feecf3a)
+        ;
+
+        
+    
+    
+            var marker_55d578a126c422c2adbfdebc1e62db89 = L.marker(
+                [37.05185556, -107.8767083],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_2f8e618fa2a6f369f97232d1e4465676 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_55d578a126c422c2adbfdebc1e62db89.setIcon(icon_2f8e618fa2a6f369f97232d1e4465676);
+        
+    
+        var popup_ed8915520a491f38cff72f3842526613 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c57f84f7e1f21cc5ad6c794e26dd0923 = $(`<div id="html_c57f84f7e1f21cc5ad6c794e26dd0923" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/370410107523210" target="_blank">Link</a></div>`)[0];
+                popup_ed8915520a491f38cff72f3842526613.setContent(html_c57f84f7e1f21cc5ad6c794e26dd0923);
+            
+        
+
+        marker_55d578a126c422c2adbfdebc1e62db89.bindPopup(popup_ed8915520a491f38cff72f3842526613)
+        ;
+
+        
+    
+    
+            var marker_51ddfd643d031100b756ef3b4602ac18 = L.marker(
+                [37.09838889, -107.8836306],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_feeb130b577215f5b6d1ccf6deb54f92 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_51ddfd643d031100b756ef3b4602ac18.setIcon(icon_feeb130b577215f5b6d1ccf6deb54f92);
+        
+    
+        var popup_10beeabb2451d4153a7f716485034d6c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b538f686ea4e77cf1d74034dc1b112cc = $(`<div id="html_b538f686ea4e77cf1d74034dc1b112cc" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/370620107533410" target="_blank">Link</a></div>`)[0];
+                popup_10beeabb2451d4153a7f716485034d6c.setContent(html_b538f686ea4e77cf1d74034dc1b112cc);
+            
+        
+
+        marker_51ddfd643d031100b756ef3b4602ac18.bindPopup(popup_10beeabb2451d4153a7f716485034d6c)
+        ;
+
+        
+    
+    
+            var marker_0464ff307f9f6a54b22b3b080d27306b = L.marker(
+                [37.14078056, -107.89185],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_d3c7724ca909e6d04137f9a804d3c0ea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0464ff307f9f6a54b22b3b080d27306b.setIcon(icon_d3c7724ca909e6d04137f9a804d3c0ea);
+        
+    
+        var popup_679f24394c4c933cef566e89d744dcd5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c3467d0ac927c28a84b4b3f2eecd3bc8 = $(`<div id="html_c3467d0ac927c28a84b4b3f2eecd3bc8" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/370847107531410" target="_blank">Link</a></div>`)[0];
+                popup_679f24394c4c933cef566e89d744dcd5.setContent(html_c3467d0ac927c28a84b4b3f2eecd3bc8);
+            
+        
+
+        marker_0464ff307f9f6a54b22b3b080d27306b.bindPopup(popup_679f24394c4c933cef566e89d744dcd5)
+        ;
+
+        
+    
+    
+            var marker_a5f38695a0f1f70a9c8236361545c9c1 = L.marker(
+                [37.18346944, -107.8790194],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_656ed235183055aaa9bfa0fae50e0011 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a5f38695a0f1f70a9c8236361545c9c1.setIcon(icon_656ed235183055aaa9bfa0fae50e0011);
+        
+    
+        var popup_88bc389b4ff44aea00b4285f05c0941b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a0e0cb15ef5cb4f2a14734bc166bf9a3 = $(`<div id="html_a0e0cb15ef5cb4f2a14734bc166bf9a3" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/371058107524210" target="_blank">Link</a></div>`)[0];
+                popup_88bc389b4ff44aea00b4285f05c0941b.setContent(html_a0e0cb15ef5cb4f2a14734bc166bf9a3);
+            
+        
+
+        marker_a5f38695a0f1f70a9c8236361545c9c1.bindPopup(popup_88bc389b4ff44aea00b4285f05c0941b)
+        ;
+
+        
+    
+    
+            var marker_6ed8b3ff159c20441e20d7d19a332285 = L.marker(
+                [37.2017, -107.845975],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_f4265b4ed14c4328b2efb600d2e6e578 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6ed8b3ff159c20441e20d7d19a332285.setIcon(icon_f4265b4ed14c4328b2efb600d2e6e578);
+        
+    
+        var popup_89eb480f14139ebaa081175bb65c085a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bf7271d39aa53d3b4da627fb4c425595 = $(`<div id="html_bf7271d39aa53d3b4da627fb4c425595" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/371206107504510" target="_blank">Link</a></div>`)[0];
+                popup_89eb480f14139ebaa081175bb65c085a.setContent(html_bf7271d39aa53d3b4da627fb4c425595);
+            
+        
+
+        marker_6ed8b3ff159c20441e20d7d19a332285.bindPopup(popup_89eb480f14139ebaa081175bb65c085a)
+        ;
+
+        
+    
+    
+            var marker_7c73bb54e206e63a72625a61871a82f6 = L.marker(
+                [37.26748056, -107.8855694],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_187c4d6942f56114687ab0d90578683f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7c73bb54e206e63a72625a61871a82f6.setIcon(icon_187c4d6942f56114687ab0d90578683f);
+        
+    
+        var popup_0de252e9490e72fc77e195544e68260a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc69d66ee60d06b3321330687c5109b8 = $(`<div id="html_fc69d66ee60d06b3321330687c5109b8" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/371604107530810" target="_blank">Link</a></div>`)[0];
+                popup_0de252e9490e72fc77e195544e68260a.setContent(html_fc69d66ee60d06b3321330687c5109b8);
+            
+        
+
+        marker_7c73bb54e206e63a72625a61871a82f6.bindPopup(popup_0de252e9490e72fc77e195544e68260a)
+        ;
+
+        
+    
+    
+            var marker_21e27d0e0ed3dcc7fa700afc5466e3a4 = L.marker(
+                [37.2828611, -107.8725889],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_076343036ed2aae6e6df7bf8d09bce0d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_21e27d0e0ed3dcc7fa700afc5466e3a4.setIcon(icon_076343036ed2aae6e6df7bf8d09bce0d);
+        
+    
+        var popup_6f608e7039e2d6cf8f724c4da822762b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9e27524f824d1c41454115aad3bcd6c1 = $(`<div id="html_9e27524f824d1c41454115aad3bcd6c1" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/371705107521910" target="_blank">Link</a></div>`)[0];
+                popup_6f608e7039e2d6cf8f724c4da822762b.setContent(html_9e27524f824d1c41454115aad3bcd6c1);
+            
+        
+
+        marker_21e27d0e0ed3dcc7fa700afc5466e3a4.bindPopup(popup_6f608e7039e2d6cf8f724c4da822762b)
+        ;
+
+        
+    
+    
+            var marker_7d30c30256ec3645f042e95dda638553 = L.marker(
+                [37.31688889, -107.8461],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_1175b492a7f81f56f3cf56c3c6f11664 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7d30c30256ec3645f042e95dda638553.setIcon(icon_1175b492a7f81f56f3cf56c3c6f11664);
+        
+    
+        var popup_ab8f7ee022bc78aed5236845e84694cc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_214c2062af1cf9a25036f06b6354dc77 = $(`<div id="html_214c2062af1cf9a25036f06b6354dc77" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/371909107505510" target="_blank">Link</a></div>`)[0];
+                popup_ab8f7ee022bc78aed5236845e84694cc.setContent(html_214c2062af1cf9a25036f06b6354dc77);
+            
+        
+
+        marker_7d30c30256ec3645f042e95dda638553.bindPopup(popup_ab8f7ee022bc78aed5236845e84694cc)
+        ;
+
+        
+    
+    
+            var marker_2ae86dd5ba80d9d8a00d22b5067d6795 = L.marker(
+                [37.34508056, -107.8465694],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_e3b898dfc6407c6346d4cf3f737c4980 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2ae86dd5ba80d9d8a00d22b5067d6795.setIcon(icon_e3b898dfc6407c6346d4cf3f737c4980);
+        
+    
+        var popup_9c54b4b6dfb6ca380be1277afeffb8ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0cea9a81a3b6f45f1d3a3596d629e704 = $(`<div id="html_0cea9a81a3b6f45f1d3a3596d629e704" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/372039107504510" target="_blank">Link</a></div>`)[0];
+                popup_9c54b4b6dfb6ca380be1277afeffb8ed.setContent(html_0cea9a81a3b6f45f1d3a3596d629e704);
+            
+        
+
+        marker_2ae86dd5ba80d9d8a00d22b5067d6795.bindPopup(popup_9c54b4b6dfb6ca380be1277afeffb8ed)
+        ;
+
+        
+    
+    
+            var marker_1a4df67dcb1d93c35465979d95309fe0 = L.marker(
+                [37.3827611, -107.8458306],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_093964e70e864e7387b210804366a08d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1a4df67dcb1d93c35465979d95309fe0.setIcon(icon_093964e70e864e7387b210804366a08d);
+        
+    
+        var popup_28a3db4b962f43327e642f78c679b062 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c19d7b48499b454f2e9b1213a3ef0d5b = $(`<div id="html_c19d7b48499b454f2e9b1213a3ef0d5b" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/372304107503210" target="_blank">Link</a></div>`)[0];
+                popup_28a3db4b962f43327e642f78c679b062.setContent(html_c19d7b48499b454f2e9b1213a3ef0d5b);
+            
+        
+
+        marker_1a4df67dcb1d93c35465979d95309fe0.bindPopup(popup_28a3db4b962f43327e642f78c679b062)
+        ;
+
+        
+    
+    
+            var marker_b8269e27a864fed3463473ad34a05c46 = L.marker(
+                [36.732, -108.1864389],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_73e82c4c191b23c2b95357b6bd04cc17 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b8269e27a864fed3463473ad34a05c46.setIcon(icon_73e82c4c191b23c2b95357b6bd04cc17);
+        
+    
+        var popup_eb9ba03918991e3e52fee53c9613e7f7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ac14713a0a5b42b3273993ff49126f10 = $(`<div id="html_ac14713a0a5b42b3273993ff49126f10" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/364333108113210" target="_blank">Link</a></div>`)[0];
+                popup_eb9ba03918991e3e52fee53c9613e7f7.setContent(html_ac14713a0a5b42b3273993ff49126f10);
+            
+        
+
+        marker_b8269e27a864fed3463473ad34a05c46.bindPopup(popup_eb9ba03918991e3e52fee53c9613e7f7)
+        ;
+
+        
+    
+    
+            var marker_b7a118a368d9384347af07ab0ac4347a = L.marker(
+                [36.77773889, -108.10895],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_887ee382adae225f3301fffcb1118d0d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b7a118a368d9384347af07ab0ac4347a.setIcon(icon_887ee382adae225f3301fffcb1118d0d);
+        
+    
+        var popup_f7feffcc43207f7cc8b18ce80888647e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_afb4c5effce6c5bf61e57f371a3acdfe = $(`<div id="html_afb4c5effce6c5bf61e57f371a3acdfe" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/364654108061310" target="_blank">Link</a></div>`)[0];
+                popup_f7feffcc43207f7cc8b18ce80888647e.setContent(html_afb4c5effce6c5bf61e57f371a3acdfe);
+            
+        
+
+        marker_b7a118a368d9384347af07ab0ac4347a.bindPopup(popup_f7feffcc43207f7cc8b18ce80888647e)
+        ;
+
+        
+    
+    
+            var marker_024f915dfb16a3bfa2827f39118b390f = L.marker(
+                [36.81373056, -108.0289389],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_bfbe2ca880fbd2a5916439921f5db95a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_024f915dfb16a3bfa2827f39118b390f.setIcon(icon_bfbe2ca880fbd2a5916439921f5db95a);
+        
+    
+        var popup_12dd478cad5c0269db0ec0e4f205e823 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5e605fb702cc64b5dcd02565576d3f93 = $(`<div id="html_5e605fb702cc64b5dcd02565576d3f93" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/364800108032710" target="_blank">Link</a></div>`)[0];
+                popup_12dd478cad5c0269db0ec0e4f205e823.setContent(html_5e605fb702cc64b5dcd02565576d3f93);
+            
+        
+
+        marker_024f915dfb16a3bfa2827f39118b390f.bindPopup(popup_12dd478cad5c0269db0ec0e4f205e823)
+        ;
+
+        
+    
+    
+            var marker_3252b77afa91bb95cb18527799b2ce13 = L.marker(
+                [36.8375611, -107.9926472],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_5102bcfe9a0b5c989526f159cf3ea0a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3252b77afa91bb95cb18527799b2ce13.setIcon(icon_5102bcfe9a0b5c989526f159cf3ea0a9);
+        
+    
+        var popup_eca7703c8ef17a84026be47267e812da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a97a81eb4a0f75accdb87e31426420c1 = $(`<div id="html_a97a81eb4a0f75accdb87e31426420c1" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/365100107591310" target="_blank">Link</a></div>`)[0];
+                popup_eca7703c8ef17a84026be47267e812da.setContent(html_a97a81eb4a0f75accdb87e31426420c1);
+            
+        
+
+        marker_3252b77afa91bb95cb18527799b2ce13.bindPopup(popup_eca7703c8ef17a84026be47267e812da)
+        ;
+
+        
+    
+    
+            var marker_9dc6e402d29fc883f4459373f34ad851 = L.marker(
+                [36.88414167, -107.9511083],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_ae08728d12f6363664ab0c3cd46323b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9dc6e402d29fc883f4459373f34ad851.setIcon(icon_ae08728d12f6363664ab0c3cd46323b0);
+        
+    
+        var popup_dc8181892031cd82cd37235c90b97331 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6c5ff41f9f20ba2872984786e169b108 = $(`<div id="html_6c5ff41f9f20ba2872984786e169b108" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/365210107575810" target="_blank">Link</a></div>`)[0];
+                popup_dc8181892031cd82cd37235c90b97331.setContent(html_6c5ff41f9f20ba2872984786e169b108);
+            
+        
+
+        marker_9dc6e402d29fc883f4459373f34ad851.bindPopup(popup_dc8181892031cd82cd37235c90b97331)
+        ;
+
+        
+    
+    
+            var marker_b75c916e3db668dae1faafd8fa4cad49 = L.marker(
+                [36.8963472, -107.93545],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_239770d931ec1d6f6642a71329d1364a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b75c916e3db668dae1faafd8fa4cad49.setIcon(icon_239770d931ec1d6f6642a71329d1364a);
+        
+    
+        var popup_44bb55e8fc2b38c9212a2ed8f66cabab = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6c721123dd08f066247befdb7157957e = $(`<div id="html_6c721123dd08f066247befdb7157957e" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/365340107561510" target="_blank">Link</a></div>`)[0];
+                popup_44bb55e8fc2b38c9212a2ed8f66cabab.setContent(html_6c721123dd08f066247befdb7157957e);
+            
+        
+
+        marker_b75c916e3db668dae1faafd8fa4cad49.bindPopup(popup_44bb55e8fc2b38c9212a2ed8f66cabab)
+        ;
+
+        
+    
+    
+            var marker_278a2a468dbc05f5f94be586af825504 = L.marker(
+                [36.929725, -107.88705],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_99fb9d615363b0b4cd0d4877cc79c3d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_278a2a468dbc05f5f94be586af825504.setIcon(icon_99fb9d615363b0b4cd0d4877cc79c3d5);
+        
+    
+        var popup_976bd9bddc6e8a0738158a8d306cbd6d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_48b49db74a837e72d3453e79e3e8e5a9 = $(`<div id="html_48b49db74a837e72d3453e79e3e8e5a9" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/365559107540510" target="_blank">Link</a></div>`)[0];
+                popup_976bd9bddc6e8a0738158a8d306cbd6d.setContent(html_48b49db74a837e72d3453e79e3e8e5a9);
+            
+        
+
+        marker_278a2a468dbc05f5f94be586af825504.bindPopup(popup_976bd9bddc6e8a0738158a8d306cbd6d)
+        ;
+
+        
+    
+    
+            var marker_8707597f3440ef59a6e0f9169ec194f9 = L.marker(
+                [36.96631389, -107.8691611],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_8ac43af57aaea656b7ec4f2ce6e4b42b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8707597f3440ef59a6e0f9169ec194f9.setIcon(icon_8ac43af57aaea656b7ec4f2ce6e4b42b);
+        
+    
+        var popup_91577b50dc7454e80bcd648dc7270321 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1726f636b592e55a384c58723f27230f = $(`<div id="html_1726f636b592e55a384c58723f27230f" style="width: 100.0%; height: 100.0%;"><a href="https://waterdata.usgs.gov/monitoring-location/365921107520210" target="_blank">Link</a></div>`)[0];
+                popup_91577b50dc7454e80bcd648dc7270321.setContent(html_1726f636b592e55a384c58723f27230f);
+            
+        
+
+        marker_8707597f3440ef59a6e0f9169ec194f9.bindPopup(popup_91577b50dc7454e80bcd648dc7270321)
+        ;
+
+        
+    
+    
+            var marker_c0da07b352702822e096bc2e83ee424b = L.marker(
+                [37.570282, -107.780635],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_3194199947e4dfee76399899c2a86df5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c0da07b352702822e096bc2e83ee424b.setIcon(icon_3194199947e4dfee76399899c2a86df5);
+        
+    
+        var popup_2ed4772db35a3e13cbce422201f66d23 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2369e79f25e4e12080ad29ce48b875ca = $(`<div id="html_2369e79f25e4e12080ad29ce48b875ca" style="width: 100.0%; height: 100.0%;"><a href="https://dwr.state.co.us/Tools/Stations/ANITIMCO" target="_blank">Link</a></div>`)[0];
+                popup_2ed4772db35a3e13cbce422201f66d23.setContent(html_2369e79f25e4e12080ad29ce48b875ca);
+            
+        
+
+        marker_c0da07b352702822e096bc2e83ee424b.bindPopup(popup_2ed4772db35a3e13cbce422201f66d23)
+        ;
+
+        
+    
+    
+            var marker_5c03300f3a294f9b438c9b2036b3fc29 = L.marker(
+                [37.790281, -107.667577],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_a4ff2eff4ace17c81b9b79a32d1cb067 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5c03300f3a294f9b438c9b2036b3fc29.setIcon(icon_a4ff2eff4ace17c81b9b79a32d1cb067);
+        
+    
+        var popup_5a196228c8ee9e3c9ef9344ccc9db6a2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1e9e6eb345a6e295206c30c5c5b99bd2 = $(`<div id="html_1e9e6eb345a6e295206c30c5c5b99bd2" style="width: 100.0%; height: 100.0%;"><a href="https://dwr.state.co.us/Tools/Stations/ANIBSICO" target="_blank">Link</a></div>`)[0];
+                popup_5a196228c8ee9e3c9ef9344ccc9db6a2.setContent(html_1e9e6eb345a6e295206c30c5c5b99bd2);
+            
+        
+
+        marker_5c03300f3a294f9b438c9b2036b3fc29.bindPopup(popup_5a196228c8ee9e3c9ef9344ccc9db6a2)
+        ;
+
+        
+    
+    
+            var marker_f88af2a119d812880ce6424cf61e4fa8 = L.marker(
+                [37.832855, -107.599581],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_d28cd84e8afaa113343afcabe7da4eba = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f88af2a119d812880ce6424cf61e4fa8.setIcon(icon_d28cd84e8afaa113343afcabe7da4eba);
+        
+    
+        var popup_cd68d4c3d8d3c6b0c15b204c63604727 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e9813389e843a33cd17020294e0a1e4a = $(`<div id="html_e9813389e843a33cd17020294e0a1e4a" style="width: 100.0%; height: 100.0%;"><a href="https://dwr.state.co.us/Tools/Stations/ANIHOWCO" target="_blank">Link</a></div>`)[0];
+                popup_cd68d4c3d8d3c6b0c15b204c63604727.setContent(html_e9813389e843a33cd17020294e0a1e4a);
+            
+        
+
+        marker_f88af2a119d812880ce6424cf61e4fa8.bindPopup(popup_cd68d4c3d8d3c6b0c15b204c63604727)
+        ;
+
+        
+    
+    
+            var marker_1ac928025129d3b68463feb874f87d84 = L.marker(
+                [37.249267, -107.872591],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_80666dfbaba18dbb281c169393fa1da7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1ac928025129d3b68463feb874f87d84.setIcon(icon_80666dfbaba18dbb281c169393fa1da7);
+        
+    
+        var popup_b2f792a191c24edfbd9599a76c1904cc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d6037e55565755be73f6ca2fb04cca0f = $(`<div id="html_d6037e55565755be73f6ca2fb04cca0f" style="width: 100.0%; height: 100.0%;"><a href="https://dwr.state.co.us/Tools/Stations/ANIALPCO" target="_blank">Link</a></div>`)[0];
+                popup_b2f792a191c24edfbd9599a76c1904cc.setContent(html_d6037e55565755be73f6ca2fb04cca0f);
+            
+        
+
+        marker_1ac928025129d3b68463feb874f87d84.bindPopup(popup_b2f792a191c24edfbd9599a76c1904cc)
+        ;
+
+        
+    
+    
+            var marker_1cb6f9cbf67780d0b8f1a7b594d45299 = L.marker(
+                [37.036574, -107.875344],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_04570928b75e75b4f331a89600496d87 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1cb6f9cbf67780d0b8f1a7b594d45299.setIcon(icon_04570928b75e75b4f331a89600496d87);
+        
+    
+        var popup_3ea90025ae1b193c881441f3d0e52843 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3daa547e3f2f8446d59716b6dee6467e = $(`<div id="html_3daa547e3f2f8446d59716b6dee6467e" style="width: 100.0%; height: 100.0%;"><a href="https://dwr.state.co.us/Tools/Stations/ANICEDNM" target="_blank">Link</a></div>`)[0];
+                popup_3ea90025ae1b193c881441f3d0e52843.setContent(html_3daa547e3f2f8446d59716b6dee6467e);
+            
+        
+
+        marker_1cb6f9cbf67780d0b8f1a7b594d45299.bindPopup(popup_3ea90025ae1b193c881441f3d0e52843)
+        ;
+
+        
+    
+    
+            var marker_7c7f7a767e1c0bd1609a9c93a5bd66db = L.marker(
+                [37.811113, -107.659241],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_ed676f3782c64d85313314b44dfe571b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7c7f7a767e1c0bd1609a9c93a5bd66db.setIcon(icon_ed676f3782c64d85313314b44dfe571b);
+        
+    
+        var popup_7aef77c4c6e7dbbce6a3d2352ddaae26 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ee4b142a0237e27e8eb1e4b4de115400 = $(`<div id="html_ee4b142a0237e27e8eb1e4b4de115400" style="width: 100.0%; height: 100.0%;"><a href="https://dwr.state.co.us/Tools/Stations/ANISILCO" target="_blank">Link</a></div>`)[0];
+                popup_7aef77c4c6e7dbbce6a3d2352ddaae26.setContent(html_ee4b142a0237e27e8eb1e4b4de115400);
+            
+        
+
+        marker_7c7f7a767e1c0bd1609a9c93a5bd66db.bindPopup(popup_7aef77c4c6e7dbbce6a3d2352ddaae26)
+        ;
+
+        
+    
+    
+            var marker_4c83da530c766832ca2dc0e4e4de97fa = L.marker(
+                [37.279174, -107.880359],
+                {}
+            ).addTo(map_77d8f8236395875380968571da27a825);
+        
+    
+            var icon_43aaf4b6a1f34942ad498637aa45f719 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4c83da530c766832ca2dc0e4e4de97fa.setIcon(icon_43aaf4b6a1f34942ad498637aa45f719);
+        
+    
+        var popup_3df9c35ae6283c7912c27b6346d08d3b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4c94a215fdf44de8d7c60c5c3d02726c = $(`<div id="html_4c94a215fdf44de8d7c60c5c3d02726c" style="width: 100.0%; height: 100.0%;"><a href="https://dwr.state.co.us/Tools/Stations/ANIDURCO" target="_blank">Link</a></div>`)[0];
+                popup_3df9c35ae6283c7912c27b6346d08d3b.setContent(html_4c94a215fdf44de8d7c60c5c3d02726c);
+            
+        
+
+        marker_4c83da530c766832ca2dc0e4e4de97fa.bindPopup(popup_3df9c35ae6283c7912c27b6346d08d3b)
+        ;
+
+        
+    
+</script>
+</html>
