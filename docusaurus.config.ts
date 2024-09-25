@@ -159,7 +159,7 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       //  markup-templating is the dependency for django and turtle is a dependency for sparql 
-      additionalLanguages: ["json", "yaml", "markup-templating", "django", "turtle", "sparql", "bash"],
+      additionalLanguages: ["json", "yaml", "markup-templating", "django", "turtle", "sparql", "bash", "r"],
     },
     colorMode: {
       respectPrefersColorScheme: true,

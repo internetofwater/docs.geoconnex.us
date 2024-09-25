@@ -15,7 +15,7 @@ Users can make knowledge graph queries for Geoconnex data at [graph.geoconnex.us
 
  ## Geoconnex key data endpoints
 
-[Reference features](./reference/index.md) and the [knowledge graph](./graph/index.md) are the two key data endpoints for Geoconnex.
+[Reference features](./reference/index.md) and the [Geoconnex graph](https://graph.geoconnex.us/) are the two key data endpoints for Geoconnex.
 - Reference features provide the stable URIs for the knowledge graph so that across organizations the same feature is tagged with the same persistent identifier. 
 - The Geoconnex  graph includes both community reference features as well as those which are associated with a particular organization or database. All features listed in [the geoconnex uri repository](https://github.com/internetofwater/geoconnex.us) are harvested and included in the Geoconnex knowledge graph. 
 
