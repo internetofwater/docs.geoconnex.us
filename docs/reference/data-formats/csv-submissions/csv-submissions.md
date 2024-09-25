@@ -28,6 +28,8 @@ import TabItem from '@theme/TabItem';
   <TabItem value="github" label="1:1 Redirects" default>
 
 There is a strong preference for creating 1:1 redirects. That is, specifying an exact redirect from a geoconnex.us-based PID to the URI of the hydrologic feature you have a web resource about, for each and every individual feature.
+This enables the resolution of features such as https://geoconnex.us/usgs/monitoring-location/01010000 to https://waterdata.usgs.gov/monitoring-location/01010000
+
 
 <!-- We need to put this behind a div and not use ## for a header since the header would be rendered
 in the docusaurus sidebar even if it is in the othertab that isn't opened -->
@@ -65,5 +67,3 @@ An example 1:N mapping that uses a regular expression
 <CSVTable csvUrl="https://raw.githubusercontent.com/internetofwater/geoconnex.us/master/namespaces/usgs/monitoring-location/monitoring-location.csv" />
   </TabItem>
 </Tabs>
-
-This enables the resolution of features such as https://geoconnex.us/usgs/monitoring-location/01010000 to https://waterdata.usgs.gov/monitoring-location/01010000
