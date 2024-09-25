@@ -143,10 +143,9 @@ legend_html = """
 
 # Add legend to map
 m.get_root().html.add_child(Element(legend_html))
-m.save('../../../static/html/python/intersect-url.html')
-m
 ```
-<iframe src='/html/python/intersect-url.html' style={{width: "100%", height: "500px"}}></iframe>
+
+<iframe src='/html/python/gages-on-river.html' style={{width: "100%", height: "500px"}}></iframe>
 
 </TabItem>
 </Tabs>
