@@ -1,5 +1,5 @@
 ---
-title: "Jinja templating for exposing your data"
+title: "Jinja templating"
 hide_title: true
 ---
 

@@ -119,7 +119,7 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "PlaygroundSidebar",
           position: "left",
-          label: "Playground",
+          label: "Playgrounds",
         },
         {
           href: "https://github.com/internetofwater/docs.geoconnex.us",
