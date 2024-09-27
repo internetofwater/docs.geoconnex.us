@@ -28,14 +28,23 @@ const OPTIONS_WITH_READONLY = {
 
 const Playground = () => {
   const default_raw = {
-    type: "Feature",
-    id: "'000000'",
-    properties: {
-      property1: "property1value",
+    "type": "Feature",
+    "id": "'AR008-331856091114601'",
+    "properties": {
+      "@iot.selfLink": "https://labs.waterdata.usgs.gov/sta/v1.1/Things('AR008-331856091114601')",
+      "name": "AR008-331856091114601",
+      "description": "Well",
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -91.1969333333333,
+        33.3169611111111
+      ]
     },
   };
 
-  const default_template = "The first value is: {{ data['property1'] }}";
+  const default_template = 'The feature name is {{ data["name"] }}';
 
   const [raw, setRaw] = useState(JSON.stringify(default_raw, null, 2));
   const [template, setTemplate] = useState(default_template);
