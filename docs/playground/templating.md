@@ -13,17 +13,31 @@ import TabItem from '@theme/TabItem';
 <TabItem value="play" label="Playground" default>
 <Playground/>
 </TabItem>
-<TabItem value="help" label="Help and Info" >
+<TabItem value="help" label="Help and Background Info" >
 
-## Templating Help
+<!-- bigger but not ## because otherwise ## will show up in the heading when the tab isn't in focus -->
+<div style={{fontSize: "1.5em", fontWeight: "bold", margin: "1em 0 0.5em 0"}}>
+Templating Overview
+</div>
 
 This page allows you to explore templating JSON-LD with Jinja so that it is easier to [contribute and expose your data](/docs/contributing/overview.md) for Geoconnex.
+ 
+- The left editor contains raw JSON-LD output from pygeoapi. 
+- The center editor contains the Jinja template that processes it.
+- The right editor shows the final templated output. 
+    - Once this JSON-LD is ensured to be valid and exposed to the internet, the endpoints can then be submitted to Geoconnex and assigned a URI.
 
-The left editor contains raw JSON-LD output from pygeoapi. The center editor contains the Jinja template that processes it. The right editor shows the final templated output. 
+<div style={{fontSize: "1.0em", fontWeight: "bold", margin: "1em 0 0.5em 0"}}>
+Notes on templating within pygeoapi
+</div>
 
-It is important to note that pygeoapi applies jinja templates in a way that is slightly different than standard.  The `properties` key is referred to as `data` turing templating. 
-This playground is programmed to reflect that. For instance, in the default example in the editor, the use of `data["name"]` in the template actually ends up sourcing `properties["name"]`. 
+When pygeoapi applies a Jinja template, it considers the entire source JSON-LD to be the top-level key named `data`. Otherwise, the Jinja templating in pygeoapi is standard and follows expected patterns.
 
+:::note
+
+For info on getting pygeoapi running locally, see [step 2](/contributing/step-2/pygeoapi/deployment) of the contribution guide.
+
+:::
 
 </TabItem>
 </Tabs>

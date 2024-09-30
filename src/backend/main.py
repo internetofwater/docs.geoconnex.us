@@ -1,6 +1,11 @@
+import json
 import functions_framework
 import flask
 import jinja2
+
+def to_json(dict_: dict, pretty: bool = False) -> str:
+    """Mimics the to_json filter in pygeoapi"""
+    return json.dumps(dict_, indent=4 if pretty else None, separators=(',', ':'))
 
 @functions_framework.http
 def templating(request: flask.Request):
@@ -32,17 +37,21 @@ def templating(request: flask.Request):
 
     if not request_json:
         return make_response_with_cors("Missing json body", 400)
+    # Template represents the jinja template
     if "template" not in request_json:
         return make_response_with_cors("Missing 'template' key", 400)
-    if "data" not in request_json:
-        return make_response_with_cors("Missing 'data' key", 400)
+    # Source values represents the data to be inserted into the template
+    if "source_values" not in request_json:
+        return make_response_with_cors("Missing 'source_values' key", 400)
 
-    data, template_str = request_json["data"], request_json["template"]
-
+    data, template_str = request_json["source_values"], request_json["template"]
     try:
-        template = jinja2.Template(template_str)
+        env = jinja2.Environment()
+        env.filters['to_json'] = to_json
+        template = env.from_string(template_str)
         rendered_template = template.render(data)
     except jinja2.TemplateError as e:
+        print(e)
         return make_response_with_cors(str(e), 400)
-
+    
     return make_response_with_cors(rendered_template)

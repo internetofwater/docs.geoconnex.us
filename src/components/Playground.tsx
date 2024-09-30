@@ -7,11 +7,13 @@ import {
   faEyeSlash,
   faSync,
   faSpinner,
-} from "@fortawesome/free-solid-svg-icons"; // Add faSpinner
-import raw_output from "./associated_assets/raw_output.json";
+} from "@fortawesome/free-solid-svg-icons"; 
+import location_oriented from "./associated_assets/location_oriented.json"
+import default_simple from "./associated_assets/default_simple.json"
+const simple_template = require('!!raw-loader!./associated_assets/default_simple.j2')?.default;
 
-const CLOUD_RUN_URL =
-  "https://geoconnex-docs-templating-177886173191.us-central1.run.app";
+const CLOUD_RUN_URL = "https://geoconnex-docs-templating-177886173191.us-central1.run.app";
+// const CLOUD_RUN_URL = "http://localhost:8080";
 
 const MONACO_EDITOR_OPTIONS = {
   automaticLayout: true,
@@ -27,29 +29,12 @@ const OPTIONS_WITH_READONLY = {
 };
 
 const Playground = () => {
-  const default_raw = {
-    "type": "Feature",
-    "id": "'AR008-331856091114601'",
-    "properties": {
-      "@iot.selfLink": "https://labs.waterdata.usgs.gov/sta/v1.1/Things('AR008-331856091114601')",
-      "name": "AR008-331856091114601",
-      "description": "Well",
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -91.1969333333333,
-        33.3169611111111
-      ]
-    },
-  };
 
-  const default_template = 'The feature name is {{ data["name"] }}';
 
-  const [raw, setRaw] = useState(JSON.stringify(default_raw, null, 2));
-  const [template, setTemplate] = useState(default_template);
+  const [raw, setRaw] = useState(JSON.stringify(default_simple, null, 2));
+  const [template, setTemplate] = useState(simple_template);
   const [result, setResult] = useState(
-    "// Here is where your jinja template will be applied"
+    "// Here is where the jinja template will \n// be applied and resulting JSON-LD will \n// be displayed"
   );
   const [error, setError] = useState("");
   const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -63,27 +48,20 @@ const Playground = () => {
     setError("");
 
     try {
-      const dataToSend = parseRawData(raw);
-      const templatingRequest = { data: dataToSend, template: template };
-
+      const dataToSend = JSON.parse(raw);
+      const templatingRequest = {
+        source_values: {
+        // we create a top level data key to mimic the fact pygeoapi does it
+          data: dataToSend,
+        },
+        template: template,
+      };
       const response = await sendRequest(templatingRequest);
       handleResponse(response);
     } catch (error) {
       setError(error.message);
     } finally {
       setLoading(false);
-    }
-  };
-
-  const parseRawData = (rawData) => {
-    try {
-      const parsedData = JSON.parse(rawData);
-      // Rename the key 'properties' to 'data'
-      parsedData.data = parsedData.properties;
-      delete parsedData.properties;
-      return parsedData;
-    } catch (error) {
-      throw new Error(`Error Parsing Raw JSON-LD: ${error.message}`);
     }
   };
 
@@ -140,7 +118,7 @@ const Playground = () => {
         "https://raw.githubusercontent.com/cgs-earth/sta-pygeoapi/main/templates/usgs-location-oriented.j2"
       );
       setTemplate(await location_oriented_template.text());
-      setRaw(JSON.stringify(raw_output, null, 2));
+      setRaw(JSON.stringify(location_oriented, null, 2));
     }
   };
 
@@ -187,10 +165,7 @@ const Playground = () => {
   const headerStyle = {
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
-    padding: "0 1rem",
     height: "4rem",
-    textAlign: "center",
     fontWeight: "bold",
   };
 
@@ -207,12 +182,6 @@ const Playground = () => {
 
   const buttonHoverStyle = {
     backgroundColor: "#0056b3", // Darker shade on hover
-  };
-
-  const errorStyle = {
-    color: "red",
-    padding: "1rem",
-    textAlign: "center",
   };
 
   return (
