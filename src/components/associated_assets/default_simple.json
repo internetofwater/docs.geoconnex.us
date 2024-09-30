@@ -1,0 +1,14 @@
+{
+    "@context":[
+        {
+            "schema":"https://schema.org/",
+            "type":"@type",
+            "gsp":"http://www.opengis.net/ont/geosparql#"
+        }
+    ],
+    "type":"schema:Place",
+    "id":"'AR008-331856091114601'",
+    "@iot.selfLink":"https://labs.waterdata.usgs.gov/sta/v1.1/Things('AR008-331856091114601')",
+    "name":"AR008-331856091114601",
+    "description":"Well"
+}
