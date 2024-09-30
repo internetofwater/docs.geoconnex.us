@@ -25,7 +25,6 @@ This page allows you to explore templating JSON-LD with Jinja so that it is easi
 - The left editor contains raw JSON-LD output from pygeoapi. 
 - The center editor contains the Jinja template that processes it.
 - The right editor shows the final templated output. 
-    - Once this JSON-LD is ensured to be valid and exposed to the internet, the endpoints can then be submitted to Geoconnex and assigned a URI.
 
 <div style={{fontSize: "1.0em", fontWeight: "bold", margin: "1em 0 0.5em 0"}}>
 Notes on templating within pygeoapi
