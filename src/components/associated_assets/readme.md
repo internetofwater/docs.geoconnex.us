@@ -1,0 +1,1 @@
+This folde rcontains assets that are useful for the playground component

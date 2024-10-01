@@ -18,7 +18,11 @@
     "@docusaurus/core": "^3.5.2",
     "@docusaurus/preset-classic": "^3.5.2",
     "@easyops-cn/docusaurus-search-local": "^0.44.3",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@mdx-js/react": "^3.0.0",
+    "@monaco-editor/react": "^4.6.0",
     "@tippyjs/react": "^4.2.6",
     "clsx": "^2.0.0",
     "papaparse": "^5.4.1",
@@ -30,6 +34,7 @@
     "@docusaurus/module-type-aliases": "^3.5.2",
     "@docusaurus/tsconfig": "^3.5.2",
     "@docusaurus/types": "^3.5.2",
+    "raw-loader": "^4.0.2",
     "typescript": "~5.2.2"
   },
   "browserslist": {

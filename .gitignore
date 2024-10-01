@@ -24,4 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 node_modules
 
-.venv
+# in case we have a python env for ipynb experiments locally
+.venv/
+__pycache__/
+*.pyc

@@ -94,7 +94,7 @@ This document is located inside a `<script>` tag within a `<head>` or `<body>` s
 
 Due to the fact that we have a `@context` where our ontologies are defined with consistent names, and the fact we have unique `@id` values for each location or dataset, our JSON-LD document can be easily transformed into a variety of formats. 
 
-View the [JSON-LD playground](/docs/reference/data-formats/jsonld/exploration.md) for more examples.
+View the [JSON-LD playground](/docs/playground/jsonld.md) for more examples.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
