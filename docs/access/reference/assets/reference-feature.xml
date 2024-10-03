@@ -1,0 +1,4 @@
+<!DOCTYPE connections>
+<qgsWFSConnections version="1.1">
+    <wfs username="" pagesize="" pagingenabled="enabled" name="Geoconnex Reference Features" maxnumfeatures="" ignoreAxisOrientation="0" password="" url="https://reference.geoconnex.us/" version="OGC_API_FEATURES" invertAxisOrientation="0"/>
+</qgsWFSConnections>

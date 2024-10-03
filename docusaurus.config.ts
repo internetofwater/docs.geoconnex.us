@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 import { remarkCodeHike, recmaCodeHike } from "codehike/mdx"
 
 const chConfig = {
-  components: { code: "MyCode" },
+  components: { code: "CustomCodeblock" },
   syntaxHighlighting: {
     theme: "github-dark",
   },
@@ -107,22 +107,29 @@ const config: Config = {
         },
         {
           type: "docSidebar",
-          sidebarId: "DataFormatReferenceSidebar",
-          position: "left",
-          label: "Best Practices & Data Standards",
-        },
-        {
-          type: "docSidebar",
           sidebarId: "QueryingSidebar",
           position: "left",
           label: "Access Data",
         },
+        {
+          type: "docSidebar",
+          sidebarId: "DataFormatReferenceSidebar",
+          position: "left",
+          label: "Best Practices & Data Standards",
+        },
+
 
         {
           type: "docSidebar",
           sidebarId: "SystemArchitectureSidebar",
           position: "left",
           label: "System Architecture",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "PlaygroundSidebar",
+          position: "left",
+          label: "Playgrounds",
         },
         {
           href: "https://github.com/internetofwater/docs.geoconnex.us",
@@ -167,7 +174,8 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ["json", "yaml", "markup-templating", "django"],
+      //  markup-templating is the dependency for django and turtle is a dependency for sparql 
+      additionalLanguages: ["json", "yaml", "markup-templating", "django", "turtle", "sparql", "bash", "r"],
     },
     colorMode: {
       respectPrefersColorScheme: true,
