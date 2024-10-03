@@ -29,8 +29,8 @@ export function CustomCodeblock({ codeblock }: { codeblock: HighlightedCode }) {
         display: "inline-block",
         overflowX: "auto",
         width: "100%",
+        borderRadius: "0.4em",
       }}
-      className="px-4 bg-zinc-950 rounded"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -40,9 +40,11 @@ export function CustomCodeblock({ codeblock }: { codeblock: HighlightedCode }) {
             backgroundColor: "#2a2d32",
             color: "#fafafa",
             paddingLeft: "1em",
-            paddingTop: "0.5em",
+            paddingTop: "1em",
             paddingBottom: "0.5em",
             fontStyle: "italic",
+            fontSize: "0.9em",
+            borderBottom: "3px solid #51555a",
           }}
         >
           {codeblock.meta}

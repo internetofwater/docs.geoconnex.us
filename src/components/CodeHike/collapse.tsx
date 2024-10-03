@@ -43,7 +43,6 @@ export const collapseTrigger: AnnotationHandler = {
 
     return (
       <>
-        <InnerLine merge={props} />
         <CollapsibleTrigger
           style={{
             backgroundColor: "transparent",
@@ -54,12 +53,16 @@ export const collapseTrigger: AnnotationHandler = {
           }}
           onClick={() => setIsOpen((prev) => !prev)} // Toggle the open state on click
         >
+          
           {isOpen ? (
             <ArrowDownCircle size={14} cursor={"pointer"} /> // Down arrow when open
           ) : (
             <ArrowRightCircle size={14} cursor={"pointer"} /> // Side arrow when closed
           )}
+
         </CollapsibleTrigger>
+        <InnerLine merge={props} />
+
       </>
     );
   },
