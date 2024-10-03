@@ -2,8 +2,8 @@ import { useColorMode } from '@docusaurus/theme-common';
 import React from 'react';
 
 const CardLinks = () => {
-  const { colorMode } = useColorMode();
 
+  const { colorMode } = useColorMode();
   return (
     <div
       style={{
