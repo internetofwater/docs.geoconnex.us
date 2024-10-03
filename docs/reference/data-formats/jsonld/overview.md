@@ -42,7 +42,6 @@ This document is located inside a `<script>` tag within a `<head>` or `<body>` s
 
 ```json
 <script type="application/ld+json">
-// !link[/"(http.*?)"/gm]
 {
   "@context": {
     "@vocab": "https://schema.org/",
