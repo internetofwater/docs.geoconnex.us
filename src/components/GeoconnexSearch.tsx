@@ -2,14 +2,24 @@ import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 import CodeBlock from '@theme/CodeBlock';
 
+
+const isValidURL = (string: string) => {
+  try {
+    new URL(string);
+    return true;
+  } catch (err) {
+    return false;
+  }
+};
+
 const GeoconnexSearch = () => {
   const [searchText, setSearchText] = useState('');
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [headers, setHeaders] = useState([]);
   const [error, setError] = useState('');
-  const [showEditor, setShowEditor] = useState(false); // State for toggling the editor
-  const [sparqlQuery, setSparqlQuery] = useState(''); // State to store the SPARQL query
+  const [showEditor, setShowEditor] = useState(false);
+  const [sparqlQuery, setSparqlQuery] = useState('');
 
   useEffect(() => {
     const updatedSparqlQuery = `PREFIX luc: <http://www.ontotext.com/connectors/lucene#>
@@ -26,8 +36,8 @@ SELECT DISTINCT ?uri ?name ?description ?dataset_url {
     OPTIONAL { ?uri <http://www.w3.org/2000/01/rdf-schema#label> ?label.}
     OPTIONAL { ?uri schema:subjectOf/schema:url ?dataset_url.}
 }
-LIMIT 100`;
-    setSparqlQuery(updatedSparqlQuery); // Update the SPARQL query whenever searchText changes
+LIMIT 50`;
+    setSparqlQuery(updatedSparqlQuery);
   }, [searchText]);
 
   const handleSubmit = (event) => {
@@ -37,18 +47,17 @@ LIMIT 100`;
 
   const graphCall = async (query) => {
     setLoading(true);
-    setError(''); // Clear previous errors
+    setError('');
 
     const url = new URL("https://graph.geoconnex.us/repositories/iow");
-    url.searchParams.append("query", sparqlQuery); // Use the updated SPARQL query
+    url.searchParams.append("query", sparqlQuery);
 
     try {
       const response = await fetch(url.toString());
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error(`Status code: ${response.status} - ${(await response.text()).toString()}`);
       }
       const responseText = await response.text();
-      console.log(responseText);
 
       const parsedData = Papa.parse(responseText, { header: true });
       setResults(parsedData.data);
@@ -57,23 +66,17 @@ LIMIT 100`;
       }
     } catch (error) {
       console.error('Error fetching data:', error);
-      setError('Failed to fetch data. Please try again.'); // Set error message
-      setResults([]); // Clear results
+      setError('Error fetching data: ' + error.message);
+      setResults([]);
     } finally {
       setLoading(false);
     }
   };
 
-  const isValidURL = (string) => {
-    try {
-      new URL(string);
-      return true;
-    } catch (err) {
-      return false;
-    }
+  const allUndefined = (result) => {
+    return headers.every(header => (result[header] === undefined || result[header] === null || result[header] === ''));
   };
-
-
+  
   return (
     <div style={{ width: '90%', margin: 'auto', padding: '20px' }}>
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px', display: 'flex', alignItems: 'center' }}>
@@ -83,10 +86,10 @@ LIMIT 100`;
           onChange={(e) => setSearchText(e.target.value)}
           placeholder="Enter the name of a feature of interest"
           style={{ 
-            flex: '1',  // Make the input take the available space
+            flex: '1',
             padding: '10px', 
             fontSize: '16px', 
-            marginRight: '10px',  // Add margin to the right of the input
+            marginRight: '10px',
             boxSizing: 'border-box', 
           }}
         />
@@ -104,7 +107,7 @@ LIMIT 100`;
         </button>
         <button 
           type="button" 
-          onClick={() => setShowEditor(!showEditor)} // Toggle editor visibility
+          onClick={() => setShowEditor(!showEditor)}
           style={{ 
             padding: '10px 20px',
             fontSize: '16px', 
@@ -122,9 +125,9 @@ LIMIT 100`;
       </form>
 
       {loading && <p>Loading...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>} {/* Display error message */}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      {showEditor && (  // Conditionally render the code block
+      {showEditor && (
         <CodeBlock language="sparql" style={{ marginBottom: '20px' }}>
           {sparqlQuery}
         </CodeBlock>
@@ -142,33 +145,35 @@ LIMIT 100`;
             </thead>
             <tbody>
               {results.map((result, index) => (
-                <tr key={index}>
-                  {headers.map((header, idx) => (
-                    <td key={idx} style={{ padding: '8px' }}>
-                      {header === 'description' ? (
-                        <span style={{ textDecoration: 'none' }}>
-                          {result[header] || 'N/A'}
-                        </span>
-                      ) : isValidURL(result[header]) ? (
-                        <a 
-                          style={{ 
-                            textDecoration: 'underline',
-                            color: 'inherit' // Inherit color instead of blue
-                          }}
-                          href={result[header]}
-                          target="_blank" // Open in a new tab
-                          rel="noopener noreferrer" // Security best practice
-                        >
-                          {result[header] || 'Name unavailable'}
-                        </a>
-                      ) : (
-                        <span style={{ textDecoration: 'none' }}>
-                          {result[header] || 'N/A'}
-                        </span>
-                      )}
-                    </td>
-                  ))}
-                </tr>
+                !allUndefined(result) && ( // Skip rendering row if all columns are N/A
+                  <tr key={index}>
+                    {headers.map((header, idx) => (
+                      <td key={idx} style={{ padding: '8px' }}>
+                        {header === 'description' ? (
+                          <span style={{ textDecoration: 'none' }}>
+                            {result[header] || 'N/A'}
+                          </span>
+                        ) : isValidURL(result[header]) ? (
+                          <a 
+                            style={{ 
+                              textDecoration: 'underline',
+                              color: 'inherit'
+                            }}
+                            href={result[header]}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {result[header] || 'N/A'}
+                          </a>
+                        ) : (
+                          <span style={{ textDecoration: 'none' }}>
+                            {result[header] || 'N/A'}
+                          </span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                )
               ))}
             </tbody>
           </table>
