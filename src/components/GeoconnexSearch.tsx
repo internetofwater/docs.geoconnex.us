@@ -18,13 +18,13 @@ PREFIX schema: <https://schema.org/>
 
 SELECT DISTINCT ?uri ?name ?description ?dataset_url {
   ?search a luc-index:combined_two ;
-      luc:query "${searchText}".
+      luc:query "${searchText}";
+      luc:entities ?uri.
     
     OPTIONAL { ?uri schema:name ?name. }
     OPTIONAL { ?uri schema:description ?description. }
     OPTIONAL { ?uri <http://www.w3.org/2000/01/rdf-schema#label> ?label.}
-    OPTIONAL { ?uri schema:subjectOf ?datasets.}
-    OPTIONAL { ?datasets schema:url ?dataset_url.}
+    OPTIONAL { ?uri schema:subjectOf/schema:url ?dataset_url.}
 }
 LIMIT 100`;
     setSparqlQuery(updatedSparqlQuery); // Update the SPARQL query whenever searchText changes
@@ -73,22 +73,6 @@ LIMIT 100`;
     }
   };
 
-  const cleanDescription = (name, description) => {
-    // in Geoconnex the description has the name in it, so we need to remove it
-    
-    if (!name || !description) return description; // Return the original description if name or description is missing
-    
-    const nameLower = name.toLowerCase();
-    const descriptionLower = description.toLowerCase();
-    
-    // Check if the description contains the name
-    if (descriptionLower.includes(nameLower)) {
-      // Remove the name from the description
-      return description.replace(new RegExp(name, 'i'), '').trim(); // Replace the name with an empty string and trim
-    }
-    
-    return description; // Return the original description if no duplicates found
-  };
 
   return (
     <div style={{ width: '90%', margin: 'auto', padding: '20px' }}>
@@ -163,7 +147,7 @@ LIMIT 100`;
                     <td key={idx} style={{ padding: '8px' }}>
                       {header === 'description' ? (
                         <span style={{ textDecoration: 'none' }}>
-                          {cleanDescription(result.name, result.description)}
+                          {result[header] || 'N/A'}
                         </span>
                       ) : isValidURL(result[header]) ? (
                         <a 
