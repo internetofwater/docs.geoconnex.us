@@ -6,6 +6,7 @@ import { collapse, collapseContent, collapseTrigger } from "./CodeHike/collapse"
 import { link } from "./CodeHike/link";
 import { mark } from "./CodeHike/mark";
 import { tokenTransitions } from "./CodeHike/token-transitions";
+import {focus } from "./CodeHike/focus";
 
 
 export function CustomCodeblock({ codeblock }: { codeblock: HighlightedCode }) {  
@@ -50,7 +51,7 @@ export function CustomCodeblock({ codeblock }: { codeblock: HighlightedCode }) {
 
       <Pre
         code={codeblock}
-        handlers={[callout, collapse, collapseTrigger, collapseContent, link, mark, tokenTransitions]}
+        handlers={[callout, collapse, collapseTrigger, collapseContent, link, mark, tokenTransitions, focus]}
         style={{
           position: "relative",
           padding: "1em",
