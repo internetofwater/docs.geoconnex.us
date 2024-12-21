@@ -1,0 +1,13 @@
+.hover-container {
+  position: relative;
+}
+
+.copy-button {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.copy-button.visible {
+  opacity: 1;
+}
+

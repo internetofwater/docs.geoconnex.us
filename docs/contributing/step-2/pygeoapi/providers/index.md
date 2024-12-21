@@ -33,7 +33,7 @@ After you have ingested your data into pygeoapi, you will need to [template it](
 
 ## Full example config for adding a new provider 
 
-```yml title="local.config.yml"
+```yml local.config.yml
 # We add our new collection into the resources block which should 
 # already exist in the default configuration file
 resources:

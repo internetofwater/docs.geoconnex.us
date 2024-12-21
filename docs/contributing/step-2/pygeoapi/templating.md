@@ -39,7 +39,7 @@ import TabItem from '@theme/TabItem';
     In this example we will be templating the data from https://labs.waterdata.usgs.gov/sta/v1.1/Things
 
 
-    ```yml title="local.config.yml"
+    ```yml local.config.yml
     # ... Rest of configuration file abbreviated for brevity
     USGS-LocationOriented/Things:
       type: collection
@@ -305,7 +305,7 @@ import TabItem from '@theme/TabItem';
   :::
 
 
-  ```json title="location-oriented.j2"
+  ```json location-oriented.j2
 {
     "@context": {
       "@vocab": "https://schema.org/", 
@@ -487,7 +487,7 @@ Once we have started to create our template, we need to apply it to the raw JSON
 To do this, add a `linked-data:` section to our pygeoapi config which links to the template we want to use when outputting our JSON-LD data for that particular collection.
 
 
-```yml title="local.config.yml"
+```yml local.config.yml
   # ... Rest of configuration file abbreviated for brevity
   USGS-LocationOriented/Things:
     type: collection
