@@ -31,6 +31,7 @@ export function CustomCodeblock({ codeblock }: { codeblock: HighlightedCode }) {
         width: "100%",
         borderRadius: "0.4em",
       }}
+      aria-label="Code block"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
