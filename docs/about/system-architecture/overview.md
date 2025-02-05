@@ -6,8 +6,6 @@ title: Overview
 
 # Overview of Geoconnex Architecture
 
-
-
 ## System Components within geoconnex.us
 
 The Geoconnex.us system includes multiple infrastructural components that are each necessary to achieve a robust, queryable, and stable knowledge graph for water data.

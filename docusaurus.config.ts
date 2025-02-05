@@ -107,14 +107,6 @@ const config: Config = {
           position: "left",
           label: "Best Practices & Data Standards",
         },
-
-
-        {
-          type: "docSidebar",
-          sidebarId: "SystemArchitectureSidebar",
-          position: "left",
-          label: "System Architecture",
-        },
         {
           type: "docSidebar",
           sidebarId: "PlaygroundSidebar",
