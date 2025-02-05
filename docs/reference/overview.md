@@ -15,7 +15,7 @@ Geoconnex development is guided by the [spatial data on the web best practices](
 
 ## Best Practices Links
 
-Throughout the Geoconnex you can find both descriptions of general best practices that guide Geoconnex development as well as their concrete implementation for how they are used in practice.
+Throughout the Geoconnex docs you can find both descriptions of general best practices that guide Geoconnex development as well as their concrete implementation for how they are used in practice.
 
 | Name     | Description                             | Best Practice Explanation     | Geoconnex Usage / Tutorials                          |
 |----------|-----------------------------------------|-----------------|-----------------------------------------|
