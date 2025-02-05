@@ -39,22 +39,30 @@ Geoconnex JSON-LD documents can have varying contexts. There are several vocabul
   }
 ```
 
-| Key                | Description                                                                                                                                                                                                                     |
-|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `@vocab`           | specifies [`schema`](https://schema.org/) as the default vocabulary from https://schema.org                                                                                                                                     |
-| `xsd`              | is a general web-enabled data types vocabulary (e.g., text vs number vs. datetime)                                                                                                                                             |
-| `rdfs`             | is a general vocabulary for basic relationships                                                                                                                                                                              |
-| `dc`               | is the [Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) vocabulary for general information metadata attributes                                                                                |
-| `dcat`             | is the [Data Catalog (DCAT) Vocabulary](https://www.w3.org/TR/vocab-dcat-3), a vocabulary for dataset metadata attributes                                                                                                    |
-| `freq`             | is the [Dublin Core Collection Frequency Vocabulary](https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/), a vocabulary for dataset temporal resolution and update frequency               |
-| `qudt-units`      | provides standard identifiers for units (e.g. [cubic feet per second](https://qudt.org/vocab/unit/FT3-PER-SEC))                                                                                                            |
-| `qudt-quantkinds` | provides ids for general phenomena (e.g. [Volume flow rate](https://qudt.org/vocab/quantitykind/VolumeFlowRate)) which may be measured in various units                                                                     |
-| `gsp`              | provides ids for spatial relationships (e.g. intersects)                                                                                                                                                                      |
-| `odm2var`          | is a supplement to `qudt-quantkinds`, and includes ids for many variables relevant to water science and management (e.g. [turbidity](http://vocabulary.odm2.org/variablename/turbidity/))                                     |
-| `odm2varType`      | is a supplement to `odm2var` that includes ids for large groupings of variables (e.g. [Water Quality](http://vocabulary.odm2.org/variabletype/WaterQuality/))                                                                    |
-| `hyf`              | provides ids for surface water hydrology concepts (e.g. [streams](https://defs.opengis.net/vocprez/object?uri=https%3A//www.opengis.net/def/schema/hy_features/hyf/HY_River))                                              |
-| `skos`             | provides general properties for relating different concepts (e.g. broader, [narrower,](https://www.w3.org/2009/08/skos-reference/skos.html#narrower) exact Match)                                                           |
-| `ssn`              | and `ssn-system` provide ids for aspects of observations and measurement (e.g. measurement methods)                                                                                                                           |
+#### Prefixes
+
+The following table describes the JSON-LD context [prefixes](https://www.w3.org/TR/json-ld11/#dfn-prefix)  above which serve as base vocabularies used in Geoconnex. A `curl` command line is also provided to fetch a server preferred content-negotiated representation of the machine-readable vocabulary for each prefix delivered as JSON-LD, RDF Turtle, or RDF/XML RDF formats.  The table also provides links  to a human readable html document of each respective vocabulary that can be viewed in a web browser. 
+
+
+| Prefix                | Description                                                                                                                                                                                                                     | Machine-Readable Content          | Documentation URL            |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|------------------------------|
+| `@vocab`           | Core vocabulary for general web resource descriptions (names descriptions URLs etc.)                                                                                                                                    | `curl -L -H "Accept: application/ld+json" https://schema.org/version/latest/schemaorg-current-https.jsonld` | https://schema.org/docs/schemas.html |
+| `xsd`              | XML Schema definitions for data types                                                                                                                                             | not available | https://www.w3.org/TR/xmlschema-11-2/ |
+| `rdfs`             | RDF Schema vocabulary for basic RDF concepts                                                                                                                                                                             | `curl -L -H "Accept: application/ld+json"  http://www.w3.org/2000/01/rdf-schema#` | https://www.w3.org/TR/rdf-schema/|
+| `dc`               | Dublin Core terms for metadata elements (temporal coverage conformance)                                                                              | `curl -L -H "Accept: text/turtle" http://purl.org/dc/terms/` | https://www.dublincore.org/specifications/dublin-core/dcmi-terms/ |
+| `dcat`             |Data Catalog vocabulary for dataset descriptions                                                                                                    | `curl -L -H "Accept: application/ld+json"  https://www.w3.org/ns/dcat#` | https://www.w3.org/TR/vocab-dcat-3/ |
+| `freq`             | Frequency codes for temporal patterns               | `curl -L -H "Accept: application/rdf+xml" http://purl.org/cld/freq/` | https://www.dublincore.org/specifications/dublin-core/collection-description/frequency/  |
+| `qudt`            | Quantities Units Dimensions and Types vocabulary | `curl -L -H "Accept: text/turtle" http://qudt.org/schema/qudt/` | https://qudt.org/doc/DOC_SCHEMA-QUDT.html |
+| `qudt-units`      | Standard units definitions  | `curl -L -H "Accept: text/turtle" http://qudt.org/vocab/unit/` | https://qudt.org/doc/DOC_VOCAB-UNITS.html |
+| `qudt-quantkinds` | Quantity kinds (types of measurements)                                                                    | `curl -L -H "Accept: text/turtle" http://qudt.org/vocab/quantitykind/` | https://qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html |
+| `gsp`              | GeoSPARQL vocabulary for spatial data representation                                                                                                                                                                      | `curl -L -H "Accept: text/turtle" http://www.opengis.net/ont/geosparql#` | https://opengeospatial.github.io/ogc-geosparql/geosparql11/geo.html |
+| `locType` | ODM2 vocabulary for site type classifications | `curl -L -H "application/rdf+xml" http://vocabulary.odm2.org/api/v1/sitetype/?format=skos` | http://vocabulary.odm2.org/sitetype/ |
+| `odm2var`          | ODM2 vocabulary for variable names                                     | `curl -L -H "application/rdf+xml" http://vocabulary.odm2.org/api/v1/variablename/?format=skos` |  http://vocabulary.odm2.org/variablename/ |
+| `odm2varType`      | ODM2 vocabulary for variable types                                                                    | `curl -L -H "application/rdf+xml" http://vocabulary.odm2.org/api/v1/variabletype/?format=skos` | http://vocabulary.odm2.org/variabletype/ |
+| `hyf`              | HY_Features model for hydrologic features                                             | `curl -L -H "text/turtle" https://www.opengis.net/def/schema/hy_features/hyf/` | https://docs.ogc.org/is/14-111r6/14-111r6.html |
+| `skos`             | Simple Knowledge Organization System for concept schemes                                                           | `curl -L -H  "Accept: application/rdf+xml" http://www.w3.org/2004/02/skos/core#` | https://www.w3.org/2009/08/skos-reference/skos.html |
+| `ssn`              | Semantic Sensor Network ontology                                                                                                                          | `curl -L  -H  "Accept: text/turtle" http://www.w3.org/ns/ssn/` | https://www.w3.org/TR/vocab-ssn/ |
+| `ssn-system` | Semantic Sensor Network system concepts | `curl -L  -H  "Accept: text/turtle" http://www.w3.org/ns/ssn/systems/` | https://www.w3.org/TR/vocab-ssn/#System-capabilities |
 
 ### Reference Features 
 
@@ -65,8 +73,6 @@ Embedding links to URIs of Reference Features are the best way to ensure that yo
 -   **Cataloging Features** which are larger area units that are commonly used to group and filter data, such as [HUCs](https://geoconnex.us/ref/hu04/0308)[^1], [states](https://geoconnex.us/ref/states/48)[^2], [counties](https://geoconnex.us/ref/counties/37003)[^3], PLSS grids, public agency operating districts, etc.
 
 [^1]: https://geoconnex.us/ref/hu04/0308
-
-[^2]: https://geoconnex.us/ref/states/48
 
 [^3]: https://geoconnex.us/ref/counties/37003
 
