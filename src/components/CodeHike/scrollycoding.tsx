@@ -10,7 +10,9 @@ import { HighlightedCode, Pre } from "codehike/code"
 import { tokenTransitions } from "./token-transitions"
 import { wordWrap } from "./word-wrap"
 import styles from "./scrollycoding.module.css"
-import React from "react"
+import React, { useState } from "react"
+import { mark } from "./mark"
+import CopyButton from "./copy"
 
 const Schema = Block.extend({
   steps: z.array(
@@ -47,15 +49,35 @@ export function Scrollycoding(props: unknown) {
 }
 
 function CodeSticker({ codeblock }: { codeblock: HighlightedCode }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
   return (
     <div className={styles.sticker}>
-      <div className={styles.stickyCode}>
+      <div className={styles.stickyCode} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} aria-label="Code block">
         <Pre
           code={codeblock}
-          handlers={[tokenTransitions, wordWrap]}
+          handlers={[tokenTransitions, wordWrap, mark]}
           style={{ minHeight: "40rem", backgroundColor: "transparent" }}
         />
+              <div
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          zIndex: 10,
+        }}
+      >
+        <CopyButton text={codeblock.code} hovered={isHovered}/>
       </div>
+      </div>
+
     </div>
   )
 }
