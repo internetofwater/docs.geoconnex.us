@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Overview
 ---
 
-# How to contribute to the [geoconnex.us](https://geoconnex.us) knowledge graph
+# How to contribute to the Geoconnex knowledge graph
 
 At a very high level, contributing to the geoconnex.us knowledge graph involves three steps:
 
@@ -30,12 +30,12 @@ Throughout these docs, for the sake of brevity, we will use the term "features" 
 
 ## About this tutorial
 
-This tutorial assumes that you would like to publish a dataset you have available that in some way represents geospatial locations that include data related to water.
 
-If you already publish some kind of website or data portal with feature-specific landing pages, then you only need to modify your landing pages to [include structure metadata formatted as JSON-LD](../reference/data-formats/jsonld/overview.md) and [mint persistent identifiers](../contributing/minting.md) for those pages. If your data is being published through a web accessible folder or API, then it may be relatively simple for you to create landing pages using your own web development tooling if you have not already done so. 
+- This tutorial assumes that you would like to publish a dataset you have available that in some way represents geospatial locations that include data related to water.
+- If you already publish some kind of website or data portal with feature-specific landing pages, then you only need to modify your landing pages to [include structure metadata formatted as JSON-LD](../reference/data-formats/jsonld/overview.md) and [mint persistent identifiers](../contributing/step-3/index.md) for those pages. 
+    - If your data is being published through a web accessible folder or API, then it may be relatively simple for you to create landing pages using your own web development tooling if you have not already done so. 
+- Otherwise, if you do not currently have a platform that publishes web content about individual features, or you do not have the resources or time to make one, we show how to use [pygeoapi](https://pygeoapi.io/) as a free and open-source option to so. 
 
-Otherwise, if you do not currently have a platform that publishes web content about individual features, or you do not have the resources or time to make one, we show how to use [pygeoapi](https://docs.geoconnex.us/quickstart/pygeoapi.html) as a free and open-source option to so. 
-
-## Licensing of geoconnex.us contributions.
+## Licensing of contributions
 
 The geoconnex.us project intends to be a public-domain registry of feature identifiers and reference information. The infrastructure used to host geoconnex.us is expected to be funded through an evolving funding source but the content of geoconnex.us is to stay dedicated to and owned by the community.
