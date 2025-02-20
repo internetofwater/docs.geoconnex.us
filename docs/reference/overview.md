@@ -21,8 +21,8 @@ Geoconnex development occurs on Github and all technical details or feedback on 
   }}
 >
   {[
-    { href: 'https://graph.geoconnex.us', text: '💬 Discuss an existing best practice' },
-    { href: 'https://geoconnex.us/iow/map', text: '➕ Propose a new best practice' }
+    { href: 'https://github.com/internetofwater/geoconnex.us/issues/new?template=best-practice-issue.md', text: '💬 Feedback on an existing best practice' },
+    { href: 'https://github.com/internetofwater/geoconnex.us/issues/new?template=best-practice-proposal.md', text: '➕ Proposal for a new best practice' }
   ].map(({ href, text }) => (
     <a
       key={href}
