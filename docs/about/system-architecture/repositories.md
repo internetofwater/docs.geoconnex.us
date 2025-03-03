@@ -1,4 +1,4 @@
-# Geoconnex Repositories
+# Code Repositories
 
 
 ## Software, infrastrucure, and documentation
@@ -13,7 +13,7 @@
 | [docs.geoconnex.us](https://github.com/internetofwater/docs.geoconnex.us) | Developing best practices and guidance for data publishers |
 | [reference.geoconnex.us](https://github.com/internetofwater/reference.geoconnex.us) | Community reference features using OGC API Features |
 
-![image](https://github.com/internetofwater/about.geoconnex.us/assets/40066515/2a035f72-2c8f-4875-bdb3-edf739cbcbec)
+![a diagram of all Geoconnex repositories and how they relate to each other](https://github.com/internetofwater/about.geoconnex.us/assets/40066515/2a035f72-2c8f-4875-bdb3-edf739cbcbec)
 
 
 
