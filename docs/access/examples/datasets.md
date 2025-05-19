@@ -76,8 +76,6 @@ df_datasets.head(5) # Display the first 5 rows
 
 For those who wish to make SPARQL queries directly, the endpoint is https://graph.geoconnex.us.
 
-The Geoconnex graph database provides a RDF4J API that is documented [here](https://graph.geoconnex.us/webapi). With this API, you can run sparql queries from any client that can send HTTP requests.
-
 For example, one can query the graph for all datasets `schema:about` monitoring locations that are on (`<hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement>`) the Animas River, that have a value for the `schema:variableMeasured` that includes the string "temperature".
 
 <Tabs groupId="lang">
