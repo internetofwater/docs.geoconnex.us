@@ -1,6 +1,5 @@
 ---
-title: "Step 3: Submitting references to your data"
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 # Mint Persistent Identifiers
@@ -10,7 +9,7 @@ Geoconnex requires a persistent identifier to refer to your data. That way, if t
 
 :::tip
 
-View the [CSV formatting reference](../../reference/data-formats/csv-submissions/) for best practices on how to format your CSV and the difference between 1:1 and 1:N regex redirects.
+View the [CSV formatting reference](./csv-submissions.md) for best practices on how to format your CSV and the difference between 1:1 and 1:N regex redirects.
 
 :::
 

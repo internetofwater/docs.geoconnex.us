@@ -14,7 +14,4 @@ sidebar_position: 6
 - [Roundtable presentation including geoconnex.us](https://www.westernstateswater.org/wp-content/uploads/2020/06/CO_Roundable_IoW.pdf)
 -  [Second Environmental Linked Features Interoperability Experiment](https://github.com/opengeospatial/SELFIE)
 - [ESIP Sessions on Structured Data in the Web](https://2020esipsummermeeting.sched.com/event/cIvv/structured-data-on-the-web-putting-best-practice-to-work) 
-    - [(_slides_)](https://docs.google.com/presentation/d/1LSXHz2_Y7hrkGZPC_sNoJWl8AIujI8AAWktl9amIR4E/edit#slide=id.g8250495469_1_30)
-
-## Walkthroughs 
-- [https://geoconnex.internetofwater.dev/demo/](https://geoconnex.internetofwater.dev/demo/)
+    - [slides](https://docs.google.com/presentation/d/1LSXHz2_Y7hrkGZPC_sNoJWl8AIujI8AAWktl9amIR4E/edit#slide=id.g8250495469_1_30)

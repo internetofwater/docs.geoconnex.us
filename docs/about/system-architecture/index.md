@@ -6,8 +6,6 @@ title: Overview
 
 # Overview of Geoconnex Architecture
 
-
-
 ## System Components within geoconnex.us
 
 The Geoconnex.us system includes multiple infrastructural components that are each necessary to achieve a robust, queryable, and stable knowledge graph for water data.
@@ -19,7 +17,6 @@ The Geoconnex.us system includes multiple infrastructural components that are ea
 
 ## Populating the Graph
 
-The Geoconnex knowledge graph is populated by the following process:
 
 1. An organization creates an endpoint for their water data and associates a list of persistent identifiers with their endpoints
 2. The organization submits a pull request or submits the form at [register.geoconnex.us](https://register.geoconnex.us/) to upload their data
@@ -28,4 +25,4 @@ The Geoconnex knowledge graph is populated by the following process:
 5. The Geoconnex crawler populates the Geoconnex graph database
 
 ## A Visual Representation of the Geoconnex Architecture
-![architecture diagram](./assets/bigpicture.png)
+![architecture diagram of the Geoconnex technical architecture showing the relationship of the reference features to the persistent identifiers and harvester](./assets/bigpicture.png)

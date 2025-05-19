@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Identifying features and their spatial geometry
 
-The Geoconnex Reference Feature server is a source for identifiers and geometries for real-world features that many organizations may collect and publish data about. The attributes of these features vary, but all include a "uri" which serves as a [persistent identifer](/contributing/minting). First, let's discover what kinds of features are available:
+The Geoconnex Reference Feature server is a source for identifiers and geometries for real-world features that many organizations may collect and publish data about. The attributes of these features vary, but all include a "uri" which serves as a [persistent identifer](../../../contributing/step-1/index.md). First, let's discover what kinds of features are available:
 
 
 <Tabs groupId="lang">
