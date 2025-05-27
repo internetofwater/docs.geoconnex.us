@@ -111,12 +111,6 @@ const config: Config = {
 
         {
           type: "docSidebar",
-          sidebarId: "SystemArchitectureSidebar",
-          position: "left",
-          label: "System Architecture",
-        },
-        {
-          type: "docSidebar",
           sidebarId: "PlaygroundSidebar",
           position: "left",
           label: "Playgrounds",
