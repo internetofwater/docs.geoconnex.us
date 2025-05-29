@@ -1,7 +1,7 @@
 # Code Repositories
 
 
-## Software, infrastrucure, and documentation
+## Software, infrastructure, and documentation
 
 | Repo name| Description |
 |-------------|-------------|
@@ -23,3 +23,4 @@
 |-----------|-------------|
 | [internetofwater/ref_gages](https://github.com/internetofwater/ref_gages) | Developing the reference gages dataset available at https://reference.geoconnex.us/collections/gages |
 | [internetofwater/ref_dams](https://github.com/internetofwater/ref_dams) | Developing the reference gages dataset available at https://reference.geoconnex.us/collections/dams |
+

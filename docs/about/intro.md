@@ -24,27 +24,10 @@ The development of geoconnex.us takes place on GitHub. See [here](./system-archi
 
 ![Fundamentals Diagram](../../static/fundamentals.png)
 
-{/*
-<!-- # Introduction
+## How the Graph is Populated
 
-
-
-
-## Basic Information Model 
-
-The model used to organize information in the Geoconnex system is shown in @fig-info-model.
-
-![Basic information model for resources in geoconnex](images/screenshot.png){#fig-info-model}
-
--   **Data providers** refer to specific systems that publish water-related **datasets** on the web. Many times a provider will simply be the data dissemination arm of an organization, such as the [Reclamation Information Sharing Environment (RISE)](https://data.usbr.gov) of the US Bureau of Reclamation. Some organizations may have multiple data providers, such as US Geological Survey, which administers the [National Water Information System](https://waterdata.usgs.gov) as well as the [National Groundwater Monitoring Network](https://cida.usgs.gov/ngwmn/), among others. Some data providers are aggregators of other organizations' data, such as the [Hydrologic Information System](https://data.cuahsi.org) of CUAHSI.
-
--   **Datasets** refer to specific collections of data that are published by data providers. In the context of Geoconnex, a single dataset generally refers to one that is collected from, or summarizable to, a specific spatial **location** on earth, as part of a specific activity. For example, a dataset would be the stage, discharge and water quality sensor data coming from a single stream gage, but not the collection of all stream gage readings from all stream gages operated by a given organization. A dataset could also be the time-series of a statistical summary of water use at the county level.
-
--   **Locations** are specific locations on earth that datasets are collected from or about, such as stream gages, groundwater wells, and dams. In the case of data that is reported at a summary unit such as a state, county, or hydrologic unit code (HUC), these can also be considered Locations. Conceptually, multiple datasets from multiple providers can be about the same Location, as might occur when a USGS streamgage and a state DEQ water quality sampling site are both located at a specific bridge.
-
--   **Hydrologic features** are elements of the water system that are related to locations. For example, a point may be on a river, which is within a watershed, and whose flow influences an aquifer. Each of these are distinct, identifiable features which many Locations are hydrologically related to, and which a user of a given dataset might also want to use.
-
--   **Cataloging features** are areas on earth that commonly group datasets. They are a superset of summary features such as HUCs, counties and states. For example, a state-level dataset summarizing average annual surface water availability would not have states as a cataloging feature. However, streamgage is within a state, county, HUC, congressional district, etc and may be tagged with these features in metadata, and thus be filtered alongside other streamgages within the same state.
-
-This Geoconnex guidance concerns how to explicitly publish metadata that describes Datasets how they are related to each of the other elements of the information model. -->
-*/}
+1. An partner organization creates an endpoint for their water data and associates a list of persistent identifiers with their endpoints
+2. The organization submits a pull request or submits the form at [register.geoconnex.us](https://register.geoconnex.us/) to upload their data
+3. The Geoconnex harvester finds the endpoints via their published PIDs and downloads the JSON-LD for each endpoint
+4. Using the JSON-LD data, the Geoconnex crawler produces [semantic triples](https://en.wikipedia.org/wiki/Semantic_triple) in the [PROV Ontology](https://www.w3.org/TR/prov-o/) 
+5. The Geoconnex crawler populates the Geoconnex graph database
