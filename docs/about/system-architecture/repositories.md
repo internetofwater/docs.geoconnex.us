@@ -1,7 +1,7 @@
-# Geoconnex Repositories
+# Code Repositories
 
 
-## Software, infrastrucure, and documentation
+## Software, infrastructure, and documentation
 
 | Repo name| Description |
 |-------------|-------------|
@@ -13,7 +13,7 @@
 | [docs.geoconnex.us](https://github.com/internetofwater/docs.geoconnex.us) | Developing best practices and guidance for data publishers |
 | [reference.geoconnex.us](https://github.com/internetofwater/reference.geoconnex.us) | Community reference features using OGC API Features |
 
-![image](https://github.com/internetofwater/about.geoconnex.us/assets/40066515/2a035f72-2c8f-4875-bdb3-edf739cbcbec)
+![a diagram of all Geoconnex repositories and how they relate to each other](https://github.com/internetofwater/about.geoconnex.us/assets/40066515/2a035f72-2c8f-4875-bdb3-edf739cbcbec)
 
 
 
@@ -23,3 +23,4 @@
 |-----------|-------------|
 | [internetofwater/ref_gages](https://github.com/internetofwater/ref_gages) | Developing the reference gages dataset available at https://reference.geoconnex.us/collections/gages |
 | [internetofwater/ref_dams](https://github.com/internetofwater/ref_dams) | Developing the reference gages dataset available at https://reference.geoconnex.us/collections/dams |
+

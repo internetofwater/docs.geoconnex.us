@@ -42,7 +42,7 @@ EOM
 ENCODED_QUERY=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$SPARQL_QUERY'''))")
 
 # Define the endpoint URL
-ENDPOINT="https://graph.geoconnex.us/repositories/iow?query=$ENCODED_QUERY"
+ENDPOINT="https://graph.geoconnex.us?query=$ENCODED_QUERY"
 
 # Send the query as a GET request by using URL parameters and encoding the query
 curl -X GET --header 'Accept: application/sparql-results+json' "$ENDPOINT"
