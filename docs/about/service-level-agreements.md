@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Service Level Agreements
+# Service Level Expectations
 
 Based on research by the Geoconnex team and input from the Geoconnex working group, these expectations are intended to inform participating data providers and end‐users, and help ensure that the publicly available infrastructure meets the needs of the water data community. In a final implementation these targets may be refined based on community feedback and operational experience. These expectations are currently met although maintaining them under current loads is a different question than under loads of widescale use.
 
@@ -46,7 +46,7 @@ The Geoconnex knowledge graph is implemented using an RDF triple store (currentl
 **For data users**:
 
 - The SPARQL endpoint should have 99% uptime.
-- There is no explicit query latency threshold for the service level agreement, since latency depends mainly upon query complexity.
+- There is no explicit query latency threshold for the service level expectation, since latency depends mainly upon query complexity.
 - Syntactically correct SPARQL queries should execute successfully.
 
 ---
@@ -67,7 +67,7 @@ In addition to the SPARQL endpoint, Geoconnex also provides a text-based search 
 Geoconnex aims to provide bulk downloads of the entire knowledge graph to allow partners to self-host or explore the graph in alternative ways.
 
 **For data users**:
-- Bulk downloads of the entire Geoconnex graph should be available for download from [Zenodo](https://zenodo.org/) and thus there is no explicit SLA metric for this capability.
+- Bulk downloads of the entire Geoconnex graph should be available for download from [Zenodo](https://zenodo.org/) and thus there is no explicit service level expectation metric for this capability.
 
 ---
 
