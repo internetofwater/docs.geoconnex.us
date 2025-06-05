@@ -37,7 +37,6 @@ const Playground = () => {
     "// Here is where the jinja template will \n// be applied and resulting JSON-LD will \n// be displayed"
   );
   const [error, setError] = useState("");
-  const [sidebarVisible, setSidebarVisible] = useState(true);
   const [resultEditorVisible, setResultEditorVisible] = useState(true);
   const [rawEditorVisible, setRawEditorVisible] = useState(true);
   const [templateEditorVisible, setTemplateEditorVisible] = useState(true);
@@ -122,23 +121,10 @@ const Playground = () => {
     }
   };
 
-  useEffect(() => {
-    const asides = document.querySelectorAll("aside");
-    asides.forEach((aside) => {
-      aside.style.display = sidebarVisible ? "block" : "none";
-    });
-    return () => {
-      asides.forEach((aside) => {
-        aside.style.display = "";
-      });
-    };
-  }, [sidebarVisible]);
-
   const containerStyle = {
     display: "flex",
     flexDirection: "column",
     height: "80vh",
-    width: sidebarVisible ? "70vw" : "90vw",
     overflow: "hidden",
   };
 
@@ -188,21 +174,6 @@ const Playground = () => {
     <>
       <div style={headerStyle}>
         <div>
-          <button
-            style={buttonStyle}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.backgroundColor =
-                buttonHoverStyle.backgroundColor)
-            }
-            onMouseOut={(e) =>
-              (e.currentTarget.style.backgroundColor =
-                buttonStyle.backgroundColor)
-            }
-            onClick={() => setSidebarVisible(!sidebarVisible)}
-          >
-            <FontAwesomeIcon icon={faArrowsAltH} />
-            {sidebarVisible ? " Maximize Width" : " Normal Width"}
-          </button>
           <select
             style={{ margin: "0 1rem" }}
             onChange={handleExampleChange}

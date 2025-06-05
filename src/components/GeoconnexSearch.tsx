@@ -49,7 +49,7 @@ LIMIT 50`;
     setLoading(true);
     setError('');
 
-    const url = new URL("https://graph.geoconnex.us/repositories/iow");
+    const url = new URL("https://graph.geoconnex.us");
     url.searchParams.append("query", sparqlQuery);
 
     try {
