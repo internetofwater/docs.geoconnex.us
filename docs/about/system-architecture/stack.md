@@ -4,6 +4,13 @@ sidebar_position: 1
 
 # Software Stack
 
+The Geoconnex.us system includes multiple infrastructural components that are each necessary to achieve a robust, queryable, and stable knowledge graph for water data.
+
+- The [Persistent Identifier Registry](https://github.com/internetofwater/pids.geoconnex.us) helps data publishers mint persistent identifiers and create a system that is stable, even if the underlying resources change
+- The [Sitemap of all identifiers](http://pids.geoconnex.us/sitemap.xml) allows a crawler to easily traverse all websites in the network
+- The [Crawler](https://github.com/internetofwater/scheduler) collects structured data so that it can be exported as knowledge graph triplets
+- The [Knowledge Graph](/playground/sparql) allows data users to interact with linked data through a search interfaces
+
 ![a visual architecture diagram of the Geoconnex system](./assets/bigpicture.png)
 
 ## Harvesting Details 
