@@ -30,8 +30,8 @@ const CardLinks = () => {
         }}
       >
         <img
-          src="/graphdb.png"
-          alt="Query the graph database"
+          src="/sparql.png"
+          title="A code editor showing a SPARQL query"
           style={{
             width: '100%',
             borderRadius: '8px'
