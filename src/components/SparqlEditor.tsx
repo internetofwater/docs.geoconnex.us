@@ -10,11 +10,14 @@ const SparqlEditor = () => {
   return (
     <>
       <style>
+        {/* remove the sparql buttons that link to examples 
+        or other utilities that we don't support at the moment */}
         {`
           #status-link,
           #sparql-add-prefixes-btn,
           #sparql-save-example-btn,
           #sparql-clear-cache-btn,
+          #sparql-toggle-examples-btn,
           #sparql-cls-overview-btn {
             display: none !important;
           }
