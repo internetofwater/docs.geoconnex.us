@@ -267,15 +267,8 @@ curl -X POST --header 'Accept: application/sparql-results+json' --header 'Conten
 </TabItem>
 
   <TabItem value="editor" label="Graphically">
-  The Geoconnex graph's website contains a sparql editor. The autocomplete functionality and GUI may make it faster to iterate if you are primarily focused on downloading specific datasets.     
 
-  Navigate to the [Sparql Editor](https://graph.geoconnex.us/sparql) on the sidebar.
-   [![sparql editor](./assets/sparql.png)](https://graph.geoconnex.us/sparql)
-
-Paste your query and click "run".
-Results are then output as a table that can be exported in a variety of formats such as CSV or JSON.
-
-![sparql editor](./assets/editor.png)
+  Since [graph.geoconnex.us](graph.geoconnex.us) is a public SPARQL endpoint, it can be used with a variety of SPARQL editors. One such example is included in the playground section of the docs, titled [SPARQL Query Builder](/playground/sparql).
 </TabItem>
 
 </Tabs>
