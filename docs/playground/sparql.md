@@ -2,7 +2,14 @@
 sidebar_position: 2
 title: "SPARQL Query Builder"
 hide_title: true
+hide_table_of_contents: true
 ---
+
+<!-- this is hacky fix to allow for full width https://stackoverflow.com/questions/74666779/override-max-width-of-specific-docs-not-all-docs -->
+<head>
+  <html class="fullWidthContent">
+  </html>
+</head>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
