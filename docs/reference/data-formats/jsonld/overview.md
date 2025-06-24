@@ -3,7 +3,7 @@ sidebar_position: 1
 title: General Overview
 ---
 
-# JSON-LD Primer
+# JSON-LD Overview
 
 JSON-LD is a version of JSON, the popular data exchange format used by web APIs, used to express linked data.
 

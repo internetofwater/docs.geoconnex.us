@@ -1,12 +1,12 @@
 ---
-title: Proper CSV Formatting for Geoconnex
+title: Proper CSV Formatting
 ---
 
 # Proper CSV Formatting for Geoconnex
 
 :::note
 
-For a tutorial on how to submit your CSV data see [the contribution tutorial](../../../contributing/minting.md)
+For the instructions on how to submit your CSV data see [the contribution tutorial](./index.md)
 
 :::
 

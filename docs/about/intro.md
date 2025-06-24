@@ -13,9 +13,13 @@ The Geoconnex knowledge graph is located at [https://graph.geoconnex.us](https:/
 1. Indexing and discovering models and research from public sector, private sector, or academic projects about a particular place or environmental feature.  
 2. Building a federated multi-organization monitoring network in which all member-systems reference common monitored features and are discoverable through a community index.
 
-See [https://geoconnex.us/demo](https://geoconnex.us/demo) for a mockup of data discovery and access workflows that https://geoconnex.us aspires to enable. 
+:::tip 
 
-The development of geoconnex.us takes place on GitHub. See [here](https://github.com/internetofwater/about.geoconnex.us) for the system of repositories.
+See the [access data section](../access/overview.md) for a mockup of data discovery and access workflows that Geoconnex enables.
+
+:::
+
+The development of geoconnex.us takes place on GitHub. See [here](./technical-architecture.md) for the system of repositories.
 
 
 ![Fundamentals Diagram](../../static/fundamentals.png)

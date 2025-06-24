@@ -107,8 +107,6 @@ const config: Config = {
           position: "left",
           label: "Best Practices & Data Standards",
         },
-
-
         {
           type: "docSidebar",
           sidebarId: "PlaygroundSidebar",
