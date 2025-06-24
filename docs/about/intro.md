@@ -15,7 +15,7 @@ The Geoconnex knowledge graph is located at [https://graph.geoconnex.us](https:/
 
 :::tip 
 
-See the [access data section](../access/overview.md) for a mockup of data discovery and access workflows that Geoconnex enables.
+See the [access data section](../access/overview.md) for examples of the data discovery and access workflows that Geoconnex enables.
 
 :::
 

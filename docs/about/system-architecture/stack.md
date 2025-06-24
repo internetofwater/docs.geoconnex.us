@@ -8,7 +8,7 @@ The Geoconnex.us system includes multiple infrastructural components that are ea
 
 - The [Persistent Identifier Registry](https://github.com/internetofwater/pids.geoconnex.us) helps data publishers mint persistent identifiers and create a system that is stable, even if the underlying resources change
 - The [Sitemap of all identifiers](http://pids.geoconnex.us/sitemap.xml) allows a crawler to easily traverse all websites in the network
-- The [Crawler](https://github.com/internetofwater/scheduler) collects structured data so that it can be exported as knowledge graph triplets
+- The [Scheduler](https://github.com/internetofwater/scheduler) schedules crawls and collects structured data so that it can be exported as knowledge graph triplets
 - The [Knowledge Graph](/playground/sparql) allows data users to interact with linked data through a search interfaces
 
 ![a visual architecture diagram of the Geoconnex system](./assets/bigpicture.png)
