@@ -359,7 +359,7 @@ Full location-oriented JSON-LD output (Identifiers, Geometric References, and Da
         "encodingFormat": [
           "application/json"
         ],
-        "dc:conformsTo": "https://labs.waterdata.usgs.gov/docs/sensorthings/index.html 
+        "dc:conformsTo": "https://labs.waterdata.usgs.gov/docs/sensorthings/index.html"
       }
     ]
   }

@@ -19,7 +19,7 @@ See the [access data section](../access/overview.md) for a mockup of data discov
 
 :::
 
-The development of geoconnex.us takes place on GitHub. See [here](./system-architecture/repositories.md) for the system of repositories.
+The development of geoconnex.us takes place on GitHub. See [here](./technical-architecture.md) for the system of repositories.
 
 
 ![Fundamentals Diagram](../../static/fundamentals.png)

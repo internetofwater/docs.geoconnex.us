@@ -74,9 +74,7 @@ df_datasets.head(5) # Display the first 5 rows
 
 ### SPARQL
 
-For those who wish to make SPARQL queries directly, the endpoint is https://graph.geoconnex.us/repositories/iow.
-
-The Geoconnex graph database provides a RDF4J API that is documented [here](https://graph.geoconnex.us/webapi). With this API, you can run sparql queries from any client that can send HTTP requests.
+For those who wish to make SPARQL queries directly, the endpoint is https://graph.geoconnex.us.
 
 For example, one can query the graph for all datasets `schema:about` monitoring locations that are on (`<hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement>`) the Animas River, that have a value for the `schema:variableMeasured` that includes the string "temperature".
 
@@ -85,7 +83,7 @@ For example, one can query the graph for all datasets `schema:about` monitoring 
 
 ```r
 # SPARQL endpoint
-endpoint <- "https://graph.geoconnex.us/repositories/iow"
+endpoint <- "https://graph.geoconnex.us"
 # Revised SPARQL query
 query <- 'PREFIX schema: <https://schema.org/>
 PREFIX gsp: <http://www.opengis.net/ont/geosparql#>
@@ -148,7 +146,7 @@ import json
 import pandas as pd
 
 # SPARQL endpoint
-endpoint = "https://graph.geoconnex.us/repositories/iow"
+endpoint = "https://graph.geoconnex.us"
 
 # Revised SPARQL query
 query = """
@@ -257,7 +255,7 @@ EOM
 ENCODED_QUERY=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$SPARQL_QUERY'''))")
 
 # Define the endpoint URL
-ENDPOINT="https://graph.geoconnex.us/repositories/iow?query=$ENCODED_QUERY"
+ENDPOINT="https://graph.geoconnex.us?query=$ENCODED_QUERY"
 
 # Send the query as a GET request by using URL parameters and encoding the query
 curl -X GET --header 'Accept: application/sparql-results+json' "$ENDPOINT"
@@ -269,15 +267,8 @@ curl -X POST --header 'Accept: application/sparql-results+json' --header 'Conten
 </TabItem>
 
   <TabItem value="editor" label="Graphically">
-  The Geoconnex graph's website contains a sparql editor. The autocomplete functionality and GUI may make it faster to iterate if you are primarily focused on downloading specific datasets.     
 
-  Navigate to the [Sparql Editor](https://graph.geoconnex.us/sparql) on the sidebar.
-   [![sparql editor](./assets/sparql.png)](https://graph.geoconnex.us/sparql)
-
-Paste your query and click "run".
-Results are then output as a table that can be exported in a variety of formats such as CSV or JSON.
-
-![sparql editor](./assets/editor.png)
+  Since [graph.geoconnex.us](https://graph.geoconnex.us) is a public SPARQL endpoint, it can be used with a variety of SPARQL editors. One such example is included in the playground section of the docs, titled [SPARQL Query Builder](/playground/sparql).
 </TabItem>
 
 </Tabs>
