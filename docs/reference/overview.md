@@ -172,7 +172,3 @@ Throughout the Geoconnex docs you can find links to explanations of general best
 | **Follow open source development practices** | Engage with the community via GitHub                          | Adhere to open source practices as documented in the [Geoconnex repositories](../about/technical-architecture.md).                          | [Project repositories](../about/technical-architecture.md)                                                    |
 | **Contribute to documentation**              | Help improve guidance for the community                       | Participate in enhancing the [Documentation repository](https://github.com/internetofwater/docs.geoconnex.us) through feedback and updates. | [Submit feedback](https://github.com/internetofwater/geoconnex.us/issues/new?template=best-practice-issue.md) |
 | **Practice responsible data ethics**         | Handle spatial data ethically and respect privacy             | Follow [W3C responsible use guidance](https://www.w3.org/TR/sdw-bp/#interact-responsibly) to ensure ethical management of spatial data.     | TBD                                                                       |
-
----
-
-This updated registry incorporates inline citations (hyperlinks) directly into the table to provide immediate access to the relevant W3C, OGC, SELFIE, and other authoritative resources. Let me know if any further adjustments are needed!
