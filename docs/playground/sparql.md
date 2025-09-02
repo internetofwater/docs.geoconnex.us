@@ -31,10 +31,12 @@ import TabItem from '@theme/TabItem';
 
   <TabItem value="help" label="Help and Background Info">
     <div style={{fontSize: "1.5em", fontWeight: "bold", margin: "1em 0 0.5em 0"}}>
-      SPARQL Query Builder Overview
+      SPARQL Query Helper Overview
     </div>
 
     This page allows you to create SPARQL queries to fetch data from the Geoconnex graph database located at [graph.geoconnex.us](https://graph.geoconnex.us). Since the Geoconnex graph database has a public endpoint, you can use both this page or any HTTP client to fetch data.
+
+    If your query returns well-known-text (wkt) geometry, you can view it on a map by changing the output from `Table` to `Map` in the bottom left of the editor.
 
     For more detail about accessing data in Geoconnex, view the [access data](/access/overview) section generally and the [SPARQL section](/access/examples/datasets#sparql) in particular.
   </TabItem>
