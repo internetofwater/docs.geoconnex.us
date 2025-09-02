@@ -268,7 +268,7 @@ curl -X POST --header 'Accept: application/sparql-results+json' --header 'Conten
 
   <TabItem value="editor" label="Graphically">
 
-  Since [graph.geoconnex.us](https://graph.geoconnex.us) is a public SPARQL endpoint, it can be used with a variety of SPARQL editors. One such example is included in the playground section of the docs, titled [SPARQL Query Builder](/playground/sparql).
+  Since [graph.geoconnex.us](https://graph.geoconnex.us) is a public SPARQL endpoint, it can be used with a variety of SPARQL editors. One such example is included in the playground section of the docs, titled [SPARQL Query Helper](/playground/sparql).
 </TabItem>
 
 </Tabs>
