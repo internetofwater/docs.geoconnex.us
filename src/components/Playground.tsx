@@ -114,7 +114,7 @@ const Playground = () => {
     const selectedOption = event.target.value;
     if (selectedOption === "location") {
       const location_oriented_template = await fetch(
-        "https://raw.githubusercontent.com/cgs-earth/sta-pygeoapi/main/templates/usgs-location-oriented.j2"
+        "https://raw.githubusercontent.com/cgs-earth/sta-pygeoapi/refs/heads/main/templates/jsonld/USGS_Things/collections/items/item.jsonld"
       );
       setTemplate(await location_oriented_template.text());
       setRaw(JSON.stringify(location_oriented, null, 2));
