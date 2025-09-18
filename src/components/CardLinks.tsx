@@ -39,7 +39,7 @@ const CardLinks = () => {
         />
         <div style={{ marginTop: '12px' }}>
           <a
-            href="https://graph.geoconnex.us"
+            href="/playground/sparql"
             style={{
               display: 'inline-block',
               padding: '4px 8px',
