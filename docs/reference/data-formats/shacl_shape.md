@@ -13,4 +13,4 @@ This shape is in active development and may be updated in the future.
 :::
 
 
-<ShaclShape url="https://raw.githubusercontent.com/internetofwater/nabu/refs/heads/main/shacl_validator/shapes/locationOriented.ttl" />
+<ShaclShape url="https://raw.githubusercontent.com/internetofwater/nabu/refs/heads/main/shacl_validator/shapes/geoconnex.ttl" />
