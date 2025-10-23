@@ -1,0 +1,16 @@
+{
+  "name": "wasm_exportable_lib",
+  "type": "module",
+  "description": "Library code that can be built as WASM for browser use",
+  "version": "0.1.0",
+  "files": [
+    "wasm_exportable_lib_bg.wasm",
+    "wasm_exportable_lib.js",
+    "wasm_exportable_lib.d.ts"
+  ],
+  "main": "wasm_exportable_lib.js",
+  "types": "wasm_exportable_lib.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

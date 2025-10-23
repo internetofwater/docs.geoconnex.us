@@ -23,13 +23,20 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mdx-js/react": "^3.0.0",
     "@monaco-editor/react": "^4.6.0",
+    "@rdfjs/fetch": "^3.1.1",
     "@sib-swiss/sparql-editor": "^0.2.11",
     "@tippyjs/react": "^4.2.6",
+    "@zazuko/env": "^3.0.1",
     "clsx": "^2.0.0",
+    "jsonld": "^8.3.3",
     "papaparse": "^5.4.1",
     "prism-react-renderer": "^2.3.0",
+    "rdf-validate-shacl": "^0.6.5",
+    "rdflib": "^2.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "shacl-js": "^0.0.1",
+    "stream-browserify": "^3.0.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.5.2",
