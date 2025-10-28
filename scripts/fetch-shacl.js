@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const fetch = require("node-fetch");
 
 // this script fetches the SHACL shape from the internet and saves it to a local file
 // so that it can be included statically in the docs but always be up-to-date

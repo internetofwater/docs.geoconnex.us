@@ -13,31 +13,90 @@ hide_table_of_contents: true
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { useState } from 'react';
 
-<Tabs>
-  <TabItem value="search" label="Search" default>
-    <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "1em"}}>
-      <h1>Geoconnex SPARQL Query Helper</h1>
-    </div>
+export default function SPARQLQueryHelper() {
+  const [loading, setLoading] = useState(true);
 
-    <div style={{width: "100%", height: "80vh", border: "none"}}>
-      <iframe
-        src="https://sparql-ui-414886575015.us-central1.run.app/"
-        style={{width: "100%", height: "100%", border: "none"}}
-        title="SPARQL Query Builder"
-      />
-    </div>
-  </TabItem>
+  const spinnerOverlayStyle = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "30%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "rgba(255, 255, 255, 0.8)",
+    zIndex: 10,
+  };
 
-  <TabItem value="help" label="Help and Background Info">
-    <div style={{fontSize: "1.5em", fontWeight: "bold", margin: "1em 0 0.5em 0"}}>
-      SPARQL Query Helper Overview
-    </div>
+  const spinnerStyle = {
+    border: "6px solid #f3f3f3",
+    borderTop: "6px solid #3498db",
+    borderRadius: "50%",
+    width: "40px",
+    height: "40px",
+    animation: "spin 1s linear infinite",
+  };
 
-    This page allows you to create SPARQL queries to fetch data from the Geoconnex graph database located at [graph.geoconnex.us](https://graph.geoconnex.us). Since the Geoconnex graph database has a public endpoint, you can use both this page or any HTTP client to fetch data.
+  const iframeContainerStyle = {
+    position: "relative",
+    width: "100%",
+    height: "80vh",
+  };
 
-    If your query returns well-known-text (wkt) geometry, you can view it on a map by changing the output from `Table` to `Map` in the bottom left of the editor.
+  const iframeStyle = {
+    border: "none",
+    width: "100%",
+    height: "100%",
+    display: "block",
+  };
 
-    For more detail about accessing data in Geoconnex, view the [access data](/access/overview) section generally and the [SPARQL section](/access/examples/datasets#sparql) in particular.
-  </TabItem>
-</Tabs>
+  // Inject the keyframes animation dynamically
+  if (typeof document !== "undefined" && !document.getElementById("spinner-style")) {
+    const style = document.createElement("style");
+    style.id = "spinner-style";
+    style.innerHTML = `
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  return (
+    <Tabs>
+      <TabItem value="search" label="Search" default>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "1em" }}>
+          <h1>Geoconnex SPARQL Query Helper</h1>
+        </div>
+
+        <div style={iframeContainerStyle}>
+          {loading && (
+            <div style={spinnerOverlayStyle}>
+              <div style={spinnerStyle}></div>
+            </div>
+          )}
+          <iframe
+            src="https://sparql-ui-414886575015.us-central1.run.app/"
+            title="SPARQL Query Helper"
+            onLoad={() => setLoading(false)}
+            style={iframeStyle}
+          />
+        </div>
+      </TabItem>
+
+      <TabItem value="help" label="Help and Background Info">
+        <div style={{ fontSize: "1.5em", fontWeight: "bold", margin: "1em 0 0.5em 0" }}>
+          SPARQL Query Helper Overview
+        </div>
+        This page allows you to create SPARQL queries to fetch data from the <a href="https://graph.geoconnex.us">Geoconnex graph database</a>. Since the Geoconnex graph database has a public endpoint, you can use both this page or any HTTP client to fetch data.
+
+        If your query returns well-known-text (wkt) geometry, you can view it on a map by changing the output from <code>Table</code> to <code>Map</code> in the bottom left of the editor.
+
+        For more detail about accessing data in Geoconnex, view the <a href="/access/overview">access data</a> section generally and the <a href="/access/examples/datasets#sparql">SPARQL section</a> in particular.
+      </TabItem>
+    </Tabs>
+  );
+}
