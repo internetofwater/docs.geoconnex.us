@@ -1,38 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CodeBlock from "@theme/CodeBlock";
+// @ts-ignore ignore types since it is a special static import
+import shapeContent from "!!raw-loader!@site/static/shapes/geoconnex.ttl";
 
-const ShaclShape = ({ url }) => {
-  const [ttlContent, setTtlContent] = useState("");
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchShape = async () => {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const text = await response.text();
-        setTtlContent(text);
-      } catch (err) {
-        setError(err.message);
-      }
-    };
-
-    fetchShape();
-  }, [url]);
-
-  if (error) {
-    return (
-      <div style={{ color: "red" }}>Error loading SHACL shape: {error}</div>
-    );
-  }
-
-  if (!ttlContent) {
-    return <div>Loading SHACL shape...</div>;
-  }
-
-  return <CodeBlock className="language-turtle">{ttlContent}</CodeBlock>;
+// load a codeblock with the shacl shape; note that this is a special static import
+// that fetches the shape from the remote location at buildtime
+// it should be always up-to-date after a build; if the shape is updated, you
+// should rebuild 
+const ShaclShape = () => {
+  return <CodeBlock className="language-turtle">{shapeContent}</CodeBlock>;
 };
 
 export default ShaclShape;
