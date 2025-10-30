@@ -1,0 +1,96 @@
+{
+    "@context": [
+        {
+            "schema": "https://schema.org/",
+            "gsp": "http://www.opengis.net/ont/geosparql#"
+        }
+    ],
+    "@type": "schema:Place",
+    "id": 1000001,
+    "prev": "1000001",
+    "next": 1000002,
+    "fid": 1,
+    "uri": "https://geoconnex.us/ref/dams/1000001",
+    "schema:name": "Yonkipin Lake",
+    "description": "Reference feature for USACE National Inventory of Dams: OK10440",
+    "subjectof": "https://nid.sec.usace.army.mil#/dams/system/OK10440/summary",
+    "provider": "https://nid.usace.army.mil",
+    "provider_id": "OK10440",
+    "nhdpv2_comid": "https://geoconnex.us/nhdplusv2/comid/832952",
+    "nhdpv2_reachcode_uri": null,
+    "nhdpv2_reachcode": null,
+    "nhdpv2_reach_measure": null,
+    "drainage_area_sqkm": 0.00285216007570198,
+    "drainage_area_sqkm_nhdpv2": 22.0581,
+    "index_type": "nawqa_off_network_da_mismatch",
+    "mainstem_uri": null,
+    "feature_data_source": "https://doi.org/10.5066/P92S9ZX6",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -95.71632747020249,
+            36.21964114065486
+        ]
+    },
+    "gsp:hasGeometry": {
+        "@type": "http://www.opengis.net/ont/sf#Point",
+        "gsp:asWKT": {
+            "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "@value": "POINT (-95.71632747020249 36.21964114065486)"
+        }
+    },
+    "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:longitude": -95.71632747020249,
+        "schema:latitude": 36.21964114065486
+    },
+    "@id": "https://geoconnex.us/ref/dams/1000001",
+    "links": [
+        {
+            "type": "application/json",
+            "rel": "root",
+            "title": "The landing page of this server as JSON",
+            "href": "https://reference.geoconnex.us?f=json"
+        },
+        {
+            "type": "text/html",
+            "rel": "root",
+            "title": "The landing page of this server as HTML",
+            "href": "https://reference.geoconnex.us?f=html"
+        },
+        {
+            "rel": "alternate",
+            "type": "application/geo+json",
+            "title": "This document as JSON",
+            "href": "https://geoconnex.us/ref/dams/1000001?f=json"
+        },
+        {
+            "rel": "self",
+            "type": "application/ld+json",
+            "title": "This document as RDF (JSON-LD)",
+            "href": "https://geoconnex.us/ref/dams/1000001?f=jsonld"
+        },
+        {
+            "rel": "alternate",
+            "type": "text/html",
+            "title": "This document as HTML",
+            "href": "https://geoconnex.us/ref/dams/1000001?f=html"
+        },
+        {
+            "rel": "collection",
+            "type": "application/json",
+            "title": "Reference Dams",
+            "href": "https://reference.geoconnex.us/collections/dams"
+        },
+        {
+            "rel": "prev",
+            "type": "application/ld+json",
+            "href": "https://reference.geoconnex.us/collections/dams/items/1000001?f=jsonld"
+        },
+        {
+            "rel": "next",
+            "type": "application/ld+json",
+            "href": "https://reference.geoconnex.us/collections/dams/items/1000002?f=jsonld"
+        }
+    ]
+}
