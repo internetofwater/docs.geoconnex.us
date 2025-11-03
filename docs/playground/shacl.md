@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
-title: "RDF Schema Validation"
+sidebar_position: 3
+title: "JSON-LD SHACL Validation"
 hide_title: true
 hide_table_of_contents: true
 ---
@@ -25,13 +25,12 @@ import ShaclPlayground from '@site/src/components/ShaclPlayground';
 
   <TabItem value="help" label="Help and Background Info">
     <div style={{fontSize: "1.5em", fontWeight: "bold", margin: "1em 0 0.5em 0"}}>
-      SPARQL Query Helper Overview
+      Check conformance of your JSON-LD data against the Geoconnex SHACL shape
     </div>
+    This page allows you to validate arbitrary JSON-LD data against the Geoconnex SHACL shape. Paste your JSON-LD data into the left text box and click `Run SHACL Validation`. The results will be displayed in the validation report box below. 
 
-    This page allows you to create SPARQL queries to fetch data from the Geoconnex graph database located at [graph.geoconnex.us](https://graph.geoconnex.us). Since the Geoconnex graph database has a public endpoint, you can use both this page or any HTTP client to fetch data.
+    The backend service used for SHACL validation can also be used locally and pulled as a docker container. See the [nabu repo](https://github.com/internetofwater/nabu) for more information.
 
-    If your query returns well-known-text (wkt) geometry, you can view it on a map by changing the output from `Table` to `Map` in the bottom left of the editor.
-
-    For more detail about accessing data in Geoconnex, view the [access data](/access/overview) section generally and the [SPARQL section](/access/examples/datasets#sparql) in particular.
+    For more detail about SHACL, view the [SHACL documentation](/reference/data-formats/shacl_shape) section.  
   </TabItem>
 </Tabs>

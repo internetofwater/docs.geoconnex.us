@@ -12,8 +12,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import default_json from "./associated_assets/ref_dams.json";
 
-const VALIDATION_URL = "http://localhost:8000/validate";
-const SHAPE_URL = "http://localhost:8000/shape";
+const VALIDATION_URL =
+  "https://shacl-validation-grpc-server-414886575015.us-central1.run.app/validate";
+const SHAPE_URL =
+  "https://shacl-validation-grpc-server-414886575015.us-central1.run.app/shape";
 
 const MONACO_EDITOR_OPTIONS = {
   automaticLayout: true,
@@ -286,7 +288,7 @@ const ShaclPlayground = () => {
             {shapeVisible && (
               <div style={columnStyle}>
                 <h2 style={{ margin: "0 1rem", textAlign: "center" }}>
-                  SHACL Shape
+                  Geoconnex SHACL Shape
                 </h2>
                 <Editor
                   value={shape}
