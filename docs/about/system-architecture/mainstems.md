@@ -6,7 +6,7 @@ In order to accomplish this, Geoconnex uses the hydrological info from the [Nati
 
 :::note
 
-NHDPlus is distinct from NHDPlus HR which is a higher resolution dataset. The reference hydrofabric will eventually be updated to use NHDPlus HR, but is currently just using NHDPlus V2.1. 
+NHDPlus is distinct from NHDPlus HR which is a higher resolution dataset. The reference hydrofabric will eventually be updated to use NHDPlus HR, but is currently using NHDPlus V2.1. 
 
 :::
 
