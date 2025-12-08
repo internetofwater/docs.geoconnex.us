@@ -209,7 +209,7 @@ export default function MainstemsMap() {
           </div>
         ) : (
           <div>
-            <i>Click anywhere in the continuous US to load catchments. </i>
+            <i>Click anywhere in the contiguous US to load catchments. </i>
           </div>
         )}
 
