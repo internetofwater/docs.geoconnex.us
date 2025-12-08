@@ -33,7 +33,6 @@ export default function MainstemsMap() {
 
   const [loadingCatchments, setLoadingCatchments] = React.useState(false);
   const [loadingMainstem, setLoadingMainstem] = React.useState(false);
-  const [hasBeenZoomedOut, setHasBeenZoomedOut] = React.useState(false);
   const [currentMainstemUrl, setCurrentMainstemUrl] = React.useState<string>();
 
   const [selectedFeature, setSelectedFeature] = React.useState<{
@@ -137,11 +136,10 @@ export default function MainstemsMap() {
     const lat = event.lngLat.lat;
     const clickedFeatures = event.features;
 
-    // ---------- FEATURE CLICK ----------
     if (clickedFeatures && clickedFeatures.length > 0) {
       const f = clickedFeatures[0];
       const geoconnexUrl = f.properties?.geoconnex_url;
-      setCurrentMainstemUrl(geoconnexUrl);
+      
       setSelectedFeature({
         properties: f.properties,
         lngLat: { lng, lat },
@@ -149,18 +147,17 @@ export default function MainstemsMap() {
       });
 
       if (geoconnexUrl) {
-        await fetchMainstem(geoconnexUrl);
-        setActiveTab("mainstem");
-        setIsPanelMinimized(false);
-
-        // Zoom OUT only once (first time a mainstem is loaded)
-        if (!hasBeenZoomedOut) {
-          mapRef.current?.flyTo({
-            zoom: 6,
-            duration: 1000,
-          });
-          setHasBeenZoomedOut(true);
+        if (geoconnexUrl !== currentMainstemUrl) {
+          setActiveTab("mainstem");
         }
+        setCurrentMainstemUrl(geoconnexUrl);
+        await fetchMainstem(geoconnexUrl);
+        setIsPanelMinimized(false);
+      } else {
+        // No mainstem available for this catchment
+        setCurrentMainstemUrl(undefined);
+        setMainstemFeature(null);
+        setActiveTab("catchment");
       }
 
       return;
@@ -235,12 +232,16 @@ export default function MainstemsMap() {
         <div style={{ fontWeight: "700", marginBottom: 6 }}>
           US Catchments and Mainstems
         </div>
-        {features.features.length > 0 && (
+        {features.features.length > 0 ? (
           <div>
             Features loaded:{" "}
             <span style={{ fontWeight: 600 }}>{features.features.length}</span>
           </div>
-        )}
+        ):
+          <div>
+            <i>Click anywhere in the continental US to load catchments. </i>
+          </div>
+        }
 
         {loadingCatchments && (
           <div style={{ marginTop: 4 }}>Loading catchments…</div>
@@ -248,17 +249,25 @@ export default function MainstemsMap() {
         {loadingMainstem && (
           <div style={{ marginTop: 4 }}>Loading mainstem…</div>
         )}
-        {!loadingMainstem && mainstemFeature && (
+        {!loadingMainstem && selectedFeature && (
           <div style={{ marginTop: 4 }}>
-            Associated Mainstem:{" "}
-            <a
-              href={currentMainstemUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "underline", color: "inherit" }}
-            >
-              <i>{currentMainstemUrl}</i>
-            </a>
+            {mainstemFeature && currentMainstemUrl ? (
+              <>
+                Associated Mainstem:{" "}
+                <a
+                  href={currentMainstemUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "underline", color: "inherit" }}
+                >
+                  <i>{currentMainstemUrl}</i>
+                </a>
+              </>
+            ) : (
+              <span style={{ opacity: 0.85, fontStyle: "italic" }}>
+                No mainstem associated with this catchment
+              </span>
+            )}
           </div>
         )}
         {marker && (
@@ -427,11 +436,13 @@ export default function MainstemsMap() {
                 </div>
               )}
 
-              {activeTab === "mainstem" && mainstemFeature && (
+              {activeTab === "mainstem" && (
                 <div>
-                  <div style={{ fontWeight: 700, marginBottom: 6 }}>
-                    Properties of <b> {mainstemFeature.features[0].properties.name_at_outlet} </b>
-                  </div>
+                  {mainstemFeature ? (
+                    <>
+                      <div style={{ fontWeight: 700, marginBottom: 6 }}>
+                        Properties of <b> {mainstemFeature.features[0].properties.name_at_outlet} </b>
+                      </div>
                   <div style={{ lineHeight: 1.45 }}>
                     {Object.entries(getMainstemProperties()).map(([k, v]) => (
                       <div
@@ -477,6 +488,14 @@ export default function MainstemsMap() {
                       </div>
                     )}
                   </div>
+                    </>
+                  ) : (
+                    <div style={{ padding: "10px 0" }}>
+                      <div style={{ opacity: 0.85, fontStyle: "italic", textAlign: "center" }}>
+                        This catchment has no associated mainstem
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -582,5 +601,4 @@ export default function MainstemsMap() {
         `}
       </style>
     </div>
-  );
-}
+  )};

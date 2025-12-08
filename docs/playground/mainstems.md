@@ -25,6 +25,7 @@ import MainstemsMap from '@site/src/components/MainstemsMap';
 
   <TabItem value="help" label="Help and Background Info">
     <div style={{fontSize: "1.5em", fontWeight: "bold", margin: "1em 0 0.5em 0"}}>
+    
     </div>
   </TabItem>
 </Tabs>
