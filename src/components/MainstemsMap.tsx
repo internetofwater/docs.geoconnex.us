@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo, useCallback } from "react";
 import * as React from "react";
 import {
   Map,
@@ -7,16 +7,20 @@ import {
   Layer,
   Marker,
   MapRef,
+  MapSourceDataEvent,
 } from "@vis.gl/react-maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { deserialize } from "flatgeobuf/lib/mjs/geojson.js";
-import { Feature, FeatureCollection, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon } from "geojson";
+import { Feature, FeatureCollection, Polygon } from "geojson";
 
 const BBOX_SIZE = 0.1;
 
-
 // Bounding box around a point
-function getBoundingBox(lng: number, lat: number, size: number): FeatureCollection<Polygon> {
+function getBoundingBox(
+  lng: number,
+  lat: number,
+  size: number
+): FeatureCollection<Polygon> {
   const coords: [number, number][][] = [
     [
       [lng - size, lat - size],
@@ -27,7 +31,7 @@ function getBoundingBox(lng: number, lat: number, size: number): FeatureCollecti
     ],
   ];
   return {
-    type: "FeatureCollection" as const,
+    type: "FeatureCollection",
     features: [
       {
         type: "Feature",
@@ -39,44 +43,47 @@ function getBoundingBox(lng: number, lat: number, size: number): FeatureCollecti
       },
     ],
   };
-};
+}
 
 export default function MainstemsMap() {
   const mapRef = useRef<MapRef>(null);
+
+  const handleSourceData = useCallback((event: MapSourceDataEvent) => {
+    if (!event.isSourceLoaded && (event.sourceDataType == "content" || event.sourceDataType == "metadata")) {
+      setLoadingMainstem(true);
+    } else if (event.isSourceLoaded) {
+      setLoadingMainstem(false);
+    }
+  }, []);
 
   const [marker, setMarker] = useState<{
     longitude: number;
     latitude: number;
   } | null>(null);
-
   const [features, setFeatures] = useState<FeatureCollection>({
     type: "FeatureCollection",
     features: [],
   });
-
   const [bbox, setBbox] = useState<FeatureCollection<Polygon>>({
     type: "FeatureCollection",
     features: [],
   });
-
   const [loadingCatchments, setLoadingCatchments] = useState(false);
   const [loadingMainstem, setLoadingMainstem] = useState(false);
   const [currentMainstemUrl, setCurrentMainstemUrl] = useState<string>();
-
   const [selectedFeature, setSelectedFeature] = useState<{
     properties: any;
     lngLat: { lng: number; lat: number };
     id: string;
   } | null>(null);
-
-  const [mainstemFeature, setMainstemFeature] =
-    useState<FeatureCollection | null>(null);
-
   const [activeTab, setActiveTab] = useState<"catchment" | "mainstem">(
     "catchment"
   );
   const [isPanelMinimized, setIsPanelMinimized] = useState(false);
 
+  // Memoize GeoJSON sources
+  const memoizedFeatures = useMemo(() => features, [features]);
+  const memoizedBbox = useMemo(() => bbox, [bbox]);
 
   const fetchFlatGeobuf = async (lng: number, lat: number) => {
     setLoadingCatchments(true);
@@ -88,9 +95,7 @@ export default function MainstemsMap() {
 
       const url =
         "https://storage.googleapis.com/national-hydrologic-geospatial-fabric-reference-hydrofabric/reference_catchments_and_flowlines.fgb";
-
       const bboxRect = { minX, minY, maxX, maxY };
-
       const iter = deserialize(url, bboxRect);
 
       const loadedFeatures: Feature[] = [];
@@ -110,28 +115,15 @@ export default function MainstemsMap() {
   };
 
   const fetchMainstem = async (geoconnexUrl: string) => {
-    if (geoconnexUrl === currentMainstemUrl) {
-      return;
-    }
+    if (geoconnexUrl === currentMainstemUrl) return;
     setLoadingMainstem(true);
     try {
-      const response = await fetch(geoconnexUrl);
-      const data = await response.json();
-
-      if (data.type === "Feature") {
-        setMainstemFeature({
-          type: "FeatureCollection",
-          features: [data],
-        });
-      } else {
-        setMainstemFeature(data);
-      }
+      setCurrentMainstemUrl(geoconnexUrl);
     } catch (error) {
-      setCurrentMainstemUrl(null);
+      setCurrentMainstemUrl(undefined);
       console.error("Error fetching mainstem:", error);
-    } finally {
       setLoadingMainstem(false);
-    }
+    } 
   };
 
   const handleClick = async (event: MapLayerMouseEvent) => {
@@ -142,7 +134,7 @@ export default function MainstemsMap() {
     if (clickedFeatures && clickedFeatures.length > 0) {
       const f = clickedFeatures[0];
       const geoconnexUrl = f.properties?.geoconnex_url;
-      
+
       setSelectedFeature({
         properties: f.properties,
         lngLat: { lng, lat },
@@ -150,50 +142,25 @@ export default function MainstemsMap() {
       });
 
       if (geoconnexUrl) {
-        if (geoconnexUrl !== currentMainstemUrl) {
-          setActiveTab("mainstem");
-        }
-        setCurrentMainstemUrl(geoconnexUrl);
         await fetchMainstem(geoconnexUrl);
         setIsPanelMinimized(false);
       } else {
-        // No mainstem available for this catchment
         setCurrentMainstemUrl(undefined);
-        setMainstemFeature(null);
-        setActiveTab("catchment");
       }
 
       return;
     }
 
     setSelectedFeature(null);
-    setMainstemFeature(null);
     setCurrentMainstemUrl(undefined);
     setActiveTab("catchment");
 
     setMarker({ longitude: lng, latitude: lat });
-
     setBbox(getBoundingBox(lng, lat, BBOX_SIZE));
-
     await fetchFlatGeobuf(lng, lat);
 
-    // Zoom IN when clicking empty area
-    mapRef.current?.flyTo({
-      center: [lng, lat],
-      zoom: 8,
-      duration: 1000,
-    });
-  };
-
-  const getMainstemProperties = () => {
-    if (
-      !mainstemFeature ||
-      !mainstemFeature.features ||
-      mainstemFeature.features.length === 0
-    ) {
-      return {};
-    }
-    return mainstemFeature.features[0].properties || {};
+    // Zoom in only when clicking empty area
+    mapRef.current?.flyTo({ center: [lng, lat], zoom: 8, duration: 1000 });
   };
 
   return (
@@ -215,7 +182,7 @@ export default function MainstemsMap() {
         />
       )}
 
-      {/* TOP-LEFT INFO BOX (explicit colors set) */}
+      {/* INFO BOX AND PANEL */}
       <div
         style={{
           position: "absolute",
@@ -254,7 +221,7 @@ export default function MainstemsMap() {
         )}
         {!loadingMainstem && selectedFeature && (
           <div style={{ marginTop: 4 }}>
-            {mainstemFeature && currentMainstemUrl ? (
+            {currentMainstemUrl ? (
               <>
                 Associated Mainstem:{" "}
                 <a
@@ -331,7 +298,7 @@ export default function MainstemsMap() {
               >
                 Catchment
               </button>
-              {mainstemFeature && (
+              {/* {currentMainstemUrl && (
                 <button
                   onClick={() => setActiveTab("mainstem")}
                   style={{
@@ -355,7 +322,7 @@ export default function MainstemsMap() {
                 >
                   Mainstem
                 </button>
-              )}
+              )} */}
             </div>
             <button
               onClick={() => setIsPanelMinimized(!isPanelMinimized)}
@@ -438,87 +405,6 @@ export default function MainstemsMap() {
                   </div>
                 </div>
               )}
-
-              {activeTab === "mainstem" && (
-                <div>
-                  {mainstemFeature ? (
-                    <>
-                      <div style={{ fontWeight: 700, marginBottom: 6 }}>
-                        Properties of{" "}
-                        <b>
-                          {" "}
-                          {
-                            mainstemFeature.features[0].properties
-                              .name_at_outlet
-                          }{" "}
-                        </b>
-                      </div>
-                      <div style={{ lineHeight: 1.45 }}>
-                        {Object.entries(getMainstemProperties()).map(
-                          ([k, v]) => (
-                            <div
-                              key={k}
-                              style={{
-                                display: "flex",
-                                gap: 8,
-                                padding: "4px 0",
-                                borderBottom:
-                                  "1px solid rgba(255,255,255,0.03)",
-                              }}
-                            >
-                              <div
-                                style={{
-                                  minWidth: 120,
-                                  fontWeight: 600,
-                                  color: "#d8e7ff",
-                                  whiteSpace: "nowrap",
-                                  overflow: "hidden",
-                                  textOverflow: "ellipsis",
-                                }}
-                                title={k}
-                              >
-                                {k}:
-                              </div>
-                              <div
-                                style={{
-                                  flex: 1,
-                                  color: "#e6f0ff",
-                                  wordBreak: "break-word",
-                                  fontFamily:
-                                    "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace",
-                                  fontWeight: 400,
-                                }}
-                                title={String(v)}
-                              >
-                                {String(v)}
-                              </div>
-                            </div>
-                          )
-                        )}
-                        {Object.keys(getMainstemProperties()).length === 0 && (
-                          <div style={{ opacity: 0.85, fontStyle: "italic" }}>
-                            No properties available
-                          </div>
-                        )}
-                      </div>
-                    </>
-                  ) : (
-                    <div style={{ padding: "10px 0" }}>
-                      <div
-                        style={{
-                          opacity: 0.85,
-                          fontStyle: "italic",
-                          textAlign: "center",
-                        }}
-                      >
-                        {loadingMainstem
-                          ? "Loading mainstem..."
-                          : "This catchment has no associated mainstem"}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
             </div>
           )}
         </div>
@@ -526,16 +412,13 @@ export default function MainstemsMap() {
 
       <Map
         ref={mapRef}
-        initialViewState={{
-          longitude: -98.5795,
-          latitude: 39.8283,
-          zoom: 3.5,
-        }}
+        initialViewState={{ longitude: -98.5795, latitude: 39.8283, zoom: 3.5 }}
         mapStyle="https://tiles.openfreemap.org/styles/positron"
         onClick={handleClick}
         interactiveLayerIds={["features-fill"]}
         minZoom={3}
         maxZoom={18}
+        onSourceData={handleSourceData} 
       >
         {marker && (
           <Marker
@@ -545,8 +428,8 @@ export default function MainstemsMap() {
           />
         )}
 
-        {bbox.features.length > 0 && (
-          <Source id="bbox" type="geojson" data={bbox}>
+        {memoizedBbox.features.length > 0 && (
+          <Source id="bbox" type="geojson" data={memoizedBbox}>
             <Layer
               id="bbox-fill"
               type="fill"
@@ -560,8 +443,8 @@ export default function MainstemsMap() {
           </Source>
         )}
 
-        {features.features.length > 0 && (
-          <Source id="features" type="geojson" data={features}>
+        {memoizedFeatures.features.length > 0 && (
+          <Source id="features" type="geojson" data={memoizedFeatures}>
             <Layer
               id="features-fill"
               type="fill"
@@ -599,15 +482,13 @@ export default function MainstemsMap() {
           </Source>
         )}
 
-        {mainstemFeature && (
-          <Source id="mainstem" type="geojson" data={mainstemFeature}>
+        {currentMainstemUrl && (
+          // by putting the url in the
+          <Source id="mainstem" type="geojson" data={currentMainstemUrl}>
             <Layer
               id="mainstem-line"
               type="line"
-              paint={{
-                "line-color": "#FF0000",
-                "line-width": 3,
-              }}
+              paint={{ "line-color": "#FF0000", "line-width": 3 }}
             />
           </Source>
         )}
@@ -622,4 +503,5 @@ export default function MainstemsMap() {
         `}
       </style>
     </div>
-  );};
+  );
+}

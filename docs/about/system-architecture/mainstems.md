@@ -1,6 +1,6 @@
 # Mainstem Association
 
-As shown in the [SPARQL Playground](../../playground/sparql.md), one of the core query patterns in Geoconnex is finding features and their associated datasets on a particular [mainstem](https://en.wikipedia.org/wiki/Main_stem).
+As shown in the [SPARQL Playground](../../playground/sparql.md) and the [Geoconnex Explorer](https://explorer.geoconnex.us), one of the core query patterns in Geoconnex is finding features and their associated datasets on a particular [mainstem](https://en.wikipedia.org/wiki/Main_stem).
 
 In order to accomplish this, Geoconnex uses the hydrological data from the [National Hydrologic Geospatial Fabric Reference Hydrofabric](https://www.sciencebase.gov/catalog/item/61295190d34e40dd9c06bcd7). This dataset can be used to associate vector features with their catchments and flowlines. This dataset is a processed version of [National Hydrography Dataset Plus (NHDPlus)](https://www.epa.gov/waterdata/get-nhdplus-national-hydrography-dataset-plus-data) version 2.1 and cleans up some of the data issues present in the original dataset. 
 
