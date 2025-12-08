@@ -1,6 +1,6 @@
 # Mainstem Association
 
-As shown in the [SPARQL Playground](../../playground/sparql.md), one of the core query patterns in Geoconnex is finding features and their associated datasets on a particular [mainstem](https://en.wikipedia.org/wiki/Main_stem).
+As shown in the [SPARQL Playground](../../playground/sparql.md) and the [Geoconnex Explorer](https://explorer.geoconnex.us), one of the core query patterns in Geoconnex is finding features and their associated datasets on a particular [mainstem](https://en.wikipedia.org/wiki/Main_stem).
 
 In order to accomplish this, Geoconnex uses the hydrological data from the [National Hydrologic Geospatial Fabric Reference Hydrofabric](https://www.sciencebase.gov/catalog/item/61295190d34e40dd9c06bcd7). This dataset can be used to associate vector features with their catchments and flowlines. This dataset is a processed version of [National Hydrography Dataset Plus (NHDPlus)](https://www.epa.gov/waterdata/get-nhdplus-national-hydrography-dataset-plus-data) version 2.1 and cleans up some of the data issues present in the original dataset. 
 
@@ -37,19 +37,19 @@ import geopandas as gpd
 import shapely
 
 # %%
-# Read in the geopackage files; these can be downloaded from 
+# Read in the geopackage files; these can be downloaded from
 # https://www.sciencebase.gov/catalog/item/61295190d34e40dd9c06bcd7
-catchments =  gpd.read_file(Path(__file__).parent / "reference_catchments.gpkg")
+catchments = gpd.read_file(Path(__file__).parent / "reference_catchments.gpkg")
 flowlines = gpd.read_file(Path(__file__).parent / "reference_flowline.gpkg")
 
-# %% 
+# %%
 # Project catchments to the same coordinate system
 catchments = catchments.to_crs("epsg:4326")
 assert catchments.crs == "epsg:4326", catchments.crs
 flowlines = flowlines.to_crs("epsg:4326")
 assert flowlines.crs == "epsg:4326", flowlines.crs
 
-# %%  
+# %%
 # First we get the featureid for the catchment. This is a catchment id aka COMID
 pointOnColoradoRiver = shapely.geometry.Point(-108.50231860661755, 39.05108882481538)
 associatedCatchment = catchments[catchments.intersects(pointOnColoradoRiver)]
@@ -58,15 +58,17 @@ assert featureID == 3185828
 
 # %%
 # Next we get the associated flowline(s) for the catchment
-relevantFlowline = (flowlines[flowlines["COMID"] == featureID])
+relevantFlowline = flowlines[flowlines["COMID"] == featureID]
 assert relevantFlowline.shape[0] == 1
 assert relevantFlowline["gnis_name"].iloc[0] == "Colorado River"
 assert relevantFlowline["gnis_id"].iloc[0] == 45730
 
-# The terminal path is the last segment of the flowline (aka the mainstem)
-TERMINAL_PATH = "TerminalPa"
-terminalPathID = relevantFlowline[TERMINAL_PATH].iloc[0]
-assert terminalPathID == 308280
+# All lines with the same LevelPathI form one continuous routed path (e.g., the entire main stem of a river);
+# There is also a column for TerminalPath but that represents the ultimate destination of the flowline
+# and thus could be very far away from the catchment
+MAINSTEM_COLUMN = "LevelPathI"
+mainstemID = relevantFlowline[MAINSTEM_COLUMN].iloc[0]
+assert mainstemID == 308280
 
 # %%
 # Finally we use the id of the terminal path to find the associated geoconnex mainstem
@@ -77,12 +79,16 @@ mainstem_lookup = gpd.read_file(
 mainstem_lookup["lp_mainstem"] = mainstem_lookup["lp_mainstem"].astype(int)
 mainstem_lookup["ref_mainstem_id"] = mainstem_lookup["ref_mainstem_id"].astype(int)
 
-geoconnex_mainstem_id =mainstem_lookup.loc[mainstem_lookup["lp_mainstem"] == terminalPathID]["ref_mainstem_id"].iloc[0]
+geoconnex_mainstem_id = mainstem_lookup.loc[
+    mainstem_lookup["lp_mainstem"] == mainstemID
+]["ref_mainstem_id"].iloc[0]
 
 assert geoconnex_mainstem_id == 29559
 
 # The point POINT (-108.50231860661755 39.05108882481538) is associated with the mainstem https://reference.geoconnex.us/collections/mainstems/items/29559
-print(f"The point {pointOnColoradoRiver} is associated with the mainstem https://reference.geoconnex.us/collections/mainstems/items/{geoconnex_mainstem_id}")
+print(
+    f"The point {pointOnColoradoRiver} is associated with the mainstem https://reference.geoconnex.us/collections/mainstems/items/{geoconnex_mainstem_id}"
+)
 ```
 
 
