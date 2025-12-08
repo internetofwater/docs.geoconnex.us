@@ -45,6 +45,11 @@ export default function MainstemsMap() {
   const [mainstemFeature, setMainstemFeature] =
     React.useState<FeatureCollection | null>(null);
 
+  const [activeTab, setActiveTab] = React.useState<"catchment" | "mainstem">(
+    "catchment"
+  );
+  const [isPanelMinimized, setIsPanelMinimized] = React.useState(false);
+
   // Bounding box around a point
   const getBoundingBox = (lng: number, lat: number, size: number) => {
     const coords: [number, number][][] = [
@@ -145,6 +150,8 @@ export default function MainstemsMap() {
 
       if (geoconnexUrl) {
         await fetchMainstem(geoconnexUrl);
+        setActiveTab("mainstem");
+        setIsPanelMinimized(false);
 
         // Zoom OUT only once (first time a mainstem is loaded)
         if (!hasBeenZoomedOut) {
@@ -161,6 +168,8 @@ export default function MainstemsMap() {
 
     setSelectedFeature(null);
     setMainstemFeature(null);
+    setCurrentMainstemUrl(undefined);
+    setActiveTab("catchment");
 
     setMarker({ longitude: lng, latitude: lat });
 
@@ -174,6 +183,17 @@ export default function MainstemsMap() {
       zoom: 8,
       duration: 1000,
     });
+  };
+
+  const getMainstemProperties = () => {
+    if (
+      !mainstemFeature ||
+      !mainstemFeature.features ||
+      mainstemFeature.features.length === 0
+    ) {
+      return {};
+    }
+    return mainstemFeature.features[0].properties || {};
   };
 
   return (
@@ -201,8 +221,8 @@ export default function MainstemsMap() {
           position: "absolute",
           top: 10,
           left: 10,
-          background: "rgba(12, 18, 28, 0.92)", // explicit dark navy-ish background
-          color: "#FFFFFF", // explicit text color
+          background: "rgba(12, 18, 28, 0.92)",
+          color: "#FFFFFF",
           padding: "10px 14px",
           borderRadius: "6px",
           fontSize: "14px",
@@ -231,7 +251,12 @@ export default function MainstemsMap() {
         {!loadingMainstem && mainstemFeature && (
           <div style={{ marginTop: 4 }}>
             Associated Mainstem:{" "}
-            <a href={currentMainstemUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", color: "inherit" }}>
+            <a
+              href={currentMainstemUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "underline", color: "inherit" }}
+            >
               <i>{currentMainstemUrl}</i>
             </a>
           </div>
@@ -244,77 +269,218 @@ export default function MainstemsMap() {
         )}
       </div>
 
-      {/* BOTTOM-LEFT SIMPLE PROPERTIES LIST (matches top-left styling) */}
+      {/* BOTTOM-LEFT TABBED PROPERTIES PANEL */}
       {selectedFeature && (
         <div
           style={{
             position: "absolute",
             bottom: 20,
             left: 10,
-            background: "rgba(12, 18, 28, 0.92)", // same explicit color
+            background: "rgba(12, 18, 28, 0.92)",
             color: "#FFFFFF",
-            padding: "10px 14px",
             borderRadius: "6px",
             fontSize: "13px",
             zIndex: 20,
-            maxHeight: "38%",
-            overflowY: "auto",
             maxWidth: "320px",
             boxShadow: "0 6px 18px rgba(0,0,0,0.4)",
             border: "1px solid rgba(255,255,255,0.04)",
           }}
         >
-          <div style={{ fontWeight: 700, marginBottom: 6 }}>
-            Properties of Selected Catchment
-          </div>
-
-          <div style={{ lineHeight: 1.45 }}>
-            {Object.entries(selectedFeature.properties || {}).map(([k, v]) => (
-              <div
-                key={k}
+          {/* Header with tabs and minimize button */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              borderBottom: "1px solid rgba(255,255,255,0.1)",
+            }}
+          >
+            <div style={{ display: "flex", flex: 1 }}>
+              <button
+                onClick={() => setActiveTab("catchment")}
                 style={{
-                  display: "flex",
-                  gap: 8,
-                  padding: "4px 0",
-                  borderBottom: "1px solid rgba(255,255,255,0.03)",
+                  flex: 1,
+                  padding: "10px 14px",
+                  background:
+                    activeTab === "catchment"
+                      ? "rgba(255,255,255,0.1)"
+                      : "transparent",
+                  color: "#FFFFFF",
+                  border: "none",
+                  borderBottom:
+                    activeTab === "catchment"
+                      ? "2px solid #4caf50"
+                      : "2px solid transparent",
+                  cursor: "pointer",
+                  fontWeight: activeTab === "catchment" ? 700 : 400,
+                  fontSize: "13px",
+                  transition: "all 0.2s",
                 }}
               >
-                <div
-                  style={{
-                    minWidth: 120,
-                    fontWeight: 600,
-                    color: "#d8e7ff", // explicit color for keys
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                  title={k}
-                >
-                  {k}:
-                </div>
-                <div
+                Catchment
+              </button>
+              {mainstemFeature && (
+                <button
+                  onClick={() => setActiveTab("mainstem")}
                   style={{
                     flex: 1,
-                    color: "#e6f0ff", // explicit color for values
-                    wordBreak: "break-word",
-                    fontFamily:
-                      "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace",
-                    fontWeight: 400,
+                    padding: "10px 14px",
+                    background:
+                      activeTab === "mainstem"
+                        ? "rgba(255,255,255,0.1)"
+                        : "transparent",
+                    color: "#FFFFFF",
+                    border: "none",
+                    borderBottom:
+                      activeTab === "mainstem"
+                        ? "2px solid #4caf50"
+                        : "2px solid transparent",
+                    cursor: "pointer",
+                    fontWeight: activeTab === "mainstem" ? 700 : 400,
+                    fontSize: "13px",
+                    transition: "all 0.2s",
                   }}
-                  title={String(v)}
                 >
-                  {String(v)}
-                </div>
-              </div>
-            ))}
-
-            {/* Show a helpful message if there are no properties */}
-            {Object.keys(selectedFeature.properties || {}).length === 0 && (
-              <div style={{ opacity: 0.85, fontStyle: "italic" }}>
-                No properties available
-              </div>
-            )}
+                  Mainstem
+                </button>
+              )}
+            </div>
+            <button
+              onClick={() => setIsPanelMinimized(!isPanelMinimized)}
+              style={{
+                padding: "10px 14px",
+                background: "transparent",
+                color: "#FFFFFF",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "16px",
+                transition: "all 0.2s",
+              }}
+              title={isPanelMinimized ? "Expand" : "Minimize"}
+            >
+              {isPanelMinimized ? "▲" : "▼"}
+            </button>
           </div>
+
+          {/* Content area */}
+          {!isPanelMinimized && (
+            <div
+              style={{
+                padding: "10px 14px",
+                maxHeight: "38vh",
+                overflowY: "auto",
+              }}
+            >
+              {activeTab === "catchment" && (
+                <div>
+                  <div style={{ fontWeight: 700, marginBottom: 6 }}>
+                    Properties of Selected Catchment
+                  </div>
+                  <div style={{ lineHeight: 1.45 }}>
+                    {Object.entries(selectedFeature.properties || {}).map(
+                      ([k, v]) => (
+                        <div
+                          key={k}
+                          style={{
+                            display: "flex",
+                            gap: 8,
+                            padding: "4px 0",
+                            borderBottom: "1px solid rgba(255,255,255,0.03)",
+                          }}
+                        >
+                          <div
+                            style={{
+                              minWidth: 120,
+                              fontWeight: 600,
+                              color: "#d8e7ff",
+                              whiteSpace: "nowrap",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                            }}
+                            title={k}
+                          >
+                            {k}:
+                          </div>
+                          <div
+                            style={{
+                              flex: 1,
+                              color: "#e6f0ff",
+                              wordBreak: "break-word",
+                              fontFamily:
+                                "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace",
+                              fontWeight: 400,
+                            }}
+                            title={String(v)}
+                          >
+                            {String(v)}
+                          </div>
+                        </div>
+                      )
+                    )}
+                    {Object.keys(selectedFeature.properties || {}).length ===
+                      0 && (
+                      <div style={{ opacity: 0.85, fontStyle: "italic" }}>
+                        No properties available
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {activeTab === "mainstem" && mainstemFeature && (
+                <div>
+                  <div style={{ fontWeight: 700, marginBottom: 6 }}>
+                    Properties of <b> {mainstemFeature.features[0].properties.name_at_outlet} </b>
+                  </div>
+                  <div style={{ lineHeight: 1.45 }}>
+                    {Object.entries(getMainstemProperties()).map(([k, v]) => (
+                      <div
+                        key={k}
+                        style={{
+                          display: "flex",
+                          gap: 8,
+                          padding: "4px 0",
+                          borderBottom: "1px solid rgba(255,255,255,0.03)",
+                        }}
+                      >
+                        <div
+                          style={{
+                            minWidth: 120,
+                            fontWeight: 600,
+                            color: "#d8e7ff",
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                          }}
+                          title={k}
+                        >
+                          {k}:
+                        </div>
+                        <div
+                          style={{
+                            flex: 1,
+                            color: "#e6f0ff",
+                            wordBreak: "break-word",
+                            fontFamily:
+                              "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace",
+                            fontWeight: 400,
+                          }}
+                          title={String(v)}
+                        >
+                          {String(v)}
+                        </div>
+                      </div>
+                    ))}
+                    {Object.keys(getMainstemProperties()).length === 0 && (
+                      <div style={{ opacity: 0.85, fontStyle: "italic" }}>
+                        No properties available
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       )}
 
@@ -360,7 +526,6 @@ export default function MainstemsMap() {
               id="features-fill"
               type="fill"
               paint={{
-                // explicit colors for selected vs default
                 "fill-color": [
                   "case",
                   [
@@ -368,8 +533,8 @@ export default function MainstemsMap() {
                     ["get", "Catchment_featureid"],
                     Number(selectedFeature?.id) || 0,
                   ],
-                  "#00FF00", // selected fill color (explicit)
-                  "#0088FF", // default fill color (explicit)
+                  "#00FF00",
+                  "#0088FF",
                 ],
                 "fill-opacity": 0.6,
               }}
@@ -385,8 +550,8 @@ export default function MainstemsMap() {
                     ["get", "Catchment_featureid"],
                     Number(selectedFeature?.id) || 0,
                   ],
-                  "#00AA00", // selected outline
-                  "#0044AA", // default outline
+                  "#00AA00",
+                  "#0044AA",
                 ],
                 "line-width": 1.5,
               }}
