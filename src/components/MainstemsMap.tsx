@@ -1,3 +1,4 @@
+import { useState, useRef } from "react";
 import * as React from "react";
 import {
   Map,
@@ -9,71 +10,73 @@ import {
 } from "@vis.gl/react-maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { deserialize } from "flatgeobuf/lib/mjs/geojson.js";
-import { Feature, FeatureCollection, Polygon } from "geojson";
+import { Feature, FeatureCollection, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon } from "geojson";
 
 const BBOX_SIZE = 0.1;
 
-export default function MainstemsMap() {
-  const mapRef = React.useRef<MapRef>(null);
 
-  const [marker, setMarker] = React.useState<{
+// Bounding box around a point
+function getBoundingBox(lng: number, lat: number, size: number): FeatureCollection<Polygon> {
+  const coords: [number, number][][] = [
+    [
+      [lng - size, lat - size],
+      [lng + size, lat - size],
+      [lng + size, lat + size],
+      [lng - size, lat + size],
+      [lng - size, lat - size],
+    ],
+  ];
+  return {
+    type: "FeatureCollection" as const,
+    features: [
+      {
+        type: "Feature",
+        properties: {},
+        geometry: {
+          type: "Polygon",
+          coordinates: coords,
+        },
+      },
+    ],
+  };
+};
+
+export default function MainstemsMap() {
+  const mapRef = useRef<MapRef>(null);
+
+  const [marker, setMarker] = useState<{
     longitude: number;
     latitude: number;
   } | null>(null);
 
-  const [features, setFeatures] = React.useState<FeatureCollection>({
+  const [features, setFeatures] = useState<FeatureCollection>({
     type: "FeatureCollection",
     features: [],
   });
 
-  const [bbox, setBbox] = React.useState<FeatureCollection<Polygon>>({
+  const [bbox, setBbox] = useState<FeatureCollection<Polygon>>({
     type: "FeatureCollection",
     features: [],
   });
 
-  const [loadingCatchments, setLoadingCatchments] = React.useState(false);
-  const [loadingMainstem, setLoadingMainstem] = React.useState(false);
-  const [currentMainstemUrl, setCurrentMainstemUrl] = React.useState<string>();
+  const [loadingCatchments, setLoadingCatchments] = useState(false);
+  const [loadingMainstem, setLoadingMainstem] = useState(false);
+  const [currentMainstemUrl, setCurrentMainstemUrl] = useState<string>();
 
-  const [selectedFeature, setSelectedFeature] = React.useState<{
+  const [selectedFeature, setSelectedFeature] = useState<{
     properties: any;
     lngLat: { lng: number; lat: number };
     id: string;
   } | null>(null);
 
   const [mainstemFeature, setMainstemFeature] =
-    React.useState<FeatureCollection | null>(null);
+    useState<FeatureCollection | null>(null);
 
-  const [activeTab, setActiveTab] = React.useState<"catchment" | "mainstem">(
+  const [activeTab, setActiveTab] = useState<"catchment" | "mainstem">(
     "catchment"
   );
-  const [isPanelMinimized, setIsPanelMinimized] = React.useState(false);
+  const [isPanelMinimized, setIsPanelMinimized] = useState(false);
 
-  // Bounding box around a point
-  const getBoundingBox = (lng: number, lat: number, size: number) => {
-    const coords: [number, number][][] = [
-      [
-        [lng - size, lat - size],
-        [lng + size, lat - size],
-        [lng + size, lat + size],
-        [lng - size, lat + size],
-        [lng - size, lat - size],
-      ],
-    ];
-    return {
-      type: "FeatureCollection",
-      features: [
-        {
-          type: "Feature",
-          properties: {},
-          geometry: {
-            type: "Polygon",
-            coordinates: coords,
-          },
-        },
-      ],
-    };
-  };
 
   const fetchFlatGeobuf = async (lng: number, lat: number) => {
     setLoadingCatchments(true);
@@ -237,11 +240,11 @@ export default function MainstemsMap() {
             Features loaded:{" "}
             <span style={{ fontWeight: 600 }}>{features.features.length}</span>
           </div>
-        ):
+        ) : (
           <div>
             <i>Click anywhere in the continental US to load catchments. </i>
           </div>
-        }
+        )}
 
         {loadingCatchments && (
           <div style={{ marginTop: 4 }}>Loading catchments…</div>
@@ -441,58 +444,76 @@ export default function MainstemsMap() {
                   {mainstemFeature ? (
                     <>
                       <div style={{ fontWeight: 700, marginBottom: 6 }}>
-                        Properties of <b> {mainstemFeature.features[0].properties.name_at_outlet} </b>
+                        Properties of{" "}
+                        <b>
+                          {" "}
+                          {
+                            mainstemFeature.features[0].properties
+                              .name_at_outlet
+                          }{" "}
+                        </b>
                       </div>
-                  <div style={{ lineHeight: 1.45 }}>
-                    {Object.entries(getMainstemProperties()).map(([k, v]) => (
-                      <div
-                        key={k}
-                        style={{
-                          display: "flex",
-                          gap: 8,
-                          padding: "4px 0",
-                          borderBottom: "1px solid rgba(255,255,255,0.03)",
-                        }}
-                      >
-                        <div
-                          style={{
-                            minWidth: 120,
-                            fontWeight: 600,
-                            color: "#d8e7ff",
-                            whiteSpace: "nowrap",
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                          }}
-                          title={k}
-                        >
-                          {k}:
-                        </div>
-                        <div
-                          style={{
-                            flex: 1,
-                            color: "#e6f0ff",
-                            wordBreak: "break-word",
-                            fontFamily:
-                              "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace",
-                            fontWeight: 400,
-                          }}
-                          title={String(v)}
-                        >
-                          {String(v)}
-                        </div>
+                      <div style={{ lineHeight: 1.45 }}>
+                        {Object.entries(getMainstemProperties()).map(
+                          ([k, v]) => (
+                            <div
+                              key={k}
+                              style={{
+                                display: "flex",
+                                gap: 8,
+                                padding: "4px 0",
+                                borderBottom:
+                                  "1px solid rgba(255,255,255,0.03)",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  minWidth: 120,
+                                  fontWeight: 600,
+                                  color: "#d8e7ff",
+                                  whiteSpace: "nowrap",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                }}
+                                title={k}
+                              >
+                                {k}:
+                              </div>
+                              <div
+                                style={{
+                                  flex: 1,
+                                  color: "#e6f0ff",
+                                  wordBreak: "break-word",
+                                  fontFamily:
+                                    "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace",
+                                  fontWeight: 400,
+                                }}
+                                title={String(v)}
+                              >
+                                {String(v)}
+                              </div>
+                            </div>
+                          )
+                        )}
+                        {Object.keys(getMainstemProperties()).length === 0 && (
+                          <div style={{ opacity: 0.85, fontStyle: "italic" }}>
+                            No properties available
+                          </div>
+                        )}
                       </div>
-                    ))}
-                    {Object.keys(getMainstemProperties()).length === 0 && (
-                      <div style={{ opacity: 0.85, fontStyle: "italic" }}>
-                        No properties available
-                      </div>
-                    )}
-                  </div>
                     </>
                   ) : (
                     <div style={{ padding: "10px 0" }}>
-                      <div style={{ opacity: 0.85, fontStyle: "italic", textAlign: "center" }}>
-                        This catchment has no associated mainstem
+                      <div
+                        style={{
+                          opacity: 0.85,
+                          fontStyle: "italic",
+                          textAlign: "center",
+                        }}
+                      >
+                        {loadingMainstem
+                          ? "Loading mainstem..."
+                          : "This catchment has no associated mainstem"}
                       </div>
                     </div>
                   )}
@@ -601,4 +622,4 @@ export default function MainstemsMap() {
         `}
       </style>
     </div>
-  )};
+  );};
