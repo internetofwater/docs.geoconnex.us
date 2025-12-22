@@ -15,6 +15,8 @@ import { Feature, FeatureCollection, Polygon } from "geojson";
 
 const BBOX_SIZE = 0.1;
 
+
+
 // Bounding box around a point
 function getBoundingBox(
   lng: number,
@@ -55,6 +57,46 @@ export default function MainstemsMap() {
       setLoadingMainstem(false);
     }
   }, []);
+
+  const [isEditingCoords, setIsEditingCoords] = useState(false);
+  const [latInput, setLatInput] = useState("");
+  const [lngInput, setLngInput] = useState("");
+
+  const handleEditClick = () => {
+    if (marker) {
+      setLatInput(marker.latitude.toFixed(4));
+      setLngInput(marker.longitude.toFixed(4));
+      setIsEditingCoords(true);
+    }
+  };
+
+  const handleLatLngSubmit = () => {
+    const lat = parseFloat(latInput);
+    const lng = parseFloat(lngInput);
+    if (
+      !isNaN(lat) &&
+      !isNaN(lng) &&
+      lat >= -90 &&
+      lat <= 90 &&
+      lng >= -180 &&
+      lng <= 180
+    ) {
+      const newMarker = { longitude: lng, latitude: lat };
+      setMarker(newMarker);
+      setBbox(getBoundingBox(lng, lat, BBOX_SIZE));
+      fetchFlatGeobuf(lng, lat);
+      mapRef.current?.flyTo({ center: [lng, lat], zoom: 8, duration: 1000 });
+      setIsEditingCoords(false);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleLatLngSubmit();
+    } else if (e.key === "Escape") {
+      setIsEditingCoords(false);
+    }
+  };
 
   const [marker, setMarker] = useState<{
     longitude: number;
@@ -202,7 +244,7 @@ export default function MainstemsMap() {
         <div style={{ fontWeight: "700", marginBottom: 6 }}>
           US Catchments and Mainstems
         </div>
-        {features.features.length > 0 ? (
+        {!loadingCatchments && ( features.features.length > 0 ? (
           <div>
             Features loaded:{" "}
             <span style={{ fontWeight: 600 }}>{features.features.length}</span>
@@ -211,7 +253,7 @@ export default function MainstemsMap() {
           <div>
             <i>Click anywhere in the contiguous US to load catchments. </i>
           </div>
-        )}
+        ))}
 
         {loadingCatchments && (
           <div style={{ marginTop: 4 }}>Loading catchments…</div>
@@ -242,8 +284,119 @@ export default function MainstemsMap() {
         )}
         {marker && (
           <div style={{ marginTop: 6, fontSize: 12, opacity: 0.9 }}>
-            Clicked point: {marker.latitude.toFixed(4)},{" "}
-            {marker.longitude.toFixed(4)}
+            {!isEditingCoords ? (
+              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                <span>
+                  {marker.latitude.toFixed(4)}, {marker.longitude.toFixed(4)}
+                </span>
+                <button
+                  onClick={handleEditClick}
+                  style={{
+                    padding: "2px 6px",
+                    background: "rgba(255,255,255,0.1)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    borderRadius: "3px",
+                    color: "#FFFFFF",
+                    fontSize: "10px",
+                    cursor: "pointer",
+                    fontWeight: 500,
+                  }}
+                >
+                  Edit
+                </button>
+              </div>
+            ) : (
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 4,
+                    alignItems: "center",
+                    marginBottom: 4,
+                  }}
+                >
+                  <span style={{ minWidth: "28px", fontSize: "11px" }}>
+                    Lat:
+                  </span>
+                  <input
+                    type="text"
+                    value={latInput}
+                    onChange={(e) => setLatInput(e.target.value)}
+                    onKeyDown={handleKeyPress}
+                    autoFocus
+                    style={{
+                      flex: 1,
+                      padding: "3px 5px",
+                      background: "rgba(255,255,255,0.1)",
+                      border: "1px solid rgba(255,255,255,0.3)",
+                      borderRadius: "3px",
+                      color: "#FFFFFF",
+                      fontSize: "11px",
+                    }}
+                  />
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 4,
+                    alignItems: "center",
+                    marginBottom: 4,
+                  }}
+                >
+                  <span style={{ minWidth: "28px", fontSize: "11px" }}>
+                    Lng:
+                  </span>
+                  <input
+                    type="text"
+                    value={lngInput}
+                    onChange={(e) => setLngInput(e.target.value)}
+                    onKeyDown={handleKeyPress}
+                    style={{
+                      flex: 1,
+                      padding: "3px 5px",
+                      background: "rgba(255,255,255,0.1)",
+                      border: "1px solid rgba(255,255,255,0.3)",
+                      borderRadius: "3px",
+                      color: "#FFFFFF",
+                      fontSize: "11px",
+                    }}
+                  />
+                </div>
+                <div style={{ display: "flex", gap: 4 }}>
+                  <button
+                    onClick={handleLatLngSubmit}
+                    style={{
+                      flex: 1,
+                      padding: "3px 6px",
+                      background: "rgba(76, 175, 80, 0.3)",
+                      border: "1px solid rgba(76, 175, 80, 0.5)",
+                      borderRadius: "3px",
+                      color: "#FFFFFF",
+                      fontSize: "10px",
+                      cursor: "pointer",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Go
+                  </button>
+                  <button
+                    onClick={() => setIsEditingCoords(false)}
+                    style={{
+                      flex: 1,
+                      padding: "3px 6px",
+                      background: "rgba(255,255,255,0.1)",
+                      border: "1px solid rgba(255,255,255,0.2)",
+                      borderRadius: "3px",
+                      color: "#FFFFFF",
+                      fontSize: "10px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
