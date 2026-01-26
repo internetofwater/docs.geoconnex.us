@@ -67,7 +67,7 @@ In addition to the SPARQL endpoint, Geoconnex also provides a text-based search 
 Geoconnex aims to provide bulk downloads of the entire knowledge graph to allow partners to self-host or explore the graph in alternative ways.
 
 **For data users**:
-- Bulk downloads of the entire Geoconnex graph should be available for download from [Zenodo](https://zenodo.org/) and thus there is no explicit service level expectation metric for this capability.
+- Bulk downloads of the entire Geoconnex graph should be available for download from [Zenodo](https://zenodo.org/records/16037450) and thus there is no explicit service level expectation metric for this capability.
 
 ---
 
