@@ -28,13 +28,13 @@ For a more detailed description of the JSON-LD output expected by Geoconnex, see
     "locType": "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType"
   },
   "@id": "https://example.com/well/1234",
-  "@type": "schema:Place",
+  "@type": "Place",
   "name": "Well 1234",
   "description": "Well at 1234 Place St., USA",
   "locType": "well",
   "subjectOf": {
     "@id": "https://datasystem.org/dataset1",
-    "@type": "schema:Dataset",
+    "@type": "Dataset",
     "name": "Well Locations Dataset",
     "ex:recordCount": 500
   }
