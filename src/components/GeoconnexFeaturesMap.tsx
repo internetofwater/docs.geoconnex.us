@@ -15,6 +15,8 @@ const GeoconnexMap: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentBbox, setCurrentBbox] = useState<number[]>([]);
   const [featureCount, setFeatureCount] = useState(0);
+  const [bboxSize, setBboxSize] = useState(0.2);
+  const bboxSizeRef = useRef(0.2);
 
   useEffect(() => {
     const client = new GeoconnexClient({ cache: false });
@@ -65,7 +67,9 @@ const GeoconnexMap: React.FC = () => {
 
     map.on("load", async () => {
       try {
-        const long_island_bbox: [number, number, number, number] = [-73.4657, 40.6302, -73.2657, 40.8302] 
+        const long_island_bbox: [number, number, number, number] = [
+          -73.4657, 40.6302, -73.2657, 40.8302,
+        ];
         setCurrentBbox(long_island_bbox);
 
         const fc = await client.get_features_inside_bbox(long_island_bbox, [
@@ -206,16 +210,14 @@ const GeoconnexMap: React.FC = () => {
 
         // Handle clicks anywhere on map that don't hit a feature
         map.on("click", async (e) => {
+          const features = map.queryRenderedFeatures(e.point, {
+            layers: ["geoconnex-fill", "geoconnex-lines", "geoconnex-points"],
+          });
 
-            const features = map.queryRenderedFeatures(e.point, {
-              layers: ["geoconnex-fill", "geoconnex-lines", "geoconnex-points"],
-            });
-
-            // If we clicked on a feature, don't run this handler
-            if (features.length > 0) {
-              return;
-            }
-
+          // If we clicked on a feature, don't run this handler
+          if (features.length > 0) {
+            return;
+          }
 
           // remove previous marker if it exists
           if (markerRef.current) {
@@ -228,15 +230,13 @@ const GeoconnexMap: React.FC = () => {
 
           const { lng, lat } = e.lngLat;
 
-          // Create a bbox around the click point
-          const bboxWidth = 0.2;
-          const bboxHeight = 0.2;
-
+          // Create a bbox around the click point using the current bboxSize
+          const currentSize = bboxSizeRef.current;
           const newBbox = [
-            lng - bboxWidth / 2,
-            lat - bboxHeight / 2,
-            lng + bboxWidth / 2,
-            lat + bboxHeight / 2,
+            lng - currentSize / 2,
+            lat - currentSize / 2,
+            lng + currentSize / 2,
+            lat + currentSize / 2,
           ] as [number, number, number, number];
           setCurrentBbox(newBbox);
 
@@ -404,6 +404,89 @@ const GeoconnexMap: React.FC = () => {
           </span>
         </div>
       )}
+
+      {/* Bbox Size Control */}
+      <div
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          background: "white",
+          padding: "15px",
+          borderRadius: "8px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+          minWidth: "220px",
+          zIndex: 1,
+        }}
+      >
+        <h3
+          style={{
+            marginTop: 0,
+            marginBottom: "12px",
+            fontSize: "14px",
+            fontWeight: "bold",
+            borderBottom: "1px solid #ccc",
+            paddingBottom: "8px",
+          }}
+        >
+          Bounding Box Size
+        </h3>
+        <div style={{ marginBottom: "10px" }}>
+          <label
+            htmlFor="bbox-size-input"
+            style={{
+              fontSize: "12px",
+              display: "block",
+              marginBottom: "6px",
+              color: "#555",
+            }}
+          >
+            Size (degrees): {bboxSize.toFixed(2)}
+          </label>
+          <input
+            id="bbox-size-input"
+            type="range"
+            min="0.01"
+            max="1.4"
+            step="0.01"
+            value={bboxSize}
+            onChange={(e) => {
+              const newSize = parseFloat(e.target.value);
+              setBboxSize(newSize);
+              bboxSizeRef.current = newSize;
+            }}
+            style={{
+              width: "100%",
+              cursor: "pointer",
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              fontSize: "10px",
+              color: "#777",
+              marginTop: "4px",
+            }}
+          >
+            <span>0.01°</span>
+            <span>1.40°</span>
+          </div>
+        </div>
+        {/* <div
+          style={{
+            fontSize: "11px",
+            color: "#666",
+            fontStyle: "italic",
+            marginTop: "10px",
+            padding: "8px",
+            background: "#f5f5f5",
+            borderRadius: "4px",
+          }}
+        >
+          Click on the map to create a new bounding box with this size
+        </div> */}
+      </div>
 
       {/* Legend */}
       {Object.keys(sitemapColors).length > 0 && !isLoading && (
