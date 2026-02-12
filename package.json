@@ -28,6 +28,7 @@
     "@vis.gl/react-maplibre": "^8.1.0",
     "clsx": "^2.0.0",
     "flatgeobuf": "^4.3.3",
+    "geoconnex-client-ts": "github:internetofwater/geoconnex-client-ts",
     "maplibre-gl": "^5.14.0",
     "papaparse": "^5.4.1",
     "prism-react-renderer": "^2.3.0",
