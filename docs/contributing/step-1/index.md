@@ -36,5 +36,5 @@ After the namespace, you have relative freedom to assign identifiers, as long as
 
  You can use as many slashes, dashes, or other separators as you wish, and use upper and lowercase alphanumeric characters, as long as the resulting identifier is a valid URL. For example, you could have `https://geoconnex.us/organization/sites/surface/waterquality/1234` and `https://geoconnex.us/organization/sites/groundwater/injection/ABCD`
 
-Once you have established an indentifier scheme and assigned each of your features/locations with a unique identifier, you can begin preparing your data for publication in the [next step](../step-2/index.md)
+Once you have established an indentifier scheme and assigned each of your features/locations with a unique identifier, you can begin preparing your data for publication in the [next step](../step-2/index.md).
 
