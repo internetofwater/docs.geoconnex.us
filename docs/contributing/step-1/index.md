@@ -8,7 +8,7 @@ title: Identification Scheme
 
 The first thing to do is establish an identification scheme for the [vector geospatial features](https://datacarpentry.org/organization-geospatial/02-intro-vector-data.html) _(abbreviated as just "features" going forward in these docs)_ or locations represented in your data. 
     - Identifiers should be unique, unambiguous, and persistent to changes. 
-    - That is, if your organization uses some kind of numbering or naming system that is vulenrable to periodic changes, identifiers should not be based on that system. The real-world feature should have a persistent, stable identifier. Furthermore, to participate in the geoconnex system, identifiers should have a stem, namespace, and id. 
+    - That is, if your organization uses some kind of numbering or naming system that is vulnerable to periodic changes, identifiers should not be based on that system. The real-world feature should have a persistent, stable identifier. Furthermore, to participate in the geoconnex system, identifiers should have a stem, namespace, and id. 
 
 <figure>
 
