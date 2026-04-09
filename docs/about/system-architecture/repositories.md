@@ -6,7 +6,7 @@
 | Repo name| Description |
 |-------------|-------------|
 | [geoconnex.us](https://github.com/internetofwater/geoconnex.us) | PID registry for hydrologic, environmental, and administrative features |
-| [register.geoconnex.us](https://github.com/internetofwater/register.geoconnex.us) | Helper web application for submitting PIDs to Geoconenx without a GitHub account |
+| [register.geoconnex.us](https://github.com/internetofwater/register.geoconnex.us) | Helper web application for submitting PIDs to Geoconnex without a GitHub account |
 | [about.geoconnex.us](https://github.com/internetofwater/about.geoconnex.us) | An overview of all geoconnex repos | 
 | [pids.geoconnex.us](https://github.com/internetofwater/pids.geoconnex.us) | Development and deployment of PID server, database, and sitemap.xml assets |
 | [harvest.geoconnex.us](https://github.com/internetofwater/harvest.geoconnex.us) | Customization and deployment of gleaner for harvesting linked data |

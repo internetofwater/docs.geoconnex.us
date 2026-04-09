@@ -293,7 +293,7 @@ import TabItem from '@theme/TabItem';
   Your goal should be to make your template as generalizable as possible. For instance, we use `{% for stream in data['Datastreams'] %}` to iterate through the `Datastreams` array in the JSON-LD output and reformat the output data for each. However, in some cases if we do not have the desired data in the original JSON-LD output, we may need to hard code the info.
 
 
-  Consult the [JSON-LD Geoconenx guidance](../../../reference/data-formats/jsonld/primer/index.md) for more detailed information on which keys are required in each JSON-LD output format.
+  Consult the [JSON-LD Geoconnex guidance](../../../reference/data-formats/jsonld/primer/index.md) for more detailed information on which keys are required in each JSON-LD output format.
 
   :::note
   In general your template should be simply moving around the structure of the original output to make it more easily parsed for Geoconnex. If necessary, data that you need but is not output via your API can be hard coded. 
