@@ -26,6 +26,8 @@ import GeoconnexFeaturesMap from '@site/src/components/GeoconnexFeaturesMap';
   <TabItem value="help" label="Help and Background Info">
       <h2> Geoconnex Features Playground </h2>
       This map is a playground for exploring the vector geospatial features in the Geoconnex system. To use it, click on a point on the map. The client will then make a request to the list of features and render them on the map.
+
+      This playground uses the OGC API Features endpoint for Geoconnex [here](https://features.geoconnex.us/). It is intended to be used as a proof of concept and does not bring in all the data within Geoconnex, only the ID's, names, descriptions, and geometries. By default this OGC API Features server will limit the max amount of features return per API call. For a bulk export, it is best to download the data from an bulk Geoconnex export file like the [geoparquet export](https://storage.cloud.google.com/metadata-geoconnex-us/exports/geoconnex_features.parquet)
       
       This playground is meant as a demonstration of the <a href="https://github.com/internetofwater/geoconnex-client-ts" target="_blank">geoconnex-client-ts</a>  libary for fetching and displaying geospatial features.  For discovering datasets within Geoconnex more generally, see the <a href="https://explorer.geoconnex.us/"> Geoconnex Explorer </a>.
   </TabItem>
