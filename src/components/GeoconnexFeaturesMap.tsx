@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import maplibregl from "maplibre-gl";
 import { GeoconnexClient } from "geoconnex-client-ts";
 import * as turf from "@turf/turf";
@@ -7,6 +7,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 const GeoconnexMap: React.FC = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
+  const clientRef = useRef<GeoconnexClient>(new GeoconnexClient());
   const [sitemapColors, setSitemapColors] = useState<Record<string, string>>(
     {},
   );
@@ -18,71 +19,165 @@ const GeoconnexMap: React.FC = () => {
   const [bboxSize, setBboxSize] = useState(0.2);
   const bboxSizeRef = useRef(0.2);
 
+  // Search state
+  const [searchQuery, setSearchQuery] = useState("");
+  const searchQueryRef = useRef("");
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const debounceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Convert [minLng, minLat, maxLng, maxLat] to a WKT POLYGON string
+  const bboxToWkt = (bbox: [number, number, number, number]): string => {
+    const [minLng, minLat, maxLng, maxLat] = bbox;
+    return (
+      `POLYGON((${minLng} ${minLat}, ${maxLng} ${minLat}, ` +
+      `${maxLng} ${maxLat}, ${minLng} ${maxLat}, ${minLng} ${minLat}))`
+    );
+  };
+
+  const buildColorExpression = (
+    sitemapValues: string[],
+    colors: Record<string, string>,
+  ): any[] => {
+    const expr: any[] = ["match", ["to-string", ["get", "geoconnex_sitemap"]]];
+    sitemapValues.forEach((val) => expr.push(String(val), colors[val]));
+    expr.push("#999999");
+    return expr;
+  };
+
+  const applyFeatureCollection = useCallback((map: maplibregl.Map, fc: any) => {
+    setFeatureCount(fc.features.length);
+
+    const sitemapValues: string[] = Array.from(
+      new Set(
+        fc.features
+          .map(
+            (f: { properties: { geoconnex_sitemap: string } }) =>
+              f.properties?.geoconnex_sitemap,
+          )
+          .filter((val: any) => val != null),
+      ),
+    );
+
+    const colors: Record<string, string> = {};
+    sitemapValues.forEach((val, i) => {
+      const hue = (i * 360) / sitemapValues.length;
+      colors[val] = `hsl(${hue}, 70%, 50%)`;
+    });
+    setSitemapColors(colors);
+
+    const colorExpression = buildColorExpression(sitemapValues, colors);
+
+    const source = map.getSource("geoconnex") as maplibregl.GeoJSONSource;
+    source.setData(fc);
+
+    map.setPaintProperty("geoconnex-fill", "fill-color", colorExpression);
+    map.setPaintProperty("geoconnex-lines", "line-color", colorExpression);
+    map.setPaintProperty("geoconnex-points", "circle-color", colorExpression);
+  }, []);
+
+  // Fetch features using current map bounds + optional search query
+  const fetchForBbox = useCallback(
+    async (bbox: [number, number, number, number], query?: string) => {
+      const map = mapRef.current;
+      if (!map) return;
+
+      setIsLoading(true);
+      try {
+        const options: any = { inside_wkt: bboxToWkt(bbox) };
+        if (query && query.trim()) {
+          options.feature_name_ilike = {
+            key: query.trim(),
+            glob_before: true,
+            glob_after: true,
+          };
+        }
+
+        const fc = await clientRef.current.get_features(options);
+        applyFeatureCollection(map, fc);
+        setCurrentBbox(bbox);
+      } catch (error) {
+        console.error("Error fetching features:", error);
+        alert("Failed to fetch features. Please try again.");
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [applyFeatureCollection],
+  );
+
+  // Debounced search: re-fetch with current map bounds
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const val = e.target.value;
+      setSearchQuery(val);
+      searchQueryRef.current = val;
+
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+      debounceTimerRef.current = setTimeout(() => {
+        const map = mapRef.current;
+        if (!map) return;
+        const b = map.getBounds();
+        const bbox: [number, number, number, number] = [
+          b.getWest(),
+          b.getSouth(),
+          b.getEast(),
+          b.getNorth(),
+        ];
+        fetchForBbox(bbox, searchQueryRef.current);
+      }, 500);
+    },
+    [fetchForBbox],
+  );
+
   useEffect(() => {
-    const client = new GeoconnexClient({ cache: false });
+    const client = clientRef.current;
     const map = new maplibregl.Map({
       container: mapContainer.current!,
       style: "https://tiles.openfreemap.org/styles/positron",
-      center: [-73.1, 40.95],
+      center: [-73.965, 40.79],
       zoom: 10,
     });
     mapRef.current = map;
 
-    // Loading spinner
+    // Loading spinner on initial load
     const loadingSpinner = document.createElement("div");
     loadingSpinner.id = "loading-spinner";
     loadingSpinner.innerHTML = `
       <div style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
+        position: absolute; top: 50%; left: 50%;
         transform: translate(-50%, -50%);
-        background: rgba(255, 255, 255, 0.9);
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        gap: 12px;
+        background: rgba(255,255,255,0.9); padding: 20px;
+        border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        z-index: 1000; display: flex; align-items: center; gap: 12px;
       ">
         <div style="
-          border: 3px solid #f3f3f3;
-          border-top: 3px solid #ff5500;
-          border-radius: 50%;
-          width: 24px;
-          height: 24px;
+          border: 3px solid #f3f3f3; border-top: 3px solid #ff5500;
+          border-radius: 50%; width: 24px; height: 24px;
           animation: spin 1s linear infinite;
         "></div>
         <span style="font-family: sans-serif; font-size: 14px;">Loading features...</span>
       </div>
       <style>
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
+        @keyframes spin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
       </style>
     `;
     map.getContainer().appendChild(loadingSpinner);
 
     map.on("load", async () => {
       try {
-        const long_island_bbox: [number, number, number, number] = [
-          -73.4657, 40.6302, -73.2657, 40.8302,
+        const manhattan_bbox: [number, number, number, number] = [
+          -74.03,
+          40.7, // southwest corner
+          -73.9,
+          40.88, // northeast corner
         ];
-        setCurrentBbox(long_island_bbox);
+        setCurrentBbox(manhattan_bbox);
 
-        const fc = await client.get_features_inside_bbox(long_island_bbox, [
-          "geometry",
-          "id",
-          "geoconnex_sitemap",
-        ]);
-
-        console.log(fc.features[0]);
-
+        const fc = await client.get_features({
+          inside_wkt: bboxToWkt(manhattan_bbox), limit: 2000
+        });
         setFeatureCount(fc.features.length);
 
-        // Get unique sitemap values and filter out null/undefined
         const sitemapValues: string[] = Array.from(
           new Set(
             fc.features
@@ -93,13 +188,7 @@ const GeoconnexMap: React.FC = () => {
               .filter((val) => val != null),
           ),
         );
-        console.log(sitemapValues);
 
-        // Initialize toggles
-        const initialToggles: Record<string, boolean> = {};
-        sitemapValues.forEach((val) => (initialToggles[val] = true));
-
-        // Generate color for each sitemap
         const colors: Record<string, string> = {};
         sitemapValues.forEach((val, i) => {
           const hue = (i * 360) / sitemapValues.length;
@@ -107,57 +196,32 @@ const GeoconnexMap: React.FC = () => {
         });
         setSitemapColors(colors);
 
-        console.log(colors);
+        const colorExpression = buildColorExpression(sitemapValues, colors);
 
-        // Add source
         map.addSource("geoconnex", { type: "geojson", data: fc });
 
-        const colorExpression: any[] = [
-          "match",
-          ["to-string", ["get", "geoconnex_sitemap"]],
-        ];
-
-        sitemapValues.forEach((val) => {
-          colorExpression.push(String(val), colors[val]);
-        });
-
-        // default color
-        colorExpression.push("#999999");
-
-        // POLYGONS
         map.addLayer({
           id: "geoconnex-fill",
           type: "fill",
           source: "geoconnex",
           filter: ["==", ["geometry-type"], "Polygon"],
-          paint: {
-            "fill-color": colorExpression,
-            "fill-opacity": 0.5,
-          },
+          paint: { "fill-color": colorExpression, "fill-opacity": 0.5 },
         });
 
-        // LINES
         map.addLayer({
           id: "geoconnex-lines",
           type: "line",
           source: "geoconnex",
           filter: ["==", ["geometry-type"], "LineString"],
-          paint: {
-            "line-color": colorExpression,
-            "line-width": 2,
-          },
+          paint: { "line-color": colorExpression, "line-width": 2 },
         });
 
-        // POINTS
         map.addLayer({
           id: "geoconnex-points",
           type: "circle",
           source: "geoconnex",
           filter: ["==", ["geometry-type"], "Point"],
-          paint: {
-            "circle-radius": 5,
-            "circle-color": colorExpression,
-          },
+          paint: { "circle-radius": 5, "circle-color": colorExpression },
         });
 
         const handleFeatureClick = (e: { features: any[] }) => {
@@ -192,7 +256,6 @@ const GeoconnexMap: React.FC = () => {
           (layer) => map.on("click", layer, handleFeatureClick),
         );
 
-        // Hover cursor
         ["geoconnex-fill", "geoconnex-lines", "geoconnex-points"].forEach(
           (layer) => {
             map.on(
@@ -208,52 +271,33 @@ const GeoconnexMap: React.FC = () => {
           },
         );
 
-        // Handle clicks anywhere on map that don't hit a feature
         map.on("click", async (e) => {
           const features = map.queryRenderedFeatures(e.point, {
             layers: ["geoconnex-fill", "geoconnex-lines", "geoconnex-points"],
           });
+          if (features.length > 0) return;
 
-          // If we clicked on a feature, don't run this handler
-          if (features.length > 0) {
-            return;
-          }
-
-          // remove previous marker if it exists
-          if (markerRef.current) {
-            markerRef.current.remove();
-          }
-
+          if (markerRef.current) markerRef.current.remove();
           markerRef.current = new maplibregl.Marker({ color: "#FF0000" })
             .setLngLat(e.lngLat)
             .addTo(map);
 
           const { lng, lat } = e.lngLat;
-
-          // Create a bbox around the click point using the current bboxSize
           const currentSize = bboxSizeRef.current;
-          const newBbox = [
+          const newBbox: [number, number, number, number] = [
             lng - currentSize / 2,
             lat - currentSize / 2,
             lng + currentSize / 2,
             lat + currentSize / 2,
-          ] as [number, number, number, number];
-          setCurrentBbox(newBbox);
+          ];
 
           // Show bbox outline
           const bboxPolygon = turf.bboxPolygon(newBbox);
-
-          // Remove previous bbox layer if exists
           if (bboxLayerRef.current) {
             if (map.getLayer("bbox-outline")) map.removeLayer("bbox-outline");
             if (map.getSource("bbox-outline")) map.removeSource("bbox-outline");
           }
-
-          map.addSource("bbox-outline", {
-            type: "geojson",
-            data: bboxPolygon,
-          });
-
+          map.addSource("bbox-outline", { type: "geojson", data: bboxPolygon });
           map.addLayer({
             id: "bbox-outline",
             type: "line",
@@ -264,86 +308,9 @@ const GeoconnexMap: React.FC = () => {
               "line-dasharray": [2, 2],
             },
           });
-
           bboxLayerRef.current = "bbox-outline";
 
-          console.log("Fetching features for bbox:", newBbox);
-
-          // Show loading
-          setIsLoading(true);
-
-          try {
-            const newFc = await client.get_features_inside_bbox(newBbox, [
-              "geometry",
-              "id",
-              "geoconnex_sitemap",
-            ]);
-
-            setFeatureCount(newFc.features.length);
-
-            // Get unique sitemap values from new features
-            const newSitemapValues: string[] = Array.from(
-              new Set(
-                newFc.features
-                  .map(
-                    (f: { properties: { geoconnex_sitemap: string } }) =>
-                      f.properties?.geoconnex_sitemap,
-                  )
-                  .filter((val) => val != null),
-              ),
-            );
-
-            // Generate colors for new sitemap values
-            const newColors: Record<string, string> = {};
-            newSitemapValues.forEach((val, i) => {
-              const hue = (i * 360) / newSitemapValues.length;
-              newColors[val] = `hsl(${hue}, 70%, 50%)`;
-            });
-
-            // Initialize toggles for new values
-            const newToggles: Record<string, boolean> = {};
-            newSitemapValues.forEach((val) => (newToggles[val] = true));
-            setSitemapColors(newColors);
-
-            // Build new color expression
-            const newColorExpression: any[] = [
-              "match",
-              ["to-string", ["get", "geoconnex_sitemap"]],
-            ];
-
-            newSitemapValues.forEach((val) => {
-              newColorExpression.push(String(val), newColors[val]);
-            });
-            newColorExpression.push("#999999");
-
-            // Update the data source
-            const currentSource = map.getSource(
-              "geoconnex",
-            ) as maplibregl.GeoJSONSource;
-            currentSource.setData(newFc);
-
-            // Update layer paint properties
-            map.setPaintProperty(
-              "geoconnex-fill",
-              "fill-color",
-              newColorExpression,
-            );
-            map.setPaintProperty(
-              "geoconnex-lines",
-              "line-color",
-              newColorExpression,
-            );
-            map.setPaintProperty(
-              "geoconnex-points",
-              "circle-color",
-              newColorExpression,
-            );
-          } catch (error) {
-            console.error("Error fetching new features:", error);
-            alert("Failed to fetch features. Please try again.");
-          } finally {
-            setIsLoading(false);
-          }
+          await fetchForBbox(newBbox, searchQueryRef.current);
         });
       } catch (error) {
         console.error("Error loading features:", error);
@@ -355,17 +322,17 @@ const GeoconnexMap: React.FC = () => {
     });
 
     return () => {
-      // Clean up markers
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
       if (markerRef.current) markerRef.current.remove();
       map.remove();
     };
-  }, []);
+  }, [fetchForBbox]);
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100vh" }}>
       <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
 
-      {/* Loading spinner */}
+      {/* Loading overlay */}
       {isLoading && (
         <div
           style={{
@@ -373,7 +340,7 @@ const GeoconnexMap: React.FC = () => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            background: "rgba(255, 255, 255, 0.95)",
+            background: "rgba(255,255,255,0.95)",
             padding: "20px 30px",
             borderRadius: "8px",
             boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
@@ -404,6 +371,92 @@ const GeoconnexMap: React.FC = () => {
           </span>
         </div>
       )}
+
+      {/* Search box */}
+      <div
+        style={{
+          position: "absolute",
+          top: "10px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 10,
+          width: "320px",
+        }}
+      >
+        <div
+          style={{
+            background: "white",
+            borderRadius: "8px",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
+            display: "flex",
+            alignItems: "center",
+            padding: "6px 12px",
+            gap: "8px",
+          }}
+        >
+          {/* Search icon */}
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#888"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{ flexShrink: 0 }}
+          >
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input
+            ref={searchInputRef}
+            type="text"
+            placeholder="Search features within the current view"
+            value={searchQuery}
+            onChange={handleSearchChange}
+            style={{
+              border: "none",
+              outline: "none",
+              width: "100%",
+              fontFamily: "sans-serif",
+              fontSize: "13px",
+              color: "#333",
+              background: "transparent",
+            }}
+          />
+          {searchQuery && (
+            <button
+              onClick={() => {
+                setSearchQuery("");
+                searchQueryRef.current = "";
+                if (searchInputRef.current) searchInputRef.current.focus();
+                // Re-fetch without filter
+                const map = mapRef.current;
+                if (!map) return;
+                const b = map.getBounds();
+                fetchForBbox(
+                  [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()],
+                  "",
+                );
+              }}
+              style={{
+                border: "none",
+                background: "none",
+                cursor: "pointer",
+                padding: "0 2px",
+                color: "#aaa",
+                fontSize: "16px",
+                lineHeight: 1,
+                flexShrink: 0,
+              }}
+              aria-label="Clear search"
+            >
+              ×
+            </button>
+          )}
+        </div>
+      </div>
 
       {/* Bbox Size Control */}
       <div
@@ -455,10 +508,7 @@ const GeoconnexMap: React.FC = () => {
               setBboxSize(newSize);
               bboxSizeRef.current = newSize;
             }}
-            style={{
-              width: "100%",
-              cursor: "pointer",
-            }}
+            style={{ width: "100%", cursor: "pointer" }}
           />
           <div
             style={{
@@ -473,19 +523,6 @@ const GeoconnexMap: React.FC = () => {
             <span>1.40°</span>
           </div>
         </div>
-        {/* <div
-          style={{
-            fontSize: "11px",
-            color: "#666",
-            fontStyle: "italic",
-            marginTop: "10px",
-            padding: "8px",
-            background: "#f5f5f5",
-            borderRadius: "4px",
-          }}
-        >
-          Click on the map to create a new bounding box with this size
-        </div> */}
       </div>
 
       {/* Legend */}
@@ -516,9 +553,16 @@ const GeoconnexMap: React.FC = () => {
           >
             Geoconnex Sitemaps
           </h3>
-          <i style={{ fontSize: "12px", marginBottom: "10px" }}>
-            Showing {featureCount} features in bbox:{" "}
-            {currentBbox.map((val) => val.toFixed(4)).join(", ")}
+          <i
+            style={{ fontSize: "12px", marginBottom: "10px", display: "block" }}
+          >
+            {featureCount} features in [
+            {currentBbox.map((v) => v.toFixed(4)).join(", ")}]
+            {searchQuery && (
+              <span style={{ color: "#ff5500", marginLeft: "4px" }}>
+                · filtered: "{searchQuery}"
+              </span>
+            )}
           </i>
           {Object.entries(sitemapColors).map(([sitemap, color]) => (
             <div
@@ -537,14 +581,10 @@ const GeoconnexMap: React.FC = () => {
                   backgroundColor: color,
                   borderRadius: "3px",
                   border: "1px solid #ddd",
+                  flexShrink: 0,
                 }}
               />
-              <span
-                style={{
-                  fontSize: "12px",
-                  wordBreak: "break-word",
-                }}
-              >
+              <span style={{ fontSize: "12px", wordBreak: "break-word" }}>
                 {sitemap}
               </span>
             </div>

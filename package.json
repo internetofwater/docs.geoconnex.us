@@ -5,6 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "dev": "docusaurus start",
     "fetch:shacl": "node scripts/fetch-shacl.js",
     "build": "npm run fetch:shacl && docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -28,7 +29,7 @@
     "@vis.gl/react-maplibre": "^8.1.0",
     "clsx": "^2.0.0",
     "flatgeobuf": "^4.3.3",
-    "geoconnex-client-ts": "github:internetofwater/geoconnex-client-ts",
+    "geoconnex-client-ts": "github:internetofwater/geoconnex-client-ts#62d2454d46142301577895d5e92502a96eb588bd",
     "maplibre-gl": "^5.14.0",
     "papaparse": "^5.4.1",
     "prism-react-renderer": "^2.3.0",
