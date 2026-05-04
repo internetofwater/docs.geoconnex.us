@@ -56,7 +56,7 @@ The purpose of dataset-oriented JSON-LD output is to give enough information abo
 
 [^18]: refers to the minimum intended time spacing between observations in the case of regular time series data
 
-[^19]: These should be geoconnex reference feature URIs. If the locations the dataset is about is not within https://reference.geoconnex.us/collections, then consider [creating location-based resources and minting geoconnex identifiers](https://github.com/internetofwater/geoconnex.us/blob/master/CONTRIBUTING.md). If the dataset is extensive over a vector feature spatial fabric, like all Census Tracts or HUC12s or NHD Catchments, then this can be a reference to a single reference fabric dataset rather than an array of identifiers for every single feature. If the dataset is extensive over an area but has no particular tie to a particular reference feature set, like a raster dataset, then this can be omitted. -->
+[^19]: These should be geoconnex reference feature URIs. If the locations the dataset is about is not within https://reference.geoconnex.us/collections, then consider [creating location-based resources and minting geoconnex identifiers](https://github.com/internetofwater/geoconnex.us/blob/master/contributing/api.md). If the dataset is extensive over a vector feature spatial fabric, like all Census Tracts or HUC12s or NHD Catchments, then this can be a reference to a single reference fabric dataset rather than an array of identifiers for every single feature. If the dataset is extensive over an area but has no particular tie to a particular reference feature set, like a raster dataset, then this can be omitted. -->
 
 
 Much is similar to the [guidance for location-oriented web resources](./location-oriented.md), so here we focus on the differences.

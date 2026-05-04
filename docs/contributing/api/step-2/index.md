@@ -14,7 +14,7 @@ Once you are finished, you should have a JSON-LD document in the head of your HT
 
 :::note
 
-For a more detailed description of the JSON-LD output expected by Geoconnex, see [the JSON-LD reference section](../../reference/data-formats/jsonld/overview.md).
+For a more detailed description of the JSON-LD output expected by Geoconnex, see [the JSON-LD reference section](../../../reference/data-formats/jsonld/overview.md).
 
 :::
 

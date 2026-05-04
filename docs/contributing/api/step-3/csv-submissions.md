@@ -14,7 +14,7 @@ Geoconnex expects a standard format for the CSVs which maps a persistent identif
 
 | Column Title  | Description                                                                                                                                                        |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`          | The ID within geoconnex that your data should map to. These are unique, will redirect to the associated target, and are meant for individual monitoring locations. View [the identification scheme](/contributing/step-1) section for more info. |
+| `id`          | The ID within geoconnex that your data should map to. These are unique, will redirect to the associated target, and are meant for individual monitoring locations. View [the identification scheme](/contributing/api/step-1) section for more info. |
 | `target`      | The URL pointing to a JSON-LD landing page for a single feature in your data.                                                                                      |
 | `creator`     | A contact email for someone associated with the resource.                                                                                                          |
 | `description` | A natural language description of the data.                                                                                                                        |

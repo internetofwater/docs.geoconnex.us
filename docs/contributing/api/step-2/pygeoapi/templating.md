@@ -6,11 +6,11 @@ sidebar_position: 2
 # Outputting properly formatted data via templating
 
 :::tip
-It is recommended to take a look at [the geoconnex JSON-LD reference](../../../reference/data-formats/jsonld/overview.md) or the [pygeoapi templating docs](https://docs.pygeoapi.io/en/latest/html-templating.html) before beginning to template your data. 
+It is recommended to take a look at [the geoconnex JSON-LD reference](../../../../reference/data-formats/jsonld/overview.md) or the [pygeoapi templating docs](https://docs.pygeoapi.io/en/latest/html-templating.html) before beginning to template your data. 
 :::
 
 pygeoapi can leverage Jinja2 templates to change the structure of the JSON-LD data output. 
-- Templating is needed in order to change the default JSON-LD output by pygeoapi into either [location-oriented](../../../reference/data-formats/jsonld/primer/location-oriented.md) or [dataset-oriented](../../../reference/data-formats/jsonld/primer/dataset-oriented.md) JSON-LD output format for Geoconnex.
+- Templating is needed in order to change the default JSON-LD output by pygeoapi into either [location-oriented](../../../../reference/data-formats/jsonld/primer/location-oriented.md) or [dataset-oriented](../../../../reference/data-formats/jsonld/primer/dataset-oriented.md) JSON-LD output format for Geoconnex.
 - To add extra templates, open your [pygeoapi config file](https://docs.pygeoapi.io/en/latest/configuration.html) and create a new collection block that links to the new `item_template` you made for your JSON-LD `linked-data`. 
 
 
@@ -26,7 +26,7 @@ To follow along with this example, clone [our sample repo](https://github.com/cg
 :::
 
 
-Before we start, we first need to determine whether our example should be [location-oriented or dataset-oriented](../../../reference/data-formats/jsonld/primer/index.md#location-or-dataset-oriented). You will need to do the same for your own data. In this example it is [location-oriented](../../../reference/data-formats/jsonld/primer/location-oriented.md).
+Before we start, we first need to determine whether our example should be [location-oriented or dataset-oriented](../../../../reference/data-formats/jsonld/primer/index.md#location-or-dataset-oriented). You will need to do the same for your own data. In this example it is [location-oriented](../../../../reference/data-formats/jsonld/primer/location-oriented.md).
 
 
 import Tabs from '@theme/Tabs';
@@ -34,7 +34,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="brief" label="Step 0: Set up your local config file" default>
-    First, make sure you are ingesting your data properly into pygeoapi. This is done by editing the pygeoapi config file. Check out the [ingesting common providers](../pygeoapi/providers/) section or the [pygeoapi docs](https://docs.pygeoapi.io/en/latest/data-publishing/ogcapi-features.html#providers) for more guidance on how to do this.
+    First, make sure you are ingesting your data properly into pygeoapi. This is done by editing the pygeoapi config file. Check out the [ingesting common providers](./providers/) section or the [pygeoapi docs](https://docs.pygeoapi.io/en/latest/data-publishing/ogcapi-features.html#providers) for more guidance on how to do this.
 
     In this example we will be templating the data from https://labs.waterdata.usgs.gov/sta/v1.1/Things
 
@@ -79,7 +79,7 @@ import TabItem from '@theme/TabItem';
 
     We begin by looking at the baseline JSON-LD output from our pygeoapi endpoint for a particular. In our case, this is located at http://localhost:5000/collections/USGS/Things/items/'AR008-331856091114601'?f=jsonld 
     
-    Depending on whether our end goal is [location-oriented or dataset-oriented](../../../reference/data-formats/jsonld/primer/index.md#location-or-dataset-oriented), make note of any important keys that we will need to take in and transform during the templating process.
+    Depending on whether our end goal is [location-oriented or dataset-oriented](../../../../reference/data-formats/jsonld/primer/index.md#location-or-dataset-oriented), make note of any important keys that we will need to take in and transform during the templating process.
     
     In this case, since we are outputting a location-oriented JSON-LD, we know we will need `data['monitoringLocationNumber']` `data['locations'][0]['description']`, `data['Datastreams']` and other related keys.  
 
@@ -293,7 +293,7 @@ import TabItem from '@theme/TabItem';
   Your goal should be to make your template as generalizable as possible. For instance, we use `{% for stream in data['Datastreams'] %}` to iterate through the `Datastreams` array in the JSON-LD output and reformat the output data for each. However, in some cases if we do not have the desired data in the original JSON-LD output, we may need to hard code the info.
 
 
-  Consult the [JSON-LD Geoconnex guidance](../../../reference/data-formats/jsonld/primer/index.md) for more detailed information on which keys are required in each JSON-LD output format.
+  Consult the [JSON-LD Geoconnex guidance](../../../../reference/data-formats/jsonld/primer/index.md) for more detailed information on which keys are required in each JSON-LD output format.
 
   :::note
   In general your template should be simply moving around the structure of the original output to make it more easily parsed for Geoconnex. If necessary, data that you need but is not output via your API can be hard coded. 
