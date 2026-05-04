@@ -27,7 +27,7 @@ The first group of information helps identify the location and its provenance.
 | `name`                       | "My name is `Rio Brazos at Fishtail Road NR Tierra Amarilla, NM`"                          |
 | `provider`                   | "Data about me is provided by the `USGS Water Data for the Nation`"                         |
   -->
-[^9]: This is ideally a persistent geoconnex URI. See [here](https://github.com/internetofwater/geoconnex.us/blob/master/CONTRIBUTING.md) for how to create these. It is optional if the "same thing" geoconnex URI in the next bullet is provided, in which case this could just be the URL of the web resource for the location, or omitted.
+[^9]: This is ideally a persistent geoconnex URI. See [here](https://github.com/internetofwater/geoconnex.us/blob/master/contributing/api.md) for how to create these. It is optional if the "same thing" geoconnex URI in the next bullet is provided, in which case this could just be the URL of the web resource for the location, or omitted.
 
 [^10]: This ideally would come from a [codelist](https://docs.ogc.org/is/14-111r6/14-111r6.html#annexB_1) so that data providers use consistent terminology
 
@@ -67,7 +67,7 @@ The first group of information helps identify the location and its provenance.
 
 Here we construct the JSON-LD document by adding a context which includes the https://schema.org/ vocabulary, as well as the https://www.opengis.net/def/schema/hy_features/hyf/ vocabulary which defines specific concepts in surface hydrology, and the ODM2 [sitetype vocabulary](http://vocabulary.odm2.org/sitetype/) which defines types of water data collection locations.
 
--   The `@id` element of https://geoconnex.us/ref/monitoring-location/08282300 in this case is a persistent geoconnex URI. See [here](https://github.com/internetofwater/geoconnex.us/blob/master/CONTRIBUTING.md) for how to create these. It is optional if the "same thing" geoconnex URI in the next bullet is provided, in which case this could just be the URL of the web resource for the location, or omitted.
+-   The `@id` element of https://geoconnex.us/ref/monitoring-location/08282300 in this case is a persistent geoconnex URI. See [here](https://github.com/internetofwater/geoconnex.us/blob/master/contributing/api.md) for how to create these. It is optional if the "same thing" geoconnex URI in the next bullet is provided, in which case this could just be the URL of the web resource for the location, or omitted.
 
 -   The `@type` element here specifies that https://geoconnex.us/ref/monitoring-location/08282300 is a [Place](https://schema.org/Place) (i.e. a generic place on earth), a [Hydrometric Feature](https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature) (i.e. a data collection station) and a [HydroLocation](https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation) (i.e. a specific location that could in principle define a catchment). The `locType` further specifies the type of location using the ODM2 sitetype vocabulary http://vocabulary.odm2.org/sitetype/, which expresses the location type in terms of the feature of interest (e.g. a stream, a groundwater system). If the location is more meant to represent a general location about which non-hydrologic data is being provided, as might be the case with a data provider publishing data about dams, levees, culverts, bridges, etc. but not associated water data, then `locType` and `hyf:HY_HydrometricFeature` can be omitted.
 
@@ -383,7 +383,7 @@ Data about me is provided by the `USGS Water Data for the Nation`
 
 - There is data about me for the parameter `Gage Height` between June 6, 2014 to the present at a 15 minute time resolution. This data is generated from `in-situ observation`, in particular using [USGS stage measurement methods](https://pubs.usgs.gov/publication/tm3A7). You can download it [here](https://waterservices.usgs.gov/nwis/iv/?sites=08282300&parameterCd=00065&startDT=2023-08-13T03:08:21.313-06:00&endDT=2023-08-20T03:08:21.313-06:00&siteStatus=all&format=rdb) from the [USGS Instantaneous Values REST Web Service](https://waterservices.usgs.gov/rest/IV-Test-Tool.html) in the [RDB format](https://waterdata.usgs.gov/nwis/?tab_delimited_format_info). You can also download it [here](https://labs.waterdata.usgs.gov/sta/v1.1/Datastreams('ba774169b3e542cdb9c02e8d705b4d0f')?$expand=Thing,Observations) using the [SensorThings API standard](https://docs.ogc.org/is/15-078r6/15-078r6.html) in `JSON` or `CSV` formats. 
 
-[^4]: This is ideally a persistent geoconnex URI. See [here](https://github.com/internetofwater/geoconnex.us/blob/master/CONTRIBUTING.md) for how to create these. It is optional if the  same thing" geoconnex URI in the next bullet is provided, in which case this could just be the URL of the web resource for the location, or omitted.
+[^4]: This is ideally a persistent geoconnex URI. See [here](https://github.com/internetofwater/geoconnex.us/blob/master/contributing/api.md) for how to create these. It is optional if the  same thing" geoconnex URI in the next bullet is provided, in which case this could just be the URL of the web resource for the location, or omitted.
 
 [^5]: Where possible, it will useful to tag your organization's locations with pre-existing identifiers for reference locations, since many organizations collect data at the same location.
 

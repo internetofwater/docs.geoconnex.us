@@ -197,7 +197,7 @@ folium.Marker(
 </TabItem>
 </Tabs>
 
-Here we see that our field site is in the HUC10 1408010505, which has the associated Geoconnex URI https://geoconnex.us/ref/hu10/1408010505. This identifier can be used if we were to publish data about our site, following [Geoconnex guidance and best practices](https://docs.geoconnex.us/contributing/step-1/dataprep).
+Here we see that our field site is in the HUC10 1408010505, which has the associated Geoconnex URI https://geoconnex.us/ref/hu10/1408010505. This identifier can be used if we were to publish data about our site, following [Geoconnex guidance and best practices](https://docs.geoconnex.us/contributing/api/step-1/dataprep).
 
 ### Intersection by URL reference
 

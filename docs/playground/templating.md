@@ -42,7 +42,7 @@ When pygeoapi applies a Jinja template, it considers the entire source JSON-LD t
 
 :::note
 
-For info on getting pygeoapi running locally, see [step 2](/contributing/step-2/pygeoapi/deployment) of the contribution guide.
+For info on getting pygeoapi running locally, see [step 2](/contributing/api/step-2/pygeoapi/deployment) of the contribution guide.
 
 :::
 

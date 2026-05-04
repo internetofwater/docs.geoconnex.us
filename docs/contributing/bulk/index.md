@@ -1,0 +1,42 @@
+# Contributing via Bulk Containers
+
+Geoconnex can ingest data into the Graph database by running a Docker container that outputs arbitrary newline delimited JSON-LD to standard out. 
+
+This is intended as a flexible way to allow Geoconnex to ingest data that is difficult to crawl in some way and is either 
+- cumbersome to be crawled efficiently (50k or more Features is a typical threshold for this)
+- requires a specialized crawl process (custom backoff or retry logic)
+- has to download data that cannot easily be hosted as a live API (downloading a large dataset without a corresponding web service)
+
+## Technical Requirements
+
+1. The Docker container is on a public registry like Dockerhub, GitHub Container Registry.
+2. The Docker container outputs exclusively newline delimited JSON-LD to standard out when run without any arguments.
+3. Each line is valid JSON-LD that represents either a Geospatial Feature or Dataset and complies with the [Geoconnex SHACL Shape](../../playground/shacl.md).
+4. Each JSON-LD document contains a `@id` url that is a unique Geoconnex identifier for the feature.
+    - This id will be used to redirect to the landing page for the feature.
+5. Upon completion, the container should exit with a zero exit code.
+6. Upon failure, the container should exit with a non-zero exit code.
+7. The container should be submitted as a separate directory within the [`namespaces/bulk`](https://github.com/internetofwater/geoconnex.us/tree/master/namespaces/bulk) directory in the Geoconnex repository.
+
+Given the fact the container encapsulates all internals and communicates via standard out, the user can write the internal transformation logic in any language with any library they choose.
+
+:::note
+
+No other content must be printed to standard out besides valid JSON-LD. For logs and warnings, print to standard error.
+
+:::
+
+## Examples 
+
+For an example of an existing bulk workflow, see the [USGS Monitoring Locations](https://github.com/internetofwater/usgs_monitoring_locations_bulk_exports) bulk export container.
+
+If you were to run `ghcr.io/internetofwater/usgs_monitoring_locations_bulk_rdf:latest` you would get JSON-LD streamed to standard out like the following:
+
+```
+{"@context": {"@vocab": "https://schema.org/", "gsp": "http://www.opengis.net/ont/geosparql#", "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/", "locType": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/site-types/items/"}, "@type": ["Place", "hyf:HY_HydrometricFeature", "hyf:HY_HydroLocation", "locType:ST-CA"], "@id": "https://geoconnex.us/usgs/monitoring-location/USGS-253937080285200", "name": "BLACKCREEKCANALWESTOFSOUTHMIAMI FLA", "identifier": {"@type": "PropertyValue", "propertyID": "USGS site identifier", "value": "253937080285200"}, "url": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items/USGS-253937080285200", "provider": {"@type": "GovernmentOrganization", "name": "U.S. Geological Survey"}, "geo": {"@type": "GeoCoordinates", "latitude": 25.6606597832648, "longitude": -80.4808896071386}, "gsp:hasGeometry": {"@type": "http://www.opengis.net/ont/sf#Point", "gsp:asWKT": {"@type": "gsp:wktLiteral", "@value": "POINT (-80.4808896071386 25.6606597832648)"}, "gsp:crs": {"@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"}}}
+{"@context": {"@vocab": "https://schema.org/", "gsp": "http://www.opengis.net/ont/geosparql#", "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/", "locType": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/site-types/items/"}, "@type": ["Place", "hyf:HY_HydrometricFeature", "hyf:HY_HydroLocation", "locType:ST-CA"], "@id": "https://geoconnex.us/usgs/monitoring-location/USGS-02290707", "name": "BLACK CREEK CANAL NEAR RICHMOND HEIGHTS, FLA.", "identifier": {"@type": "PropertyValue", "propertyID": "USGS site identifier", "value": "02290707"}, "url": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items/USGS-02290707", "provider": {"@type": "GovernmentOrganization", "name": "U.S. Geological Survey"}, "geo": {"@type": "GeoCoordinates", "latitude": 25.6612153101648, "longitude": -80.4792228969147}, "gsp:hasGeometry": {"@type": "http://www.opengis.net/ont/sf#Point", "gsp:asWKT": {"@type": "gsp:wktLiteral", "@value": "POINT (-80.4792228969147 25.6612153101648)"}, "gsp:crs": {"@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"}}, "subjectOf": [{"@type": "Dataset", "name": "02290707", "description": "Gage height at BLACK CREEK CANAL NEAR RICHMOND HEIGHTS, FLA.", "provider": {"@type": "GovernmentOrganization", "name": "U.S. Geological Survey", "url": "https://www.usgs.gov/"}, "url": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/time-series-metadata/items/2c6c421363cf4d01854c0dd4dc98fbc4", "variableMeasured": {"@type": "PropertyValue", "name": "Gage height", "description": "Gage height in ft", "propertyID": "00065", "unitText": "ft", "measurementTechnique": "observation", "measurementMethod": {"name": "Gage height Measurements", "publisher": "U.S. Geological Survey"}}, "distribution": [[{"@type": "DataDownload", "name": "USGS Continuous Values for Gage height at location USGS-02290707 as CSV", "contentUrl": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/daily/items?monitoring_location_id=USGS-02290707&parameter_code=00065&f=csv", "encodingFormat": ["text/comma-separated-values"]}, {"@type": "DataDownload", "name": "USGS Daily Values for Gage height at location USGS-02290707 as JSON", "contentUrl": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/daily/items?monitoring_location_id=USGS-02290707&parameter_code=00065&f=json", "encodingFormat": ["application/json"]}, {"@type": "DataDownload", "name": "USGS Daily Values for Gage height at location USGS-02290707 as HTML", "contentUrl": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/daily/items?monitoring_location_id=USGS-02290707&parameter_code=00065&f=html", "encodingFormat": ["text/html"]}]]}]}
+{"@context": {"@vocab": "https://schema.org/", "gsp": "http://www.opengis.net/ont/geosparql#", "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/", "locType": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/site-types/items/"}, "@type": ["Place", "hyf:HY_HydrometricFeature", "hyf:HY_HydroLocation", "locType:GW"], "@id": "https://geoconnex.us/usgs/monitoring-location/USGS-253940080282601", "name": "G  -3683", "identifier": {"@type": "PropertyValue", "propertyID": "USGS site identifier", "value": "253940080282601"}, "url": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items/USGS-253940080282601", "provider": {"@type": "GovernmentOrganization", "name": "U.S. Geological Survey"}, "geo": {"@type": "GeoCoordinates", "latitude": 25.6611111111111, "longitude": -80.4738888888889}, "gsp:hasGeometry": {"@type": "http://www.opengis.net/ont/sf#Point", "gsp:asWKT": {"@type": "gsp:wktLiteral", "@value": "POINT (-80.4738888888889 25.6611111111111)"}, "gsp:crs": {"@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"}}}
+{"@context": {"@vocab": "https://schema.org/", "gsp": "http://www.opengis.net/ont/geosparql#", "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/", "locType": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/site-types/items/"}, "@type": ["Place", "hyf:HY_HydrometricFeature", "hyf:HY_HydroLocation", "locType:ST-CA"], "@id": "https://geoconnex.us/usgs/monitoring-location/USGS-253910080285500", "name": "BLACKCREEKCANAL WESTOFSOUTHMIAMI FLA", "identifier": {"@type": "PropertyValue", "propertyID": "USGS site identifier", "value": "253910080285500"}, "url": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items/USGS-253910080285500", "provider": {"@type": "GovernmentOrganization", "name": "U.S. Geological Survey"}, "geo": {"@type": "GeoCoordinates", "latitude": 25.6531600644073, "longitude": -80.4817229862656}, "gsp:hasGeometry": {"@type": "http://www.opengis.net/ont/sf#Point", "gsp:asWKT": {"@type": "gsp:wktLiteral", "@value": "POINT (-80.4817229862656 25.6531600644073)"}, "gsp:crs": {"@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"}}}
+```
+
+This workflow has been submitted within the Geoconnex repo [here](https://github.com/internetofwater/geoconnex.us/tree/master/namespaces/bulk/usgs_monitoring_locations)

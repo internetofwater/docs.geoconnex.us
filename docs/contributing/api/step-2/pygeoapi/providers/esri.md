@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ## Example
 
-    This is an example of just the  provider section. Place this within a pre-existing `collection` block in the `.yml` file. For clarification on the general pattern of adding providers, read about the general pattern [here](/contributing/step-2/pygeoapi/providers/#the-general-pattern-for-adding-a-new-data-endpoint).
+    This is an example of just the  provider section. Place this within a pre-existing `collection` block in the `.yml` file. For clarification on the general pattern of adding providers, read about the general pattern [here](/contributing/api/step-2/pygeoapi/providers/#the-general-pattern-for-adding-a-new-data-endpoint).
 
     ```yml title="local.config.yml"
     providers:
