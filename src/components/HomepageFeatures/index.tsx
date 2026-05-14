@@ -18,7 +18,7 @@ export default function HomepageFeatures(): JSX.Element {
               />
             </div>
             <div className="text--center padding-horiz--md">
-              <a href="/contributing/api/overview" style={{ textDecoration: 'underline', color: 'inherit' }}>
+              <a href="/contributing/overview" style={{ textDecoration: 'underline', color: 'inherit' }}>
               <Heading as="h3">Contribute your water data to Geoconnex</Heading>
               </a>
               <p>
