@@ -10,14 +10,12 @@ For the instructions on how to submit your CSV data see [the contribution tutori
 
 :::
 
-Geoconnex expects a standard format for the CSVs which maps a persistent identifier in Geoconnex to a single data resource. You must include at least the following 4 columns:
+Geoconnex expects a standard format for the CSVs which maps a persistent identifier in Geoconnex to a single data resource. You must include at least the following 2 columns:
 
 | Column Title  | Description                                                                                                                                                        |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `id`          | The ID within geoconnex that your data should map to. These are unique, will redirect to the associated target, and are meant for individual monitoring locations. View [the identification scheme](/contributing/api/step-1) section for more info. |
 | `target`      | The URL pointing to a JSON-LD landing page for a single feature in your data.                                                                                      |
-| `creator`     | A contact email for someone associated with the resource.                                                                                                          |
-| `description` | A natural language description of the data.                                                                                                                        |
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -41,7 +39,7 @@ in the docusaurus sidebar even if it is in the othertab that isn't opened -->
 
 import CSVTable from '@site/src/components/CSVTable';
 
-<CSVTable csvUrl="https://raw.githubusercontent.com/internetofwater/geoconnex.us/master/namespaces/iow/demo.csv" />
+<CSVTable csvUrl="https://raw.githubusercontent.com/internetofwater/geoconnex.us/refs/heads/master/namespaces/iow/demo/demo.csv" />
 
   </TabItem>
   <TabItem value="register" label="1:N Regex Redirects">
@@ -64,6 +62,6 @@ An example 1:N mapping that uses a regular expression
 
 </div>
 
-<CSVTable csvUrl="https://raw.githubusercontent.com/internetofwater/geoconnex.us/master/namespaces/usgs/monitoring-location/monitoring-location.csv" />
+<CSVTable csvUrl="https://raw.githubusercontent.com/internetofwater/geoconnex.us/refs/heads/master/namespaces/bulk/usgs_monitoring_locations/monitoring-location.csv" />
   </TabItem>
 </Tabs>
