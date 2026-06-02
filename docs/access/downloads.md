@@ -19,6 +19,12 @@ _Download the snapshot of the Graph generated on 2026_05_14_
 oras pull ghcr.io/internetofwater/geoconnex-graph:2026_05_14
 ```
 
+_Download the latest snapshot of the Graph_
+
+```
+oras pull ghcr.io/internetofwater/geoconnex-graph:latest
+```
+
 ## Geoparquet
 
 Geoconnex also provides a download of all geospatial data in the graph as geoparquet [here](https://storage.cloud.google.com/metadata-geoconnex-us/exports/geoconnex_features.parquet). Geoparquet is similar to CSV but binary encoded and more appropriate for large geospatial datasets.
