@@ -10,7 +10,7 @@ Geoconnex provides ways to download the entire graph database so that users can 
 
 Geoconnex provides a dump of all [nquads](https://www.w3.org/TR/n-quads/) that compromises the Geoconnex graph [on github here](https://github.com/internetofwater/geoconnex.us/pkgs/container/geoconnex-graph). This is packaged as an OCI artifact. An OCI artifact is essentially a docker container for data that encapsulates a set of files with metadata. It can be easily versioned and rolled back.
 
-You will need to install [`oras`](https://oras.land/). `oras` is a command line tool for managing OCI artifacts. Then run [`oras pull`](https://oras.land/docs/commands/oras_pull) to download the image.
+You will need to install [`oras`](https://oras.land/). `oras` is a command line tool for managing OCI artifacts. Then run [`oras pull`](https://oras.land/docs/commands/oras_pull) to download the data.
 
 ### Example
 
