@@ -26,7 +26,7 @@ To test for conformance, refer to the methods [here](/reference/data-formats/sha
 ## Two categories: `schema:Place` and `schema:Dataset`
 
 Geoconnex JSON-LD documents must be typed via `@type` as either:
-- a [Geospatial Feature](./feature.md) type as a `schema:Place`
-- a [Dataset](./dataset.md) typed as a `schema:Dataset`. 
+- a [Geospatial Feature](./feature.md) modeled as a `schema:Place`
+- a [Dataset](./dataset.md) modeled as a `schema:Dataset`. 
 
 Within this single JSON-LD document, there can be multiple `schema:Place` and `schema:Dataset` nodes. Note that you must use one of these types explicitly since many RDF engines do not support inferencing at scale.
