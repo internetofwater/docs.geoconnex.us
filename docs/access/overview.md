@@ -10,8 +10,9 @@ import CardLinks from '@site/src/components/CardLinks';
 
 <CardLinks />
 
-Users can make knowledge graph queries for Geoconnex data at [graph.geoconnex.us](https://graph.geoconnex.us/). The query functionality for the Geoconnex graph is in active development and there are plans to eventually develop a general purpose REST API for accessing the knowledge graph without needing to use a graph database query language like SPARQL.
+Users can make knowledge graph queries for Geoconnex data at [graph.geoconnex.us](https://graph.geoconnex.us/). The query functionality for the Geoconnex graph is in active development. There are plans to eventually develop a general purpose REST API for accessing the knowledge graph without needing to use a graph database query language like SPARQL.
 
+The [Geoconnex Explorer](https://explorer.geoconnex.us/) provides a web map for finding datasets and monitoring locations within Geoconnex associated with a mainstem river. This application is also in active development and there are plans to allow for querying and visualizing other types of data relationships linked in the graph.
 
  ## Geoconnex key data endpoints
 
