@@ -7,47 +7,47 @@ const CardLinks = () => {
   return (
     <div
       style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '160px',
-        padding: '40px 0',
-        flexWrap: 'wrap'
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "160px",
+        padding: "40px 0",
+        flexWrap: "wrap",
       }}
     >
       <div
         style={{
-          border: '1px solid #ccc',
-          borderRadius: '8px',
-          width: '300px',
-          padding: '16px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-          textAlign: 'center',
-          ...(colorMode === 'dark' && {
-            border: '1px solid #555',
-            boxShadow: '0 4px 8px rgba(255, 255, 255, 0.1)',
-          })
+          border: "1px solid #ccc",
+          borderRadius: "8px",
+          width: "300px",
+          padding: "16px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          textAlign: "center",
+          ...(colorMode === "dark" && {
+            border: "1px solid #555",
+            boxShadow: "0 4px 8px rgba(255, 255, 255, 0.1)",
+          }),
         }}
       >
         <img
           src="/sparql.png"
           title="A code editor showing a SPARQL query"
           style={{
-            width: '100%',
-            borderRadius: '8px'
+            width: "100%",
+            borderRadius: "8px",
           }}
         />
-        <div style={{ marginTop: '12px' }}>
+        <div style={{ marginTop: "12px" }}>
           <a
             href="/playground/sparql"
             style={{
-              display: 'inline-block',
-              padding: '4px 8px',
-              fontSize: '16px',
-              color: '#fff',
-              backgroundColor: '#007bff',
-              borderRadius: '4px',
-              textDecoration: 'none'
+              display: "inline-block",
+              padding: "4px 8px",
+              fontSize: "16px",
+              color: "#fff",
+              backgroundColor: "#007bff",
+              borderRadius: "4px",
+              textDecoration: "none",
             }}
           >
             Query the graph database
@@ -57,37 +57,37 @@ const CardLinks = () => {
 
       <div
         style={{
-          border: '1px solid #ccc',
-          borderRadius: '8px',
-          width: '300px',
-          padding: '16px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-          textAlign: 'center',
-          ...(colorMode === 'dark' && {
-            border: '1px solid #555',
-            boxShadow: '0 4px 8px rgba(255, 255, 255, 0.1)',
-          })
+          border: "1px solid #ccc",
+          borderRadius: "8px",
+          width: "300px",
+          padding: "16px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          textAlign: "center",
+          ...(colorMode === "dark" && {
+            border: "1px solid #555",
+            boxShadow: "0 4px 8px rgba(255, 255, 255, 0.1)",
+          }),
         }}
       >
         <img
-          src="/map.png"
+          src="/explorer.png"
           alt="Explore a map of the data"
           style={{
-            width: '100%',
-            borderRadius: '8px'
+            width: "100%",
+            borderRadius: "8px",
           }}
         />
-        <div style={{ marginTop: '12px' }}>
+        <div style={{ marginTop: "12px" }}>
           <a
-            href="https://geoconnex.us/iow/map"
+            href="https://explorer.geoconnex.us/"
             style={{
-              display: 'inline-block',
-              padding: '4px 8px',
-              fontSize: '16px',
-              color: '#fff',
-              backgroundColor: '#007bff',
-              borderRadius: '4px',
-              textDecoration: 'none'
+              display: "inline-block",
+              padding: "4px 8px",
+              fontSize: "16px",
+              color: "#fff",
+              backgroundColor: "#007bff",
+              borderRadius: "4px",
+              textDecoration: "none",
             }}
           >
             Explore a map of the data
