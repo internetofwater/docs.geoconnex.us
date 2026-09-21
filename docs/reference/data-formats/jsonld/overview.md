@@ -45,6 +45,7 @@ This document is located inside a `<script>` tag within a `<head>` or `<body>` s
 {
   "@context": {
     "@vocab": "https://schema.org/",
+    "schema": "https://schema.org/",
     "ex": "https://example.com/schema/",
     "locType": "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType"
   },
@@ -68,6 +69,7 @@ This document is located inside a `<script>` tag within a `<head>` or `<body>` s
 **`@context`** includes two properties:
 
 - `@vocab` sets the default document vocabulary to `https://schema.org/`, which is a standard vocabulary for web-based structured data. This means that in general, attributes in the document will be assumed to have `https://schema.org/` as a prefix, so JSON-LD parsers will map `name` to https://schema.org/name
+- `schema` is declared as an explicit prefix so that `schema:Place` and `schema:Dataset` expand to https://schema.org/Place and https://schema.org/Dataset. This matters: `@vocab` applies only to bare terms like `name`, never to a prefixed term like `schema:Place`, so a document that sets `@vocab` without also declaring `schema` leaves `schema:Place` as an opaque IRI that the [Geoconnex SHACL shape](../shacl_shape.md) will not match.
 - `ex` is a custom context prefix representing `https://example.com/schema/`, signifying specific extensions or custom data definitions specific to our website. 
   - The prefix can be used on other attributes so that JSON-LD parsers do the appropriate mapping. Thus, `ex:name` will be parsed as `https://example.com/schema/recordCount`.
 - `locType` is a custom direct attribute mapping, specifying that this attribute exactly matches to the concept identified by this HTTP identifier https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType. 
@@ -107,6 +109,7 @@ import TabItem from '@theme/TabItem';
 {
   "@context": {
     "@vocab": "https://schema.org/",
+    "schema": "https://schema.org/",
     "ex": "https://example.com/schema/",
     "locType": "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType"
   },
@@ -133,7 +136,7 @@ import TabItem from '@theme/TabItem';
         {
           "@id": "https://example.com/well/1234",
           "@type": [
-            "schema:Place"
+            "https://schema.org/Place"
           ],
           "https://schema.org/description": [
             {
@@ -154,7 +157,7 @@ import TabItem from '@theme/TabItem';
             {
               "@id": "https://datasystem.org/dataset1",
               "@type": [
-                "schema:Dataset"
+                "https://schema.org/Dataset"
               ],
               "https://example.com/schema/recordCount": [
                 {
@@ -175,10 +178,10 @@ import TabItem from '@theme/TabItem';
   <TabItem value="quads" label="N-Quads">
    JSON-LD is not constrained to just outputting JSON. It can also output N-Quads. This format can be used to create a knowledge graph and the output data describes the subject, predicate, object, and optionally, a label. 
   ```
-<https://datasystem.org/dataset1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <schema:Dataset> .
+<https://datasystem.org/dataset1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Dataset> .
 <https://datasystem.org/dataset1> <https://example.com/schema/recordCount> "500"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://datasystem.org/dataset1> <https://schema.org/name> "Well Locations Dataset" .
-<https://example.com/well/1234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <schema:Place> .
+<https://example.com/well/1234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Place> .
 <https://example.com/well/1234> <https://schema.org/description> "Well at 1234 Place St., USA" .
 <https://example.com/well/1234> <https://schema.org/name> "Well 1234" .
 <https://example.com/well/1234> <https://schema.org/subjectOf> <https://datasystem.org/dataset1> .
@@ -186,3 +189,7 @@ import TabItem from '@theme/TabItem';
   ```
   </TabItem>
 </Tabs>
+
+## Next: the Geoconnex profile
+
+The example above is valid JSON-LD but says nothing about what Geoconnex expects. For that, see [Building Geoconnex Web Resources](./primer/index.md), which describes the single [SHACL shape](../shacl_shape.md) every Geoconnex document must conform to.

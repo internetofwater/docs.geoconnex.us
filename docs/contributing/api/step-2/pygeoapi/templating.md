@@ -10,7 +10,7 @@ It is recommended to take a look at [the geoconnex JSON-LD reference](../../../.
 :::
 
 pygeoapi can leverage Jinja2 templates to change the structure of the JSON-LD data output. 
-- Templating is needed in order to change the default JSON-LD output by pygeoapi into either [location-oriented](../../../../reference/data-formats/jsonld/primer/location-oriented.md) or [dataset-oriented](../../../../reference/data-formats/jsonld/primer/dataset-oriented.md) JSON-LD output format for Geoconnex.
+- Templating is needed in order to turn the default JSON-LD output by pygeoapi into the [Geoconnex JSON-LD format](../../../../reference/data-formats/jsonld/primer/index.md), which is defined by a single [SHACL shape](../../../../reference/data-formats/shacl_shape.md).
 - To add extra templates, open your [pygeoapi config file](https://docs.pygeoapi.io/en/latest/configuration.html) and create a new collection block that links to the new `item_template` you made for your JSON-LD `linked-data`. 
 
 
@@ -26,7 +26,7 @@ To follow along with this example, clone [our sample repo](https://github.com/cg
 :::
 
 
-Before we start, we first need to determine whether our example should be [location-oriented or dataset-oriented](../../../../reference/data-formats/jsonld/primer/index.md#location-or-dataset-oriented). You will need to do the same for your own data. In this example it is [location-oriented](../../../../reference/data-formats/jsonld/primer/location-oriented.md).
+Before we start, it is worth reviewing what the output needs to look like. Every Geoconnex document has the same structure: a `schema:Place` with a name and a WKT geometry, carrying its datasets under `schema:subjectOf`. See [Building Geoconnex Web Resources](../../../../reference/data-formats/jsonld/primer/index.md) for the full description, and validate your template output in the [SHACL playground](/playground/shacl) as you go.
 
 
 import Tabs from '@theme/Tabs';
@@ -79,9 +79,9 @@ import TabItem from '@theme/TabItem';
 
     We begin by looking at the baseline JSON-LD output from our pygeoapi endpoint for a particular. In our case, this is located at http://localhost:5000/collections/USGS/Things/items/'AR008-331856091114601'?f=jsonld 
     
-    Depending on whether our end goal is [location-oriented or dataset-oriented](../../../../reference/data-formats/jsonld/primer/index.md#location-or-dataset-oriented), make note of any important keys that we will need to take in and transform during the templating process.
+    Make note of any important keys that we will need to take in and transform during the templating process, keeping in mind the [properties the Geoconnex shape expects](../../../../reference/data-formats/jsonld/primer/index.md#what-the-shape-requires).
     
-    In this case, since we are outputting a location-oriented JSON-LD, we know we will need `data['monitoringLocationNumber']` `data['locations'][0]['description']`, `data['Datastreams']` and other related keys.  
+    In this case we know we will need `data['monitoringLocationNumber']`, `data['locations'][0]['description']`, `data['Datastreams']` and other related keys — the location's identity and geometry, plus the datastreams that become our `schema:subjectOf` datasets.  
 
 
     :::tip
@@ -293,7 +293,7 @@ import TabItem from '@theme/TabItem';
   Your goal should be to make your template as generalizable as possible. For instance, we use `{% for stream in data['Datastreams'] %}` to iterate through the `Datastreams` array in the JSON-LD output and reformat the output data for each. However, in some cases if we do not have the desired data in the original JSON-LD output, we may need to hard code the info.
 
 
-  Consult the [JSON-LD Geoconnex guidance](../../../../reference/data-formats/jsonld/primer/index.md) for more detailed information on which keys are required in each JSON-LD output format.
+  Consult the [JSON-LD Geoconnex guidance](../../../../reference/data-formats/jsonld/primer/index.md) for more detailed information on which keys are required.
 
   :::note
   In general your template should be simply moving around the structure of the original output to make it more easily parsed for Geoconnex. If necessary, data that you need but is not output via your API can be hard coded. 
