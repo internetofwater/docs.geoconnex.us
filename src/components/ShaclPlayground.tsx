@@ -10,7 +10,7 @@ import {
   faCheck,
   faShareAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import default_json from "./associated_assets/ref_dams.json";
+import default_json from "./associated_assets/rise.json";
 
 const VALIDATION_URL =
   "https://shacl-validation-grpc-server-414886575015.us-central1.run.app/validate";

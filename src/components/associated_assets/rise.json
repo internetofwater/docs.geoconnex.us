@@ -1,0 +1,111 @@
+{
+    "@context": [
+        {
+            "schema": "https://schema.org/",
+            "gsp": "http://www.opengis.net/ont/geosparql#",
+            "type": "@type",
+            "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/"
+        }
+    ],
+    "type": [
+        "schema:Place",
+        "hyf:HY_HydroLocation"
+    ],
+    "@id": "https://geoconnex.us/wwdh/rise/1",
+    "schema:identifier": 1,
+    "schema:name": "Marys Lake",
+    "schema:AdministrativeArea": "Missouri Basin",
+    "schema:elevation": 8050.0,
+    "schema:dateCreated": "2020-08-12T10:08:06+00:00",
+    "schema:dateModified": "2021-11-17T09:07:16+00:00",
+    "hyf:HY_HydroLocationType": "HY_Reservoir",
+    "gsp:hasGeometry": {
+        "@type": "http://www.opengis.net/ont/sf#Point",
+        "gsp:asWKT": {
+            "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "@value": "POINT (-105.5343083 40.3440796)"
+        }
+    },
+    "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:longitude": -105.5343083,
+        "schema:latitude": 40.3440796
+    },
+    "schema:subjectOf": [
+        {
+            "@type": "schema:Dataset",
+            "schema:name": "Marys Lake Daily Lake/Reservoir Storage-af Time Series Data",
+            "schema:description": "Reservoir Storage Content (acre-feet)",
+            "schema:identifier": "4222",
+            "schema:variableMeasured": {
+                "@type": "schema:PropertyValue",
+                "schema:name": "Lake/Reservoir Storage",
+                "schema:unitText": "af"
+            },
+            "schema:dateCreated": "2020-08-13T13:10:43+00:00",
+            "schema:dateUpdated": "2026-09-27T12:15:18+00:00",
+            "schema:frequency": "daily",
+            "schema:temporalCoverage": "1986-05-01T06:00:00+00:00/2026-09-26T06:00:00+00:00",
+            "schema:provider": {
+                "@type": "schema:GovernmentOrganization",
+                "schema:url": "https://data.usbr.gov/rise-api",
+                "schema:name": "US Bureau of Reclamation"
+            },
+            "schema:publisher": {
+                "@type": "schema:Organization",
+                "schema:name": "Internet of Water",
+                "schema:email": "internetofwater@lincolninst.edu"
+            }
+        },
+        {
+            "@type": "schema:Dataset",
+            "schema:name": "Marys Lake Daily Lake/Reservoir Elevation-ft Time Series Data",
+            "schema:description": "Reservoir Forebay Elevation (feet)",
+            "schema:identifier": "4223",
+            "schema:variableMeasured": {
+                "@type": "schema:PropertyValue",
+                "schema:name": "Lake/Reservoir Elevation",
+                "schema:unitText": "ft"
+            },
+            "schema:dateCreated": "2020-08-13T13:10:43+00:00",
+            "schema:dateUpdated": "2026-09-27T12:15:18+00:00",
+            "schema:frequency": "daily",
+            "schema:temporalCoverage": "1986-05-01T06:00:00+00:00/2026-09-26T06:00:00+00:00",
+            "schema:provider": {
+                "@type": "schema:GovernmentOrganization",
+                "schema:url": "https://data.usbr.gov/rise-api",
+                "schema:name": "US Bureau of Reclamation"
+            },
+            "schema:publisher": {
+                "@type": "schema:Organization",
+                "schema:name": "Internet of Water",
+                "schema:email": "internetofwater@lincolninst.edu"
+            }
+        },
+        {
+            "@type": "schema:Dataset",
+            "schema:name": "Marys Lake Daily Lake/Reservoir Release - Total-cfs Time Series Data",
+            "schema:description": "Daily Mean Total Discharge (cfs)",
+            "schema:identifier": "4225",
+            "schema:variableMeasured": {
+                "@type": "schema:PropertyValue",
+                "schema:name": "Lake/Reservoir Release - Total",
+                "schema:unitText": "cfs"
+            },
+            "schema:dateCreated": "2020-08-13T13:10:43+00:00",
+            "schema:dateUpdated": "2026-09-27T12:15:18+00:00",
+            "schema:frequency": "daily",
+            "schema:temporalCoverage": "2012-02-09T06:00:00+00:00/2026-09-26T06:00:00+00:00",
+            "schema:provider": {
+                "@type": "schema:GovernmentOrganization",
+                "schema:url": "https://data.usbr.gov/rise-api",
+                "schema:name": "US Bureau of Reclamation"
+            },
+            "schema:publisher": {
+                "@type": "schema:Organization",
+                "schema:name": "Internet of Water",
+                "schema:email": "internetofwater@lincolninst.edu"
+            }
+        }
+    ]
+}
