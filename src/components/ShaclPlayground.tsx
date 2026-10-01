@@ -13,9 +13,9 @@ import {
 import default_json from "./associated_assets/rise.json";
 
 const VALIDATION_URL =
-  "https://shacl-validation-grpc-server-414886575015.us-central1.run.app/validate";
+  "https://shacl-validation-server-414886575015.us-central1.run.app/validate";
 const SHAPE_URL =
-  "https://shacl-validation-grpc-server-414886575015.us-central1.run.app/shape";
+  "https://shacl-validation-server-414886575015.us-central1.run.app/shape";
 
 const MONACO_EDITOR_OPTIONS = {
   automaticLayout: true,
