@@ -1,0 +1,10 @@
+# title: Total datasets in Geoconnex
+# category: Miscellaneous Queries
+# tags: misc, simple, datasets
+
+PREFIX schema: <https://schema.org/>
+
+SELECT (COUNT(?dataset) AS ?numDatasets)
+WHERE {
+  ?dataset a schema:Dataset .
+}

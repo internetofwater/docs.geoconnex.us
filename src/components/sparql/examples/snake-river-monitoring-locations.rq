@@ -1,0 +1,16 @@
+# title: Map all monitoring locations on the Animas River
+# category: Location Queries
+# tags: mainstem, map
+
+PREFIX hyf: <https://www.opengis.net/def/schema/hy_features/hyf/>
+PREFIX gsp: <http://www.opengis.net/ont/geosparql#>
+
+SELECT DISTINCT ?monitoringLocation ?wkt
+WHERE {
+  # Specify your desired mainstem
+  VALUES ?mainstem { <https://geoconnex.us/ref/mainstems/35394> }
+
+  # Get monitoring locations along the mainstem
+  ?monitoringLocation hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement ?mainstem ;
+    gsp:hasGeometry/gsp:asWKT ?wkt .
+}
