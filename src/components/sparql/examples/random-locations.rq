@@ -1,0 +1,12 @@
+# title: Get 100 random locations
+# category: Miscellaneous Queries
+# tags: misc, simple
+
+PREFIX schema: <https://schema.org/>
+PREFIX gsp: <http://www.opengis.net/ont/geosparql#>
+SELECT DISTINCT ?monitoringLocation ?wkt
+WHERE {
+  ?monitoringLocation a schema:Place ;
+    gsp:hasGeometry/gsp:asWKT ?wkt .
+}
+LIMIT 100

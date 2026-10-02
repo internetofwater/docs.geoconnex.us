@@ -1,0 +1,39 @@
+# title: All datasets about the Animas River mainstem
+# category: Dataset Queries
+# tags: mainstem, datasets
+
+PREFIX schema: <https://schema.org/>
+PREFIX gsp: <http://www.opengis.net/ont/geosparql#>
+PREFIX hyf: <https://www.opengis.net/def/schema/hy_features/hyf/>
+SELECT DISTINCT ?monitoringLocation ?siteName ?datasetDescription ?type ?url
+  ?variableMeasured ?variableUnit ?measurementTechnique ?temporalCoverage
+  ?distributionName ?distributionURL ?distributionFormat ?wkt
+WHERE {
+  VALUES ?mainstem { <https://geoconnex.us/ref/mainstems/35394> }
+
+  ?monitoringLocation hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement ?mainstem ;
+    schema:subjectOf ?item ;
+    hyf:HydroLocationType ?type ;
+    gsp:hasGeometry/gsp:asWKT ?wkt .
+
+  ?item schema:name ?siteName ;
+    schema:temporalCoverage ?temporalCoverage ;
+    schema:url ?url ;
+    schema:variableMeasured ?variableMeasured .
+
+  ?variableMeasured schema:description ?datasetDescription ;
+    schema:name ?variableMeasuredName ;
+    schema:unitText ?variableUnit ;
+    schema:measurementTechnique ?measurementTechnique .
+
+  OPTIONAL {
+    ?item schema:distribution ?distribution .
+    ?distribution schema:name ?distributionName ;
+      schema:contentUrl ?distributionURL ;
+      schema:encodingFormat ?distributionFormat .
+  }
+
+  # Filter datasets by the desired variable description
+  FILTER(REGEX(?datasetDescription, "temperature", "i"))
+}
+ORDER BY ?siteName
