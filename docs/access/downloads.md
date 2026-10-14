@@ -29,4 +29,4 @@ oras pull ghcr.io/internetofwater/geoconnex-graph:latest
 
 Geoconnex provides a STAC catalog of all the geospatial data contained in the graph  [here](https://storage.googleapis.com/harvest-geoconnex-us/stac/catalog.json). Since it complies with the Portolan spec, it can be visualized in the browser [here](https://browser.portolan-sdi.org/#/external/storage.googleapis.com/harvest-geoconnex-us/stac/catalog.json). This catalog contains both Parquet and PMTiles exports for each dataset.
 
-Note that this is just the geospatial data and some basic metadata like the name and description of the feature. For other linked metadata such as dataset info that doesn't have direct geospatial data on it, you should make queries against the full graph database.
+Note that this is primarily focused on the geospatial data and some basic metadata like the name and description of the feature. While the JSON-LD source for the feature is provided in the geoparquet as a semi-structured `jsonld` column, for other linked metadata such as dataset info that doesn't have direct geospatial data on it, you should make queries against the full graph database.
