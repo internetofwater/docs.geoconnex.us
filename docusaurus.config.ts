@@ -37,6 +37,18 @@ const config: Config = {
           routeBasePath: "/", // Serve the docs at the site's root
 
           sidebarPath: "./sidebars.ts",
+          async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
+            const items = await defaultSidebarItemsGenerator(args);
+            return items.map((item) =>
+              item.type === "doc" && item.id === "playground/features"
+                ? {
+                    type: "link" as const,
+                    label: "Features in Geoconnex",
+                    href: "https://internetofwater.github.io/Geoconnex-Feature-UI/",
+                  }
+                : item,
+            );
+          },
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/internetofwater/docs.geoconnex.us/edit/main/",
         },
