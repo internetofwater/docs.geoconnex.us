@@ -26,8 +26,8 @@ The development of geoconnex.us takes place on GitHub. See [here](./system-archi
 
 ## How the Graph is Populated
 
-1. An partner organization creates an endpoint for their water data and associates a list of persistent identifiers with their endpoints
+1. An partner organization creates an endpoint or bulk container for their water data and associates a list of persistent identifiers with their endpoints
 2. The organization submits a pull request or submits the form at [register.geoconnex.us](https://register.geoconnex.us/) to upload their data
-3. The Geoconnex harvester finds the endpoints via their published PIDs and downloads the JSON-LD for each endpoint
-4. Using the JSON-LD data, the Geoconnex crawler produces [semantic triples](https://en.wikipedia.org/wiki/Semantic_triple) in the [PROV Ontology](https://www.w3.org/TR/prov-o/) 
-5. The Geoconnex crawler populates the Geoconnex graph database
+3. The Geoconnex harvester finds the endpoints via their published PIDs and downloads the JSON-LD for each feature
+4. The Geoconnex harvester stores all the JSON-LD for a sitemap as Parquet
+5. The Geoconnex harvester streams the JSON-LD from Parquet into triples and populates the Geoconnex graph database

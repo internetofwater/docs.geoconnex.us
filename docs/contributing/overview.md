@@ -12,7 +12,7 @@ You can contribute to the Geoconnex Graph in 2 main ways. Each has a different a
 1. [Hosting live landing pages](./api/index.md) with embedded JSON-LD for your water data and having the Geoconnex crawler crawl them
     - Allows organizations maximum control over the data they publish and a clear source of truth for redirects. However, it may not scale well for large datasets or require maintaining infrastructure.
 2. [Submitting reference to a Docker container](./bulk/index.md) that the Geoconnex crawler can pull and run in order to generate JSON-LD
-    - Allows organizations to publish data without having to maintain infrastructure. However, it abstracts away 
+    - Allows organizations to publish data without having to maintain infrastructure. It scales to large datasets well, but does not guarantee a live associated landing page provided by the dataset submitter.
 
 After creating either the CSV with each landing page or the Docker container, you should submit a [pull request](https://github.com/internetofwater/geoconnex.us/pulls) to the [geoconnex.us repository](https://github.com/internetofwater/geoconnex.us) that specifies how to crawl or run it.
 
